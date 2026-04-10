@@ -101,7 +101,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         public bool? SkipTlsVerification { get; set; }
         /// <summary>If true, the page will be stored in the Firecrawl index and cache. Setting this to false is useful if your scraping activity may have data protection concerns. Using some parameters associated with sensitive scraping (e.g. actions, headers) will force this parameter to be false.</summary>
         public bool? StoreInCache { get; set; }
-        /// <summary>Timeout in milliseconds for the request. Minimum is 1000 (1 second). Default is 30000 (30 seconds). Maximum is 300000 (300 seconds).</summary>
+        /// <summary>Timeout in milliseconds for the request. Minimum is 1000 (1 second). Default is 60000 (60 seconds). Maximum is 300000 (300 seconds).</summary>
         public int? Timeout { get; set; }
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
