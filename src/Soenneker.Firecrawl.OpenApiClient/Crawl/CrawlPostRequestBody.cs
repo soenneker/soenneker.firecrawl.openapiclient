@@ -33,6 +33,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
 #endif
         /// <summary>Do not re-scrape the same path with different (or none) query parameters</summary>
         public bool? IgnoreQueryParameters { get; set; }
+        /// <summary>Ignore the website&apos;s robots.txt rules. Enterprise only — contact support@firecrawl.com to enable.</summary>
+        public bool? IgnoreRobotsTxt { get; set; }
         /// <summary>URL pathname regex patterns that include matching URLs in the crawl. Only the paths that match the specified patterns will be included in the response. Note: the starting URL is also checked against these patterns — if it does not match, the crawl may return 0 pages. For example, if you set &quot;includePaths&quot;: [&quot;blog/.*&quot;] for the base URL firecrawl.dev/blog, only pages under /blog/ will be included in the results, such as https://www.firecrawl.dev/blog/firecrawl-launch-week-1-recap.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
 #endif
         /// <summary>When true, includePaths and excludePaths regex patterns are matched against the full URL (including query parameters) instead of just the URL pathname. Useful when you need to filter URLs based on query strings.</summary>
         public bool? RegexOnFullURL { get; set; }
+        /// <summary>Custom User-Agent string for robots.txt evaluation. When set, robots.txt is fetched with this User-Agent and allow/disallow rules are matched against it instead of the default. Enterprise only — contact support@firecrawl.com to enable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RobotsUserAgent { get; set; }
+#nullable restore
+#else
+        public string RobotsUserAgent { get; set; }
+#endif
         /// <summary>The scrapeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,12 +127,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
                 { "delay", n => { Delay = n.GetDoubleValue(); } },
                 { "excludePaths", n => { ExcludePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ignoreQueryParameters", n => { IgnoreQueryParameters = n.GetBoolValue(); } },
+                { "ignoreRobotsTxt", n => { IgnoreRobotsTxt = n.GetBoolValue(); } },
                 { "includePaths", n => { IncludePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "maxConcurrency", n => { MaxConcurrency = n.GetIntValue(); } },
                 { "maxDiscoveryDepth", n => { MaxDiscoveryDepth = n.GetIntValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "regexOnFullURL", n => { RegexOnFullURL = n.GetBoolValue(); } },
+                { "robotsUserAgent", n => { RobotsUserAgent = n.GetStringValue(); } },
                 { "scrapeOptions", n => { ScrapeOptions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.CreateFromDiscriminatorValue); } },
                 { "sitemap", n => { Sitemap = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlPostRequestBody_sitemap>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -143,12 +155,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
             writer.WriteDoubleValue("delay", Delay);
             writer.WriteCollectionOfPrimitiveValues<string>("excludePaths", ExcludePaths);
             writer.WriteBoolValue("ignoreQueryParameters", IgnoreQueryParameters);
+            writer.WriteBoolValue("ignoreRobotsTxt", IgnoreRobotsTxt);
             writer.WriteCollectionOfPrimitiveValues<string>("includePaths", IncludePaths);
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("maxConcurrency", MaxConcurrency);
             writer.WriteIntValue("maxDiscoveryDepth", MaxDiscoveryDepth);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteBoolValue("regexOnFullURL", RegexOnFullURL);
+            writer.WriteStringValue("robotsUserAgent", RobotsUserAgent);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>("scrapeOptions", ScrapeOptions);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlPostRequestBody_sitemap>("sitemap", Sitemap);
             writer.WriteStringValue("url", Url);

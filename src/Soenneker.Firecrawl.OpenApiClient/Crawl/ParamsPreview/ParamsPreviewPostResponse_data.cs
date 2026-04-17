@@ -34,6 +34,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
 #endif
         /// <summary>Whether to ignore query parameters</summary>
         public bool? IgnoreQueryParameters { get; set; }
+        /// <summary>Whether robots.txt rules are ignored</summary>
+        public bool? IgnoreRobotsTxt { get; set; }
         /// <summary>URL patterns to include</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
         public int? MaxDepth { get; set; }
         /// <summary>Maximum discovery depth</summary>
         public int? MaxDiscoveryDepth { get; set; }
+        /// <summary>Custom User-Agent string used for robots.txt evaluation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RobotsUserAgent { get; set; }
+#nullable restore
+#else
+        public string RobotsUserAgent { get; set; }
+#endif
         /// <summary>Sitemap handling strategy</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap? Sitemap { get; set; }
         /// <summary>The URL to crawl</summary>
@@ -90,10 +100,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
                 { "delay", n => { Delay = n.GetDoubleValue(); } },
                 { "excludePaths", n => { ExcludePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ignoreQueryParameters", n => { IgnoreQueryParameters = n.GetBoolValue(); } },
+                { "ignoreRobotsTxt", n => { IgnoreRobotsTxt = n.GetBoolValue(); } },
                 { "includePaths", n => { IncludePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "maxDepth", n => { MaxDepth = n.GetIntValue(); } },
                 { "maxDiscoveryDepth", n => { MaxDiscoveryDepth = n.GetIntValue(); } },
+                { "robotsUserAgent", n => { RobotsUserAgent = n.GetStringValue(); } },
                 { "sitemap", n => { Sitemap = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -112,10 +124,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
             writer.WriteDoubleValue("delay", Delay);
             writer.WriteCollectionOfPrimitiveValues<string>("excludePaths", ExcludePaths);
             writer.WriteBoolValue("ignoreQueryParameters", IgnoreQueryParameters);
+            writer.WriteBoolValue("ignoreRobotsTxt", IgnoreRobotsTxt);
             writer.WriteCollectionOfPrimitiveValues<string>("includePaths", IncludePaths);
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("maxDepth", MaxDepth);
             writer.WriteIntValue("maxDiscoveryDepth", MaxDiscoveryDepth);
+            writer.WriteStringValue("robotsUserAgent", RobotsUserAgent);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap>("sitemap", Sitemap);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
