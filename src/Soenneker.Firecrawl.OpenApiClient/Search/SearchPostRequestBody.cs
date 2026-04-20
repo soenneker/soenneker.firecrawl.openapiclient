@@ -41,7 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #endif
         /// <summary>Excludes URLs from the search results that are invalid for other Firecrawl endpoints. This helps reduce errors if you are piping data from search into other Firecrawl API endpoints.</summary>
         public bool? IgnoreInvalidURLs { get; set; }
-        /// <summary>Maximum number of results to return</summary>
+        /// <summary>Maximum number of results to return (per source type when using multiple sources)</summary>
         public int? Limit { get; set; }
         /// <summary>Location parameter for search results (e.g. `San Francisco,California,United States`). For best results, set both this and the `country` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
