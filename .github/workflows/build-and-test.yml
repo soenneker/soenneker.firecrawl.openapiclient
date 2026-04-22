@@ -38,7 +38,7 @@ jobs:
         run: dotnet build test/Soenneker.Firecrawl.OpenApiClient.Tests/Soenneker.Firecrawl.OpenApiClient.Tests.csproj --configuration Release --no-restore --verbosity minimal
 
       - name: Test
-        run: dotnet test test/Soenneker.Firecrawl.OpenApiClient.Tests/Soenneker.Firecrawl.OpenApiClient.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
+        run: dotnet test --project test/Soenneker.Firecrawl.OpenApiClient.Tests/Soenneker.Firecrawl.OpenApiClient.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
 
       - name: Pack
         run: dotnet pack src/Soenneker.Firecrawl.OpenApiClient/Soenneker.Firecrawl.OpenApiClient.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
