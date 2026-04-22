@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Firecrawl.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class FirecrawlOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class FirecrawlOpenApiClientTests : HostedUnitTest
 {
-    public FirecrawlOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public FirecrawlOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
