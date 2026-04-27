@@ -12,6 +12,7 @@ using Soenneker.Firecrawl.OpenApiClient.Browser;
 using Soenneker.Firecrawl.OpenApiClient.Crawl;
 using Soenneker.Firecrawl.OpenApiClient.Extract;
 using Soenneker.Firecrawl.OpenApiClient.Map;
+using Soenneker.Firecrawl.OpenApiClient.Parse;
 using Soenneker.Firecrawl.OpenApiClient.Scrape;
 using Soenneker.Firecrawl.OpenApiClient.Search;
 using Soenneker.Firecrawl.OpenApiClient.Team;
@@ -56,6 +57,11 @@ namespace Soenneker.Firecrawl.OpenApiClient
         public global::Soenneker.Firecrawl.OpenApiClient.Map.MapRequestBuilder Map
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Map.MapRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The parse property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Parse.ParseRequestBuilder Parse
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Parse.ParseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scrape property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder Scrape
