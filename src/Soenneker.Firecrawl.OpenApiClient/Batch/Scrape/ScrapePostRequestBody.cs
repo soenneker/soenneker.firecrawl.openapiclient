@@ -75,7 +75,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         public int? MinAge { get; set; }
         /// <summary>Set to true if you want to emulate scraping from a mobile device. Useful for testing responsive pages and taking mobile screenshots.</summary>
         public bool? Mobile { get; set; }
-        /// <summary>Only return the main content of the page excluding headers, navs, footers, etc.</summary>
+        /// <summary>Beta. Run an additional LLM-based pass over the generated markdown to remove residual boilerplate that `onlyMainContent` can miss (cookie banners, ad blocks, social share widgets, breadcrumbs, newsletter signups, comment sections, related-article lists). Headings, lists, tables, code blocks, image references, and inline links are preserved. Can be combined with `onlyMainContent` (the most common setup) or used on its own. Skipped with a warning when the markdown exceeds the cleaning model&apos;s output token limit (the original markdown is preserved). Not supported on zero-data-retention requests.</summary>
+        public bool? OnlyCleanContent { get; set; }
+        /// <summary>Only return the main content of the page excluding headers, navs, footers, etc. This is a deterministic HTML-level filter applied before markdown is generated; no LLM is involved.</summary>
         public bool? OnlyMainContent { get; set; }
         /// <summary>Controls how files are processed during scraping. When &quot;pdf&quot; is included (default), the PDF content is extracted and converted to markdown format, with billing based on the number of pages (1 credit per page). When an empty array is passed, the PDF file is returned in base64 encoding with a flat rate of 1 credit for the entire PDF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,6 +163,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 { "maxConcurrency", n => { MaxConcurrency = n.GetIntValue(); } },
                 { "minAge", n => { MinAge = n.GetIntValue(); } },
                 { "mobile", n => { Mobile = n.GetBoolValue(); } },
+                { "onlyCleanContent", n => { OnlyCleanContent = n.GetBoolValue(); } },
                 { "onlyMainContent", n => { OnlyMainContent = n.GetBoolValue(); } },
                 { "parsers", n => { Parsers = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile.CreateFromDiscriminatorValue); } },
@@ -194,6 +197,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteIntValue("maxConcurrency", MaxConcurrency);
             writer.WriteIntValue("minAge", MinAge);
             writer.WriteBoolValue("mobile", Mobile);
+            writer.WriteBoolValue("onlyCleanContent", OnlyCleanContent);
             writer.WriteBoolValue("onlyMainContent", OnlyMainContent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers>("parsers", Parsers);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile>("profile", Profile);
