@@ -67,6 +67,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_location Location { get; set; }
 #endif
+        /// <summary>If true, serves the request from Firecrawl&apos;s cache only and never makes an outbound request to the target URL. Designed for compliance-constrained or air-gapped environments where the scrape request itself could leak sensitive information. On cache miss, returns a 404 with error code SCRAPE_LOCKDOWN_CACHE_MISS (the URL is never logged on miss). Lockdown requests are treated as zero data retention. Default maxAge is extended to 2 years so existing cached pages remain eligible. Billed at 5 credits on hit, 1 credit on cache miss.</summary>
+        public bool? Lockdown { get; set; }
         /// <summary>Returns a cached version of the page if it is younger than this age in milliseconds. If a cached version of the page is older than this value, the page will be scraped. If you do not need extremely fresh data, enabling this can speed up your scrapes by 500%. Defaults to 2 days.</summary>
         public int? MaxAge { get; set; }
         /// <summary>Maximum number of concurrent scrapes. This parameter allows you to set a concurrency limit for this batch scrape. If not specified, the batch scrape adheres to your team&apos;s concurrency limit.</summary>
@@ -159,6 +161,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 { "ignoreInvalidURLs", n => { IgnoreInvalidURLs = n.GetBoolValue(); } },
                 { "includeTags", n => { IncludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_location>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_location.CreateFromDiscriminatorValue); } },
+                { "lockdown", n => { Lockdown = n.GetBoolValue(); } },
                 { "maxAge", n => { MaxAge = n.GetIntValue(); } },
                 { "maxConcurrency", n => { MaxConcurrency = n.GetIntValue(); } },
                 { "minAge", n => { MinAge = n.GetIntValue(); } },
@@ -193,6 +196,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteBoolValue("ignoreInvalidURLs", IgnoreInvalidURLs);
             writer.WriteCollectionOfPrimitiveValues<string>("includeTags", IncludeTags);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_location>("location", Location);
+            writer.WriteBoolValue("lockdown", Lockdown);
             writer.WriteIntValue("maxAge", MaxAge);
             writer.WriteIntValue("maxConcurrency", MaxConcurrency);
             writer.WriteIntValue("minAge", MinAge);

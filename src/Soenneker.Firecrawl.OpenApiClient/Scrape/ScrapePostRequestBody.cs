@@ -65,6 +65,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location Location { get; set; }
 #endif
+        /// <summary>If true, serves the request from Firecrawl&apos;s cache only and never makes an outbound request to the target URL. Designed for compliance-constrained or air-gapped environments where the scrape request itself could leak sensitive information. On cache miss, returns a 404 with error code SCRAPE_LOCKDOWN_CACHE_MISS (the URL is never logged on miss). Lockdown requests are treated as zero data retention. Default maxAge is extended to 2 years so existing cached pages remain eligible. Billed at 5 credits on hit, 1 credit on cache miss.</summary>
+        public bool? Lockdown { get; set; }
         /// <summary>Returns a cached version of the page if it is younger than this age in milliseconds. If a cached version of the page is older than this value, the page will be scraped. If you do not need extremely fresh data, enabling this can speed up your scrapes by 500%. Defaults to 2 days.</summary>
         public int? MaxAge { get; set; }
         /// <summary>When set, the request only checks the cache and never triggers a fresh scrape. The value is in milliseconds and specifies the minimum age the cached data must be. If matching cached data exists, it is returned instantly. If no cached data is found, a 404 with error code SCRAPE_NO_CACHED_DATA is returned. Set to 1 to accept any cached data regardless of age.</summary>
@@ -146,6 +148,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers.CreateFromDiscriminatorValue); } },
                 { "includeTags", n => { IncludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location.CreateFromDiscriminatorValue); } },
+                { "lockdown", n => { Lockdown = n.GetBoolValue(); } },
                 { "maxAge", n => { MaxAge = n.GetIntValue(); } },
                 { "minAge", n => { MinAge = n.GetIntValue(); } },
                 { "mobile", n => { Mobile = n.GetBoolValue(); } },
@@ -177,6 +180,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers>("headers", Headers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeTags", IncludeTags);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location>("location", Location);
+            writer.WriteBoolValue("lockdown", Lockdown);
             writer.WriteIntValue("maxAge", MaxAge);
             writer.WriteIntValue("minAge", MinAge);
             writer.WriteBoolValue("mobile", Mobile);
