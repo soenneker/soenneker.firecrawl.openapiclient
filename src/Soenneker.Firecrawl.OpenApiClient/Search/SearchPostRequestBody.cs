@@ -39,8 +39,24 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise?> Enterprise { get; set; }
 #endif
+        /// <summary>Excludes search results from the specified domains. Domains should be hostnames only, without protocol or path. Cannot be used with includeDomains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludeDomains { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludeDomains { get; set; }
+#endif
         /// <summary>Excludes URLs from the search results that are invalid for other Firecrawl endpoints. This helps reduce errors if you are piping data from search into other Firecrawl API endpoints.</summary>
         public bool? IgnoreInvalidURLs { get; set; }
+        /// <summary>Restricts search results to the specified domains. Domains should be hostnames only, without protocol or path. Cannot be used with excludeDomains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IncludeDomains { get; set; }
+#nullable restore
+#else
+        public List<string> IncludeDomains { get; set; }
+#endif
         /// <summary>Maximum number of results to return (per source type when using multiple sources)</summary>
         public int? Limit { get; set; }
         /// <summary>Location parameter for search results (e.g. `San Francisco,California,United States`). For best results, set both this and the `country` parameter.</summary>
@@ -114,7 +130,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "enterprise", n => { Enterprise = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>()?.AsList(); } },
+                { "excludeDomains", n => { ExcludeDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ignoreInvalidURLs", n => { IgnoreInvalidURLs = n.GetBoolValue(); } },
+                { "includeDomains", n => { IncludeDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
@@ -134,7 +152,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>("categories", Categories);
             writer.WriteStringValue("country", Country);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>("enterprise", Enterprise);
+            writer.WriteCollectionOfPrimitiveValues<string>("excludeDomains", ExcludeDomains);
             writer.WriteBoolValue("ignoreInvalidURLs", IgnoreInvalidURLs);
+            writer.WriteCollectionOfPrimitiveValues<string>("includeDomains", IncludeDomains);
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("query", Query);
