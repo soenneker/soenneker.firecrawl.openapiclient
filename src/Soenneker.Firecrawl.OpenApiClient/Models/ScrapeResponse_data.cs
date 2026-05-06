@@ -22,6 +22,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Natural-language answer to the question supplied via the `question` format. Only present if a `question` format object was included in `formats`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Answer { get; set; }
+#nullable restore
+#else
+        public string Answer { get; set; }
+#endif
         /// <summary>Signed URL to the extracted MP3 audio file if `audio` is in `formats`. The signed URL expires after 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +53,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking ChangeTracking { get; set; }
+#endif
+        /// <summary>Relevant source text selected by the `highlights` format. Only present if a `highlights` format object was included in `formats`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Highlights { get; set; }
+#nullable restore
+#else
+        public string Highlights { get; set; }
 #endif
         /// <summary>Cleaned HTML of the page if `html` is in `formats`. Removes `&lt;script&gt;`, `&lt;style&gt;`, `&lt;noscript&gt;`, `&lt;meta&gt;`, and `&lt;head&gt;` tags; converts relative URLs to absolute; resolves responsive image `srcset` to the largest version. Respects `onlyMainContent`, `includeTags`, and `excludeTags` filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,9 +152,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions.CreateFromDiscriminatorValue); } },
+                { "answer", n => { Answer = n.GetStringValue(); } },
                 { "audio", n => { Audio = n.GetStringValue(); } },
                 { "branding", n => { Branding = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding.CreateFromDiscriminatorValue); } },
                 { "changeTracking", n => { ChangeTracking = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking.CreateFromDiscriminatorValue); } },
+                { "highlights", n => { Highlights = n.GetStringValue(); } },
                 { "html", n => { Html = n.GetStringValue(); } },
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
@@ -157,9 +175,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>("actions", Actions);
+            writer.WriteStringValue("answer", Answer);
             writer.WriteStringValue("audio", Audio);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>("branding", Branding);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking>("changeTracking", ChangeTracking);
+            writer.WriteStringValue("highlights", Highlights);
             writer.WriteStringValue("html", Html);
             writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
             writer.WriteStringValue("markdown", Markdown);
