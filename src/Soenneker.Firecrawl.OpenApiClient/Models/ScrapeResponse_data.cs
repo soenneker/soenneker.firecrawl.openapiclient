@@ -118,6 +118,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
+        /// <summary>Signed URL to the extracted video file if `video` is in `formats`. The signed URL expires after 1 hour.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Video { get; set; }
+#nullable restore
+#else
+        public string Video { get; set; }
+#endif
         /// <summary>Can be displayed when using LLM Extraction. Warning message will let you know any issues with the extraction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +172,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
+                { "video", n => { Video = n.GetStringValue(); } },
                 { "warning", n => { Warning = n.GetStringValue(); } },
             };
         }
@@ -187,6 +196,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteStringValue("summary", Summary);
+            writer.WriteStringValue("video", Video);
             writer.WriteStringValue("warning", Warning);
             writer.WriteAdditionalData(AdditionalData);
         }

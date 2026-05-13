@@ -2,45 +2,45 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch
+namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
+    /// <summary>
+    /// Find relevant source text from the page. Returns the selected text in the response `highlights` field.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DocsSearchResponse400Error : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ScrapeMember14 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>The text-selection query to run against the page. Maximum 10,000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Query { get; set; }
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Query { get; set; }
 #endif
-        /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchResponse400Error"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/> and sets the default values.
         /// </summary>
-        public DocsSearchResponse400Error()
+        public ScrapeMember14()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchResponse400Error"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchResponse400Error CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchResponse400Error();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetStringValue(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14_type>(); } },
             };
         }
         /// <summary>
@@ -60,7 +61,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("error", Error);
+            writer.WriteStringValue("query", Query);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

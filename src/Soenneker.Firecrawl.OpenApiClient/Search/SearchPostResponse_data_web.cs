@@ -94,6 +94,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>Signed URL to the extracted video file if `video` is in `formats`. The signed URL expires after 1 hour.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Video { get; set; }
+#nullable restore
+#else
+        public string Video { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web"/> and sets the default values.
         /// </summary>
@@ -129,6 +137,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "video", n => { Video = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -148,6 +157,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

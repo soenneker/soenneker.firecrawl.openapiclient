@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum CrawlMember13_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "highlights")]
+        [EnumMember(Value = "question")]
         #pragma warning disable CS1591
-        Highlights,
+        Question,
         #pragma warning restore CS1591
     }
 }
