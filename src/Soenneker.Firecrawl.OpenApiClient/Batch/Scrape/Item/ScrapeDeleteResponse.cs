@@ -14,16 +14,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The message property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        /// <summary>The status property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.ScrapeDeleteResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.ScrapeDeleteResponse"/> and sets the default values.
         /// </summary>
@@ -49,8 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.ScrapeDeleteResponse_status>(); } },
             };
         }
         /// <summary>
@@ -60,8 +51,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("message", Message);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.ScrapeDeleteResponse_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
