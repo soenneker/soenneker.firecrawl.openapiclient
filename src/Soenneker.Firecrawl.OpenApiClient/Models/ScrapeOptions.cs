@@ -35,10 +35,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Output formats to include in the response. You can specify one or more formats, either as strings (e.g., `&apos;markdown&apos;`) or as objects with additional options (e.g., `{ type: &apos;json&apos;, schema: {...} }`). Some formats require specific options to be set. Example: `[&apos;markdown&apos;, { type: &apos;json&apos;, schema: {...} }]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl>? Formats { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor>? Formats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl> Formats { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor> Formats { get; set; }
 #endif
         /// <summary>Headers to send with the request. Can be used to send cookies, user-agent, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
                 { "excludeTags", n => { ExcludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_headers>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_headers.CreateFromDiscriminatorValue); } },
                 { "includeTags", n => { IncludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_location>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_location.CreateFromDiscriminatorValue); } },
@@ -163,7 +163,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("actions", Actions);
             writer.WriteBoolValue("blockAds", BlockAds);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeTags", ExcludeTags);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl>("formats", Formats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor>("formats", Formats);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_headers>("headers", Headers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeTags", IncludeTags);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_location>("location", Location);
@@ -184,188 +184,188 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Crawl : IComposedTypeWrapper, IParsable
+        public partial class Monitor : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1? CrawlMember1 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1? MonitorMember1 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1 CrawlMember1 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1 MonitorMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10? CrawlMember10 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10? MonitorMember10 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10 CrawlMember10 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10 MonitorMember10 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11? CrawlMember11 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11? MonitorMember11 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11 CrawlMember11 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11 MonitorMember11 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12? CrawlMember12 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12? MonitorMember12 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12 CrawlMember12 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12 MonitorMember12 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13? CrawlMember13 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13? MonitorMember13 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13 CrawlMember13 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13 MonitorMember13 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14? CrawlMember14 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14? MonitorMember14 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14 CrawlMember14 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14 MonitorMember14 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2? CrawlMember2 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2? MonitorMember2 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2 CrawlMember2 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2 MonitorMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3? CrawlMember3 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3? MonitorMember3 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3 CrawlMember3 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3 MonitorMember3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4? CrawlMember4 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4? MonitorMember4 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4 CrawlMember4 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4 MonitorMember4 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5? CrawlMember5 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5? MonitorMember5 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5 CrawlMember5 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5 MonitorMember5 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6? CrawlMember6 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6? MonitorMember6 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6 CrawlMember6 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6 MonitorMember6 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7? CrawlMember7 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7? MonitorMember7 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7 CrawlMember7 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7 MonitorMember7 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8? CrawlMember8 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8? MonitorMember8 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8 CrawlMember8 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8 MonitorMember8 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9? CrawlMember9 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9? MonitorMember9 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9 CrawlMember9 { get; set; }
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9 MonitorMember9 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Crawl();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor();
                 if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1();
+                    result.MonitorMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember10 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10();
+                    result.MonitorMember10 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember11 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11();
+                    result.MonitorMember11 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember12 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12();
+                    result.MonitorMember12 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember13 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13();
+                    result.MonitorMember13 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember14 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14();
+                    result.MonitorMember14 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2();
+                    result.MonitorMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3();
+                    result.MonitorMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember4 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4();
+                    result.MonitorMember4 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember5 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5();
+                    result.MonitorMember5 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember6 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6();
+                    result.MonitorMember6 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember7 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7();
+                    result.MonitorMember7 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember8 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8();
+                    result.MonitorMember8 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CrawlMember9 = new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9();
+                    result.MonitorMember9 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9();
                 }
                 return result;
             }
@@ -375,61 +375,61 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(CrawlMember1 != null)
+                if(MonitorMember1 != null)
                 {
-                    return CrawlMember1.GetFieldDeserializers();
+                    return MonitorMember1.GetFieldDeserializers();
                 }
-                else if(CrawlMember10 != null)
+                else if(MonitorMember10 != null)
                 {
-                    return CrawlMember10.GetFieldDeserializers();
+                    return MonitorMember10.GetFieldDeserializers();
                 }
-                else if(CrawlMember11 != null)
+                else if(MonitorMember11 != null)
                 {
-                    return CrawlMember11.GetFieldDeserializers();
+                    return MonitorMember11.GetFieldDeserializers();
                 }
-                else if(CrawlMember12 != null)
+                else if(MonitorMember12 != null)
                 {
-                    return CrawlMember12.GetFieldDeserializers();
+                    return MonitorMember12.GetFieldDeserializers();
                 }
-                else if(CrawlMember13 != null)
+                else if(MonitorMember13 != null)
                 {
-                    return CrawlMember13.GetFieldDeserializers();
+                    return MonitorMember13.GetFieldDeserializers();
                 }
-                else if(CrawlMember14 != null)
+                else if(MonitorMember14 != null)
                 {
-                    return CrawlMember14.GetFieldDeserializers();
+                    return MonitorMember14.GetFieldDeserializers();
                 }
-                else if(CrawlMember2 != null)
+                else if(MonitorMember2 != null)
                 {
-                    return CrawlMember2.GetFieldDeserializers();
+                    return MonitorMember2.GetFieldDeserializers();
                 }
-                else if(CrawlMember3 != null)
+                else if(MonitorMember3 != null)
                 {
-                    return CrawlMember3.GetFieldDeserializers();
+                    return MonitorMember3.GetFieldDeserializers();
                 }
-                else if(CrawlMember4 != null)
+                else if(MonitorMember4 != null)
                 {
-                    return CrawlMember4.GetFieldDeserializers();
+                    return MonitorMember4.GetFieldDeserializers();
                 }
-                else if(CrawlMember5 != null)
+                else if(MonitorMember5 != null)
                 {
-                    return CrawlMember5.GetFieldDeserializers();
+                    return MonitorMember5.GetFieldDeserializers();
                 }
-                else if(CrawlMember6 != null)
+                else if(MonitorMember6 != null)
                 {
-                    return CrawlMember6.GetFieldDeserializers();
+                    return MonitorMember6.GetFieldDeserializers();
                 }
-                else if(CrawlMember7 != null)
+                else if(MonitorMember7 != null)
                 {
-                    return CrawlMember7.GetFieldDeserializers();
+                    return MonitorMember7.GetFieldDeserializers();
                 }
-                else if(CrawlMember8 != null)
+                else if(MonitorMember8 != null)
                 {
-                    return CrawlMember8.GetFieldDeserializers();
+                    return MonitorMember8.GetFieldDeserializers();
                 }
-                else if(CrawlMember9 != null)
+                else if(MonitorMember9 != null)
                 {
-                    return CrawlMember9.GetFieldDeserializers();
+                    return MonitorMember9.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -440,61 +440,61 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CrawlMember1 != null)
+                if(MonitorMember1 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember1>(null, CrawlMember1);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1>(null, MonitorMember1);
                 }
-                else if(CrawlMember10 != null)
+                else if(MonitorMember10 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember10>(null, CrawlMember10);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10>(null, MonitorMember10);
                 }
-                else if(CrawlMember11 != null)
+                else if(MonitorMember11 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember11>(null, CrawlMember11);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11>(null, MonitorMember11);
                 }
-                else if(CrawlMember12 != null)
+                else if(MonitorMember12 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember12>(null, CrawlMember12);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12>(null, MonitorMember12);
                 }
-                else if(CrawlMember13 != null)
+                else if(MonitorMember13 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember13>(null, CrawlMember13);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13>(null, MonitorMember13);
                 }
-                else if(CrawlMember14 != null)
+                else if(MonitorMember14 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember14>(null, CrawlMember14);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14>(null, MonitorMember14);
                 }
-                else if(CrawlMember2 != null)
+                else if(MonitorMember2 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember2>(null, CrawlMember2);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2>(null, MonitorMember2);
                 }
-                else if(CrawlMember3 != null)
+                else if(MonitorMember3 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember3>(null, CrawlMember3);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3>(null, MonitorMember3);
                 }
-                else if(CrawlMember4 != null)
+                else if(MonitorMember4 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember4>(null, CrawlMember4);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4>(null, MonitorMember4);
                 }
-                else if(CrawlMember5 != null)
+                else if(MonitorMember5 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember5>(null, CrawlMember5);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5>(null, MonitorMember5);
                 }
-                else if(CrawlMember6 != null)
+                else if(MonitorMember6 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember6>(null, CrawlMember6);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6>(null, MonitorMember6);
                 }
-                else if(CrawlMember7 != null)
+                else if(MonitorMember7 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember7>(null, CrawlMember7);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7>(null, MonitorMember7);
                 }
-                else if(CrawlMember8 != null)
+                else if(MonitorMember8 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember8>(null, CrawlMember8);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8>(null, MonitorMember8);
                 }
-                else if(CrawlMember9 != null)
+                else if(MonitorMember9 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlMember9>(null, CrawlMember9);
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9>(null, MonitorMember9);
                 }
             }
         }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Firecrawl.OpenApiClient.Search.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +17,18 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Firecrawl.OpenApiClient.search.item collection</summary>
+        /// <param name="position">The search job ID</param>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder"/></returns>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("jobId", position);
+                return new global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchRequestBuilder"/> and sets the default values.
         /// </summary>

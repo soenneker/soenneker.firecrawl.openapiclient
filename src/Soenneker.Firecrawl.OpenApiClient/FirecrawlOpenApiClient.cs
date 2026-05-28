@@ -12,9 +12,11 @@ using Soenneker.Firecrawl.OpenApiClient.Browser;
 using Soenneker.Firecrawl.OpenApiClient.Crawl;
 using Soenneker.Firecrawl.OpenApiClient.Extract;
 using Soenneker.Firecrawl.OpenApiClient.Map;
+using Soenneker.Firecrawl.OpenApiClient.Monitor;
 using Soenneker.Firecrawl.OpenApiClient.Parse;
 using Soenneker.Firecrawl.OpenApiClient.Scrape;
 using Soenneker.Firecrawl.OpenApiClient.Search;
+using Soenneker.Firecrawl.OpenApiClient.Support;
 using Soenneker.Firecrawl.OpenApiClient.Team;
 using System.Collections.Generic;
 using System.IO;
@@ -58,6 +60,11 @@ namespace Soenneker.Firecrawl.OpenApiClient
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Map.MapRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The monitor property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Monitor.MonitorRequestBuilder Monitor
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Monitor.MonitorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The parse property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Parse.ParseRequestBuilder Parse
         {
@@ -72,6 +79,11 @@ namespace Soenneker.Firecrawl.OpenApiClient
         public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchRequestBuilder Search
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The support property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Support.SupportRequestBuilder Support
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Support.SupportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The team property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Team.TeamRequestBuilder Team

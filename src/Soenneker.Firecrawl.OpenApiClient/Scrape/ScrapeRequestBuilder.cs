@@ -19,7 +19,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
     public partial class ScrapeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Firecrawl.OpenApiClient.scrape.item collection</summary>
-        /// <param name="position">The scrape job ID</param>
+        /// <param name="position">The ID of the job</param>
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.WithJobItemRequestBuilder"/></returns>
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.WithJobItemRequestBuilder this[Guid position]
         {
