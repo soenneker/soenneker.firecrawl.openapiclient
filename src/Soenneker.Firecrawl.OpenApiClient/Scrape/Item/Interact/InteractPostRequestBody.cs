@@ -41,6 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
         {
             AdditionalData = new Dictionary<string, object>();
             Language = global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody_language.Node;
+            Timeout = 30;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

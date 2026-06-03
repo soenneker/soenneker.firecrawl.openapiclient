@@ -63,6 +63,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Extract
         public ExtractPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableWebSearch = false;
+            IgnoreInvalidURLs = true;
+            IgnoreSitemap = false;
+            IncludeSubdomains = true;
+            ShowSources = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

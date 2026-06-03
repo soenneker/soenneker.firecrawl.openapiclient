@@ -39,14 +39,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTarget();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MonitorTargetMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MonitorTargetMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2();
-            }
             return result;
         }
         /// <summary>

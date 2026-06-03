@@ -108,6 +108,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         {
             AdditionalData = new Dictionary<string, object>();
             Country = "US";
+            IgnoreInvalidURLs = false;
+            Limit = 10;
+            Timeout = 60000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -204,18 +207,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodyCategoriesMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodyCategoriesMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodyCategoriesMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3();
-                }
                 return result;
             }
             /// <summary>
@@ -299,18 +290,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodySourcesMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodySourcesMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SearchPostRequestBodySourcesMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember3();
-                }
                 return result;
             }
             /// <summary>

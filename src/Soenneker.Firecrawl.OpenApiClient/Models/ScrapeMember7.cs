@@ -34,6 +34,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public ScrapeMember7()
         {
             AdditionalData = new Dictionary<string, object>();
+            FullPage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

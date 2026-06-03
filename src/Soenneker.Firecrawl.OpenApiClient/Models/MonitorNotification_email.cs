@@ -32,6 +32,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public MonitorNotification_email()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            IncludeDiffs = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

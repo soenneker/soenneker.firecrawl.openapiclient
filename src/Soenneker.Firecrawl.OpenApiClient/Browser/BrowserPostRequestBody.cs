@@ -34,6 +34,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Browser
         public BrowserPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            StreamWebView = true;
+            Ttl = 300;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

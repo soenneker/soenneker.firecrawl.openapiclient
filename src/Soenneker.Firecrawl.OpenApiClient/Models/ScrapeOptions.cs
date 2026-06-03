@@ -110,7 +110,18 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public ScrapeOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            BlockAds = true;
+            Lockdown = false;
+            MaxAge = 172800000;
+            Mobile = false;
+            OnlyCleanContent = false;
+            OnlyMainContent = true;
             Proxy = global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_proxy.Auto;
+            RemoveBase64Images = true;
+            SkipTlsVerification = true;
+            StoreInCache = true;
+            Timeout = 60000;
+            WaitFor = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -311,62 +322,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.Monitor();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember10 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember11 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember12 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember13 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember14 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember4 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember5 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember6 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember7 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember8 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MonitorMember9 = new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9();
-                }
                 return result;
             }
             /// <summary>

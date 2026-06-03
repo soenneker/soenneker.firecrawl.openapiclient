@@ -101,7 +101,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
         public CrawlPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowExternalLinks = false;
+            AllowSubdomains = false;
+            CrawlEntireDomain = false;
+            IgnoreQueryParameters = false;
+            IgnoreRobotsTxt = false;
+            Limit = 10000;
+            RegexOnFullURL = false;
             Sitemap = global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlPostRequestBody_sitemap.Include;
+            ZeroDataRetention = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -56,6 +56,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
         public MapPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            IgnoreCache = false;
+            IgnoreQueryParameters = true;
+            IncludeSubdomains = true;
+            Limit = 5000;
             Sitemap = global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_sitemap.Include;
         }
         /// <summary>

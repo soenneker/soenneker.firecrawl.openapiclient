@@ -91,7 +91,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public ParseOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            BlockAds = true;
+            OnlyMainContent = true;
             Origin = "api";
+            RemoveBase64Images = true;
+            SkipTlsVerification = true;
+            Timeout = 30000;
+            ZeroDataRetention = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -222,34 +228,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember1 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember2 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember3 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember4 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember4();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember5 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember5();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember6 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember6();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ParseMember7 = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember7();
-                }
                 return result;
             }
             /// <summary>

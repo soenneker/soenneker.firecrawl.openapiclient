@@ -31,6 +31,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Browser
         public BrowserPostRequestBody_profile()
         {
             AdditionalData = new Dictionary<string, object>();
+            SaveChanges = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
