@@ -77,6 +77,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>Proxy mode for parse uploads. `/parse` supports only `basic` and `auto`.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy? Proxy { get; set; }
+        /// <summary>Redact personally identifiable information from returned markdown. Pass `true` to use defaults, or an object to tune mode, entities, and replacement style.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII? RedactPII { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII RedactPII { get; set; }
+#endif
         /// <summary>Remove base64-encoded images from output and keep alt text placeholders.</summary>
         public bool? RemoveBase64Images { get; set; }
         /// <summary>Skip TLS certificate verification when making requests.</summary>
@@ -127,6 +135,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "parsers", n => { Parsers = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>(global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "proxy", n => { Proxy = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy>(); } },
+                { "redactPII", n => { RedactPII = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII>(global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII.CreateFromDiscriminatorValue); } },
                 { "removeBase64Images", n => { RemoveBase64Images = n.GetBoolValue(); } },
                 { "skipTlsVerification", n => { SkipTlsVerification = n.GetBoolValue(); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
@@ -150,6 +159,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("origin", Origin);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>("parsers", Parsers);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy>("proxy", Proxy);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII>("redactPII", RedactPII);
             writer.WriteBoolValue("removeBase64Images", RemoveBase64Images);
             writer.WriteBoolValue("skipTlsVerification", SkipTlsVerification);
             writer.WriteIntValue("timeout", Timeout);
@@ -300,6 +310,71 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 else if(ParseMember7 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseMember7>(null, ParseMember7);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ParseOptions_redactPII : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="bool"/></summary>
+            public bool? Boolean { get; set; }
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions? RedactPIIOptions { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions RedactPIIOptions { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.ParseOptions_redactPII();
+                if("RedactPIIOptions".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RedactPIIOptions = new global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions();
+                }
+                else if(parseNode.GetBoolValue() is bool booleanValue)
+                {
+                    result.Boolean = booleanValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(RedactPIIOptions != null)
+                {
+                    return RedactPIIOptions.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(RedactPIIOptions != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions>(null, RedactPIIOptions);
+                }
+                else if(Boolean != null)
+                {
+                    writer.WriteBoolValue(null, Boolean);
                 }
             }
         }
