@@ -16,6 +16,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of pages that have been successfully crawled.</summary>
         public int? Completed { get; set; }
+        /// <summary>The date and time when the crawl finished. Present only when the crawl is in a terminal state (`completed`, `failed`, or `cancelled`).</summary>
+        public DateTimeOffset? CompletedAt { get; set; }
+        /// <summary>The date and time when the crawl was started.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The number of credits used for the crawl.</summary>
         public int? CreditsUsed { get; set; }
         /// <summary>The data of the crawl.</summary>
@@ -26,6 +30,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data> Data { get; set; }
 #endif
+        /// <summary>Crawl duration in seconds. For terminal crawls, this is the elapsed time from `createdAt` to `completedAt`. For in-progress crawls, it is the elapsed time from `createdAt` to now.</summary>
+        public double? Duration { get; set; }
         /// <summary>The date and time when the crawl will expire.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The URL to retrieve the next 10MB of data. Returned if the crawl is not completed or if the response is larger than 10MB.</summary>
@@ -72,8 +78,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completed", n => { Completed = n.GetIntValue(); } },
+                { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creditsUsed", n => { CreditsUsed = n.GetIntValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "duration", n => { Duration = n.GetDoubleValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "next", n => { Next = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -88,8 +97,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("completed", Completed);
+            writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
+            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteIntValue("creditsUsed", CreditsUsed);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data>("data", Data);
+            writer.WriteDoubleValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("next", Next);
             writer.WriteStringValue("status", Status);
