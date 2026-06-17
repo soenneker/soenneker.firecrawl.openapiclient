@@ -8,9 +8,9 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Firecrawl.OpenApiClient.Agent;
 using Soenneker.Firecrawl.OpenApiClient.Batch;
-using Soenneker.Firecrawl.OpenApiClient.Browser;
 using Soenneker.Firecrawl.OpenApiClient.Crawl;
 using Soenneker.Firecrawl.OpenApiClient.Extract;
+using Soenneker.Firecrawl.OpenApiClient.Interact;
 using Soenneker.Firecrawl.OpenApiClient.Map;
 using Soenneker.Firecrawl.OpenApiClient.Monitor;
 using Soenneker.Firecrawl.OpenApiClient.Parse;
@@ -40,11 +40,6 @@ namespace Soenneker.Firecrawl.OpenApiClient
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The browser property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Browser.BrowserRequestBuilder Browser
-        {
-            get => new global::Soenneker.Firecrawl.OpenApiClient.Browser.BrowserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The crawl property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlRequestBuilder Crawl
         {
@@ -54,6 +49,11 @@ namespace Soenneker.Firecrawl.OpenApiClient
         public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractRequestBuilder Extract
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The interact property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractRequestBuilder Interact
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The map property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Map.MapRequestBuilder Map

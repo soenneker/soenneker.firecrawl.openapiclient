@@ -94,6 +94,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata Metadata { get; set; }
 #endif
+        /// <summary>Product information extracted from the page if `product` is in `formats`. Includes title, brand, category, description, and variants. Pricing, availability, and images live on each variant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product? Product { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product Product { get; set; }
+#endif
         /// <summary>The exact, unmodified HTML as received from the page if `rawHtml` is in `formats`. No cleaning or filtering is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product.CreateFromDiscriminatorValue); } },
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
@@ -193,6 +202,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>("product", Product);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteStringValue("summary", Summary);

@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum ScrapeMember12_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "video")]
+        [EnumMember(Value = "audio")]
         #pragma warning disable CS1591
-        Video,
+        Audio,
         #pragma warning restore CS1591
     }
 }

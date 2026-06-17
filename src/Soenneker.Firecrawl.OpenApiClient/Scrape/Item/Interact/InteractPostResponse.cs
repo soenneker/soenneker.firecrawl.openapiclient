@@ -14,6 +14,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Raw Chrome DevTools Protocol (CDP) WebSocket URL for the browser session. Use it to connect directly with Playwright, Puppeteer, or any CDP client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CdpUrl { get; set; }
+#nullable restore
+#else
+        public string CdpUrl { get; set; }
+#endif
         /// <summary>Error message if the code raised an exception</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,8 +32,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
 #endif
         /// <summary>Exit code of the executed process</summary>
         public int? ExitCode { get; set; }
+        /// <summary>Interactive live view URL (viewers can control the browser)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InteractiveLiveViewUrl { get; set; }
+#nullable restore
+#else
+        public string InteractiveLiveViewUrl { get; set; }
+#endif
         /// <summary>Whether the process was killed due to timeout</summary>
         public bool? Killed { get; set; }
+        /// <summary>Read-only live view URL for the browser session</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LiveViewUrl { get; set; }
+#nullable restore
+#else
+        public string LiveViewUrl { get; set; }
+#endif
+        /// <summary>AI agent&apos;s final response (only present when using prompt)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Output { get; set; }
+#nullable restore
+#else
+        public string Output { get; set; }
+#endif
         /// <summary>Standard output (alias for stdout)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,9 +109,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cdpUrl", n => { CdpUrl = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "exitCode", n => { ExitCode = n.GetIntValue(); } },
+                { "interactiveLiveViewUrl", n => { InteractiveLiveViewUrl = n.GetStringValue(); } },
                 { "killed", n => { Killed = n.GetBoolValue(); } },
+                { "liveViewUrl", n => { LiveViewUrl = n.GetStringValue(); } },
+                { "output", n => { Output = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetStringValue(); } },
                 { "stderr", n => { Stderr = n.GetStringValue(); } },
                 { "stdout", n => { Stdout = n.GetStringValue(); } },
@@ -93,9 +129,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("cdpUrl", CdpUrl);
             writer.WriteStringValue("error", Error);
             writer.WriteIntValue("exitCode", ExitCode);
+            writer.WriteStringValue("interactiveLiveViewUrl", InteractiveLiveViewUrl);
             writer.WriteBoolValue("killed", Killed);
+            writer.WriteStringValue("liveViewUrl", LiveViewUrl);
+            writer.WriteStringValue("output", Output);
             writer.WriteStringValue("result", Result);
             writer.WriteStringValue("stderr", Stderr);
             writer.WriteStringValue("stdout", Stdout);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Extract best-quality video from supported video URLs, e.g. YouTube. Returns a signed GCS URL.
+    /// Extract audio (MP3) from supported video URLs, e.g. YouTube. Returns a signed GCS URL.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorMember12 : IAdditionalDataHolder, IParsable

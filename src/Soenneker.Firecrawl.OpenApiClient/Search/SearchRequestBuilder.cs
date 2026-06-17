@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Search.Item;
+using Soenneker.Firecrawl.OpenApiClient.Search.Research;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The research property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.ResearchRequestBuilder Research
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.ResearchRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Firecrawl.OpenApiClient.search.item collection</summary>
         /// <param name="position">The search job ID</param>
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder"/></returns>
