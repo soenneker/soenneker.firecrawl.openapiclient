@@ -14,9 +14,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>End date of the billing period. null if using the free plan</summary>
+        /// <summary>End date of the current billing period.</summary>
         public DateTimeOffset? BillingPeriodEnd { get; set; }
-        /// <summary>Start date of the billing period. null if using the free plan</summary>
+        /// <summary>Start date of the current billing period.</summary>
         public DateTimeOffset? BillingPeriodStart { get; set; }
         /// <summary>Number of credits in the plan. This does not include coupon credits, credit packs, or auto recharge credits.</summary>
         public double? PlanCredits { get; set; }
