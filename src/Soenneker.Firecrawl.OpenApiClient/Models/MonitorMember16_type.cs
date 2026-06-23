@@ -5,12 +5,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ScrapeMember13_type
+    public enum MonitorMember16_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "audio")]
+        [EnumMember(Value = "highlights")]
         #pragma warning disable CS1591
-        Audio,
+        Highlights,
         #pragma warning restore CS1591
     }
 }

@@ -221,7 +221,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Scrape : IComposedTypeWrapper, IParsable
@@ -281,6 +281,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #nullable restore
 #else
             public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15 ScrapeMember15 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16? ScrapeMember16 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16 ScrapeMember16 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -392,6 +400,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 {
                     return ScrapeMember15.GetFieldDeserializers();
                 }
+                else if(ScrapeMember16 != null)
+                {
+                    return ScrapeMember16.GetFieldDeserializers();
+                }
                 else if(ScrapeMember2 != null)
                 {
                     return ScrapeMember2.GetFieldDeserializers();
@@ -460,6 +472,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 else if(ScrapeMember15 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15>(null, ScrapeMember15);
+                }
+                else if(ScrapeMember16 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16>(null, ScrapeMember16);
                 }
                 else if(ScrapeMember2 != null)
                 {

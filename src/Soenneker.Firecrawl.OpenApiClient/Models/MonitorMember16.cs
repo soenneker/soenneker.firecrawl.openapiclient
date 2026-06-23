@@ -8,31 +8,39 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Extract audio (MP3) from supported video URLs, e.g. YouTube. Returns a signed GCS URL.
+    /// Find relevant source text from the page. Returns the selected text in the response `highlights` field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MonitorMember13 : IAdditionalDataHolder, IParsable
+    public partial class MonitorMember16 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The text-selection query to run against the page. Maximum 10,000 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Query { get; set; }
+#nullable restore
+#else
+        public string Query { get; set; }
+#endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16"/> and sets the default values.
         /// </summary>
-        public MonitorMember13()
+        public MonitorMember16()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +50,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13_type>(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16_type>(); } },
             };
         }
         /// <summary>
@@ -52,7 +61,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13_type>("type", Type);
+            writer.WriteStringValue("query", Query);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
