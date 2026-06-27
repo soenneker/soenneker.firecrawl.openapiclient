@@ -10,6 +10,7 @@ using Soenneker.Firecrawl.OpenApiClient.Agent;
 using Soenneker.Firecrawl.OpenApiClient.Batch;
 using Soenneker.Firecrawl.OpenApiClient.Crawl;
 using Soenneker.Firecrawl.OpenApiClient.Extract;
+using Soenneker.Firecrawl.OpenApiClient.Feedback;
 using Soenneker.Firecrawl.OpenApiClient.Interact;
 using Soenneker.Firecrawl.OpenApiClient.Map;
 using Soenneker.Firecrawl.OpenApiClient.Monitor;
@@ -49,6 +50,11 @@ namespace Soenneker.Firecrawl.OpenApiClient
         public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractRequestBuilder Extract
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The feedback property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder Feedback
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The interact property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractRequestBuilder Interact

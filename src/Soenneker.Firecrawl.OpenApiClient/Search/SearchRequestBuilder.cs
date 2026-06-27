@@ -24,7 +24,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.ResearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Firecrawl.OpenApiClient.search.item collection</summary>
-        /// <param name="position">The search job ID</param>
+        /// <param name="position">Search job id returned by /search.</param>
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder"/></returns>
         public global::Soenneker.Firecrawl.OpenApiClient.Search.Item.WithJobItemRequestBuilder this[Guid position]
         {

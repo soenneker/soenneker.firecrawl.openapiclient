@@ -9,35 +9,35 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
+namespace Soenneker.Firecrawl.OpenApiClient.Feedback
 {
     /// <summary>
-    /// Builds and executes requests for operations under \search\{jobId}\feedback
+    /// Builds and executes requests for operations under \feedback
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.FeedbackRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FeedbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/{jobId}/feedback", pathParameters)
+        public FeedbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/feedback", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.FeedbackRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FeedbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/{jobId}/feedback", rawUrl)
+        public FeedbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/feedback", rawUrl)
         {
         }
         /// <summary>
-        /// Submit feedback for a search job
+        /// Submit feedback for a v2 job
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse"/></returns>
-        /// <param name="body">For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse">When receiving a 400 status code</exception>
@@ -47,11 +47,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse?> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse?> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -67,18 +67,18 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Submit feedback for a search job
+        /// Submit feedback for a v2 job
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -91,11 +91,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.FeedbackRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.FeedbackRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.FeedbackRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Firecrawl.OpenApiClient.Feedback.FeedbackRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

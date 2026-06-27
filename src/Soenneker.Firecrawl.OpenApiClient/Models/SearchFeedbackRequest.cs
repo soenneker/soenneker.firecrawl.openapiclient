@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Substantive feedback is required by rating: good requires valuableSources; partial requires valuableSources or missingContent; bad requires missingContent or querySuggestions.
+    /// For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchFeedbackRequest : IAdditionalDataHolder, IParsable

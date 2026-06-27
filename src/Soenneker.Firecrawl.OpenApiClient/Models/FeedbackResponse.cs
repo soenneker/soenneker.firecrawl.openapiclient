@@ -9,7 +9,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchFeedbackResponse : IAdditionalDataHolder, IParsable
+    public partial class FeedbackResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -24,24 +24,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public bool? DailyCapReached { get; set; }
         /// <summary>The dailyRefundCap property</summary>
         public double? DailyRefundCap { get; set; }
-        /// <summary>The error property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error { get; set; }
-#nullable restore
-#else
-        public string Error { get; set; }
-#endif
-        /// <summary>The feedbackErrorCode property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse_feedbackErrorCode? FeedbackErrorCode { get; set; }
         /// <summary>The feedbackId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FeedbackId { get; set; }
-#nullable restore
-#else
-        public string FeedbackId { get; set; }
-#endif
+        public Guid? FeedbackId { get; set; }
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
         /// <summary>The warning property</summary>
@@ -53,21 +37,21 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Warning { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse"/> and sets the default values.
         /// </summary>
-        public SearchFeedbackResponse()
+        public FeedbackResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +66,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "creditsRefundedToday", n => { CreditsRefundedToday = n.GetDoubleValue(); } },
                 { "dailyCapReached", n => { DailyCapReached = n.GetBoolValue(); } },
                 { "dailyRefundCap", n => { DailyRefundCap = n.GetDoubleValue(); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "feedbackErrorCode", n => { FeedbackErrorCode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse_feedbackErrorCode>(); } },
-                { "feedbackId", n => { FeedbackId = n.GetStringValue(); } },
+                { "feedbackId", n => { FeedbackId = n.GetGuidValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "warning", n => { Warning = n.GetStringValue(); } },
             };
@@ -101,9 +83,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteDoubleValue("creditsRefundedToday", CreditsRefundedToday);
             writer.WriteBoolValue("dailyCapReached", DailyCapReached);
             writer.WriteDoubleValue("dailyRefundCap", DailyRefundCap);
-            writer.WriteStringValue("error", Error);
-            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackResponse_feedbackErrorCode>("feedbackErrorCode", FeedbackErrorCode);
-            writer.WriteStringValue("feedbackId", FeedbackId);
+            writer.WriteGuidValue("feedbackId", FeedbackId);
             writer.WriteBoolValue("success", Success);
             writer.WriteStringValue("warning", Warning);
             writer.WriteAdditionalData(AdditionalData);

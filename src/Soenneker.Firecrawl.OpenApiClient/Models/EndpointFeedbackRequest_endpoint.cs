@@ -5,20 +5,24 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum SearchFeedbackRequest_rating
+    public enum EndpointFeedbackRequest_endpoint
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "good")]
+        [EnumMember(Value = "search")]
         #pragma warning disable CS1591
-        Good,
+        Search,
         #pragma warning restore CS1591
-        [EnumMember(Value = "partial")]
+        [EnumMember(Value = "scrape")]
         #pragma warning disable CS1591
-        Partial,
+        Scrape,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bad")]
+        [EnumMember(Value = "parse")]
         #pragma warning disable CS1591
-        Bad,
+        Parse,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "map")]
+        #pragma warning disable CS1591
+        Map,
         #pragma warning restore CS1591
     }
 }

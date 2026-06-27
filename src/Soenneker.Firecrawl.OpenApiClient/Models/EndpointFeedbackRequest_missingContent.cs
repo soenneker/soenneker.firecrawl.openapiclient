@@ -2,63 +2,50 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
+namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchFeedbackResponse403Error : ApiException, IAdditionalDataHolder, IParsable
+    public partial class EndpointFeedbackRequest_missingContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Description { get; set; }
 #endif
-        /// <summary>The details property</summary>
+        /// <summary>The topic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Details { get; set; }
+        public string? Topic { get; set; }
 #nullable restore
 #else
-        public UntypedNode Details { get; set; }
+        public string Topic { get; set; }
 #endif
-        /// <summary>The error property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error { get; set; }
-#nullable restore
-#else
-        public string Error { get; set; }
-#endif
-        /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.SearchFeedbackResponse403Error"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_missingContent"/> and sets the default values.
         /// </summary>
-        public SearchFeedbackResponse403Error()
+        public EndpointFeedbackRequest_missingContent()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.SearchFeedbackResponse403Error"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_missingContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.SearchFeedbackResponse403Error CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_missingContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback.SearchFeedbackResponse403Error();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_missingContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,10 +55,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "topic", n => { Topic = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,10 +66,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<UntypedNode>("details", Details);
-            writer.WriteStringValue("error", Error);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
