@@ -66,6 +66,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language Language { get; set; }
 #endif
+        /// <summary>For PDF inputs, the number of pages parsed (capped by the parsers maxPages option).</summary>
+        public int? NumPages { get; set; }
         /// <summary>Alternative locales for the page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +94,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title Title { get; set; }
 #endif
+        /// <summary>For PDF inputs, the document&apos;s true page count before any maxPages capping. Omitted when it cannot be determined; a totalPages greater than numPages indicates the result was truncated.</summary>
+        public int? TotalPages { get; set; }
         /// <summary>The final URL of the page after all redirects have been followed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,10 +137,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "keywords", n => { Keywords = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_keywords>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_keywords.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language.CreateFromDiscriminatorValue); } },
+                { "numPages", n => { NumPages = n.GetIntValue(); } },
                 { "ogLocaleAlternate", n => { OgLocaleAlternate = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sourceURL", n => { SourceURL = n.GetStringValue(); } },
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title.CreateFromDiscriminatorValue); } },
+                { "totalPages", n => { TotalPages = n.GetIntValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -155,10 +161,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("error", Error);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_keywords>("keywords", Keywords);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language>("language", Language);
+            writer.WriteIntValue("numPages", NumPages);
             writer.WriteCollectionOfPrimitiveValues<string>("ogLocaleAlternate", OgLocaleAlternate);
             writer.WriteStringValue("sourceURL", SourceURL);
             writer.WriteIntValue("statusCode", StatusCode);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title>("title", Title);
+            writer.WriteIntValue("totalPages", TotalPages);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -30,6 +30,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Error { get; set; }
 #endif
+        /// <summary>For PDF inputs, the number of pages parsed (capped by the parsers maxPages option).</summary>
+        public int? NumPages { get; set; }
         /// <summary>The original URL that was requested. May differ from the page&apos;s final URL if redirects occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Title { get; set; }
 #endif
+        /// <summary>For PDF inputs, the document&apos;s true page count before any maxPages capping. Omitted when it cannot be determined; a totalPages greater than numPages indicates the result was truncated.</summary>
+        public int? TotalPages { get; set; }
         /// <summary>The final URL of the page after all redirects have been followed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,9 +87,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
+                { "numPages", n => { NumPages = n.GetIntValue(); } },
                 { "sourceURL", n => { SourceURL = n.GetStringValue(); } },
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "totalPages", n => { TotalPages = n.GetIntValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -98,9 +104,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("error", Error);
+            writer.WriteIntValue("numPages", NumPages);
             writer.WriteStringValue("sourceURL", SourceURL);
             writer.WriteIntValue("statusCode", StatusCode);
             writer.WriteStringValue("title", Title);
+            writer.WriteIntValue("totalPages", TotalPages);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
