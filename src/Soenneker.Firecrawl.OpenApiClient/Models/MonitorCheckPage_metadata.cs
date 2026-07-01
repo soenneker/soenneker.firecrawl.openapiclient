@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
+    /// <summary>
+    /// Extra per-page metadata. For search monitors this includes `searchStatus`, the finer-grained search disposition behind the top-level `status`: `alert` (maps to `new`), `already_seen`, `watching`, `ignored` (all map to `same`), or `skipped` (maps to `error`).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MonitorCheckPage_metadata : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

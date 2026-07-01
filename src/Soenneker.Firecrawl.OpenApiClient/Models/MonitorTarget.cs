@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorTarget : IComposedTypeWrapper, IParsable
@@ -28,6 +28,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2 MonitorTargetMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3? MonitorTargetMember3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3 MonitorTargetMember3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +63,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 return MonitorTargetMember2.GetFieldDeserializers();
             }
+            else if(MonitorTargetMember3 != null)
+            {
+                return MonitorTargetMember3.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -71,6 +83,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             else if(MonitorTargetMember2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2>(null, MonitorTargetMember2);
+            }
+            else if(MonitorTargetMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3>(null, MonitorTargetMember3);
             }
         }
     }

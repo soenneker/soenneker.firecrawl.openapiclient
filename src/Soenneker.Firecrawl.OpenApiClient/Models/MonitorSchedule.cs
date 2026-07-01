@@ -15,7 +15,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Five-field cron expression. Minimum interval is 15 minutes.</summary>
+        /// <summary>Five-field cron expression. Minimum interval is 5 minutes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cron { get; set; }

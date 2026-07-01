@@ -44,7 +44,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment Judgment { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Extra per-page metadata. For search monitors this includes `searchStatus`, the finer-grained search disposition behind the top-level `status`: `alert` (maps to `new`), `already_seen`, `watching`, `ignored` (all map to `same`), or `skipped` (maps to `error`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage_metadata? Metadata { get; set; }
