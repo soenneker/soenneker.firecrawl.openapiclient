@@ -109,6 +109,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         public bool? SkipTlsVerification { get; set; }
         /// <summary>If true, the page will be stored in the Firecrawl index and cache. Setting this to false is useful if your scraping activity may have data protection concerns. Using some parameters associated with sensitive scraping (e.g. actions, headers) will force this parameter to be false.</summary>
         public bool? StoreInCache { get; set; }
+        /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+#endif
         /// <summary>Timeout in milliseconds for the request. Minimum is 1000 (1 second). Default is 60000 (60 seconds). Maximum is 300000 (300 seconds).</summary>
         public int? Timeout { get; set; }
         /// <summary>The URL to scrape</summary>
@@ -181,6 +189,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "removeBase64Images", n => { RemoveBase64Images = n.GetBoolValue(); } },
                 { "skipTlsVerification", n => { SkipTlsVerification = n.GetBoolValue(); } },
                 { "storeInCache", n => { StoreInCache = n.GetBoolValue(); } },
+                { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "waitFor", n => { WaitFor = n.GetIntValue(); } },
@@ -214,6 +223,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteBoolValue("removeBase64Images", RemoveBase64Images);
             writer.WriteBoolValue("skipTlsVerification", SkipTlsVerification);
             writer.WriteBoolValue("storeInCache", StoreInCache);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteStringValue("url", Url);
             writer.WriteIntValue("waitFor", WaitFor);

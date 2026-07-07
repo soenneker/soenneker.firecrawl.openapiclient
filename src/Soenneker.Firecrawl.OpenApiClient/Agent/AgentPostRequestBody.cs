@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Firecrawl.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -36,6 +37,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #endif
         /// <summary>If true, agent will only visit URLs provided in the urls array</summary>
         public bool? StrictConstrainToURLs { get; set; }
+        /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+#endif
         /// <summary>Optional list of URLs to constrain the agent to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +84,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema.CreateFromDiscriminatorValue); } },
                 { "strictConstrainToURLs", n => { StrictConstrainToURLs = n.GetBoolValue(); } },
+                { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -90,6 +100,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>("schema", Schema);
             writer.WriteBoolValue("strictConstrainToURLs", StrictConstrainToURLs);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }

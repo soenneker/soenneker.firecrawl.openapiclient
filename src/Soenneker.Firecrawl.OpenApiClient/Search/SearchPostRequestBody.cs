@@ -99,6 +99,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Tbs { get; set; }
 #endif
+        /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+#endif
         /// <summary>Timeout in milliseconds</summary>
         public int? Timeout { get; set; }
         /// <summary>
@@ -142,6 +150,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "scrapeOptions", n => { ScrapeOptions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.CreateFromDiscriminatorValue); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tbs", n => { Tbs = n.GetStringValue(); } },
+                { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
         }
@@ -164,6 +173,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>("scrapeOptions", ScrapeOptions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources>("sources", Sources);
             writer.WriteStringValue("tbs", Tbs);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }

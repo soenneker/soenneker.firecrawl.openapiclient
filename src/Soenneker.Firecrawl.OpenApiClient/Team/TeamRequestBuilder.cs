@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Team.Activity;
 using Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage;
 using Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus;
+using Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection;
 using Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage;
 using System.Collections.Generic;
 using System.IO;
@@ -32,6 +33,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team
         public global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusRequestBuilder QueueStatus
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The threatProtection property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionRequestBuilder ThreatProtection
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tokenUsage property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageRequestBuilder TokenUsage

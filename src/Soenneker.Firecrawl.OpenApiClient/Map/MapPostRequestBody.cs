@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Firecrawl.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -40,6 +41,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
 #endif
         /// <summary>Sitemap mode when mapping. If you set it to `skip`, the sitemap won&apos;t be used to find URLs. If you set it to `only`, only URLs that are in the sitemap will be returned. By default (`include`), the sitemap and other methods will be used together to find URLs.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_sitemap? Sitemap { get; set; }
+        /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+#endif
         /// <summary>Timeout in milliseconds. There is no timeout by default.</summary>
         public int? Timeout { get; set; }
         /// <summary>The base URL to start crawling from</summary>
@@ -87,6 +96,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_location>(global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_location.CreateFromDiscriminatorValue); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "sitemap", n => { Sitemap = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_sitemap>(); } },
+                { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -105,6 +115,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_location>("location", Location);
             writer.WriteStringValue("search", Search);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Map.MapPostRequestBody_sitemap>("sitemap", Sitemap);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
