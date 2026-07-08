@@ -34,7 +34,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection
 #endif
         /// <summary>Behavior when the classifier is unreachable: `closed` blocks (default), `open` allows.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutRequestBody_failurePolicy? FailurePolicy { get; set; }
-        /// <summary>Threat protection mode. `off` disables checks; `normal` checks domains against Google Web Risk (+2 credits per domain scanned).</summary>
+        /// <summary>Threat protection mode. `off` disables checks; `normal` checks URLs against Google Web Risk (+2 credits per URL scanned).</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutRequestBody_mode? Mode { get; set; }
         /// <summary>Normalized score (0-100) at or above which a classifier verdict is blocked. Lower is stricter.</summary>
         public int? RiskScoreThreshold { get; set; }

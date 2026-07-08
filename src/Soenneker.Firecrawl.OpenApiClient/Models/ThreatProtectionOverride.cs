@@ -33,9 +33,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>What to do when the classifier can&apos;t be reached: `closed` blocks the request, `open` allows it.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy? FailurePolicy { get; set; }
-        /// <summary>Domain scanning mode for this request. `normal` checks domains against Google Web Risk (+2 credits per domain scanned).</summary>
+        /// <summary>URL scanning mode for this request. `normal` checks URLs against Google Web Risk (+2 credits per URL scanned).</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode? Mode { get; set; }
-        /// <summary>Normalized risk score (0–100) at or above which a classifier verdict blocks the domain. Lower is stricter.</summary>
+        /// <summary>Normalized risk score (0–100) at or above which a classifier verdict blocks the URL. Lower is stricter.</summary>
         public int? RiskScoreThreshold { get; set; }
         /// <summary>Domains to always allow, as plain domains or wildcard globs. Wins over every other rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection
 {
-    /// <summary>Threat protection mode. `off` disables checks; `normal` checks domains against Google Web Risk (+2 credits per domain scanned).</summary>
+    /// <summary>Threat protection mode. `off` disables checks; `normal` checks URLs against Google Web Risk (+2 credits per URL scanned).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ThreatProtectionPutResponse_data_mode
     {
