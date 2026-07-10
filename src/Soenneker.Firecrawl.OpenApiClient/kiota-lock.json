@@ -2,7 +2,7 @@
   "descriptionHash": "7BF01370B6A9E17D686241D20F1CE0978D261CF268342C61739A78472EEB06A1126D7CE1935A79FD369E39E7970A53080146B3C8E0418718FCFF5743E5563B89",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.0",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "FirecrawlOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Firecrawl.OpenApiClient",
