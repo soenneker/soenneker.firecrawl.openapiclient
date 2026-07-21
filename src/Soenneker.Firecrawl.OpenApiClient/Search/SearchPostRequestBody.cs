@@ -47,6 +47,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public List<string> ExcludeDomains { get; set; }
 #endif
+        /// <summary>Generate query-relevant highlights for search results. Set to false to return provider descriptions or snippets without highlighting.</summary>
+        public bool? Highlights { get; set; }
         /// <summary>Excludes URLs from the search results that are invalid for other Firecrawl endpoints. This helps reduce errors if you are piping data from search into other Firecrawl API endpoints.</summary>
         public bool? IgnoreInvalidURLs { get; set; }
         /// <summary>Restricts search results to the specified domains. Domains should be hostnames only, without protocol or path. Cannot be used with excludeDomains.</summary>
@@ -116,6 +118,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         {
             AdditionalData = new Dictionary<string, object>();
             Country = "US";
+            Highlights = true;
             IgnoreInvalidURLs = false;
             Limit = 10;
             Timeout = 60000;
@@ -142,6 +145,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "enterprise", n => { Enterprise = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>()?.AsList(); } },
                 { "excludeDomains", n => { ExcludeDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "highlights", n => { Highlights = n.GetBoolValue(); } },
                 { "ignoreInvalidURLs", n => { IgnoreInvalidURLs = n.GetBoolValue(); } },
                 { "includeDomains", n => { IncludeDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
@@ -165,6 +169,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteStringValue("country", Country);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>("enterprise", Enterprise);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeDomains", ExcludeDomains);
+            writer.WriteBoolValue("highlights", Highlights);
             writer.WriteBoolValue("ignoreInvalidURLs", IgnoreInvalidURLs);
             writer.WriteCollectionOfPrimitiveValues<string>("includeDomains", IncludeDomains);
             writer.WriteIntValue("limit", Limit);
