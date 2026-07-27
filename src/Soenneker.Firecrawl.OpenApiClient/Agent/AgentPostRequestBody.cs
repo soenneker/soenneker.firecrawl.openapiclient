@@ -15,6 +15,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
+#endif
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
         public double? MaxCredits { get; set; }
         /// <summary>The model to use for the agent task. spark-1-mini (default) is 60% cheaper, spark-1-pro offers higher accuracy for complex tasks</summary>
@@ -79,6 +87,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "maxCredits", n => { MaxCredits = n.GetDoubleValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
@@ -95,6 +104,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteDoubleValue("maxCredits", MaxCredits);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>("model", Model);
             writer.WriteStringValue("prompt", Prompt);

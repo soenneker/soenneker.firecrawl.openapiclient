@@ -23,6 +23,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
+#endif
         /// <summary>Enables ad-blocking and cookie popup blocking.</summary>
         public bool? BlockAds { get; set; }
         /// <summary>Tags to exclude from the output.</summary>
@@ -183,6 +191,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
                 { "excludeTags", n => { ExcludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -220,6 +229,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteBoolValue("blockAds", BlockAds);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeTags", ExcludeTags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape>("formats", Formats);

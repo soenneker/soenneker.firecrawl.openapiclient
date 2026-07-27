@@ -15,6 +15,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
+#endif
         /// <summary>Bypass the sitemap cache to retrieve fresh URLs. Sitemap data is cached for up to 7 days; use this parameter when your sitemap has been recently updated.</summary>
         public bool? IgnoreCache { get; set; }
         /// <summary>Do not return URLs with query parameters</summary>
@@ -89,6 +97,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "ignoreCache", n => { IgnoreCache = n.GetBoolValue(); } },
                 { "ignoreQueryParameters", n => { IgnoreQueryParameters = n.GetBoolValue(); } },
                 { "includeSubdomains", n => { IncludeSubdomains = n.GetBoolValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteBoolValue("ignoreCache", IgnoreCache);
             writer.WriteBoolValue("ignoreQueryParameters", IgnoreQueryParameters);
             writer.WriteBoolValue("includeSubdomains", IncludeSubdomains);
