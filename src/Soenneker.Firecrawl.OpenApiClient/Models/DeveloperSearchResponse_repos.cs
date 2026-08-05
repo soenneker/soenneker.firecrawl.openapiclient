@@ -9,37 +9,45 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ResearchGitHubSearchResponse : IAdditionalDataHolder, IParsable
+    public partial class DeveloperSearchResponse_repos : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>The indexed property</summary>
+        public bool? Indexed { get; set; }
+        /// <summary>The repo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubItem>? Results { get; set; }
+        public string? Repo { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubItem> Results { get; set; }
+        public string Repo { get; set; }
 #endif
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        /// <summary>Which result types are indexed for this repository: `issue`, `pullRequest`, and `readme`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types? Types { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types Types { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubSearchResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos"/> and sets the default values.
         /// </summary>
-        public ResearchGitHubSearchResponse()
+        public DeveloperSearchResponse_repos()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubSearchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubSearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubSearchResponse();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +57,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubItem>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "indexed", n => { Indexed = n.GetBoolValue(); } },
+                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "types", n => { Types = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,8 +69,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubItem>("results", Results);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteBoolValue("indexed", Indexed);
+            writer.WriteStringValue("repo", Repo);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types>("types", Types);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

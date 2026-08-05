@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Firecrawl.OpenApiClient.Search.Research.Github;
 using Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResearchRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The github property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Github.GithubRequestBuilder Github
-        {
-            get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Github.GithubRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The papers property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.PapersRequestBuilder Papers
         {

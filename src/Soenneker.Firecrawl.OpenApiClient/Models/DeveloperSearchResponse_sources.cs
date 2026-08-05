@@ -7,30 +7,39 @@ using System.IO;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
-    /// <summary>
-    /// Component scores such as semantic, lexical, fusion, rrf, or rerank.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResearchGitHubScoreBreakdown : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class DeveloperSearchResponse_sources : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The indexed property</summary>
+        public bool? Indexed { get; set; }
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubScoreBreakdown"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources"/> and sets the default values.
         /// </summary>
-        public ResearchGitHubScoreBreakdown()
+        public DeveloperSearchResponse_sources()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubScoreBreakdown"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubScoreBreakdown CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchGitHubScoreBreakdown();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +49,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "indexed", n => { Indexed = n.GetBoolValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +60,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("indexed", Indexed);
+            writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
