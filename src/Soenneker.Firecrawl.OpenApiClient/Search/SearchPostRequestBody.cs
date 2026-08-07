@@ -77,6 +77,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Query { get; set; }
 #endif
+        /// <summary>When `true`, filters explicit content from search results (SafeSearch). Omit to keep the default behavior, which does not apply the filter.</summary>
+        public bool? Safe { get; set; }
         /// <summary>Options for scraping search results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +153,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
+                { "safe", n => { Safe = n.GetBoolValue(); } },
                 { "scrapeOptions", n => { ScrapeOptions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions.CreateFromDiscriminatorValue); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tbs", n => { Tbs = n.GetStringValue(); } },
@@ -175,6 +178,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("query", Query);
+            writer.WriteBoolValue("safe", Safe);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>("scrapeOptions", ScrapeOptions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources>("sources", Sources);
             writer.WriteStringValue("tbs", Tbs);
