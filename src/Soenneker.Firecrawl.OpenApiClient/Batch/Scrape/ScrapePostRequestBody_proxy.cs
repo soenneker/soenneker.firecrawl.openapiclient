@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
 {
-    /// <summary>Specifies the type of proxy to use. - **basic**: Proxies for scraping sites with none to basic anti-bot solutions. Fast and usually works. - **enhanced**: Enhanced proxies for scraping sites with advanced anti-bot solutions. Slower, but more reliable on certain sites. Costs up to 5 credits per request. - **auto**: Firecrawl will automatically retry scraping with enhanced proxies if the basic proxy fails. If the retry with enhanced is successful, 5 credits will be billed for the scrape. If the first attempt with basic is successful, only the regular cost will be billed.</summary>
+    /// <summary>Specifies the type of proxy to use. - **basic**: Proxies for scraping sites with none to basic anti-bot solutions. Fast and usually works. - **enhanced**: Enhanced proxies for scraping sites with advanced anti-bot solutions. Slower, but more reliable on certain sites. Billed at the same credit cost as basic. - **auto**: Firecrawl will automatically retry scraping with enhanced proxies if the basic proxy fails. Enhanced proxies carry no credit surcharge, so either way only the regular cost is billed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ScrapePostRequestBody_proxy
     {

@@ -101,7 +101,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile Profile { get; set; }
 #endif
-        /// <summary>Specifies the type of proxy to use. - **basic**: Proxies for scraping sites with none to basic anti-bot solutions. Fast and usually works. - **enhanced**: Enhanced proxies for scraping sites with advanced anti-bot solutions. Slower, but more reliable on certain sites. Costs up to 5 credits per request. - **auto**: Firecrawl will automatically retry scraping with enhanced proxies if the basic proxy fails. If the retry with enhanced is successful, 5 credits will be billed for the scrape. If the first attempt with basic is successful, only the regular cost will be billed.</summary>
+        /// <summary>Specifies the type of proxy to use. - **basic**: Proxies for scraping sites with none to basic anti-bot solutions. Fast and usually works. - **enhanced**: Enhanced proxies for scraping sites with advanced anti-bot solutions. Slower, but more reliable on certain sites. Billed at the same credit cost as basic. - **auto**: Firecrawl will automatically retry scraping with enhanced proxies if the basic proxy fails. Enhanced proxies carry no credit surcharge, so either way only the regular cost is billed.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_proxy? Proxy { get; set; }
         /// <summary>Redact personally identifiable information from returned markdown. Pass `true` to use defaults, or an object to tune mode, entities, and replacement style.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

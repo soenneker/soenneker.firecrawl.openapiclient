@@ -15,7 +15,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Allows the crawler to follow links to external websites.</summary>
+        /// <summary>Allows the crawler to follow links to external websites. External links are followed one hop (the links found on those external pages are not crawled). Links pointing to an external site&apos;s homepage (a root URL with no path) are skipped and reported in Get Crawl Errors with the code EXTERNAL_LINK; redirects to an external homepage are skipped for the same reason.</summary>
         public bool? AllowExternalLinks { get; set; }
         /// <summary>Allows the crawler to follow links to subdomains of the main domain.</summary>
         public bool? AllowSubdomains { get; set; }
