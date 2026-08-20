@@ -12,10 +12,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public partial class ScrapeOptions_parsers : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Include per-page typed layout blocks alongside the document markdown. Populates the `blocks` field on the document: typed blocks (title, section_header, text, table, formula, figure, caption, ...) with normalized bounding boxes, reading order, character-span links into the markdown, and per-block confidence. No additional cost.</summary>
+        public bool? Blocks { get; set; }
         /// <summary>Maximum number of pages to parse from the PDF. Must be a positive integer up to 10000.</summary>
         public int? MaxPages { get; set; }
         /// <summary>PDF parsing mode. &quot;fast&quot;: text-based extraction only (embedded text, fastest). &quot;auto&quot; (default): attempts fast extraction first, falls back to OCR if needed. &quot;ocr&quot;: forces OCR parsing on every page.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_mode? Mode { get; set; }
+        /// <summary>Include physical per-page markdown alongside the document markdown. Populates the `pages` field on the document as an array of { pageNumber, markdown }. No additional cost.</summary>
+        public bool? Pages { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_type? Type { get; set; }
         /// <summary>
@@ -23,7 +27,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// </summary>
         public ScrapeOptions_parsers()
         {
+            Blocks = false;
             Mode = global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_mode.Auto;
+            Pages = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,8 +49,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "blocks", n => { Blocks = n.GetBoolValue(); } },
                 { "maxPages", n => { MaxPages = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_mode>(); } },
+                { "pages", n => { Pages = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_type>(); } },
             };
         }
@@ -55,8 +63,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("blocks", Blocks);
             writer.WriteIntValue("maxPages", MaxPages);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_mode>("mode", Mode);
+            writer.WriteBoolValue("pages", Pages);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_parsers_type>("type", Type);
         }
     }

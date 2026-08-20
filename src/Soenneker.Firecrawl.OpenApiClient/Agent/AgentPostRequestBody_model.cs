@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Agent
 {
-    /// <summary>The model to use for the agent task. spark-1-mini (default) is 60% cheaper, spark-1-pro offers higher accuracy for complex tasks</summary>
+    /// <summary>The model to use for the agent task. spark-2 (default) is cheaper and faster than both Spark 1 models at comparable accuracy. spark-1-mini is 60% cheaper than spark-1-pro, which offers higher accuracy for complex tasks</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AgentPostRequestBody_model
     {
+        [EnumMember(Value = "spark-2")]
+        #pragma warning disable CS1591
+        Spark2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spark-1-mini")]
         #pragma warning disable CS1591
         Spark1Mini,

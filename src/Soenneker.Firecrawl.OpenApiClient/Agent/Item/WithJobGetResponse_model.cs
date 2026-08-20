@@ -7,6 +7,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithJobGetResponse_model
     {
+        [EnumMember(Value = "spark-2")]
+        #pragma warning disable CS1591
+        Spark2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spark-1-pro")]
         #pragma warning disable CS1591
         Spark1Pro,

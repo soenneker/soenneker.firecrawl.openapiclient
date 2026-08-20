@@ -14,6 +14,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Per-page typed layout blocks for PDFs. Present only when the request set the `blocks` PDF parser option.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>? Blocks { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks> Blocks { get; set; }
+#endif
         /// <summary>HTML version of the content on page if `includeHtml`  is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +53,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata Metadata { get; set; }
+#endif
+        /// <summary>Physical per-page markdown for PDFs. Present only when the request set the `pages` PDF parser option.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>? Pages { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages> Pages { get; set; }
 #endif
         /// <summary>Raw HTML content of the page if `includeRawHtml`  is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +103,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "blocks", n => { Blocks = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "html", n => { Html = n.GetStringValue(); } },
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata.CreateFromDiscriminatorValue); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
             };
@@ -102,10 +120,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>("blocks", Blocks);
             writer.WriteStringValue("html", Html);
             writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>("pages", Pages);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteAdditionalData(AdditionalData);

@@ -38,6 +38,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Audio { get; set; }
 #endif
+        /// <summary>Per-page typed layout blocks for PDFs. Present only when the request set the `blocks` PDF parser option.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks>? Blocks { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks> Blocks { get; set; }
+#endif
         /// <summary>Branding information extracted from the page if `branding` is in `formats`. Includes colors, fonts, typography, spacing, components, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata Metadata { get; set; }
+#endif
+        /// <summary>Physical per-page markdown for PDFs. Present only when the request set the `pages` PDF parser option.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages>? Pages { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages> Pages { get; set; }
 #endif
         /// <summary>Product information extracted from the page if `product` is in `formats`. Includes title, brand, category, description, and variants. Pricing, availability, and images live on each variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,6 +194,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions.CreateFromDiscriminatorValue); } },
                 { "answer", n => { Answer = n.GetStringValue(); } },
                 { "audio", n => { Audio = n.GetStringValue(); } },
+                { "blocks", n => { Blocks = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "branding", n => { Branding = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding.CreateFromDiscriminatorValue); } },
                 { "changeTracking", n => { ChangeTracking = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking.CreateFromDiscriminatorValue); } },
                 { "highlights", n => { Highlights = n.GetStringValue(); } },
@@ -186,6 +203,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "menu", n => { Menu = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.CreateFromDiscriminatorValue); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product.CreateFromDiscriminatorValue); } },
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
@@ -204,6 +222,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>("actions", Actions);
             writer.WriteStringValue("answer", Answer);
             writer.WriteStringValue("audio", Audio);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks>("blocks", Blocks);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>("branding", Branding);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking>("changeTracking", ChangeTracking);
             writer.WriteStringValue("highlights", Highlights);
@@ -212,6 +231,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu>("menu", Menu);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages>("pages", Pages);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>("product", Product);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
