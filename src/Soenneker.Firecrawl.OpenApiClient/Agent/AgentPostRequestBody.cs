@@ -25,7 +25,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #endif
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
         public double? MaxCredits { get; set; }
-        /// <summary>The model to use for the agent task. spark-2 (default) is cheaper and faster than both Spark 1 models at comparable accuracy. spark-1-mini is 60% cheaper than spark-1-pro, which offers higher accuracy for complex tasks</summary>
+        /// <summary>The model to use for the agent task. spark-1-pro (default) offers higher accuracy for complex tasks. spark-1-mini is 60% cheaper than spark-1-pro. spark-2 is cheaper and faster than both Spark 1 models at comparable accuracy</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? Model { get; set; }
         /// <summary>The prompt describing what data to extract</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public AgentPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
-            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark2;
+            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark1Pro;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

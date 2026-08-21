@@ -18,6 +18,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         public int? MaxPages { get; set; }
         /// <summary>PDF parsing mode. &quot;fast&quot;: text-based extraction only (embedded text, fastest). &quot;auto&quot; (default): attempts fast extraction first, falls back to OCR if needed. &quot;ocr&quot;: forces OCR parsing on every page.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_mode? Mode { get; set; }
+        /// <summary>Annotate page breaks in the document markdown: pages are joined with `\n\n---\n\n&lt;!-- page N --&gt;\n\n`, where N is the 1-based physical page of the content that follows. Markers appear between pages only (no leading marker for page 1), and numbering may skip pages merged across a page break — use `pages: true` when every physical page is needed. No new response field; no additional cost.</summary>
+        public bool? PageMarkers { get; set; }
         /// <summary>Include physical per-page markdown alongside the document markdown. Populates the `pages` field on the document as an array of { pageNumber, markdown }. No additional cost.</summary>
         public bool? Pages { get; set; }
         /// <summary>The type property</summary>
@@ -29,6 +31,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         {
             Blocks = false;
             Mode = global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_mode.Auto;
+            PageMarkers = false;
             Pages = false;
         }
         /// <summary>
@@ -52,6 +55,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 { "blocks", n => { Blocks = n.GetBoolValue(); } },
                 { "maxPages", n => { MaxPages = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_mode>(); } },
+                { "pageMarkers", n => { PageMarkers = n.GetBoolValue(); } },
                 { "pages", n => { Pages = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_type>(); } },
             };
@@ -66,6 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteBoolValue("blocks", Blocks);
             writer.WriteIntValue("maxPages", MaxPages);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_mode>("mode", Mode);
+            writer.WriteBoolValue("pageMarkers", PageMarkers);
             writer.WriteBoolValue("pages", Pages);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers_type>("type", Type);
         }

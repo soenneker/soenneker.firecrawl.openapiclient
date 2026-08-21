@@ -46,7 +46,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         public WithJobGetResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model.Spark2;
+            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model.Spark1Pro;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
