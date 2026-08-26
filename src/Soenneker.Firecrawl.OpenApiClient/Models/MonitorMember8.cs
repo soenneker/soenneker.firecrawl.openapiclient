@@ -14,6 +14,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When enabled, scans the scraped page content for prompt injection attempts before running the extraction. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. Defaults to false.</summary>
+        public bool? CheckPromptInjection { get; set; }
         /// <summary>The prompt to use for the JSON output</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public MonitorMember8()
         {
             AdditionalData = new Dictionary<string, object>();
+            CheckPromptInjection = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "checkPromptInjection", n => { CheckPromptInjection = n.GetBoolValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema>(global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_type>(); } },
@@ -69,6 +73,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("checkPromptInjection", CheckPromptInjection);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema>("schema", Schema);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_type>("type", Type);
