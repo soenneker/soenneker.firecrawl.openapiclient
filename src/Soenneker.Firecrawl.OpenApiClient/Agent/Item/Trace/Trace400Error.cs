@@ -2,38 +2,45 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Firecrawl.OpenApiClient.Models
+namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MonitorMember7_viewport : IAdditionalDataHolder, IParsable
+    public partial class Trace400Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The height of the viewport in pixels</summary>
-        public int? Height { get; set; }
-        /// <summary>The width of the viewport in pixels</summary>
-        public int? Width { get; set; }
+        /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Error { get; set; }
+#nullable restore
+#else
+        public string Error { get; set; }
+#endif
+        /// <summary>The primary error message.</summary>
+        public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.Trace400Error"/> and sets the default values.
         /// </summary>
-        public MonitorMember7_viewport()
+        public Trace400Error()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.Trace400Error"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.Trace400Error CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.Trace400Error();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +50,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
+                { "error", n => { Error = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("width", Width);
+            writer.WriteStringValue("error", Error);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

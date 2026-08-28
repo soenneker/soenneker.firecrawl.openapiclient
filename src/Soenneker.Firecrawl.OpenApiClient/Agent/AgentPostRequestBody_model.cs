@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Agent
 {
-    /// <summary>The model to use for the agent task. spark-1-pro (default) offers higher accuracy for complex tasks. spark-1-mini is 60% cheaper than spark-1-pro. spark-2 is cheaper and faster than both Spark 1 models at comparable accuracy</summary>
+    /// <summary>The model to use for the agent task. spark-2 is the default and the model every run executes on. The Spark 1 model names remain accepted for backwards compatibility but are deprecated and route to spark-2.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AgentPostRequestBody_model
     {

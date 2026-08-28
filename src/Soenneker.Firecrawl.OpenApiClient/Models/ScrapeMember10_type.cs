@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum ScrapeMember10_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "branding")]
+        [EnumMember(Value = "changeTracking")]
         #pragma warning disable CS1591
-        Branding,
+        ChangeTracking,
         #pragma warning restore CS1591
     }
 }

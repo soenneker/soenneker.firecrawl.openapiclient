@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum MonitorMember6_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "images")]
+        [EnumMember(Value = "links")]
         #pragma warning disable CS1591
-        Images,
+        Links,
         #pragma warning restore CS1591
     }
 }

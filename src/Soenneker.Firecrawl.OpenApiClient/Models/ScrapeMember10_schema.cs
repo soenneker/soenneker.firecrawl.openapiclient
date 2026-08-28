@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
+    /// Schema for JSON extraction when using &apos;json&apos; mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScrapeMember8_schema : IAdditionalDataHolder, IParsable
+    public partial class ScrapeMember10_schema : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10_schema"/> and sets the default values.
         /// </summary>
-        public ScrapeMember8_schema()
+        public ScrapeMember10_schema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10_schema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10_schema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10_schema();
         }
         /// <summary>
         /// The deserialization information for the current model

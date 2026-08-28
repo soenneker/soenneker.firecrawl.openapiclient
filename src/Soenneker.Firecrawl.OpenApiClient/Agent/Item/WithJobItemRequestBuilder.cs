@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots;
+using Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +18,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithJobItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The snapshots property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.SnapshotsRequestBuilder Snapshots
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.SnapshotsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tracePath property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.TraceRequestBuilder TracePath
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.TraceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -38,6 +50,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob409Error">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -48,7 +63,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob409Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the status of an agent job
@@ -56,6 +77,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,7 +89,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancel an agent job

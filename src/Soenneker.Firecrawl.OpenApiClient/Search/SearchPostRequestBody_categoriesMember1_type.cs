@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     public enum SearchPostRequestBody_categoriesMember1_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "github")]
+        [EnumMember(Value = "developer")]
         #pragma warning disable CS1591
-        Github,
+        Developer,
         #pragma warning restore CS1591
     }
 }

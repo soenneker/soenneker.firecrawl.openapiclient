@@ -126,6 +126,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product Product { get; set; }
 #endif
+        /// <summary>The Base64-encoded original HTTP response body if `rawBase64` is in `formats`. A bare Base64 string, not a data URI. The MIME type is in `metadata.contentType`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RawBase64 { get; set; }
+#nullable restore
+#else
+        public string RawBase64 { get; set; }
+#endif
         /// <summary>The exact, unmodified HTML as received from the page if `rawHtml` is in `formats`. No cleaning or filtering is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,6 +213,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.CreateFromDiscriminatorValue); } },
                 { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product.CreateFromDiscriminatorValue); } },
+                { "rawBase64", n => { RawBase64 = n.GetStringValue(); } },
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
@@ -233,6 +242,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_pages>("pages", Pages);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product>("product", Product);
+            writer.WriteStringValue("rawBase64", RawBase64);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteStringValue("summary", Summary);

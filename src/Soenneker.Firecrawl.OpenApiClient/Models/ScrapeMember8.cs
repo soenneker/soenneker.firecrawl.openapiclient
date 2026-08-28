@@ -14,33 +14,27 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When enabled, scans the scraped page content for prompt injection attempts before running the extraction. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. Defaults to false.</summary>
-        public bool? CheckPromptInjection { get; set; }
-        /// <summary>The prompt to use for the JSON output</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Prompt { get; set; }
-#nullable restore
-#else
-        public string Prompt { get; set; }
-#endif
-        /// <summary>The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema? Schema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema Schema { get; set; }
-#endif
+        /// <summary>Whether to capture a full-page screenshot (ignores viewport.height) or limit to the current viewport.</summary>
+        public bool? FullPage { get; set; }
+        /// <summary>The quality of the screenshot, from 1 to 100. 100 is the highest quality.</summary>
+        public int? Quality { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_type? Type { get; set; }
+        /// <summary>The viewport property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_viewport? Viewport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_viewport Viewport { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8"/> and sets the default values.
         /// </summary>
         public ScrapeMember8()
         {
             AdditionalData = new Dictionary<string, object>();
-            CheckPromptInjection = false;
+            FullPage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,10 +54,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "checkPromptInjection", n => { CheckPromptInjection = n.GetBoolValue(); } },
-                { "prompt", n => { Prompt = n.GetStringValue(); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema.CreateFromDiscriminatorValue); } },
+                { "fullPage", n => { FullPage = n.GetBoolValue(); } },
+                { "quality", n => { Quality = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_type>(); } },
+                { "viewport", n => { Viewport = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_viewport>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_viewport.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +67,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("checkPromptInjection", CheckPromptInjection);
-            writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_schema>("schema", Schema);
+            writer.WriteBoolValue("fullPage", FullPage);
+            writer.WriteIntValue("quality", Quality);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8_viewport>("viewport", Viewport);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

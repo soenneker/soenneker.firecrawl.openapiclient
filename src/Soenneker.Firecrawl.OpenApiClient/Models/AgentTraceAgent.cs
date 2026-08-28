@@ -8,29 +8,43 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
+    /// Identity of the agent that emitted the event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MonitorMember8_schema : IAdditionalDataHolder, IParsable
+    public partial class AgentTraceAgent : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The id property</summary>
+        public Guid? Id { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>ID of the parent agent (present on subagents).</summary>
+        public Guid? ParentId { get; set; }
+        /// <summary>The role property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent_role? Role { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent"/> and sets the default values.
         /// </summary>
-        public MonitorMember8_schema()
+        public AgentTraceAgent()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_schema();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +54,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetGuidValue(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent_role>(); } },
             };
         }
         /// <summary>
@@ -49,6 +67,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteGuidValue("parentId", ParentId);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent_role>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

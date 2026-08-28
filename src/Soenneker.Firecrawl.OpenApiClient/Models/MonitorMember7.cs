@@ -14,27 +14,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether to capture a full-page screenshot (ignores viewport.height) or limit to the current viewport.</summary>
-        public bool? FullPage { get; set; }
-        /// <summary>The quality of the screenshot, from 1 to 100. 100 is the highest quality.</summary>
-        public int? Quality { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_type? Type { get; set; }
-        /// <summary>The viewport property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport? Viewport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport Viewport { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7"/> and sets the default values.
         /// </summary>
         public MonitorMember7()
         {
             AdditionalData = new Dictionary<string, object>();
-            FullPage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fullPage", n => { FullPage = n.GetBoolValue(); } },
-                { "quality", n => { Quality = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_type>(); } },
-                { "viewport", n => { Viewport = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport>(global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,10 +51,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("fullPage", FullPage);
-            writer.WriteIntValue("quality", Quality);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7_viewport>("viewport", Viewport);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

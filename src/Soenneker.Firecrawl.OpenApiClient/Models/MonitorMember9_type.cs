@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum MonitorMember9_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "changeTracking")]
+        [EnumMember(Value = "json")]
         #pragma warning disable CS1591
-        ChangeTracking,
+        Json,
         #pragma warning restore CS1591
     }
 }

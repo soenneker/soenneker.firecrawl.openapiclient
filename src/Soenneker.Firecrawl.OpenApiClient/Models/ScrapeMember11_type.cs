@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum ScrapeMember11_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "product")]
+        [EnumMember(Value = "branding")]
         #pragma warning disable CS1591
-        Product,
+        Branding,
         #pragma warning restore CS1591
     }
 }

@@ -14,15 +14,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The mode to use for change tracking. &apos;git-diff&apos; provides a detailed diff, and &apos;json&apos; compares extracted JSON data.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_modes?>? Modes { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_modes?> Modes { get; set; }
-#endif
-        /// <summary>Prompt to use for change tracking when using &apos;json&apos; mode. If not provided, the default prompt will be used.</summary>
+        /// <summary>When enabled, scans the scraped page content for prompt injection attempts before running the extraction. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. Defaults to false.</summary>
+        public bool? CheckPromptInjection { get; set; }
+        /// <summary>The prompt to use for the JSON output</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prompt { get; set; }
@@ -30,21 +24,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>Schema for JSON extraction when using &apos;json&apos; mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).</summary>
+        /// <summary>The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema? Schema { get; set; }
 #nullable restore
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema Schema { get; set; }
-#endif
-        /// <summary>Tag to use for change tracking. Tags can separate change tracking history into separate &quot;branches&quot;, where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tag { get; set; }
-#nullable restore
-#else
-        public string Tag { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_type? Type { get; set; }
@@ -54,6 +40,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public ScrapeMember9()
         {
             AdditionalData = new Dictionary<string, object>();
+            CheckPromptInjection = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,10 +60,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "modes", n => { Modes = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_modes>()?.AsList(); } },
+                { "checkPromptInjection", n => { CheckPromptInjection = n.GetBoolValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema.CreateFromDiscriminatorValue); } },
-                { "tag", n => { Tag = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_type>(); } },
             };
         }
@@ -87,10 +73,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_modes>("modes", Modes);
+            writer.WriteBoolValue("checkPromptInjection", CheckPromptInjection);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema>("schema", Schema);
-            writer.WriteStringValue("tag", Tag);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

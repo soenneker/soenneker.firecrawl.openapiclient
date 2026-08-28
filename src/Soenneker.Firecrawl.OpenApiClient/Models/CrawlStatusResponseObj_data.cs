@@ -62,6 +62,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages> Pages { get; set; }
 #endif
+        /// <summary>The Base64-encoded original HTTP response body if `rawBase64` is in `formats`. A bare Base64 string, not a data URI. The MIME type is in `metadata.contentType`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RawBase64 { get; set; }
+#nullable restore
+#else
+        public string RawBase64 { get; set; }
+#endif
         /// <summary>Raw HTML content of the page if `includeRawHtml`  is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata.CreateFromDiscriminatorValue); } },
                 { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>(global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rawBase64", n => { RawBase64 = n.GetStringValue(); } },
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
             };
@@ -126,6 +135,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>("pages", Pages);
+            writer.WriteStringValue("rawBase64", RawBase64);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteAdditionalData(AdditionalData);

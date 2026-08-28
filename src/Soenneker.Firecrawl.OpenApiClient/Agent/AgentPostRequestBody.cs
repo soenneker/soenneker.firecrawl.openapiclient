@@ -23,9 +23,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
 #endif
+        /// <summary>Reasoning budget for the agent task. Every run executes on spark-2, so effort can be sent with or without model.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort? Effort { get; set; }
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
         public double? MaxCredits { get; set; }
-        /// <summary>The model to use for the agent task. spark-1-pro (default) offers higher accuracy for complex tasks. spark-1-mini is 60% cheaper than spark-1-pro. spark-2 is cheaper and faster than both Spark 1 models at comparable accuracy</summary>
+        /// <summary>The model to use for the agent task. spark-2 is the default and the model every run executes on. The Spark 1 model names remain accepted for backwards compatibility but are deprecated and route to spark-2.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? Model { get; set; }
         /// <summary>The prompt describing what data to extract</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,13 +63,21 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public List<string> Urls { get; set; }
 #endif
+        /// <summary>A webhook specification object. Subscribes to agent lifecycle events (agent.started, agent.action, agent.completed, agent.failed, agent.cancelled).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook? Webhook { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook Webhook { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody"/> and sets the default values.
         /// </summary>
         public AgentPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
-            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark1Pro;
+            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark2;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +98,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
+                { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>(); } },
                 { "maxCredits", n => { MaxCredits = n.GetDoubleValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
@@ -95,6 +106,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "strictConstrainToURLs", n => { StrictConstrainToURLs = n.GetBoolValue(); } },
                 { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,6 +117,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>("effort", Effort);
             writer.WriteDoubleValue("maxCredits", MaxCredits);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>("model", Model);
             writer.WriteStringValue("prompt", Prompt);
@@ -112,6 +125,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteBoolValue("strictConstrainToURLs", StrictConstrainToURLs);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>("webhook", Webhook);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 {
-    /// <summary>Model preset used for the agent run</summary>
+    /// <summary>Model preset used for the agent run. Every new run executes on spark-2; Spark 1 names only appear on legacy runs.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithJobGetResponse_model
     {

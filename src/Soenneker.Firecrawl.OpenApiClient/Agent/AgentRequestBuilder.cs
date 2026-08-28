@@ -52,8 +52,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent400Error">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent402Error">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse?> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,8 +70,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent400Error.CreateFromDiscriminatorValue },
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent402Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent403Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent429Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent500Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

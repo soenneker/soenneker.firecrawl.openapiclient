@@ -24,6 +24,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data Data { get; set; }
 #endif
+        /// <summary>Reasoning budget used for the agent run (only present for runs that set effort)</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort? Effort { get; set; }
         /// <summary>Error message (only present when status is failed)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +36,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #endif
         /// <summary>The expiresAt property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>Model preset used for the agent run</summary>
+        /// <summary>Model preset used for the agent run. Every new run executes on spark-2; Spark 1 names only appear on legacy runs.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? Model { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get; set; }
@@ -46,7 +48,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         public WithJobGetResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model.Spark1Pro;
+            Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model.Spark2;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             {
                 { "creditsUsed", n => { CreditsUsed = n.GetDoubleValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data>(global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data.CreateFromDiscriminatorValue); } },
+                { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>(); } },
@@ -84,6 +87,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("creditsUsed", CreditsUsed);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data>("data", Data);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>("effort", Effort);
             writer.WriteStringValue("error", Error);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>("model", Model);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Schema for JSON extraction when using &apos;json&apos; mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).
+    /// The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorMember9_schema : IAdditionalDataHolder, IParsable

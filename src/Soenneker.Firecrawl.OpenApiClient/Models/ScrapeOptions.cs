@@ -225,7 +225,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember17"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Monitor : IComposedTypeWrapper, IParsable
@@ -293,6 +293,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16 MonitorMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember17? MonitorMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember17 MonitorMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -408,6 +416,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 {
                     return MonitorMember16.GetFieldDeserializers();
                 }
+                else if(MonitorMember17 != null)
+                {
+                    return MonitorMember17.GetFieldDeserializers();
+                }
                 else if(MonitorMember2 != null)
                 {
                     return MonitorMember2.GetFieldDeserializers();
@@ -480,6 +492,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 else if(MonitorMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember16>(null, MonitorMember16);
+                }
+                else if(MonitorMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember17>(null, MonitorMember17);
                 }
                 else if(MonitorMember2 != null)
                 {
