@@ -25,7 +25,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Credits consumed so far, capped at maxCredits if one was set.</summary>
         public double? CreditsUsed { get; set; }
-        /// <summary>Canonical execution events for the run; order by producerSequence. artifact.updated events carry the snapshotId values used by the snapshots endpoint.</summary>
+        /// <summary>Canonical execution events for the run; group by agent.id, then order each group by producerSequence, which is monotonic per emitting agent. artifact.updated events carry the snapshotId values used by the snapshots endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEvent>? Events { get; set; }

@@ -34,7 +34,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent", pathParameters)
+        public AgentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent{?before*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,8 +42,31 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent", rawUrl)
+        public AgentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agent{?before*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// List agent runs
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent400Error">When receiving a 400 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder.AgentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder.AgentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent400Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Start an agent task for agentic data extraction
@@ -79,6 +102,25 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// List agent runs
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder.AgentRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder.AgentRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Start an agent task for agentic data extraction
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -108,6 +150,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List agent runs
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AgentRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Only return agent runs created before this unix millisecond timestamp. Pages are fixed at 20 runs; use the `before` value from the previous page&apos;s `next` URL to fetch the next page.</summary>
+            [QueryParameter("before")]
+            public int? Before { get; set; }
         }
     }
 }
