@@ -15,7 +15,7 @@ dotnet add package Soenneker.Firecrawl.OpenApiClient
 
 ## Recommended setup
 
-For dependency injection, API-key configuration, and transport reuse, install the companion utility:
+For managed API-key authentication and cached client reuse, install the companion package:
 
 ```bash
 dotnet add package Soenneker.Firecrawl.OpenApiClientUtil
