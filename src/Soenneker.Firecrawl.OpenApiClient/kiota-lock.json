@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "A9449AD5B285B936035A3168D8EF641572A398FF48C9EE320E1DE5AC798297B24E54BE8C1493F3BDD165C3168B1B995A7456F54193E3AE7A057E614026659085",
+  "descriptionHash": "0627ECD4C756872DBD57DB202DAEAA4A2AF411F688F7A720579FC219C3B9CDA0B2C5C6CC2ED12F75A6FB00CE3ABB5FB91A01D2B2235FE21573DAA74CCA99A18A",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "FirecrawlOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Firecrawl.OpenApiClient",

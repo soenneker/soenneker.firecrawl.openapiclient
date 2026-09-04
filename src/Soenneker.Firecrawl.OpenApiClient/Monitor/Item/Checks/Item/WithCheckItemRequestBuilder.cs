@@ -85,13 +85,17 @@ namespace Soenneker.Firecrawl.OpenApiClient.Monitor.Item.Checks.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCheckItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Number of page results to skip. Use the `next` URL from the previous response for pagination.</summary>
             [QueryParameter("skip")]
             public int? Skip { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public global::Soenneker.Firecrawl.OpenApiClient.Monitor.Item.Checks.Item.GetStatusQueryParameterType? Status { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage
         public DateTimeOffset? BillingPeriodEnd { get; set; }
         /// <summary>Start date of the current billing period.</summary>
         public DateTimeOffset? BillingPeriodStart { get; set; }
-        /// <summary>Number of credits in the plan. This does not include coupon credits or credits added by auto-reload.</summary>
+        /// <summary>Number of credits in the plan. This does not include coupon credits or credits added by pay-as-you-go.</summary>
         public double? PlanCredits { get; set; }
         /// <summary>Number of credits remaining for the team</summary>
         public double? RemainingCredits { get; set; }
