@@ -32,5 +32,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         #pragma warning disable CS1591
         Skipped_overlap,
         #pragma warning restore CS1591
+        [EnumMember(Value = "skipped_no_credits")]
+        #pragma warning disable CS1591
+        Skipped_no_credits,
+        #pragma warning restore CS1591
     }
 }
