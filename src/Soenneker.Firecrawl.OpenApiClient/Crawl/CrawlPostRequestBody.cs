@@ -23,7 +23,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
         public bool? CrawlEntireDomain { get; set; }
         /// <summary>Delay in seconds between scrapes. This helps respect website rate limits. Setting this forces concurrency to 1.</summary>
         public double? Delay { get; set; }
-        /// <summary>URL pathname regex patterns that exclude matching URLs from the crawl. For example, if you set &quot;excludePaths&quot;: [&quot;blog/.*&quot;] for the base URL firecrawl.dev, any results matching that pattern will be excluded, such as https://www.firecrawl.dev/blog/firecrawl-launch-week-1-recap.</summary>
+        /// <summary>URL pathname regex patterns that exclude matching URLs from the crawl. For example, if you set &quot;excludePaths&quot;: [&quot;blog/.*&quot;] for the base URL firecrawl.dev, any results matching that pattern will be excluded, such as https://www.firecrawl.dev/blog/firecrawl-launch-week-1-recap. Patterns use Rust regex (RE2-style) syntax: look-around and backreferences are not supported, and a pattern that does not compile is rejected with a 400. Each field accepts at most 1000 patterns of at most 2000 characters each, and includePaths and excludePaths together may contain at most 1000 patterns and 100,000 characters in total. For keyword-style filtering, send one short pattern per term rather than combining terms into a single long alternation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExcludePaths { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
         public bool? IgnoreQueryParameters { get; set; }
         /// <summary>Ignore the website&apos;s robots.txt rules. Enterprise only — contact support@firecrawl.com to enable.</summary>
         public bool? IgnoreRobotsTxt { get; set; }
-        /// <summary>URL pathname regex patterns that include matching URLs in the crawl. Only the paths that match the specified patterns will be included in the response. Note: the starting URL is also checked against these patterns — if it does not match, the crawl may return 0 pages. For example, if you set &quot;includePaths&quot;: [&quot;blog/.*&quot;] for the base URL firecrawl.dev/blog, only pages under /blog/ will be included in the results, such as https://www.firecrawl.dev/blog/firecrawl-launch-week-1-recap.</summary>
+        /// <summary>URL pathname regex patterns that include matching URLs in the crawl. Only the paths that match the specified patterns will be included in the response. Note: the starting URL is also checked against these patterns — if it does not match, the crawl may return 0 pages. For example, if you set &quot;includePaths&quot;: [&quot;blog/.*&quot;] for the base URL firecrawl.dev/blog, only pages under /blog/ will be included in the results, such as https://www.firecrawl.dev/blog/firecrawl-launch-week-1-recap. Patterns use Rust regex (RE2-style) syntax: look-around and backreferences are not supported, and a pattern that does not compile is rejected with a 400. Each field accepts at most 1000 patterns of at most 2000 characters each, and includePaths and excludePaths together may contain at most 1000 patterns and 100,000 characters in total. For keyword-style filtering, send one short pattern per term rather than combining terms into a single long alternation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IncludePaths { get; set; }
