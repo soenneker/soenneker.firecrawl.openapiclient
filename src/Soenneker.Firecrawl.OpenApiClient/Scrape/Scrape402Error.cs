@@ -10,11 +10,27 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScrapeResponse429Error : ApiException, IAdditionalDataHolder, IParsable
+    public partial class Scrape402Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The chargeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeId { get; set; }
+#nullable restore
+#else
+        public string ChargeId { get; set; }
+#endif
+        /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,22 +41,24 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
+        /// <summary>The success property</summary>
+        public bool? Success { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error"/> and sets the default values.
         /// </summary>
-        public ScrapeResponse429Error()
+        public Scrape402Error()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +68,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "chargeId", n => { ChargeId = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -60,7 +81,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("chargeId", ChargeId);
+            writer.WriteStringValue("code", Code);
             writer.WriteStringValue("error", Error);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

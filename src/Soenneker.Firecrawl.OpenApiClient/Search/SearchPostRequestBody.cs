@@ -31,6 +31,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public string Country { get; set; }
 #endif
+        /// <summary>Include tool contracts whose provider matches the domains of the returned web results. Defaults to on when `alexandria` is among the sources; set `false` to disable, or `true` alone to add domain-matched tools beside ordinary web results. Free.</summary>
+        public bool? DomainTools { get; set; }
         /// <summary>Enterprise search options for Zero Data Retention (ZDR). Use `[&quot;zdr&quot;]` for end-to-end ZDR (10 credits / 10 results) or `[&quot;anon&quot;]` for anonymized ZDR (2 credits / 10 results). Must be enabled for your team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +89,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get; set; }
 #endif
-        /// <summary>Sources to search. Will determine the arrays available in the response. Defaults to [&apos;web&apos;].</summary>
+        /// <summary>Sources to search. Will determine the arrays available in the response. Defaults to [&apos;web&apos;]. The plain string form (e.g. `[&quot;web&quot;, &quot;alexandria&quot;]`) is also accepted. The `alexandria` source returns tool contracts discovered from the Alexandria catalogue in `data.tools` instead of search results; it is free and is never counted in `creditsUsed`. Requires the team&apos;s Alexandria access to be enabled (403 otherwise).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_sources>? Sources { get; set; }
@@ -145,6 +147,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             {
                 { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
+                { "domainTools", n => { DomainTools = n.GetBoolValue(); } },
                 { "enterprise", n => { Enterprise = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>()?.AsList(); } },
                 { "excludeDomains", n => { ExcludeDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "highlights", n => { Highlights = n.GetBoolValue(); } },
@@ -170,6 +173,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>("categories", Categories);
             writer.WriteStringValue("country", Country);
+            writer.WriteBoolValue("domainTools", DomainTools);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>("enterprise", Enterprise);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeDomains", ExcludeDomains);
             writer.WriteBoolValue("highlights", Highlights);
@@ -270,7 +274,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember3"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember4"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchPostRequestBody_sources : IComposedTypeWrapper, IParsable
@@ -298,6 +302,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #nullable restore
 #else
             public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember3 SearchPostRequestBodySourcesMember3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember4? SearchPostRequestBodySourcesMember4 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember4 SearchPostRequestBodySourcesMember4 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -329,6 +341,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 {
                     return SearchPostRequestBodySourcesMember3.GetFieldDeserializers();
                 }
+                else if(SearchPostRequestBodySourcesMember4 != null)
+                {
+                    return SearchPostRequestBodySourcesMember4.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -349,6 +365,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 else if(SearchPostRequestBodySourcesMember3 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember3>(null, SearchPostRequestBodySourcesMember3);
+                }
+                else if(SearchPostRequestBodySourcesMember4 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_sourcesMember4>(null, SearchPostRequestBodySourcesMember4);
                 }
             }
         }

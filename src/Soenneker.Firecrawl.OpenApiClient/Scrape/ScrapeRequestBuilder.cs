@@ -49,31 +49,41 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         /// <summary>
         /// Scrape a single URL and optionally extract information using an LLM
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse402Error">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape409Error">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse?> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse?> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse> PostAsync(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "402", global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse402Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse429Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeResponse500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape400Error.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape404Error.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape409Error.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape429Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape500Error.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape503Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Scrape a single URL and optionally extract information using an LLM
@@ -105,6 +115,81 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ScrapePostResponse : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse? AlexandriaScrapeResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse AlexandriaScrapeResponse { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse? ScrapeResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse ScrapeResponse { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse();
+                if("AlexandriaScrapeResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.AlexandriaScrapeResponse = new global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse();
+                }
+                else if("ScrapeResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ScrapeResponse = new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AlexandriaScrapeResponse != null)
+                {
+                    return AlexandriaScrapeResponse.GetFieldDeserializers();
+                }
+                else if(ScrapeResponse != null)
+                {
+                    return ScrapeResponse.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(AlexandriaScrapeResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse>(null, AlexandriaScrapeResponse);
+                }
+                else if(ScrapeResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse>(null, ScrapeResponse);
+                }
+            }
         }
     }
 }

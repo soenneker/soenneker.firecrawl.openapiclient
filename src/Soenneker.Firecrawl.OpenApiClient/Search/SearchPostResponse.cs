@@ -34,7 +34,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
-        /// <summary>Warning message if any issues occurred</summary>
+        /// <summary>Warning message if any issues occurred. Includes `Some tool discovery results are unavailable.` when Alexandria or domain tool discovery partially failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Warning { get; set; }

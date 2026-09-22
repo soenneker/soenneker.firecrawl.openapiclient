@@ -23,6 +23,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Execute one or more catalogued provider tools instead of scraping a URL. Cannot be combined with `url`, `formats`, or other scrape options (400); the only allowed sibling keys are `timeout`, `origin`, and `integration`. Use the `x-request-id` request header as a client-chosen idempotency key (1 to 128 characters of letters, digits, `.`, `_`, `:`, `-`) — it is echoed back, and a completed request with the same key replays its original response and `scrape_id` instead of re-executing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria? Alexandria { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria Alexandria { get; set; }
+#endif
         /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +41,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #endif
         /// <summary>Enables ad-blocking and cookie popup blocking.</summary>
         public bool? BlockAds { get; set; }
+        /// <summary>When true on an ordinary URL scrape, `data.tools` lists tool contracts matched to the scraped page&apos;s domain (same `DiscoveredTool` shape as search). Requires the team&apos;s Alexandria access to be enabled and no zero data retention (403 otherwise). Free.</summary>
+        public bool? DomainTools { get; set; }
         /// <summary>Tags to exclude from the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +156,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         {
             AdditionalData = new Dictionary<string, object>();
             BlockAds = true;
+            DomainTools = false;
             Lockdown = false;
             MaxAge = 172800000;
             Mobile = false;
@@ -178,8 +189,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alexandria", n => { Alexandria = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria.CreateFromDiscriminatorValue); } },
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
+                { "domainTools", n => { DomainTools = n.GetBoolValue(); } },
                 { "excludeTags", n => { ExcludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers.CreateFromDiscriminatorValue); } },
@@ -213,8 +226,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria>("alexandria", Alexandria);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteBoolValue("blockAds", BlockAds);
+            writer.WriteBoolValue("domainTools", DomainTools);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeTags", ExcludeTags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>("formats", Formats);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers>("headers", Headers);
@@ -544,6 +559,77 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 else if(ScrapeMember9 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9>(null, ScrapeMember9);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall"/>, List&lt;global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ScrapePostRequestBody_alexandria : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall>? AlexandriaCall { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall> AlexandriaCall { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall? ScrapePostRequestBodyAlexandriaAlexandriaCall { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall ScrapePostRequestBodyAlexandriaAlexandriaCall { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria();
+                if("AlexandriaCall".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ScrapePostRequestBodyAlexandriaAlexandriaCall = new global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall();
+                }
+                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall> alexandriaCallValue)
+                {
+                    result.AlexandriaCall = alexandriaCallValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ScrapePostRequestBodyAlexandriaAlexandriaCall != null)
+                {
+                    return ScrapePostRequestBodyAlexandriaAlexandriaCall.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(ScrapePostRequestBodyAlexandriaAlexandriaCall != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall>(null, ScrapePostRequestBodyAlexandriaAlexandriaCall);
+                }
+                else if(AlexandriaCall != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall>(null, AlexandriaCall);
                 }
             }
         }

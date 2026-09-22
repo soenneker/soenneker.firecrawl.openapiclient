@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Firecrawl.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -30,6 +31,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #nullable restore
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news> News { get; set; }
+#endif
+        /// <summary>Tool contracts discovered from the Alexandria catalogue. Present when `alexandria` is among the sources or when `domainTools` was requested; up to `limit` results per discovery source (semantic matches from the `alexandria` source, domain matches from `domainTools`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>? Tools { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool> Tools { get; set; }
 #endif
         /// <summary>The web property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,6 +75,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             {
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "news", n => { News = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>(global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "web", n => { Web = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -78,6 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>("images", Images);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>("news", News);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>("tools", Tools);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>("web", Web);
             writer.WriteAdditionalData(AdditionalData);
         }

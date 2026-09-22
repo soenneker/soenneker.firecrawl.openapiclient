@@ -158,6 +158,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
+        /// <summary>Tool contracts matched to the scraped page&apos;s domain. Present only when `domainTools` is `true` on the request. Requires Alexandria access and no zero data retention (403 otherwise); free.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>? Tools { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool> Tools { get; set; }
+#endif
         /// <summary>Signed URL to the extracted video file if `video` is in `formats`. The signed URL expires after 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +225,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "rawHtml", n => { RawHtml = n.GetStringValue(); } },
                 { "screenshot", n => { Screenshot = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>(global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "video", n => { Video = n.GetStringValue(); } },
                 { "warning", n => { Warning = n.GetStringValue(); } },
             };
@@ -246,6 +255,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
             writer.WriteStringValue("summary", Summary);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>("tools", Tools);
             writer.WriteStringValue("video", Video);
             writer.WriteStringValue("warning", Warning);
             writer.WriteAdditionalData(AdditionalData);
