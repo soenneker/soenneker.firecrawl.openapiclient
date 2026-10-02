@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// A catalogued provider tool discovered via Alexandria, semantic search, or domain matching.
+    /// A catalogued provider tool discovered via Alexandria, semantic search, or domain matching. The `toolDetail` request parameter sets which fields appear: `compact` returns only `provider`, `capability`, and `description`; `summary` adds the other fields except `options` and `response`; `full` also adds `options`, `response`, and `examples`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiscoveredTool : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Capability { get; set; }
 #endif
-        /// <summary>Credits charged per execution of this tool.</summary>
+        /// <summary>Credits charged per execution of this tool. Omitted when `toolDetail` is `compact`.</summary>
         public int? CreditsCost { get; set; }
         /// <summary>Human-readable description of what the tool does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,7 +33,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The tool&apos;s identifier, formatted as `provider/capability`.</summary>
+        /// <summary>The tool&apos;s identifier, formatted as `provider/capability`. Omitted when `toolDetail` is `compact`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Why this tool was surfaced.</summary>
+        /// <summary>Why this tool was surfaced. Omitted when `toolDetail` is `compact`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool_matchedBy?>? MatchedBy { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool_matchedBy?> MatchedBy { get; set; }
 #endif
-        /// <summary>URLs whose domain matched this tool, when matched by domain.</summary>
+        /// <summary>URLs whose domain matched this tool, when matched by domain. Omitted when `toolDetail` is `compact`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MatchedUrls { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<string> MatchedUrls { get; set; }
 #endif
-        /// <summary>Human-readable name of the tool.</summary>
+        /// <summary>Human-readable name of the tool. Omitted when `toolDetail` is `compact`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The capability&apos;s accepted options.</summary>
+        /// <summary>The capability&apos;s accepted options. Present only when `toolDetail` is `full`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool_options>? Options { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool_options> Options { get; set; }
 #endif
-        /// <summary>Whether `creditsCost` is charged per record returned rather than per call.</summary>
+        /// <summary>Whether `creditsCost` is charged per record returned rather than per call. Omitted when `toolDetail` is `compact`.</summary>
         public bool? PerRecord { get; set; }
         /// <summary>The catalogued provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>Description of the shape of a successful response&apos;s `data`.</summary>
+        /// <summary>Description of the shape of a successful response&apos;s `data`. Present only when `toolDetail` is `full`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool_response? Response { get; set; }

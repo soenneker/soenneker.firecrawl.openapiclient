@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Description of the shape of a successful response&apos;s `data`.
+    /// Description of the shape of a successful response&apos;s `data`. Present only when `toolDetail` is `full`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiscoveredTool_response : IAdditionalDataHolder, IParsable

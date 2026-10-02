@@ -23,7 +23,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Capability { get; set; }
 #endif
-        /// <summary>Capability-specific options passed through to the provider tool.</summary>
+        /// <summary>Capability-specific options passed through to the provider tool. For Find Tools (`provider: firecrawl`, `capability: find-tools`), use `FindToolsOptions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options? Options { get; set; }

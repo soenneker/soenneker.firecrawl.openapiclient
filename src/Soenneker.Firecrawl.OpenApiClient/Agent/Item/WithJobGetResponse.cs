@@ -16,7 +16,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creditsUsed property</summary>
         public double? CreditsUsed { get; set; }
-        /// <summary>The extracted data (only present when status is completed)</summary>
+        /// <summary>The extracted data (only present when status is completed). Never set on a failed run, including one that stopped at its credit limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data? Data { get; set; }
@@ -36,10 +36,30 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #endif
         /// <summary>The expiresAt property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
+        /// <summary>A note from the agent about the result. On a failed credit-limit stop, it may explain what is incomplete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
         /// <summary>Model preset used for the agent run. Every new run executes on spark-2; Spark 1 names only appear on legacy runs.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? Model { get; set; }
+        /// <summary>Best-effort JSON recovered from an incomplete run. Only present on some failed runs, such as one that reached `maxCredits`; never present while the run is processing. It may be missing rows or fields, so do not treat it as a completed result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Partial { get; set; }
+#nullable restore
+#else
+        public UntypedNode Partial { get; set; }
+#endif
+        /// <summary>Whether `partial` validates against the request&apos;s JSON schema. Only present when `partial` is present and the request included a `schema`.</summary>
+        public bool? PartialSchemaValid { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get; set; }
+        /// <summary>Why a failed run stopped early. `credit_limit_reached` means the run hit its `maxCredits` limit. Only present when status is failed.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason? StopReason { get; set; }
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -73,8 +93,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
                 { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>(); } },
+                { "partial", n => { Partial = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "partialSchemaValid", n => { PartialSchemaValid = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>(); } },
+                { "stopReason", n => { StopReason = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -90,8 +114,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>("effort", Effort);
             writer.WriteStringValue("error", Error);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
+            writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>("model", Model);
+            writer.WriteObjectValue<UntypedNode>("partial", Partial);
+            writer.WriteBoolValue("partialSchemaValid", PartialSchemaValid);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>("stopReason", StopReason);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

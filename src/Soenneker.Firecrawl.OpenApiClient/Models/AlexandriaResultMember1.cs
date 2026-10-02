@@ -24,13 +24,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>Credits charged for this call.</summary>
         public int? CreditsCost { get; set; }
-        /// <summary>The provider&apos;s response payload.</summary>
+        /// <summary>The provider&apos;s response payload. For Find Tools (`provider: firecrawl`, `capability: find-tools`), this is a `FindToolsData` page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Data { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData? Data { get; set; }
 #nullable restore
 #else
-        public UntypedNode Data { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData Data { get; set; }
 #endif
         /// <summary>The provider that was called.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 { "capability", n => { Capability = n.GetStringValue(); } },
                 { "creditsCost", n => { CreditsCost = n.GetIntValue(); } },
-                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData>(global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData.CreateFromDiscriminatorValue); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "records", n => { Records = n.GetIntValue(); } },
                 { "upstreamStatus", n => { UpstreamStatus = n.GetIntValue(); } },
@@ -86,7 +86,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("capability", Capability);
             writer.WriteIntValue("creditsCost", CreditsCost);
-            writer.WriteObjectValue<UntypedNode>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData>("data", Data);
             writer.WriteStringValue("provider", Provider);
             writer.WriteIntValue("records", Records);
             writer.WriteIntValue("upstreamStatus", UpstreamStatus);

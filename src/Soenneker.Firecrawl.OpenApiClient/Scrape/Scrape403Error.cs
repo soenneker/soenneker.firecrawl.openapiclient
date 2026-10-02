@@ -41,8 +41,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Present when the team must take action (e.g. accept third-party data terms) before this request can be retried.</summary>
-        public bool? RequiresAction { get; set; }
+        /// <summary>Present with `THIRD_PARTY_DATA_TERMS_REQUIRED`. Tells you which provider terms an organization admin must accept before you retry this request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error_requiresAction? RequiresAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error_requiresAction RequiresAction { get; set; }
+#endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -73,7 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "chargeId", n => { ChargeId = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "requiresAction", n => { RequiresAction = n.GetBoolValue(); } },
+                { "requiresAction", n => { RequiresAction = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error_requiresAction>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error_requiresAction.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -87,7 +93,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteStringValue("chargeId", ChargeId);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("error", Error);
-            writer.WriteBoolValue("requiresAction", RequiresAction);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error_requiresAction>("requiresAction", RequiresAction);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

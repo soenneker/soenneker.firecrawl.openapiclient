@@ -8,13 +8,75 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Capability-specific options passed through to the provider tool.
+    /// Capability-specific options passed through to the provider tool. For Find Tools (`provider: firecrawl`, `capability: find-tools`), use `FindToolsOptions`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlexandriaCall_options : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Exact capability IDs to return.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Capabilities { get; set; }
+#nullable restore
+#else
+        public List<string> Capabilities { get; set; }
+#endif
+        /// <summary>Category IDs to browse.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Categories { get; set; }
+#nullable restore
+#else
+        public List<string> Categories { get; set; }
+#endif
+        /// <summary>Contract parts to include on each tool. Use `[&quot;options&quot;, &quot;response&quot;]` for inputs and output shape, add `examples` for example payloads, or use `[]` for compact results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?>? Expand { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?> Expand { get; set; }
+#endif
+        /// <summary>Group IDs to browse.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Groups { get; set; }
+#nullable restore
+#else
+        public List<string> Groups { get; set; }
+#endif
+        /// <summary>The catalogue level to list in `items`.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level? Level { get; set; }
+        /// <summary>Maximum number of items on the page.</summary>
+        public int? Limit { get; set; }
+        /// <summary>Number of items to skip, for pagination.</summary>
+        public int? Offset { get; set; }
+        /// <summary>Provider IDs to browse, e.g. `particle`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Providers { get; set; }
+#nullable restore
+#else
+        public List<string> Providers { get; set; }
+#endif
+        /// <summary>Natural-language description of the data you need. Returns tools that match by meaning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Query { get; set; }
+#nullable restore
+#else
+        public string Query { get; set; }
+#endif
+        /// <summary>Website URLs. Returns tools whose provider matches the domain of a URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Urls { get; set; }
+#nullable restore
+#else
+        public List<string> Urls { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options"/> and sets the default values.
         /// </summary>
@@ -40,6 +102,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "capabilities", n => { Capabilities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "expand", n => { Expand = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand>()?.AsList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "level", n => { Level = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level>(); } },
+                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "offset", n => { Offset = n.GetIntValue(); } },
+                { "providers", n => { Providers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
+                { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,6 +121,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("capabilities", Capabilities);
+            writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand>("expand", Expand);
+            writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level>("level", Level);
+            writer.WriteIntValue("limit", Limit);
+            writer.WriteIntValue("offset", Offset);
+            writer.WriteCollectionOfPrimitiveValues<string>("providers", Providers);
+            writer.WriteStringValue("query", Query);
+            writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

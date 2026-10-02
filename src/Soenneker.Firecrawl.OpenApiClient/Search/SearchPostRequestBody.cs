@@ -115,6 +115,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #endif
         /// <summary>Timeout in milliseconds</summary>
         public int? Timeout { get; set; }
+        /// <summary>How much of each tool contract to return in `data.tools`. `compact` returns only `provider`, `capability`, and `description`. `summary` returns the full tool entry without `options` and `response`. `full` also returns `options`, `response`, and `examples`.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_toolDetail? ToolDetail { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -126,6 +128,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             IgnoreInvalidURLs = false;
             Limit = 10;
             Timeout = 60000;
+            ToolDetail = global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_toolDetail.Compact;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -162,6 +165,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 { "tbs", n => { Tbs = n.GetStringValue(); } },
                 { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
+                { "toolDetail", n => { ToolDetail = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_toolDetail>(); } },
             };
         }
         /// <summary>
@@ -188,6 +192,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteStringValue("tbs", Tbs);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteIntValue("timeout", Timeout);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_toolDetail>("toolDetail", ToolDetail);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Models;
+using Soenneker.Firecrawl.OpenApiClient.Parse.Formats;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParseRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The formats property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsRequestBuilder Formats
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Parse.ParseRequestBuilder"/> and sets the default values.
         /// </summary>
