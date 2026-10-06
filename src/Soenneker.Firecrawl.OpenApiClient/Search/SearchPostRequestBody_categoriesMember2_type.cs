@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     public enum SearchPostRequestBody_categoriesMember2_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "research")]
+        [EnumMember(Value = "gov")]
         #pragma warning disable CS1591
-        Research,
+        Gov,
         #pragma warning restore CS1591
     }
 }

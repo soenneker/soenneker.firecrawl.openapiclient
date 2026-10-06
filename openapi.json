@@ -4484,6 +4484,21 @@
                         },
                         {
                           "type": "object",
+                          "title": "Gov",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "gov"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        },
+                        {
+                          "type": "object",
                           "title": "Research",
                           "properties": {
                             "type": {
@@ -4946,6 +4961,11 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Whether to stream a live view of the browser"
+                  },
+                  "blockAds": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable ad and cookie popup blocking, as in scrape. Sessions started from a scrape with interact use the scrape's blockAds."
                   },
                   "profile": {
                     "type": "object",
@@ -6393,6 +6413,155 @@
           },
           "500": {
             "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/search/gov": {
+      "get": {
+        "summary": "Search the Government Index",
+        "operationId": "govSearch",
+        "tags": [
+          "Government"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "description": "Natural-language question or search phrase.",
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          {
+            "name": "k",
+            "in": "query",
+            "required": false,
+            "description": "Number of results to return.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ranked Government Index results in the `web` group.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GovSearchResponse"
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "web": [
+                      {
+                        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101",
+                        "title": "21 CFR Part 101 -- Food Labeling",
+                        "description": "Nutrition labeling of food shall be provided for all products intended for human consumption...",
+                        "position": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request, including an unknown field"
+          },
+          "401": {
+            "description": "Invalid bearer token"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "502": {
+            "description": "Upstream error"
+          },
+          "504": {
+            "description": "Upstream timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Search the Government Index",
+        "operationId": "govSearchPost",
+        "tags": [
+          "Government"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Natural-language question or search phrase."
+                  },
+                  "k": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "default": 10,
+                    "description": "Number of results to return."
+                  }
+                }
+              },
+              "example": {
+                "query": "food labeling requirements for allergens",
+                "k": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ranked Government Index results in the `web` group.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GovSearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request, including an unknown field"
+          },
+          "401": {
+            "description": "Invalid bearer token"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "502": {
+            "description": "Upstream error"
+          },
+          "504": {
+            "description": "Upstream timeout"
           }
         }
       }
@@ -12398,6 +12567,42 @@
                 "indexed": false
               }
             ]
+          }
+        }
+      },
+      "GovSearchResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "web": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Matched snippet from the source document."
+                    },
+                    "position": {
+                      "type": "integer",
+                      "description": "1-based rank in the result list."
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },

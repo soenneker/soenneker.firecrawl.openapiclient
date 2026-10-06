@@ -16,6 +16,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public int? ActivityTtl { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Enable ad and cookie popup blocking, as in scrape. Sessions started from a scrape with interact use the scrape&apos;s blockAds.</summary>
+        public bool? BlockAds { get; set; }
         /// <summary>Enable persistent storage across interact sessions. Data saved in one session can be loaded in a later session using the same name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,6 +36,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public InteractPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            BlockAds = true;
             StreamWebView = true;
             Ttl = 300;
         }
@@ -56,6 +59,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activityTtl", n => { ActivityTtl = n.GetIntValue(); } },
+                { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile>(global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile.CreateFromDiscriminatorValue); } },
                 { "streamWebView", n => { StreamWebView = n.GetBoolValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
@@ -69,6 +73,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("activityTtl", ActivityTtl);
+            writer.WriteBoolValue("blockAds", BlockAds);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile>("profile", Profile);
             writer.WriteBoolValue("streamWebView", StreamWebView);
             writer.WriteIntValue("ttl", Ttl);

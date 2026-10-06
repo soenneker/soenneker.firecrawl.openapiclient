@@ -196,7 +196,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchPostRequestBody_categories : IComposedTypeWrapper, IParsable
@@ -224,6 +224,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 #nullable restore
 #else
             public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3 SearchPostRequestBodyCategoriesMember3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4? SearchPostRequestBodyCategoriesMember4 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4 SearchPostRequestBodyCategoriesMember4 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -255,6 +263,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 {
                     return SearchPostRequestBodyCategoriesMember3.GetFieldDeserializers();
                 }
+                else if(SearchPostRequestBodyCategoriesMember4 != null)
+                {
+                    return SearchPostRequestBodyCategoriesMember4.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -275,6 +287,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 else if(SearchPostRequestBodyCategoriesMember3 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3>(null, SearchPostRequestBodyCategoriesMember3);
+                }
+                else if(SearchPostRequestBodyCategoriesMember4 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4>(null, SearchPostRequestBodyCategoriesMember4);
                 }
             }
         }

@@ -5,12 +5,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum SearchPostRequestBody_categoriesMember3_type
+    public enum SearchPostRequestBody_categoriesMember4_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "research")]
+        [EnumMember(Value = "pdf")]
         #pragma warning disable CS1591
-        Research,
+        Pdf,
         #pragma warning restore CS1591
     }
 }

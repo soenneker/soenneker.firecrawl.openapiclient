@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Search.Developer;
+using Soenneker.Firecrawl.OpenApiClient.Search.Gov;
 using Soenneker.Firecrawl.OpenApiClient.Search.Item;
 using Soenneker.Firecrawl.OpenApiClient.Search.Research;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         public global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperRequestBuilder Developer
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The gov property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovRequestBuilder Gov
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The research property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.ResearchRequestBuilder Research
