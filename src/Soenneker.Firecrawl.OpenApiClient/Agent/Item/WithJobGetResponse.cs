@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Firecrawl.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -34,9 +35,17 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #else
         public string Error { get; set; }
 #endif
+        /// <summary>What the run did with Alexandria. `toolkits` and `requireApproval` are what the run resolved to after thread inheritance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary? Exchange { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary Exchange { get; set; }
+#endif
         /// <summary>The expiresAt property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>A note from the agent about the result. On a failed credit-limit stop, it may explain what is incomplete.</summary>
+        /// <summary>A note from the agent about the result. In `chat` mode, a follow-up that asks for no new data is answered here instead of in `data`. On a failed credit-limit stop, it may explain what is incomplete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -44,6 +53,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>The mode property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode? Mode { get; set; }
         /// <summary>Model preset used for the agent run. Every new run executes on spark-2; Spark 1 names only appear on legacy runs.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? Model { get; set; }
         /// <summary>Best-effort JSON recovered from an incomplete run. Only present on some failed runs, such as one that reached `maxCredits`; never present while the run is processing. It may be missing rows or fields, so do not treat it as a completed result.</summary>
@@ -56,12 +67,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #endif
         /// <summary>Whether `partial` validates against the request&apos;s JSON schema. Only present when `partial` is present and the request included a `schema`.</summary>
         public bool? PartialSchemaValid { get; set; }
+        /// <summary>What the turn stopped to ask. Answer it on the next turn of the thread with `exchange.approve` or `exchange.decline`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval? PendingApproval { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval PendingApproval { get; set; }
+#endif
         /// <summary>The status property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get; set; }
         /// <summary>Why a failed run stopped early. `credit_limit_reached` means the run hit its `maxCredits` limit. Only present when status is failed.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason? StopReason { get; set; }
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
+        /// <summary>Follow-ups the agent offers for the next turn of the thread.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>? Suggestions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions> Suggestions { get; set; }
+#endif
+        /// <summary>The thread this run belongs to.</summary>
+        public Guid? ThreadId { get; set; }
+        /// <summary>This run&apos;s turn in the thread, starting at 1.</summary>
+        public int? ThreadTurn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse"/> and sets the default values.
         /// </summary>
@@ -92,14 +123,20 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data>(global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data.CreateFromDiscriminatorValue); } },
                 { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode>(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>(); } },
                 { "partial", n => { Partial = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "partialSchemaValid", n => { PartialSchemaValid = n.GetBoolValue(); } },
+                { "pendingApproval", n => { PendingApproval = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>(); } },
                 { "stopReason", n => { StopReason = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
+                { "suggestions", n => { Suggestions = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>(global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "threadId", n => { ThreadId = n.GetGuidValue(); } },
+                { "threadTurn", n => { ThreadTurn = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -113,14 +150,20 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data>("data", Data);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort>("effort", Effort);
             writer.WriteStringValue("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary>("exchange", Exchange);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model>("model", Model);
             writer.WriteObjectValue<UntypedNode>("partial", Partial);
             writer.WriteBoolValue("partialSchemaValid", PartialSchemaValid);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval>("pendingApproval", PendingApproval);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>("stopReason", StopReason);
             writer.WriteBoolValue("success", Success);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>("suggestions", Suggestions);
+            writer.WriteGuidValue("threadId", ThreadId);
+            writer.WriteIntValue("threadTurn", ThreadTurn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

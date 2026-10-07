@@ -76,6 +76,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<string> OgLocaleAlternate { get; set; }
 #endif
+        /// <summary>Set when a third-party data provider served the URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider? Provider { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider Provider { get; set; }
+#endif
         /// <summary>The original URL that was requested. May differ from the page&apos;s final URL if redirects occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +147,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "language", n => { Language = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language.CreateFromDiscriminatorValue); } },
                 { "numPages", n => { NumPages = n.GetIntValue(); } },
                 { "ogLocaleAlternate", n => { OgLocaleAlternate = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider.CreateFromDiscriminatorValue); } },
                 { "sourceURL", n => { SourceURL = n.GetStringValue(); } },
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title.CreateFromDiscriminatorValue); } },
@@ -163,6 +172,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_language>("language", Language);
             writer.WriteIntValue("numPages", NumPages);
             writer.WriteCollectionOfPrimitiveValues<string>("ogLocaleAlternate", OgLocaleAlternate);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider>("provider", Provider);
             writer.WriteStringValue("sourceURL", SourceURL);
             writer.WriteIntValue("statusCode", StatusCode);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_title>("title", Title);

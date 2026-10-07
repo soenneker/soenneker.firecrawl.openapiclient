@@ -25,8 +25,18 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #endif
         /// <summary>Reasoning budget for the agent task. Every run executes on spark-2, so effort can be sent with or without model.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort? Effort { get; set; }
+        /// <summary>Let the agent call your team&apos;s [Alexandria](https://docs.firecrawl.dev/features/alexandria) data providers during the run. Without this object the run uses the web only (a follow-up turn inherits the previous turn&apos;s settings). See [Use your connected Alexandria tools](https://docs.firecrawl.dev/features/agent#use-your-connected-alexandria-tools).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange? Exchange { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange Exchange { get; set; }
+#endif
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
         public double? MaxCredits { get; set; }
+        /// <summary>`extract` returns the complete structured result in `data` every turn. `chat` lets a follow-up that asks for no new data get a short reply in `message` instead of a re-run. `exchange.requireApproval` needs `chat` on the same request. Omitted on a follow-up turn keeps the thread&apos;s mode.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode? Mode { get; set; }
         /// <summary>The model to use for the agent task. spark-2 is the default and the model every run executes on. The Spark 1 model names remain accepted for backwards compatibility but are deprecated and route to spark-2.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? Model { get; set; }
         /// <summary>The prompt describing what data to extract</summary>
@@ -47,6 +57,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #endif
         /// <summary>If true, agent will only visit URLs provided in the urls array</summary>
         public bool? StrictConstrainToURLs { get; set; }
+        /// <summary>Continue an existing thread: pass the `threadId` an earlier run returned, and this request runs as that thread&apos;s next turn. Omitted `urls`, `schema`, `effort`, `mode` and `exchange` settings carry over from the previous turn. Omit `threadId` to start a new thread.</summary>
+        public Guid? ThreadId { get; set; }
         /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +89,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public AgentPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            Mode = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode.Extract;
             Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark2;
         }
         /// <summary>
@@ -99,11 +112,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             {
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>(); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange.CreateFromDiscriminatorValue); } },
                 { "maxCredits", n => { MaxCredits = n.GetDoubleValue(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema.CreateFromDiscriminatorValue); } },
                 { "strictConstrainToURLs", n => { StrictConstrainToURLs = n.GetBoolValue(); } },
+                { "threadId", n => { ThreadId = n.GetGuidValue(); } },
                 { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook.CreateFromDiscriminatorValue); } },
@@ -118,11 +134,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>("effort", Effort);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange>("exchange", Exchange);
             writer.WriteDoubleValue("maxCredits", MaxCredits);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>("model", Model);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>("schema", Schema);
             writer.WriteBoolValue("strictConstrainToURLs", StrictConstrainToURLs);
+            writer.WriteGuidValue("threadId", ThreadId);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>("webhook", Webhook);
