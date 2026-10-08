@@ -33,6 +33,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
 #endif
         /// <summary>Enables ad-blocking and cookie popup blocking.</summary>
         public bool? BlockAds { get; set; }
+        /// <summary>When enabled, scans the page content for prompt injection attempts before any LLM-backed format (such as json, summary or question) runs. Works with any format except rawBase64. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. If the check cannot scan all of the content, the scrape continues with a warning and the check is not billed.</summary>
+        public bool? CheckPromptInjection { get; set; }
         /// <summary>Tags to exclude from the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +160,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         {
             AdditionalData = new Dictionary<string, object>();
             BlockAds = true;
+            CheckPromptInjection = false;
             IgnoreInvalidURLs = true;
             Lockdown = false;
             MaxAge = 172800000;
@@ -193,6 +196,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 { "actions", n => { Actions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
+                { "checkPromptInjection", n => { CheckPromptInjection = n.GetBoolValue(); } },
                 { "excludeTags", n => { ExcludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_headers>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_headers.CreateFromDiscriminatorValue); } },
@@ -231,6 +235,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteObjectValue<UntypedNode>("actions", Actions);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteBoolValue("blockAds", BlockAds);
+            writer.WriteBoolValue("checkPromptInjection", CheckPromptInjection);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeTags", ExcludeTags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.Scrape>("formats", Formats);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_headers>("headers", Headers);

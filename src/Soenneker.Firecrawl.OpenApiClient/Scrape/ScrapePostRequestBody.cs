@@ -41,6 +41,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
 #endif
         /// <summary>Enables ad-blocking and cookie popup blocking.</summary>
         public bool? BlockAds { get; set; }
+        /// <summary>When enabled, scans the page content for prompt injection attempts before any LLM-backed format (such as json, summary or question) runs. Works with any format except rawBase64. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. If the check cannot scan all of the content, the scrape continues with a warning and the check is not billed.</summary>
+        public bool? CheckPromptInjection { get; set; }
         /// <summary>When true on an ordinary URL scrape, `data.tools` lists tool contracts matched to the scraped page&apos;s domain (same `DiscoveredTool` shape as search). Requires the team&apos;s Alexandria access to be enabled and no zero data retention (403 otherwise). Free.</summary>
         public bool? DomainTools { get; set; }
         /// <summary>Tags to exclude from the output.</summary>
@@ -156,6 +158,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         {
             AdditionalData = new Dictionary<string, object>();
             BlockAds = true;
+            CheckPromptInjection = false;
             DomainTools = false;
             Lockdown = false;
             MaxAge = 172800000;
@@ -192,6 +195,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "alexandria", n => { Alexandria = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria.CreateFromDiscriminatorValue); } },
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
+                { "checkPromptInjection", n => { CheckPromptInjection = n.GetBoolValue(); } },
                 { "domainTools", n => { DomainTools = n.GetBoolValue(); } },
                 { "excludeTags", n => { ExcludeTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "formats", n => { Formats = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -229,6 +233,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria>("alexandria", Alexandria);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteBoolValue("blockAds", BlockAds);
+            writer.WriteBoolValue("checkPromptInjection", CheckPromptInjection);
             writer.WriteBoolValue("domainTools", DomainTools);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeTags", ExcludeTags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>("formats", Formats);
