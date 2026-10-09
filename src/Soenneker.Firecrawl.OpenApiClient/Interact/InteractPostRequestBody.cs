@@ -18,6 +18,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable ad and cookie popup blocking, as in scrape. Sessions started from a scrape with interact use the scrape&apos;s blockAds.</summary>
         public bool? BlockAds { get; set; }
+        /// <summary>Country the session browses from. Defaults to the US. Sessions started from a scrape with interact use the scrape&apos;s location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location? Location { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location Location { get; set; }
+#endif
         /// <summary>Enable persistent storage across interact sessions. Data saved in one session can be loaded in a later session using the same name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +68,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             {
                 { "activityTtl", n => { ActivityTtl = n.GetIntValue(); } },
                 { "blockAds", n => { BlockAds = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location>(global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location.CreateFromDiscriminatorValue); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile>(global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile.CreateFromDiscriminatorValue); } },
                 { "streamWebView", n => { StreamWebView = n.GetBoolValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
@@ -74,6 +83,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("activityTtl", ActivityTtl);
             writer.WriteBoolValue("blockAds", BlockAds);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location>("location", Location);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile>("profile", Profile);
             writer.WriteBoolValue("streamWebView", StreamWebView);
             writer.WriteIntValue("ttl", Ttl);
