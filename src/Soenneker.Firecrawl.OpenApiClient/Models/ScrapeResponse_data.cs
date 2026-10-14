@@ -30,6 +30,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string Answer { get; set; }
 #endif
+        /// <summary>Attribute values extracted by the `attributes` format. Only present if an `attributes` format object was included in `formats`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_attributes>? Attributes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_attributes> Attributes { get; set; }
+#endif
         /// <summary>Signed URL to the extracted MP3 audio file if `audio` is in `formats`. The signed URL expires after 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +217,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions.CreateFromDiscriminatorValue); } },
                 { "answer", n => { Answer = n.GetStringValue(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_attributes>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_attributes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audio", n => { Audio = n.GetStringValue(); } },
                 { "blocks", n => { Blocks = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "branding", n => { Branding = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding.CreateFromDiscriminatorValue); } },
@@ -239,6 +248,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions>("actions", Actions);
             writer.WriteStringValue("answer", Answer);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_attributes>("attributes", Attributes);
             writer.WriteStringValue("audio", Audio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_blocks>("blocks", Blocks);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding>("branding", Branding);

@@ -5,7 +5,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum MonitorMember10_modes
+    public enum MonitorMember11_modes
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "git-diff")]

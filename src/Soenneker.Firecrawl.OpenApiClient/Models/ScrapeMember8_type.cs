@@ -8,9 +8,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public enum ScrapeMember8_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "screenshot")]
+        [EnumMember(Value = "attributes")]
         #pragma warning disable CS1591
-        Screenshot,
+        Attributes,
         #pragma warning restore CS1591
     }
 }

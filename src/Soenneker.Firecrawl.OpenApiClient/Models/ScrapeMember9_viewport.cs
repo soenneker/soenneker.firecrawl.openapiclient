@@ -7,30 +7,33 @@ using System.IO;
 using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
-    /// <summary>
-    /// The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScrapeMember9_schema : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class ScrapeMember9_viewport : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The height of the viewport in pixels</summary>
+        public int? Height { get; set; }
+        /// <summary>The width of the viewport in pixels</summary>
+        public int? Width { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_viewport"/> and sets the default values.
         /// </summary>
-        public ScrapeMember9_schema()
+        public ScrapeMember9_viewport()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_viewport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_viewport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_schema();
+            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9_viewport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +43,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +54,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("height", Height);
+            writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

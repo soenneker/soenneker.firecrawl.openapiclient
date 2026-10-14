@@ -91,13 +91,13 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         public bool? OnlyCleanContent { get; set; }
         /// <summary>Only return the main content of the page excluding headers, navs, footers, etc. This is a deterministic HTML-level filter applied before markdown is generated; no LLM is involved.</summary>
         public bool? OnlyMainContent { get; set; }
-        /// <summary>Controls how files are processed during scraping. When &quot;pdf&quot; is included (default), the PDF content is extracted and converted to markdown format, with billing based on the number of pages (1 credit per page). When an empty array is passed, the PDF file is returned in base64 encoding with a flat rate of 1 credit for the entire PDF.</summary>
+        /// <summary>Controls how files are processed during scraping. Each item is a parser name (`&quot;pdf&quot;` or `&quot;image&quot;`) or a parser object. Both parsers are on by default. - **pdf**: PDF content is extracted and converted to markdown format, with billing based on the number of pages (1 credit per page). - **image**: Raster images (PNG, JPEG, JPEG 2000, TIFF, GIF, BMP, WebP, AVIF) are OCR&apos;d as one-page documents and converted to markdown. SVG and HEIC are not supported.If you pass a list, parsers that are not in the list are off. For example, `[&quot;pdf&quot;]` turns off image OCR, so image URLs fail as unsupported files. When an empty array is passed, the PDF file is returned in base64 encoding with a flat rate of 1 credit for the entire PDF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers>? Parsers { get; set; }
+        public List<string>? Parsers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers> Parsers { get; set; }
+        public List<string> Parsers { get; set; }
 #endif
         /// <summary>Enable persistent browser storage across scrape and interact sessions. Pass a profile when scraping to preserve cookies, localStorage, and session data. Sessions with the same profile name share browser state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -210,7 +210,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 { "mobile", n => { Mobile = n.GetBoolValue(); } },
                 { "onlyCleanContent", n => { OnlyCleanContent = n.GetBoolValue(); } },
                 { "onlyMainContent", n => { OnlyMainContent = n.GetBoolValue(); } },
-                { "parsers", n => { Parsers = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "parsers", n => { Parsers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile.CreateFromDiscriminatorValue); } },
                 { "proxy", n => { Proxy = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_proxy>(); } },
                 { "redactPII", n => { RedactPII = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII>(global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII.CreateFromDiscriminatorValue); } },
@@ -249,7 +249,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteBoolValue("mobile", Mobile);
             writer.WriteBoolValue("onlyCleanContent", OnlyCleanContent);
             writer.WriteBoolValue("onlyMainContent", OnlyMainContent);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_parsers>("parsers", Parsers);
+            writer.WriteCollectionOfPrimitiveValues<string>("parsers", Parsers);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_profile>("profile", Profile);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_proxy>("proxy", Proxy);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII>("redactPII", RedactPII);
@@ -265,7 +265,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember17"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember10"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember12"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember13"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember14"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember15"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember16"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember17"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember18"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember4"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember5"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember6"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember7"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember8"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Scrape : IComposedTypeWrapper, IParsable
@@ -341,6 +341,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
 #nullable restore
 #else
             public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember17 ScrapeMember17 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember18"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember18? ScrapeMember18 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember18 ScrapeMember18 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -460,6 +468,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 {
                     return ScrapeMember17.GetFieldDeserializers();
                 }
+                else if(ScrapeMember18 != null)
+                {
+                    return ScrapeMember18.GetFieldDeserializers();
+                }
                 else if(ScrapeMember2 != null)
                 {
                     return ScrapeMember2.GetFieldDeserializers();
@@ -536,6 +548,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
                 else if(ScrapeMember17 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember17>(null, ScrapeMember17);
+                }
+                else if(ScrapeMember18 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember18>(null, ScrapeMember18);
                 }
                 else if(ScrapeMember2 != null)
                 {
