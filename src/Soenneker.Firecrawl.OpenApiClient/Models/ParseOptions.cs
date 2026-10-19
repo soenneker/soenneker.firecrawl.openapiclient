@@ -59,7 +59,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<string> IncludeTags { get; set; }
 #endif
-        /// <summary>Optional integration identifier.</summary>
+        /// <summary>Optional integration identifier. When omitted, a valid `X-Integration` request header is used instead; the body value takes precedence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Integration { get; set; }
