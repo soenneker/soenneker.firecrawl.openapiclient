@@ -33,6 +33,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange Exchange { get; set; }
 #endif
+        /// <summary>Proxy country for every request the agent makes during the run: scrapes, batch scrapes and browser sessions go out from this country, and the agent cannot change it. Search results are localized to the country. Omitted on a follow-up turn keeps the thread&apos;s country. See [Choosing a location](https://docs.firecrawl.dev/features/agent#choosing-a-location).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location? Location { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location Location { get; set; }
+#endif
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
         public double? MaxCredits { get; set; }
         /// <summary>`extract` returns the complete structured result in `data` every turn. `chat` lets a follow-up that asks for no new data get a short reply in `message` instead of a re-run. `exchange.requireApproval` needs `chat` on the same request. Omitted on a follow-up turn keeps the thread&apos;s mode.</summary>
@@ -113,6 +121,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "auditMetadata", n => { AuditMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata.CreateFromDiscriminatorValue); } },
                 { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>(); } },
                 { "exchange", n => { Exchange = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location.CreateFromDiscriminatorValue); } },
                 { "maxCredits", n => { MaxCredits = n.GetDoubleValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>(); } },
@@ -135,6 +144,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata>("auditMetadata", AuditMetadata);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort>("effort", Effort);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange>("exchange", Exchange);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location>("location", Location);
             writer.WriteDoubleValue("maxCredits", MaxCredits);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>("model", Model);
