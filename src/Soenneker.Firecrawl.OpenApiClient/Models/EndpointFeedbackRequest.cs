@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// Submit feedback for a v2 job. Include at least one substantive signal such as issues, note, valuableSources, missingContent, querySuggestions, url, or pageNumbers.
+    /// Submit feedback for a v2 job. Include at least one substantive signal such as issues, note, valuableSources, valuableResults for search, missingContent, querySuggestions, url, or pageNumbers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EndpointFeedbackRequest : global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest, IParsable

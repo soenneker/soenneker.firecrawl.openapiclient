@@ -25,10 +25,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Null when outcome is succeeded; otherwise the structured error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceError? Error { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_error? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceError Error { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_error Error { get; set; }
 #endif
         /// <summary>Unique ID of this event.</summary>
         public Guid? EventId { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceError>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_error>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_error.CreateFromDiscriminatorValue); } },
                 { "eventId", n => { EventId = n.GetGuidValue(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_outcome>(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent>("agent", Agent);
-            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_error>("error", Error);
             writer.WriteGuidValue("eventId", EventId);
             writer.WriteDateTimeOffsetValue("occurredAt", OccurredAt);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3_outcome>("outcome", Outcome);

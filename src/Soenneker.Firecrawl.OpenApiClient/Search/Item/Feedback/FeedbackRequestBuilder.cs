@@ -37,7 +37,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         /// Submit feedback for a search job
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse"/></returns>
-        /// <param name="body">For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
+        /// <param name="body">For &apos;good&apos;, include valuableSources or valuableResults. For &apos;partial&apos;, include valuableSources, valuableResults, or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse">When receiving a 400 status code</exception>
@@ -70,7 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
         /// Submit feedback for a search job
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
+        /// <param name="body">For &apos;good&apos;, include valuableSources or valuableResults. For &apos;partial&apos;, include valuableSources, valuableResults, or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

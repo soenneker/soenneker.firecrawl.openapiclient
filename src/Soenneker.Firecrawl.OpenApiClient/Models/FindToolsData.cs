@@ -28,10 +28,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>An `alexandria` call for the next page of this listing, or `null` on the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall? Next { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall Next { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next Next { get; set; }
 #endif
         /// <summary>Total number of entries that match the selectors.</summary>
         public int? Total { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>(global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "level", n => { Level = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level>(); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall>(global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall.CreateFromDiscriminatorValue); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next>(global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next.CreateFromDiscriminatorValue); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>("items", Items);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level>("level", Level);
-            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next>("next", Next);
             writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }

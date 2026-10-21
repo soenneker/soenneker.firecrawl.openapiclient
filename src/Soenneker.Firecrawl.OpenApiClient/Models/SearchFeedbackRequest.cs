@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Firecrawl.OpenApiClient.Models
 {
     /// <summary>
-    /// For &apos;good&apos;, include valuableSources. For &apos;partial&apos;, include valuableSources or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.
+    /// For &apos;good&apos;, include valuableSources or valuableResults. For &apos;partial&apos;, include valuableSources, valuableResults, or missingContent. For &apos;bad&apos;, include missingContent or querySuggestions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchFeedbackRequest : IAdditionalDataHolder, IParsable
@@ -49,6 +49,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>The rating property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? Rating { get; set; }
+        /// <summary>Results that were useful, each addressed by the `data` group it appears in and its 1-indexed position within that group. Results are returned grouped (`data.web`, `data.images`, `data.news`) and each group is numbered from 1 independently, so `source` is required. List every useful result; unlisted results are treated as not useful. Positions beyond what the group actually returned are ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? ValuableResults { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> ValuableResults { get; set; }
+#endif
         /// <summary>The valuableSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +96,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "querySuggestions", n => { QuerySuggestions = n.GetStringValue(); } },
                 { "rating", n => { Rating = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating>(); } },
+                { "valuableResults", n => { ValuableResults = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "valuableSources", n => { ValuableSources = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -103,6 +112,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("querySuggestions", QuerySuggestions);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating>("rating", Rating);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>("valuableResults", ValuableResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>("valuableSources", ValuableSources);
             writer.WriteAdditionalData(AdditionalData);
         }
