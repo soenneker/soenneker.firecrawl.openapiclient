@@ -91,6 +91,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook Webhook { get; set; }
 #endif
+        /// <summary>Run the agent with Zero Data Retention: Firecrawl keeps no prompt, result or step content in logs or storage, only billing and status metadata. The result is kept for 24 hours for retrieval, then deleted. Requires Scrape ZDR and Search ZDR to be enabled for your team, otherwise the request returns 400 `zdr_not_enabled`. Cannot be combined with `threadId`. With `exchange`, only capabilities that support ZDR are used. See [Zero Data Retention](https://docs.firecrawl.dev/features/agent#zero-data-retention-zdr).</summary>
+        public bool? ZeroDataRetention { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -99,6 +101,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             AdditionalData = new Dictionary<string, object>();
             Mode = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode.Extract;
             Model = global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model.Spark2;
+            ZeroDataRetention = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -132,6 +135,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "threatProtection", n => { ThreatProtection = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>(global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook.CreateFromDiscriminatorValue); } },
+                { "zeroDataRetention", n => { ZeroDataRetention = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -155,6 +159,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>("webhook", Webhook);
+            writer.WriteBoolValue("zeroDataRetention", ZeroDataRetention);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,6 +12,40 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
     public partial class GovPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Keep only pages that cite one law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cites { get; set; }
+#nullable restore
+#else
+        public string Cites { get; set; }
+#endif
+        /// <summary>Keep only pages labeled for one court, by CourtListener court id, such as `scotus`, `ca9` or `nysd`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Court { get; set; }
+#nullable restore
+#else
+        public string Court { get; set; }
+#endif
+        /// <summary>Keep only pages from one type of court: `federal-supreme`, `federal-appellate`, `federal-district`, `federal-bankruptcy`, `federal-special`, `military`, `state-supreme`, `state-appellate`, `state-trial`, `state-special`, `state-attorney-general`.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType? CourtType { get; set; }
+        /// <summary>Keep only pages from one site, such as `irs.gov`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Domain { get; set; }
+#nullable restore
+#else
+        public string Domain { get; set; }
+#endif
+        /// <summary>Keep only pages of one jurisdiction: `us` for federal, or `us-` plus a two-letter state or territory code, such as `us-ca` or `us-dc`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Jurisdiction { get; set; }
+#nullable restore
+#else
+        public string Jurisdiction { get; set; }
+#endif
         /// <summary>Number of results to return.</summary>
         public int? K { get; set; }
         /// <summary>Natural-language question or search phrase.</summary>
@@ -47,6 +81,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cites", n => { Cites = n.GetStringValue(); } },
+                { "court", n => { Court = n.GetStringValue(); } },
+                { "courtType", n => { CourtType = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType>(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetStringValue(); } },
                 { "k", n => { K = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
             };
@@ -58,6 +97,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("cites", Cites);
+            writer.WriteStringValue("court", Court);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType>("courtType", CourtType);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("jurisdiction", Jurisdiction);
             writer.WriteIntValue("k", K);
             writer.WriteStringValue("query", Query);
         }

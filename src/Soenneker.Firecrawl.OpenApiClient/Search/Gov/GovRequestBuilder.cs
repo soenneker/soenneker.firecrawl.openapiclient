@@ -22,7 +22,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GovRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?k*}", pathParameters)
+        public GovRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GovRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?k*}", rawUrl)
+        public GovRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovRequestBuilder.GovRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/search/gov?query={query}{&k*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/search/gov?query={query}{&cites*,court*,courtType*,domain*,jurisdiction*,k*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -127,6 +127,49 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovRequestBuilderGetQueryParameters 
         {
+            /// <summary>Keep only pages that cite one law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cites")]
+            public string? Cites { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cites")]
+            public string Cites { get; set; }
+#endif
+            /// <summary>Keep only pages labeled for one court, by CourtListener court id, such as `scotus`, `ca9` or `nysd`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("court")]
+            public string? Court { get; set; }
+#nullable restore
+#else
+            [QueryParameter("court")]
+            public string Court { get; set; }
+#endif
+            /// <summary>Keep only pages from one type of court: `federal-supreme`, `federal-appellate`, `federal-district`, `federal-bankruptcy`, `federal-special`, `military`, `state-supreme`, `state-appellate`, `state-trial`, `state-special`, `state-attorney-general`.</summary>
+            [QueryParameter("courtType")]
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GetCourtTypeQueryParameterType? CourtType { get; set; }
+            /// <summary>Keep only pages from one site, such as `irs.gov`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("domain")]
+            public string? Domain { get; set; }
+#nullable restore
+#else
+            [QueryParameter("domain")]
+            public string Domain { get; set; }
+#endif
+            /// <summary>Keep only pages of one jurisdiction: `us` for federal, or `us-` plus a two-letter state or territory code, such as `us-ca` or `us-dc`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("jurisdiction")]
+            public string? Jurisdiction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("jurisdiction")]
+            public string Jurisdiction { get; set; }
+#endif
             /// <summary>Number of results to return.</summary>
             [QueryParameter("k")]
             public int? K { get; set; }
