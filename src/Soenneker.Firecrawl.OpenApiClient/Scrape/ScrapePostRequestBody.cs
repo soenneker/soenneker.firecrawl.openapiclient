@@ -623,7 +623,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 {
                     result.ScrapePostRequestBodyAlexandriaAlexandriaCall = new global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall();
                 }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall> alexandriaCallValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall>(global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.AlexandriaCall> alexandriaCallValue)
                 {
                     result.AlexandriaCall = alexandriaCallValue;
                 }
