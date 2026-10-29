@@ -27,6 +27,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public string Prompt { get; set; }
 #endif
+        /// <summary>Whether the run&apos;s web searches filtered explicit content (only present for runs that set `safe: true`)</summary>
+        public bool? Safe { get; set; }
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_effort>(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_model>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
+                { "safe", n => { Safe = n.GetBoolValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_schema>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_schema.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -85,6 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_effort>("effort", Effort);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_model>("model", Model);
             writer.WriteStringValue("prompt", Prompt);
+            writer.WriteBoolValue("safe", Safe);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_schema>("schema", Schema);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);

@@ -55,6 +55,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 #else
         public string Prompt { get; set; }
 #endif
+        /// <summary>When `true`, every web search the agent makes during the run filters explicit content, the same filter as the search endpoint&apos;s `safe` option. Pages the agent scrapes or opens in a browser are not filtered. Omit to keep the default behavior, which does not apply the filter. Omitted on a follow-up turn keeps the thread&apos;s setting; `false` turns it off.</summary>
+        public bool? Safe { get; set; }
         /// <summary>Optional JSON schema to structure the extracted data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +131,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
+                { "safe", n => { Safe = n.GetBoolValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema.CreateFromDiscriminatorValue); } },
                 { "strictConstrainToURLs", n => { StrictConstrainToURLs = n.GetBoolValue(); } },
                 { "threadId", n => { ThreadId = n.GetGuidValue(); } },
@@ -153,6 +156,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model>("model", Model);
             writer.WriteStringValue("prompt", Prompt);
+            writer.WriteBoolValue("safe", Safe);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema>("schema", Schema);
             writer.WriteBoolValue("strictConstrainToURLs", StrictConstrainToURLs);
             writer.WriteGuidValue("threadId", ThreadId);

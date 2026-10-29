@@ -75,6 +75,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
 #else
         public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval PendingApproval { get; set; }
 #endif
+        /// <summary>Whether the run&apos;s web searches filtered explicit content (only present for runs that set `safe: true`)</summary>
+        public bool? Safe { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get; set; }
         /// <summary>Why a failed run stopped early. `credit_limit_reached` means the run hit its `maxCredits` limit. Only present when status is failed.</summary>
@@ -131,6 +133,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
                 { "partial", n => { Partial = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "partialSchemaValid", n => { PartialSchemaValid = n.GetBoolValue(); } },
                 { "pendingApproval", n => { PendingApproval = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval.CreateFromDiscriminatorValue); } },
+                { "safe", n => { Safe = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>(); } },
                 { "stopReason", n => { StopReason = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -158,6 +161,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             writer.WriteObjectValue<UntypedNode>("partial", Partial);
             writer.WriteBoolValue("partialSchemaValid", PartialSchemaValid);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval>("pendingApproval", PendingApproval);
+            writer.WriteBoolValue("safe", Safe);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason>("stopReason", StopReason);
             writer.WriteBoolValue("success", Success);
