@@ -11,98 +11,140 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScrapeResponse_data_menu_sections_items : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("availability") is { } nullNodeAvailability && nullNodeAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Availability = null;
+            if (parseNode.GetChildNode("calories") is { } nullNodeCalories && nullNodeCalories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calories = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("dietary") is { } nullNodeDietary && nullNodeDietary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dietary = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("identifiers") is { } nullNodeIdentifiers && nullNodeIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifiers = null;
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("optionGroups") is { } nullNodeOptionGroups && nullNodeOptionGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionGroups = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("sourceUrl") is { } nullNodeSourceUrl && nullNodeSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUrl = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availability of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability? Availability { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability? Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability? _explicitNullValueAvailability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability Availability { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_availability _explicitNullValueAvailability = default!;
 #endif
         /// <summary>The item&apos;s calorie count.</summary>
-        public double? Calories { get; set; }
+        public double? Calories { get => _explicitNullValueCalories; set { _explicitNullValueCalories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calories"); else _explicitNullProperties?.Remove("calories"); } }
+        private double? _explicitNullValueCalories = default!;
         /// <summary>The item description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Dietary tags for the item (e.g. [&apos;vegetarian&apos;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Dietary { get; set; }
+        public List<string>? Dietary { get => _explicitNullValueDietary; set { _explicitNullValueDietary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dietary"); else _explicitNullProperties?.Remove("dietary"); } }
+        private List<string>? _explicitNullValueDietary = default!;
 #nullable restore
 #else
-        public List<string> Dietary { get; set; }
+        public List<string> Dietary { get => _explicitNullValueDietary; set { _explicitNullValueDietary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dietary"); else _explicitNullProperties?.Remove("dietary"); } }
+        private List<string> _explicitNullValueDietary = default!;
 #endif
         /// <summary>The item identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Merchant-specific identifiers for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers? Identifiers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers? Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers? _explicitNullValueIdentifiers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers Identifiers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers Identifiers { get => _explicitNullValueIdentifiers; set { _explicitNullValueIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifiers"); else _explicitNullProperties?.Remove("identifiers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_identifiers _explicitNullValueIdentifiers = default!;
 #endif
         /// <summary>Item images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images>? Images { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images> Images { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_images> _explicitNullValueImages = default!;
 #endif
         /// <summary>The item name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Option/modifier groups for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups>? OptionGroups { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups>? OptionGroups { get => _explicitNullValueOptionGroups; set { _explicitNullValueOptionGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionGroups"); else _explicitNullProperties?.Remove("optionGroups"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups>? _explicitNullValueOptionGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups> OptionGroups { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups> OptionGroups { get => _explicitNullValueOptionGroups; set { _explicitNullValueOptionGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionGroups"); else _explicitNullProperties?.Remove("optionGroups"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_optionGroups> _explicitNullValueOptionGroups = default!;
 #endif
         /// <summary>The price of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price? Price { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price Price { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price _explicitNullValuePrice = default!;
 #endif
         /// <summary>The URL the item was extracted from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl { get; set; }
+        public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string? _explicitNullValueSourceUrl = default!;
 #nullable restore
 #else
-        public string SourceUrl { get; set; }
+        public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string _explicitNullValueSourceUrl = default!;
 #endif
         /// <summary>The canonical URL of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items"/> and sets the default values.
@@ -119,7 +161,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +204,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_menu_sections_items_price>("price", Price);
             writer.WriteStringValue("sourceUrl", SourceUrl);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

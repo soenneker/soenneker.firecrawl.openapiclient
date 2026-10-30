@@ -11,20 +11,34 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorNotification_email : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("includeDiffs") is { } nullNodeIncludeDiffs && nullNodeIncludeDiffs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDiffs = null;
+            if (parseNode.GetChildNode("recipients") is { } nullNodeRecipients && nullNodeRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipients = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Include changed page details in email summaries.</summary>
-        public bool? IncludeDiffs { get; set; }
+        public bool? IncludeDiffs { get => _explicitNullValueIncludeDiffs; set { _explicitNullValueIncludeDiffs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeDiffs"); else _explicitNullProperties?.Remove("includeDiffs"); } }
+        private bool? _explicitNullValueIncludeDiffs = default!;
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Recipients { get; set; }
+        public List<string>? Recipients { get => _explicitNullValueRecipients; set { _explicitNullValueRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipients"); else _explicitNullProperties?.Remove("recipients"); } }
+        private List<string>? _explicitNullValueRecipients = default!;
 #nullable restore
 #else
-        public List<string> Recipients { get; set; }
+        public List<string> Recipients { get => _explicitNullValueRecipients; set { _explicitNullValueRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipients"); else _explicitNullProperties?.Remove("recipients"); } }
+        private List<string> _explicitNullValueRecipients = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorNotification_email"/> and sets the default values.
@@ -43,7 +57,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorNotification_email CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorNotification_email();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorNotification_email(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +82,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("includeDiffs", IncludeDiffs);
             writer.WriteCollectionOfPrimitiveValues<string>("recipients", Recipients);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

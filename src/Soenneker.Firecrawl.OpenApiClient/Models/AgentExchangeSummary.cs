@@ -12,42 +12,68 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentExchangeSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creditsUsed") is { } nullNodeCreditsUsed && nullNodeCreditsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsUsed = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("onTermsRequired") is { } nullNodeOnTermsRequired && nullNodeOnTermsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnTermsRequired = null;
+            if (parseNode.GetChildNode("paidCalls") is { } nullNodePaidCalls && nullNodePaidCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidCalls = null;
+            if (parseNode.GetChildNode("requireApproval") is { } nullNodeRequireApproval && nullNodeRequireApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApproval = null;
+            if (parseNode.GetChildNode("requiresAction") is { } nullNodeRequiresAction && nullNodeRequiresAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresAction = null;
+            if (parseNode.GetChildNode("skippedProviders") is { } nullNodeSkippedProviders && nullNodeSkippedProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedProviders = null;
+            if (parseNode.GetChildNode("toolkits") is { } nullNodeToolkits && nullNodeToolkits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toolkits = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Credits the provider calls used, or null when unknown.</summary>
-        public double? CreditsUsed { get; set; }
+        public double? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsUsed"); else _explicitNullProperties?.Remove("creditsUsed"); } }
+        private double? _explicitNullValueCreditsUsed = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The onTermsRequired property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? OnTermsRequired { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? OnTermsRequired { get => _explicitNullValueOnTermsRequired; set { _explicitNullValueOnTermsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onTermsRequired"); else _explicitNullProperties?.Remove("onTermsRequired"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? _explicitNullValueOnTermsRequired = default!;
         /// <summary>Paid provider calls the run made.</summary>
-        public int? PaidCalls { get; set; }
+        public int? PaidCalls { get => _explicitNullValuePaidCalls; set { _explicitNullValuePaidCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidCalls"); else _explicitNullProperties?.Remove("paidCalls"); } }
+        private int? _explicitNullValuePaidCalls = default!;
         /// <summary>The requireApproval property</summary>
-        public bool? RequireApproval { get; set; }
+        public bool? RequireApproval { get => _explicitNullValueRequireApproval; set { _explicitNullValueRequireApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireApproval"); else _explicitNullProperties?.Remove("requireApproval"); } }
+        private bool? _explicitNullValueRequireApproval = default!;
         /// <summary>`onTermsRequired: &quot;ask&quot;` only, when a terms offer ended the turn: the calls to view and accept each provider&apos;s terms. Nothing here runs for you, and `terms/accept` must only be called after your user explicitly agrees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? RequiresAction { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? _explicitNullValueRequiresAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction RequiresAction { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction _explicitNullValueRequiresAction = default!;
 #endif
         /// <summary>Providers that would have helped but need data terms your team has not accepted. Any `onTermsRequired` mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? SkippedProviders { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? _explicitNullValueSkippedProviders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> SkippedProviders { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> _explicitNullValueSkippedProviders = default!;
 #endif
         /// <summary>Pinned providers. Empty or absent means every provider the team can use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Toolkits { get; set; }
+        public List<string>? Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        private List<string>? _explicitNullValueToolkits = default!;
 #nullable restore
 #else
-        public List<string> Toolkits { get; set; }
+        public List<string> Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        private List<string> _explicitNullValueToolkits = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary"/> and sets the default values.
@@ -64,7 +90,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +125,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction>("requiresAction", RequiresAction);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>("skippedProviders", SkippedProviders);
             writer.WriteCollectionOfPrimitiveValues<string>("toolkits", Toolkits);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

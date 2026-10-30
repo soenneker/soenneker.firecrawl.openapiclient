@@ -60,6 +60,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage
             {
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsage404Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsage500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,15 +11,28 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SupportDocsSearchResponse_usage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("inputTokens") is { } nullNodeInputTokens && nullNodeInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTokens = null;
+            if (parseNode.GetChildNode("outputTokens") is { } nullNodeOutputTokens && nullNodeOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputTokens = null;
+            if (parseNode.GetChildNode("totalTokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The inputTokens property</summary>
-        public int? InputTokens { get; set; }
+        public int? InputTokens { get => _explicitNullValueInputTokens; set { _explicitNullValueInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputTokens"); else _explicitNullProperties?.Remove("inputTokens"); } }
+        private int? _explicitNullValueInputTokens = default!;
         /// <summary>The outputTokens property</summary>
-        public int? OutputTokens { get; set; }
+        public int? OutputTokens { get => _explicitNullValueOutputTokens; set { _explicitNullValueOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputTokens"); else _explicitNullProperties?.Remove("outputTokens"); } }
+        private int? _explicitNullValueOutputTokens = default!;
         /// <summary>The totalTokens property</summary>
-        public int? TotalTokens { get; set; }
+        public int? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTokens"); else _explicitNullProperties?.Remove("totalTokens"); } }
+        private int? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteIntValue("inputTokens", InputTokens);
             writer.WriteIntValue("outputTokens", OutputTokens);
             writer.WriteIntValue("totalTokens", TotalTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

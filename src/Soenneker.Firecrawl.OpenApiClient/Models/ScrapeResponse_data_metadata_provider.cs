@@ -12,26 +12,41 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_metadata_provider : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creditsCost") is { } nullNodeCreditsCost && nullNodeCreditsCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsCost = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>What that access cost, in credits.</summary>
-        public int? CreditsCost { get; set; }
+        public int? CreditsCost { get => _explicitNullValueCreditsCost; set { _explicitNullValueCreditsCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsCost"); else _explicitNullProperties?.Remove("creditsCost"); } }
+        private int? _explicitNullValueCreditsCost = default!;
         /// <summary>The provider that returned the data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Each provider tried, in order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps>? Steps { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps>? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps>? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps> Steps { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps> Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps> _explicitNullValueSteps = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteIntValue("creditsCost", CreditsCost);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata_provider_steps>("steps", Steps);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

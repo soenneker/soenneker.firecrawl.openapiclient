@@ -57,6 +57,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.Errors
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.Errors.CrawlErrorsResponseObj402Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.Errors.CrawlErrorsResponseObj429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.Item.Errors.CrawlErrorsResponseObj500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

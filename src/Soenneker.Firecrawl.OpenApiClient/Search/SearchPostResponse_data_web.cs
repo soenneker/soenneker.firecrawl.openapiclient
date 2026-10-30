@@ -11,96 +11,136 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     #pragma warning disable CS1591
     public partial class SearchPostResponse_data_web : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("html") is { } nullNodeHtml && nullNodeHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Html = null;
+            if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("markdown") is { } nullNodeMarkdown && nullNodeMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Markdown = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("rawHtml") is { } nullNodeRawHtml && nullNodeRawHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawHtml = null;
+            if (parseNode.GetChildNode("screenshot") is { } nullNodeScreenshot && nullNodeScreenshot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshot = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("video") is { } nullNodeVideo && nullNodeVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Video = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signed URL to the extracted MP3 audio file if `audio` is in `formats`. The signed URL expires after 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Audio { get; set; }
+        public string? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private string? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public string Audio { get; set; }
+        public string Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private string _explicitNullValueAudio = default!;
 #endif
         /// <summary>Description from search result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>HTML content if requested in formats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Html { get; set; }
+        public string? Html { get => _explicitNullValueHtml; set { _explicitNullValueHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html"); else _explicitNullProperties?.Remove("html"); } }
+        private string? _explicitNullValueHtml = default!;
 #nullable restore
 #else
-        public string Html { get; set; }
+        public string Html { get => _explicitNullValueHtml; set { _explicitNullValueHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html"); else _explicitNullProperties?.Remove("html"); } }
+        private string _explicitNullValueHtml = default!;
 #endif
         /// <summary>Links found if requested in formats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Links { get; set; }
+        public List<string>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string>? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public List<string> Links { get; set; }
+        public List<string> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string> _explicitNullValueLinks = default!;
 #endif
         /// <summary>Markdown content if scraping was requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Markdown { get; set; }
+        public string? Markdown { get => _explicitNullValueMarkdown; set { _explicitNullValueMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown"); else _explicitNullProperties?.Remove("markdown"); } }
+        private string? _explicitNullValueMarkdown = default!;
 #nullable restore
 #else
-        public string Markdown { get; set; }
+        public string Markdown { get => _explicitNullValueMarkdown; set { _explicitNullValueMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown"); else _explicitNullProperties?.Remove("markdown"); } }
+        private string _explicitNullValueMarkdown = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata? Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web_metadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Raw HTML content if requested in formats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawHtml { get; set; }
+        public string? RawHtml { get => _explicitNullValueRawHtml; set { _explicitNullValueRawHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawHtml"); else _explicitNullProperties?.Remove("rawHtml"); } }
+        private string? _explicitNullValueRawHtml = default!;
 #nullable restore
 #else
-        public string RawHtml { get; set; }
+        public string RawHtml { get => _explicitNullValueRawHtml; set { _explicitNullValueRawHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawHtml"); else _explicitNullProperties?.Remove("rawHtml"); } }
+        private string _explicitNullValueRawHtml = default!;
 #endif
         /// <summary>Screenshot URL if requested in formats. Screenshots expire after 24 hours and can no longer be downloaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Screenshot { get; set; }
+        public string? Screenshot { get => _explicitNullValueScreenshot; set { _explicitNullValueScreenshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshot"); else _explicitNullProperties?.Remove("screenshot"); } }
+        private string? _explicitNullValueScreenshot = default!;
 #nullable restore
 #else
-        public string Screenshot { get; set; }
+        public string Screenshot { get => _explicitNullValueScreenshot; set { _explicitNullValueScreenshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshot"); else _explicitNullProperties?.Remove("screenshot"); } }
+        private string _explicitNullValueScreenshot = default!;
 #endif
         /// <summary>Title from search result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>URL of the search result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Signed URL to the extracted video file if `video` is in `formats`. The signed URL expires after 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Video { get; set; }
+        public string? Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string? _explicitNullValueVideo = default!;
 #nullable restore
 #else
-        public string Video { get; set; }
+        public string Video { get => _explicitNullValueVideo; set { _explicitNullValueVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video"); else _explicitNullProperties?.Remove("video"); } }
+        private string _explicitNullValueVideo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web"/> and sets the default values.
@@ -117,7 +157,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         public static global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +198,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("video", Video);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

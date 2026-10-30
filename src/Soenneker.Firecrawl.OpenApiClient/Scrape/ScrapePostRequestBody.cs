@@ -12,147 +12,227 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
     #pragma warning disable CS1591
     public partial class ScrapePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("alexandria") is { } nullNodeAlexandria && nullNodeAlexandria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alexandria = null;
+            if (parseNode.GetChildNode("auditMetadata") is { } nullNodeAuditMetadata && nullNodeAuditMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditMetadata = null;
+            if (parseNode.GetChildNode("blockAds") is { } nullNodeBlockAds && nullNodeBlockAds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockAds = null;
+            if (parseNode.GetChildNode("checkPromptInjection") is { } nullNodeCheckPromptInjection && nullNodeCheckPromptInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPromptInjection = null;
+            if (parseNode.GetChildNode("domainTools") is { } nullNodeDomainTools && nullNodeDomainTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainTools = null;
+            if (parseNode.GetChildNode("excludeTags") is { } nullNodeExcludeTags && nullNodeExcludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTags = null;
+            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("includeTags") is { } nullNodeIncludeTags && nullNodeIncludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeTags = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("lockdown") is { } nullNodeLockdown && nullNodeLockdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lockdown = null;
+            if (parseNode.GetChildNode("maxAge") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("minAge") is { } nullNodeMinAge && nullNodeMinAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAge = null;
+            if (parseNode.GetChildNode("mobile") is { } nullNodeMobile && nullNodeMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mobile = null;
+            if (parseNode.GetChildNode("onlyCleanContent") is { } nullNodeOnlyCleanContent && nullNodeOnlyCleanContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyCleanContent = null;
+            if (parseNode.GetChildNode("onlyMainContent") is { } nullNodeOnlyMainContent && nullNodeOnlyMainContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyMainContent = null;
+            if (parseNode.GetChildNode("parsers") is { } nullNodeParsers && nullNodeParsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parsers = null;
+            if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
+            if (parseNode.GetChildNode("proxy") is { } nullNodeProxy && nullNodeProxy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxy = null;
+            if (parseNode.GetChildNode("redactPII") is { } nullNodeRedactPII && nullNodeRedactPII.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactPII = null;
+            if (parseNode.GetChildNode("removeBase64Images") is { } nullNodeRemoveBase64Images && nullNodeRemoveBase64Images.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveBase64Images = null;
+            if (parseNode.GetChildNode("skipTlsVerification") is { } nullNodeSkipTlsVerification && nullNodeSkipTlsVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTlsVerification = null;
+            if (parseNode.GetChildNode("storeInCache") is { } nullNodeStoreInCache && nullNodeStoreInCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreInCache = null;
+            if (parseNode.GetChildNode("threatProtection") is { } nullNodeThreatProtection && nullNodeThreatProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreatProtection = null;
+            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("toolDetail") is { } nullNodeToolDetail && nullNodeToolDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolDetail = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("waitFor") is { } nullNodeWaitFor && nullNodeWaitFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitFor = null;
+            if (parseNode.GetChildNode("zeroDataRetention") is { } nullNodeZeroDataRetention && nullNodeZeroDataRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroDataRetention = null;
+        }
+
         /// <summary>Actions to perform on the page before grabbing the content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Actions { get; set; }
+        public UntypedNode? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private UntypedNode? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public UntypedNode Actions { get; set; }
+        public UntypedNode Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private UntypedNode _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Execute one or more catalogued provider tools instead of scraping a URL. Cannot be combined with `url`, `formats`, or other scrape options (400); the only allowed sibling keys are `timeout`, `origin`, and `integration`. Use the `x-request-id` request header as a client-chosen idempotency key (1 to 128 characters of letters, digits, `.`, `_`, `:`, `-`) — it is echoed back, and a completed request with the same key replays its original response and `scrape_id` instead of re-executing. To browse the catalogue and read tool contracts for free, call Find Tools: set `provider` to `firecrawl`, `capability` to `find-tools`, and `options` to a `FindToolsOptions` object. The result `data` is a `FindToolsData` page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria? Alexandria { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria? Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria? _explicitNullValueAlexandria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria Alexandria { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria _explicitNullValueAlexandria = default!;
 #endif
         /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? _explicitNullValueAuditMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata _explicitNullValueAuditMetadata = default!;
 #endif
         /// <summary>Enables ad-blocking and cookie popup blocking.</summary>
-        public bool? BlockAds { get; set; }
+        public bool? BlockAds { get => _explicitNullValueBlockAds; set { _explicitNullValueBlockAds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockAds"); else _explicitNullProperties?.Remove("blockAds"); } }
+        private bool? _explicitNullValueBlockAds = default!;
         /// <summary>When enabled, scans the page content for prompt injection attempts before any LLM-backed format (such as json, summary or question) runs. Works with any format except rawBase64. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. If the check cannot scan all of the content, the scrape continues with a warning and the check is not billed.</summary>
-        public bool? CheckPromptInjection { get; set; }
+        public bool? CheckPromptInjection { get => _explicitNullValueCheckPromptInjection; set { _explicitNullValueCheckPromptInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkPromptInjection"); else _explicitNullProperties?.Remove("checkPromptInjection"); } }
+        private bool? _explicitNullValueCheckPromptInjection = default!;
         /// <summary>When true on an ordinary URL scrape, `data.tools` lists tool contracts matched to the scraped page&apos;s domain (same `DiscoveredTool` shape as search). Requires the team&apos;s Alexandria access to be enabled and no zero data retention (403 otherwise). Free.</summary>
-        public bool? DomainTools { get; set; }
+        public bool? DomainTools { get => _explicitNullValueDomainTools; set { _explicitNullValueDomainTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainTools"); else _explicitNullProperties?.Remove("domainTools"); } }
+        private bool? _explicitNullValueDomainTools = default!;
         /// <summary>Tags to exclude from the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeTags { get; set; }
+        public List<string>? ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
+        private List<string>? _explicitNullValueExcludeTags = default!;
 #nullable restore
 #else
-        public List<string> ExcludeTags { get; set; }
+        public List<string> ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
+        private List<string> _explicitNullValueExcludeTags = default!;
 #endif
         /// <summary>Output formats to include in the response. You can specify one or more formats, either as strings (e.g., `&apos;markdown&apos;`) or as objects with additional options (e.g., `{ type: &apos;json&apos;, schema: {...} }`). Some formats require specific options to be set. Example: `[&apos;markdown&apos;, { type: &apos;json&apos;, schema: {...} }]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>? Formats { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape> Formats { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape> _explicitNullValueFormats = default!;
 #endif
         /// <summary>Headers to send with the request. Can be used to send cookies, user-agent, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers? Headers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers Headers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Tags to include in the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeTags { get; set; }
+        public List<string>? IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
+        private List<string>? _explicitNullValueIncludeTags = default!;
 #nullable restore
 #else
-        public List<string> IncludeTags { get; set; }
+        public List<string> IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
+        private List<string> _explicitNullValueIncludeTags = default!;
 #endif
         /// <summary>Location settings for the request. When specified, this will use an appropriate proxy if available and emulate the corresponding language and timezone settings. Defaults to &apos;US&apos; if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location? Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location _explicitNullValueLocation = default!;
 #endif
         /// <summary>If true, serves the request from Firecrawl&apos;s cache only and never makes an outbound request to the target URL. Designed for compliance-constrained or air-gapped environments where the scrape request itself could leak sensitive information. On cache miss, returns a 404 with error code SCRAPE_LOCKDOWN_CACHE_MISS (the URL is never logged on miss). Lockdown requests are treated as zero data retention. Default maxAge is extended to 2 years so existing cached pages remain eligible. Billed at 5 credits on hit, 1 credit on cache miss.</summary>
-        public bool? Lockdown { get; set; }
+        public bool? Lockdown { get => _explicitNullValueLockdown; set { _explicitNullValueLockdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lockdown"); else _explicitNullProperties?.Remove("lockdown"); } }
+        private bool? _explicitNullValueLockdown = default!;
         /// <summary>Returns a cached version of the page if it is younger than this age in milliseconds. If a cached version of the page is older than this value, the page will be scraped. If you do not need extremely fresh data, enabling this can speed up your scrapes by 500%. Defaults to 2 days.</summary>
-        public int? MaxAge { get; set; }
+        public int? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAge"); else _explicitNullProperties?.Remove("maxAge"); } }
+        private int? _explicitNullValueMaxAge = default!;
         /// <summary>When set, the request only checks the cache and never triggers a fresh scrape. The value is in milliseconds and specifies the minimum age the cached data must be. If matching cached data exists, it is returned instantly. If no cached data is found, a 404 with error code SCRAPE_NO_CACHED_DATA is returned. Set to 1 to accept any cached data regardless of age.</summary>
-        public int? MinAge { get; set; }
+        public int? MinAge { get => _explicitNullValueMinAge; set { _explicitNullValueMinAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minAge"); else _explicitNullProperties?.Remove("minAge"); } }
+        private int? _explicitNullValueMinAge = default!;
         /// <summary>Set to true if you want to emulate scraping from a mobile device. Useful for testing responsive pages and taking mobile screenshots.</summary>
-        public bool? Mobile { get; set; }
+        public bool? Mobile { get => _explicitNullValueMobile; set { _explicitNullValueMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile"); else _explicitNullProperties?.Remove("mobile"); } }
+        private bool? _explicitNullValueMobile = default!;
         /// <summary>Beta. Run an additional LLM-based pass over the generated markdown to remove residual boilerplate that `onlyMainContent` can miss (cookie banners, ad blocks, social share widgets, breadcrumbs, newsletter signups, comment sections, related-article lists). Headings, lists, tables, code blocks, image references, and inline links are preserved. Can be combined with `onlyMainContent` (the most common setup) or used on its own. Skipped with a warning when the markdown exceeds the cleaning model&apos;s output token limit (the original markdown is preserved). Not supported on zero-data-retention requests.</summary>
-        public bool? OnlyCleanContent { get; set; }
+        public bool? OnlyCleanContent { get => _explicitNullValueOnlyCleanContent; set { _explicitNullValueOnlyCleanContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onlyCleanContent"); else _explicitNullProperties?.Remove("onlyCleanContent"); } }
+        private bool? _explicitNullValueOnlyCleanContent = default!;
         /// <summary>Only return the main content of the page excluding headers, navs, footers, etc. This is a deterministic HTML-level filter applied before markdown is generated; no LLM is involved.</summary>
-        public bool? OnlyMainContent { get; set; }
+        public bool? OnlyMainContent { get => _explicitNullValueOnlyMainContent; set { _explicitNullValueOnlyMainContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onlyMainContent"); else _explicitNullProperties?.Remove("onlyMainContent"); } }
+        private bool? _explicitNullValueOnlyMainContent = default!;
         /// <summary>Controls how files are processed during scraping. Each item is a parser name (`&quot;pdf&quot;` or `&quot;image&quot;`) or a parser object. Both parsers are on by default. - **pdf**: PDF content is extracted and converted to markdown format, with billing based on the number of pages (1 credit per page). - **image**: Raster images (PNG, JPEG, JPEG 2000, TIFF, GIF, BMP, WebP, AVIF) are OCR&apos;d as one-page documents and converted to markdown. SVG and HEIC are not supported.If you pass a list, parsers that are not in the list are off. For example, `[&quot;pdf&quot;]` turns off image OCR, so image URLs fail as unsupported files. When an empty array is passed, the PDF file is returned in base64 encoding with a flat rate of 1 credit for the entire PDF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Parsers { get; set; }
+        public List<string>? Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
+        private List<string>? _explicitNullValueParsers = default!;
 #nullable restore
 #else
-        public List<string> Parsers { get; set; }
+        public List<string> Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
+        private List<string> _explicitNullValueParsers = default!;
 #endif
         /// <summary>Enable persistent browser storage across scrape and interact sessions. Pass a profile when scraping to preserve cookies, localStorage, and session data. Sessions with the same profile name share browser state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile? Profile { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile? _explicitNullValueProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile Profile { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_profile _explicitNullValueProfile = default!;
 #endif
         /// <summary>Specifies the type of proxy to use. - **basic**: Proxies for scraping sites with none to basic anti-bot solutions. Fast and usually works. - **enhanced**: Enhanced proxies for scraping sites with advanced anti-bot solutions. Slower, but more reliable on certain sites. Billed at the same credit cost as basic. - **auto**: Firecrawl will automatically retry scraping with enhanced proxies if the basic proxy fails. Enhanced proxies carry no credit surcharge, so either way only the regular cost is billed.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_proxy? Proxy { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_proxy? Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_proxy? _explicitNullValueProxy = default!;
         /// <summary>Redact personally identifiable information from returned markdown. Pass `true` to use defaults, or an object to tune mode, entities, and replacement style.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII? RedactPII { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII? RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII? _explicitNullValueRedactPII = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII RedactPII { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII _explicitNullValueRedactPII = default!;
 #endif
         /// <summary>Removes all base 64 images from the markdown output, which may be overwhelmingly long. This does not affect html or rawHtml formats. The image&apos;s alt text remains in the output, but the URL is replaced with a placeholder.</summary>
-        public bool? RemoveBase64Images { get; set; }
+        public bool? RemoveBase64Images { get => _explicitNullValueRemoveBase64Images; set { _explicitNullValueRemoveBase64Images = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeBase64Images"); else _explicitNullProperties?.Remove("removeBase64Images"); } }
+        private bool? _explicitNullValueRemoveBase64Images = default!;
         /// <summary>Skip TLS certificate verification when making requests.</summary>
-        public bool? SkipTlsVerification { get; set; }
+        public bool? SkipTlsVerification { get => _explicitNullValueSkipTlsVerification; set { _explicitNullValueSkipTlsVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipTlsVerification"); else _explicitNullProperties?.Remove("skipTlsVerification"); } }
+        private bool? _explicitNullValueSkipTlsVerification = default!;
         /// <summary>If true, the page will be stored in the Firecrawl index and cache. Setting this to false is useful if your scraping activity may have data protection concerns. Using some parameters associated with sensitive scraping (e.g. actions, headers) will force this parameter to be false.</summary>
-        public bool? StoreInCache { get; set; }
+        public bool? StoreInCache { get => _explicitNullValueStoreInCache; set { _explicitNullValueStoreInCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeInCache"); else _explicitNullProperties?.Remove("storeInCache"); } }
+        private bool? _explicitNullValueStoreInCache = default!;
         /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? _explicitNullValueThreatProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride _explicitNullValueThreatProtection = default!;
 #endif
         /// <summary>Timeout in milliseconds for the request. Minimum is 1000 (1 second). Default is 60000 (60 seconds). Maximum is 300000 (300 seconds).</summary>
-        public int? Timeout { get; set; }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        private int? _explicitNullValueTimeout = default!;
         /// <summary>How much of each tool contract to return in `data.tools` when `domainTools` is true. `compact` returns only `provider`, `capability`, and `description`. `summary` returns the full tool entry without `options` and `response`. `full` also returns `options`, `response`, and `examples`. If you omit it, tools are returned as with `summary`.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_toolDetail? ToolDetail { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_toolDetail? ToolDetail { get => _explicitNullValueToolDetail; set { _explicitNullValueToolDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolDetail"); else _explicitNullProperties?.Remove("toolDetail"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_toolDetail? _explicitNullValueToolDetail = default!;
         /// <summary>The URL to scrape</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Specify a delay in milliseconds before fetching the content, allowing the page sufficient time to load. This waiting time is in addition to Firecrawl&apos;s smart wait feature.</summary>
-        public int? WaitFor { get; set; }
+        public int? WaitFor { get => _explicitNullValueWaitFor; set { _explicitNullValueWaitFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitFor"); else _explicitNullProperties?.Remove("waitFor"); } }
+        private int? _explicitNullValueWaitFor = default!;
         /// <summary>If true, this will enable zero data retention for this scrape. To enable this feature, please contact help@firecrawl.dev</summary>
-        public bool? ZeroDataRetention { get; set; }
+        public bool? ZeroDataRetention { get => _explicitNullValueZeroDataRetention; set { _explicitNullValueZeroDataRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeroDataRetention"); else _explicitNullProperties?.Remove("zeroDataRetention"); } }
+        private bool? _explicitNullValueZeroDataRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody"/> and sets the default values.
         /// </summary>
@@ -183,7 +263,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -262,6 +342,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             writer.WriteStringValue("url", Url);
             writer.WriteIntValue("waitFor", WaitFor);
             writer.WriteBoolValue("zeroDataRetention", ZeroDataRetention);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -421,6 +502,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.Scrape();
@@ -512,6 +597,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ScrapeMember1 == null && ScrapeMember10 == null && ScrapeMember11 == null && ScrapeMember12 == null && ScrapeMember13 == null && ScrapeMember14 == null && ScrapeMember15 == null && ScrapeMember16 == null && ScrapeMember17 == null && ScrapeMember18 == null && ScrapeMember2 == null && ScrapeMember3 == null && ScrapeMember4 == null && ScrapeMember5 == null && ScrapeMember6 == null && ScrapeMember7 == null && ScrapeMember8 == null && ScrapeMember9 == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(ScrapeMember1 != null)
                 {
@@ -616,6 +705,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_alexandria();
@@ -647,6 +740,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AlexandriaCall == null && ScrapePostRequestBodyAlexandriaAlexandriaCall == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(ScrapePostRequestBodyAlexandriaAlexandriaCall != null)
                 {
@@ -681,6 +778,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody.ScrapePostRequestBody_redactPII();
@@ -688,7 +789,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 {
                     result.RedactPIIOptions = new global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions();
                 }
-                else if(parseNode.GetBoolValue() is bool booleanValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool booleanValue)
                 {
                     result.Boolean = booleanValue;
                 }
@@ -712,6 +813,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Boolean == null && RedactPIIOptions == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(RedactPIIOptions != null)
                 {

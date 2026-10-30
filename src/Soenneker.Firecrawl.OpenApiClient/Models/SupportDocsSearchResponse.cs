@@ -11,42 +11,63 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SupportDocsSearchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("answer") is { } nullNodeAnswer && nullNodeAnswer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Answer = null;
+            if (parseNode.GetChildNode("durationMs") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("evidence") is { } nullNodeEvidence && nullNodeEvidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Evidence = null;
+            if (parseNode.GetChildNode("requestId") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Concise answer grounded in Firecrawl documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Answer { get; set; }
+        public string? Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string? _explicitNullValueAnswer = default!;
 #nullable restore
 #else
-        public string Answer { get; set; }
+        public string Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string _explicitNullValueAnswer = default!;
 #endif
         /// <summary>Total docs-search execution time in milliseconds.</summary>
-        public int? DurationMs { get; set; }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMs"); else _explicitNullProperties?.Remove("durationMs"); } }
+        private int? _explicitNullValueDurationMs = default!;
         /// <summary>The evidence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence>? Evidence { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence>? Evidence { get => _explicitNullValueEvidence; set { _explicitNullValueEvidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evidence"); else _explicitNullProperties?.Remove("evidence"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence>? _explicitNullValueEvidence = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence> Evidence { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence> Evidence { get => _explicitNullValueEvidence; set { _explicitNullValueEvidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evidence"); else _explicitNullProperties?.Remove("evidence"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence> _explicitNullValueEvidence = default!;
 #endif
         /// <summary>The requestId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestId"); else _explicitNullProperties?.Remove("requestId"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestId"); else _explicitNullProperties?.Remove("requestId"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage? Usage { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage? _explicitNullValueUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage Usage { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage _explicitNullValueUsage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_evidence>("evidence", Evidence);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportDocsSearchResponse_usage>("usage", Usage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

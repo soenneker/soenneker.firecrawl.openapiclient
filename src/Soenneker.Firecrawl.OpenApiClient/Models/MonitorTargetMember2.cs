@@ -11,36 +11,56 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorTargetMember2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("crawlOptions") is { } nullNodeCrawlOptions && nullNodeCrawlOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlOptions = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("scrapeOptions") is { } nullNodeScrapeOptions && nullNodeScrapeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeOptions = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Crawl options such as `limit`, `maxDepth`, `includePaths`, and `excludePaths`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions? CrawlOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions? CrawlOptions { get => _explicitNullValueCrawlOptions; set { _explicitNullValueCrawlOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlOptions"); else _explicitNullProperties?.Remove("crawlOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions? _explicitNullValueCrawlOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions CrawlOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions CrawlOptions { get => _explicitNullValueCrawlOptions; set { _explicitNullValueCrawlOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlOptions"); else _explicitNullProperties?.Remove("crawlOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_crawlOptions _explicitNullValueCrawlOptions = default!;
 #endif
         /// <summary>Optional stable ID for this target. Generated if omitted.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The scrapeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? _explicitNullValueScrapeOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions _explicitNullValueScrapeOptions = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_type? _explicitNullValueType = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions>("scrapeOptions", ScrapeOptions);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember2_type>("type", Type);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

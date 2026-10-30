@@ -12,32 +12,48 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_branding_components_buttonPrimary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("background") is { } nullNodeBackground && nullNodeBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Background = null;
+            if (parseNode.GetChildNode("borderRadius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
+            if (parseNode.GetChildNode("textColor") is { } nullNodeTextColor && nullNodeTextColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextColor = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The background property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Background { get; set; }
+        public string? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private string? _explicitNullValueBackground = default!;
 #nullable restore
 #else
-        public string Background { get; set; }
+        public string Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private string _explicitNullValueBackground = default!;
 #endif
         /// <summary>The borderRadius property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BorderRadius { get; set; }
+        public string? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
+        private string? _explicitNullValueBorderRadius = default!;
 #nullable restore
 #else
-        public string BorderRadius { get; set; }
+        public string BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
+        private string _explicitNullValueBorderRadius = default!;
 #endif
         /// <summary>The textColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextColor { get; set; }
+        public string? TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textColor"); else _explicitNullProperties?.Remove("textColor"); } }
+        private string? _explicitNullValueTextColor = default!;
 #nullable restore
 #else
-        public string TextColor { get; set; }
+        public string TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textColor"); else _explicitNullProperties?.Remove("textColor"); } }
+        private string _explicitNullValueTextColor = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("background", Background);
             writer.WriteStringValue("borderRadius", BorderRadius);
             writer.WriteStringValue("textColor", TextColor);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

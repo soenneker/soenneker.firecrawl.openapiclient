@@ -11,44 +11,67 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SupportAskResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("answer") is { } nullNodeAnswer && nullNodeAnswer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Answer = null;
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("durationMs") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("feedback") is { } nullNodeFeedback && nullNodeFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feedback = null;
+            if (parseNode.GetChildNode("fixParameters") is { } nullNodeFixParameters && nullNodeFixParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixParameters = null;
+            if (parseNode.GetChildNode("validation") is { } nullNodeValidation && nullNodeValidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Diagnosis and recommended fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Answer { get; set; }
+        public string? Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string? _explicitNullValueAnswer = default!;
 #nullable restore
 #else
-        public string Answer { get; set; }
+        public string Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string _explicitNullValueAnswer = default!;
 #endif
         /// <summary>The confidence property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_confidence? Confidence { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_confidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_confidence? _explicitNullValueConfidence = default!;
         /// <summary>Total support-agent execution time in milliseconds.</summary>
-        public int? DurationMs { get; set; }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMs"); else _explicitNullProperties?.Remove("durationMs"); } }
+        private int? _explicitNullValueDurationMs = default!;
         /// <summary>Present when the support agent is blocked or needs more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback? Feedback { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback? _explicitNullValueFeedback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback Feedback { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback _explicitNullValueFeedback = default!;
 #endif
         /// <summary>Machine-readable API parameters that may fix the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters? FixParameters { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters? FixParameters { get => _explicitNullValueFixParameters; set { _explicitNullValueFixParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixParameters"); else _explicitNullProperties?.Remove("fixParameters"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters? _explicitNullValueFixParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters FixParameters { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters FixParameters { get => _explicitNullValueFixParameters; set { _explicitNullValueFixParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixParameters"); else _explicitNullProperties?.Remove("fixParameters"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters _explicitNullValueFixParameters = default!;
 #endif
         /// <summary>Validation result when the support agent tested or attempted a fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation? Validation { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation? Validation { get => _explicitNullValueValidation; set { _explicitNullValueValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation"); else _explicitNullProperties?.Remove("validation"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation? _explicitNullValueValidation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation Validation { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation Validation { get => _explicitNullValueValidation; set { _explicitNullValueValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation"); else _explicitNullProperties?.Remove("validation"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation _explicitNullValueValidation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_feedback>("feedback", Feedback);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_fixParameters>("fixParameters", FixParameters);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SupportAskResponse_validation>("validation", Validation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

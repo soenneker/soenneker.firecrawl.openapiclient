@@ -11,50 +11,76 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
     #pragma warning disable CS1591
     public partial class GovPostRequestBody : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cites") is { } nullNodeCites && nullNodeCites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cites = null;
+            if (parseNode.GetChildNode("court") is { } nullNodeCourt && nullNodeCourt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Court = null;
+            if (parseNode.GetChildNode("courtType") is { } nullNodeCourtType && nullNodeCourtType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CourtType = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("jurisdiction") is { } nullNodeJurisdiction && nullNodeJurisdiction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jurisdiction = null;
+            if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+        }
+
         /// <summary>Keep only pages that cite one law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cites { get; set; }
+        public string? Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
+        private string? _explicitNullValueCites = default!;
 #nullable restore
 #else
-        public string Cites { get; set; }
+        public string Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
+        private string _explicitNullValueCites = default!;
 #endif
         /// <summary>Keep only pages labeled for one court, by CourtListener court id, such as `scotus`, `ca9` or `nysd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Court { get; set; }
+        public string? Court { get => _explicitNullValueCourt; set { _explicitNullValueCourt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("court"); else _explicitNullProperties?.Remove("court"); } }
+        private string? _explicitNullValueCourt = default!;
 #nullable restore
 #else
-        public string Court { get; set; }
+        public string Court { get => _explicitNullValueCourt; set { _explicitNullValueCourt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("court"); else _explicitNullProperties?.Remove("court"); } }
+        private string _explicitNullValueCourt = default!;
 #endif
         /// <summary>Keep only pages from one type of court: `federal-supreme`, `federal-appellate`, `federal-district`, `federal-bankruptcy`, `federal-special`, `military`, `state-supreme`, `state-appellate`, `state-trial`, `state-special`, `state-attorney-general`.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType? CourtType { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType? CourtType { get => _explicitNullValueCourtType; set { _explicitNullValueCourtType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("courtType"); else _explicitNullProperties?.Remove("courtType"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType? _explicitNullValueCourtType = default!;
         /// <summary>Keep only pages from one site, such as `irs.gov`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Keep only pages of one jurisdiction: `us` for federal, or `us-` plus a two-letter state or territory code, such as `us-ca` or `us-dc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Jurisdiction { get; set; }
+        public string? Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private string? _explicitNullValueJurisdiction = default!;
 #nullable restore
 #else
-        public string Jurisdiction { get; set; }
+        public string Jurisdiction { get => _explicitNullValueJurisdiction; set { _explicitNullValueJurisdiction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jurisdiction"); else _explicitNullProperties?.Remove("jurisdiction"); } }
+        private string _explicitNullValueJurisdiction = default!;
 #endif
         /// <summary>Number of results to return.</summary>
-        public int? K { get; set; }
+        public int? K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private int? _explicitNullValueK = default!;
         /// <summary>Natural-language question or search phrase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody"/> and sets the default values.
@@ -71,7 +97,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public static global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,7 +129,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("jurisdiction", Jurisdiction);
             writer.WriteIntValue("k", K);
-            writer.WriteStringValue("query", Query);
+            writer.WriteStringValue("query", Query);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

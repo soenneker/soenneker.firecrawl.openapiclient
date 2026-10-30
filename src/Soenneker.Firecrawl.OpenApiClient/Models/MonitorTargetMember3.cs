@@ -12,41 +12,65 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorTargetMember3 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excludeDomains") is { } nullNodeExcludeDomains && nullNodeExcludeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeDomains = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("includeDomains") is { } nullNodeIncludeDomains && nullNodeIncludeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDomains = null;
+            if (parseNode.GetChildNode("maxResults") is { } nullNodeMaxResults && nullNodeMaxResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxResults = null;
+            if (parseNode.GetChildNode("queries") is { } nullNodeQueries && nullNodeQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queries = null;
+            if (parseNode.GetChildNode("searchWindow") is { } nullNodeSearchWindow && nullNodeSearchWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchWindow = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional. Drop results from these domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeDomains { get; set; }
+        public List<string>? ExcludeDomains { get => _explicitNullValueExcludeDomains; set { _explicitNullValueExcludeDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeDomains"); else _explicitNullProperties?.Remove("excludeDomains"); } }
+        private List<string>? _explicitNullValueExcludeDomains = default!;
 #nullable restore
 #else
-        public List<string> ExcludeDomains { get; set; }
+        public List<string> ExcludeDomains { get => _explicitNullValueExcludeDomains; set { _explicitNullValueExcludeDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeDomains"); else _explicitNullProperties?.Remove("excludeDomains"); } }
+        private List<string> _explicitNullValueExcludeDomains = default!;
 #endif
         /// <summary>Optional stable ID for this target. Generated if omitted.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Optional. Restrict results to these domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeDomains { get; set; }
+        public List<string>? IncludeDomains { get => _explicitNullValueIncludeDomains; set { _explicitNullValueIncludeDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeDomains"); else _explicitNullProperties?.Remove("includeDomains"); } }
+        private List<string>? _explicitNullValueIncludeDomains = default!;
 #nullable restore
 #else
-        public List<string> IncludeDomains { get; set; }
+        public List<string> IncludeDomains { get => _explicitNullValueIncludeDomains; set { _explicitNullValueIncludeDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeDomains"); else _explicitNullProperties?.Remove("includeDomains"); } }
+        private List<string> _explicitNullValueIncludeDomains = default!;
 #endif
         /// <summary>Total results to evaluate per check, merged and deduped across all queries (a combined cap, not per-query).</summary>
-        public int? MaxResults { get; set; }
+        public int? MaxResults { get => _explicitNullValueMaxResults; set { _explicitNullValueMaxResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxResults"); else _explicitNullProperties?.Remove("maxResults"); } }
+        private int? _explicitNullValueMaxResults = default!;
         /// <summary>Search queries to run on each check (1-12).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Queries { get; set; }
+        public List<string>? Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        private List<string>? _explicitNullValueQueries = default!;
 #nullable restore
 #else
-        public List<string> Queries { get; set; }
+        public List<string> Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        private List<string> _explicitNullValueQueries = default!;
 #endif
         /// <summary>Recency filter — only consider results published within this window.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_searchWindow? SearchWindow { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_searchWindow? SearchWindow { get => _explicitNullValueSearchWindow; set { _explicitNullValueSearchWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searchWindow"); else _explicitNullProperties?.Remove("searchWindow"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_searchWindow? _explicitNullValueSearchWindow = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3"/> and sets the default values.
         /// </summary>
@@ -64,7 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +121,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("queries", Queries);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_searchWindow>("searchWindow", SearchWindow);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorTargetMember3_type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -63,6 +63,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Item.Feedback
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

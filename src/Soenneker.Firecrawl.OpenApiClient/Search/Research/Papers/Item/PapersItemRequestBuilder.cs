@@ -55,7 +55,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Inspect or read a paper
@@ -114,6 +114,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item.PapersItemRequestBuilder.PapersGetResponse();
@@ -149,6 +153,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.Item
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ResearchPaperMetadataResponse == null && ResearchReadPaperResponse == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(ResearchPaperMetadataResponse != null)
                 {

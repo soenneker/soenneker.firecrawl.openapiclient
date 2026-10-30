@@ -11,80 +11,114 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CrawlStatusResponseObj_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocks") is { } nullNodeBlocks && nullNodeBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocks = null;
+            if (parseNode.GetChildNode("html") is { } nullNodeHtml && nullNodeHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Html = null;
+            if (parseNode.GetChildNode("links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("markdown") is { } nullNodeMarkdown && nullNodeMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Markdown = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+            if (parseNode.GetChildNode("rawBase64") is { } nullNodeRawBase64 && nullNodeRawBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawBase64 = null;
+            if (parseNode.GetChildNode("rawHtml") is { } nullNodeRawHtml && nullNodeRawHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawHtml = null;
+            if (parseNode.GetChildNode("screenshot") is { } nullNodeScreenshot && nullNodeScreenshot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshot = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Per-page typed layout blocks for PDFs. Present only when the request set the `blocks` PDF parser option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>? Blocks { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>? Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks>? _explicitNullValueBlocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks> Blocks { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks> Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_blocks> _explicitNullValueBlocks = default!;
 #endif
         /// <summary>HTML version of the content on page if `includeHtml`  is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Html { get; set; }
+        public string? Html { get => _explicitNullValueHtml; set { _explicitNullValueHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html"); else _explicitNullProperties?.Remove("html"); } }
+        private string? _explicitNullValueHtml = default!;
 #nullable restore
 #else
-        public string Html { get; set; }
+        public string Html { get => _explicitNullValueHtml; set { _explicitNullValueHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html"); else _explicitNullProperties?.Remove("html"); } }
+        private string _explicitNullValueHtml = default!;
 #endif
         /// <summary>List of links on the page if `includeLinks` is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Links { get; set; }
+        public List<string>? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string>? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public List<string> Links { get; set; }
+        public List<string> Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
+        private List<string> _explicitNullValueLinks = default!;
 #endif
         /// <summary>The markdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Markdown { get; set; }
+        public string? Markdown { get => _explicitNullValueMarkdown; set { _explicitNullValueMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown"); else _explicitNullProperties?.Remove("markdown"); } }
+        private string? _explicitNullValueMarkdown = default!;
 #nullable restore
 #else
-        public string Markdown { get; set; }
+        public string Markdown { get => _explicitNullValueMarkdown; set { _explicitNullValueMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown"); else _explicitNullProperties?.Remove("markdown"); } }
+        private string _explicitNullValueMarkdown = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata? Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_metadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Physical per-page markdown for PDFs. Present only when the request set the `pages` PDF parser option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>? Pages { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages>? _explicitNullValuePages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages> Pages { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages> Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data_pages> _explicitNullValuePages = default!;
 #endif
         /// <summary>The Base64-encoded original HTTP response body if `rawBase64` is in `formats`. A bare Base64 string, not a data URI. The MIME type is in `metadata.contentType`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawBase64 { get; set; }
+        public string? RawBase64 { get => _explicitNullValueRawBase64; set { _explicitNullValueRawBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawBase64"); else _explicitNullProperties?.Remove("rawBase64"); } }
+        private string? _explicitNullValueRawBase64 = default!;
 #nullable restore
 #else
-        public string RawBase64 { get; set; }
+        public string RawBase64 { get => _explicitNullValueRawBase64; set { _explicitNullValueRawBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawBase64"); else _explicitNullProperties?.Remove("rawBase64"); } }
+        private string _explicitNullValueRawBase64 = default!;
 #endif
         /// <summary>Raw HTML content of the page if `includeRawHtml`  is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawHtml { get; set; }
+        public string? RawHtml { get => _explicitNullValueRawHtml; set { _explicitNullValueRawHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawHtml"); else _explicitNullProperties?.Remove("rawHtml"); } }
+        private string? _explicitNullValueRawHtml = default!;
 #nullable restore
 #else
-        public string RawHtml { get; set; }
+        public string RawHtml { get => _explicitNullValueRawHtml; set { _explicitNullValueRawHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rawHtml"); else _explicitNullProperties?.Remove("rawHtml"); } }
+        private string _explicitNullValueRawHtml = default!;
 #endif
         /// <summary>Screenshot of the page if `includeScreenshot` is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Screenshot { get; set; }
+        public string? Screenshot { get => _explicitNullValueScreenshot; set { _explicitNullValueScreenshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshot"); else _explicitNullProperties?.Remove("screenshot"); } }
+        private string? _explicitNullValueScreenshot = default!;
 #nullable restore
 #else
-        public string Screenshot { get; set; }
+        public string Screenshot { get => _explicitNullValueScreenshot; set { _explicitNullValueScreenshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshot"); else _explicitNullProperties?.Remove("screenshot"); } }
+        private string _explicitNullValueScreenshot = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data"/> and sets the default values.
@@ -101,7 +135,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlStatusResponseObj_data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,6 +172,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("rawBase64", RawBase64);
             writer.WriteStringValue("rawHtml", RawHtml);
             writer.WriteStringValue("screenshot", Screenshot);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

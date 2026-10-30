@@ -12,31 +12,50 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_changeTracking : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("changeStatus") is { } nullNodeChangeStatus && nullNodeChangeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeStatus = null;
+            if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
+            if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
+            if (parseNode.GetChildNode("previousScrapeAt") is { } nullNodePreviousScrapeAt && nullNodePreviousScrapeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousScrapeAt = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The result of the comparison between the two page versions. &apos;new&apos; means this page did not exist before, &apos;same&apos; means content has not changed, &apos;changed&apos; means content has changed, &apos;removed&apos; means the page was removed.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_changeStatus? ChangeStatus { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_changeStatus? ChangeStatus { get => _explicitNullValueChangeStatus; set { _explicitNullValueChangeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changeStatus"); else _explicitNullProperties?.Remove("changeStatus"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_changeStatus? _explicitNullValueChangeStatus = default!;
         /// <summary>Git-style diff of changes when using &apos;git-diff&apos; mode. Only present when the mode is set to &apos;git-diff&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Diff { get; set; }
+        public string? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        private string? _explicitNullValueDiff = default!;
 #nullable restore
 #else
-        public string Diff { get; set; }
+        public string Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        private string _explicitNullValueDiff = default!;
 #endif
         /// <summary>JSON comparison results when using &apos;json&apos; mode. Only present when the mode is set to &apos;json&apos;. This will emit a list of all the keys and their values from the `previous` and `current` scrapes based on the type defined in the `schema`. Example [here](/features/change-tracking)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json? Json { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json? _explicitNullValueJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json Json { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json _explicitNullValueJson = default!;
 #endif
         /// <summary>The timestamp of the previous scrape that the current page is being compared against. Null if no previous scrape exists.</summary>
-        public DateTimeOffset? PreviousScrapeAt { get; set; }
+        public DateTimeOffset? PreviousScrapeAt { get => _explicitNullValuePreviousScrapeAt; set { _explicitNullValuePreviousScrapeAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousScrapeAt"); else _explicitNullProperties?.Remove("previousScrapeAt"); } }
+        private DateTimeOffset? _explicitNullValuePreviousScrapeAt = default!;
         /// <summary>The visibility of the current page/URL. &apos;visible&apos; means the URL was discovered through an organic route (links or sitemap), &apos;hidden&apos; means the URL was discovered through memory from previous crawls.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_visibility? Visibility { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_visibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_visibility? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_json>("json", Json);
             writer.WriteDateTimeOffsetValue("previousScrapeAt", PreviousScrapeAt);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_changeTracking_visibility>("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

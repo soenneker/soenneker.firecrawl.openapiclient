@@ -11,33 +11,54 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
     #pragma warning disable CS1591
     public partial class InteractPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activityTtl") is { } nullNodeActivityTtl && nullNodeActivityTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityTtl = null;
+            if (parseNode.GetChildNode("blockAds") is { } nullNodeBlockAds && nullNodeBlockAds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockAds = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
+            if (parseNode.GetChildNode("streamWebView") is { } nullNodeStreamWebView && nullNodeStreamWebView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamWebView = null;
+            if (parseNode.GetChildNode("ttl") is { } nullNodeTtl && nullNodeTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ttl = null;
+        }
+
         /// <summary>Time in seconds before the session is destroyed due to inactivity</summary>
-        public int? ActivityTtl { get; set; }
+        public int? ActivityTtl { get => _explicitNullValueActivityTtl; set { _explicitNullValueActivityTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activityTtl"); else _explicitNullProperties?.Remove("activityTtl"); } }
+        private int? _explicitNullValueActivityTtl = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable ad and cookie popup blocking, as in scrape. Sessions started from a scrape with interact use the scrape&apos;s blockAds.</summary>
-        public bool? BlockAds { get; set; }
+        public bool? BlockAds { get => _explicitNullValueBlockAds; set { _explicitNullValueBlockAds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockAds"); else _explicitNullProperties?.Remove("blockAds"); } }
+        private bool? _explicitNullValueBlockAds = default!;
         /// <summary>Country the session browses from. Defaults to the US. Sessions started from a scrape with interact use the scrape&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location? Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_location _explicitNullValueLocation = default!;
 #endif
         /// <summary>Enable persistent storage across interact sessions. Data saved in one session can be loaded in a later session using the same name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile? Profile { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile? _explicitNullValueProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile Profile { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile _explicitNullValueProfile = default!;
 #endif
         /// <summary>Whether to stream a live view of the browser</summary>
-        public bool? StreamWebView { get; set; }
+        public bool? StreamWebView { get => _explicitNullValueStreamWebView; set { _explicitNullValueStreamWebView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streamWebView"); else _explicitNullProperties?.Remove("streamWebView"); } }
+        private bool? _explicitNullValueStreamWebView = default!;
         /// <summary>Total time-to-live in seconds for the interact session</summary>
-        public int? Ttl { get; set; }
+        public int? Ttl { get => _explicitNullValueTtl; set { _explicitNullValueTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl"); else _explicitNullProperties?.Remove("ttl"); } }
+        private int? _explicitNullValueTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -56,7 +77,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public static global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +108,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostRequestBody_profile>("profile", Profile);
             writer.WriteBoolValue("streamWebView", StreamWebView);
             writer.WriteIntValue("ttl", Ttl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

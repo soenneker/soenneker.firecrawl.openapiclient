@@ -11,73 +11,119 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorCheck : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actualCredits") is { } nullNodeActualCredits && nullNodeActualCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualCredits = null;
+            if (parseNode.GetChildNode("billingStatus") is { } nullNodeBillingStatus && nullNodeBillingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingStatus = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("estimatedCredits") is { } nullNodeEstimatedCredits && nullNodeEstimatedCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedCredits = null;
+            if (parseNode.GetChildNode("finishedAt") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("monitorId") is { } nullNodeMonitorId && nullNodeMonitorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorId = null;
+            if (parseNode.GetChildNode("notificationStatus") is { } nullNodeNotificationStatus && nullNodeNotificationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationStatus = null;
+            if (parseNode.GetChildNode("reservedCredits") is { } nullNodeReservedCredits && nullNodeReservedCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReservedCredits = null;
+            if (parseNode.GetChildNode("scheduledFor") is { } nullNodeScheduledFor && nullNodeScheduledFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledFor = null;
+            if (parseNode.GetChildNode("startedAt") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("targetResults") is { } nullNodeTargetResults && nullNodeTargetResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetResults = null;
+            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Final credits charged for this check after scrapes, crawls, and any changed-page judge calls complete.</summary>
-        public int? ActualCredits { get; set; }
+        public int? ActualCredits { get => _explicitNullValueActualCredits; set { _explicitNullValueActualCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actualCredits"); else _explicitNullProperties?.Remove("actualCredits"); } }
+        private int? _explicitNullValueActualCredits = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billingStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingStatus { get; set; }
+        public string? BillingStatus { get => _explicitNullValueBillingStatus; set { _explicitNullValueBillingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingStatus"); else _explicitNullProperties?.Remove("billingStatus"); } }
+        private string? _explicitNullValueBillingStatus = default!;
 #nullable restore
 #else
-        public string BillingStatus { get; set; }
+        public string BillingStatus { get => _explicitNullValueBillingStatus; set { _explicitNullValueBillingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingStatus"); else _explicitNullProperties?.Remove("billingStatus"); } }
+        private string _explicitNullValueBillingStatus = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string _explicitNullValueError = default!;
 #endif
         /// <summary>Upper-bound credits reserved for this check before Firecrawl knows how many pages changed and require judging.</summary>
-        public int? EstimatedCredits { get; set; }
+        public int? EstimatedCredits { get => _explicitNullValueEstimatedCredits; set { _explicitNullValueEstimatedCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedCredits"); else _explicitNullProperties?.Remove("estimatedCredits"); } }
+        private int? _explicitNullValueEstimatedCredits = default!;
         /// <summary>The finishedAt property</summary>
-        public DateTimeOffset? FinishedAt { get; set; }
+        public DateTimeOffset? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
+        private DateTimeOffset? _explicitNullValueFinishedAt = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The monitorId property</summary>
-        public Guid? MonitorId { get; set; }
+        public Guid? MonitorId { get => _explicitNullValueMonitorId; set { _explicitNullValueMonitorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitorId"); else _explicitNullProperties?.Remove("monitorId"); } }
+        private Guid? _explicitNullValueMonitorId = default!;
         /// <summary>The notificationStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus? NotificationStatus { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus? NotificationStatus { get => _explicitNullValueNotificationStatus; set { _explicitNullValueNotificationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationStatus"); else _explicitNullProperties?.Remove("notificationStatus"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus? _explicitNullValueNotificationStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus NotificationStatus { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus NotificationStatus { get => _explicitNullValueNotificationStatus; set { _explicitNullValueNotificationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationStatus"); else _explicitNullProperties?.Remove("notificationStatus"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_notificationStatus _explicitNullValueNotificationStatus = default!;
 #endif
         /// <summary>The reservedCredits property</summary>
-        public int? ReservedCredits { get; set; }
+        public int? ReservedCredits { get => _explicitNullValueReservedCredits; set { _explicitNullValueReservedCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reservedCredits"); else _explicitNullProperties?.Remove("reservedCredits"); } }
+        private int? _explicitNullValueReservedCredits = default!;
         /// <summary>The scheduledFor property</summary>
-        public DateTimeOffset? ScheduledFor { get; set; }
+        public DateTimeOffset? ScheduledFor { get => _explicitNullValueScheduledFor; set { _explicitNullValueScheduledFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledFor"); else _explicitNullProperties?.Remove("scheduledFor"); } }
+        private DateTimeOffset? _explicitNullValueScheduledFor = default!;
         /// <summary>The startedAt property</summary>
-        public DateTimeOffset? StartedAt { get; set; }
+        public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
+        private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_status? Status { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_status? _explicitNullValueStatus = default!;
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary? Summary { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary Summary { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The targetResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TargetResults { get; set; }
+        public UntypedNode? TargetResults { get => _explicitNullValueTargetResults; set { _explicitNullValueTargetResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetResults"); else _explicitNullProperties?.Remove("targetResults"); } }
+        private UntypedNode? _explicitNullValueTargetResults = default!;
 #nullable restore
 #else
-        public UntypedNode TargetResults { get; set; }
+        public UntypedNode TargetResults { get => _explicitNullValueTargetResults; set { _explicitNullValueTargetResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetResults"); else _explicitNullProperties?.Remove("targetResults"); } }
+        private UntypedNode _explicitNullValueTargetResults = default!;
 #endif
         /// <summary>The trigger property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_trigger? Trigger { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_trigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_trigger? _explicitNullValueTrigger = default!;
         /// <summary>The updatedAt property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck"/> and sets the default values.
         /// </summary>
@@ -93,7 +139,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,6 +192,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("targetResults", TargetResults);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck_trigger>("trigger", Trigger);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

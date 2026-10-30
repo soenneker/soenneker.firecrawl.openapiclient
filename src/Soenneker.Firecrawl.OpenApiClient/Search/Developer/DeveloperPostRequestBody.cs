@@ -11,78 +11,120 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Developer
     #pragma warning disable CS1591
     public partial class DeveloperPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
+            if (parseNode.GetChildNode("fork") is { } nullNodeFork && nullNodeFork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fork = null;
+            if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("license") is { } nullNodeLicense && nullNodeLicense.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) License = null;
+            if (parseNode.GetChildNode("max_stars") is { } nullNodeMaxStars && nullNodeMaxStars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxStars = null;
+            if (parseNode.GetChildNode("min_stars") is { } nullNodeMinStars && nullNodeMinStars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinStars = null;
+            if (parseNode.GetChildNode("passages") is { } nullNodePassages && nullNodePassages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passages = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("repos") is { } nullNodeRepos && nullNodeRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repos = null;
+            if (parseNode.GetChildNode("skills") is { } nullNodeSkills && nullNodeSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skills = null;
+            if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
+            if (parseNode.GetChildNode("topic") is { } nullNodeTopic && nullNodeTopic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topic = null;
+            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Include or exclude archived repositories. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
-        public bool? Archived { get; set; }
+        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
+        private bool? _explicitNullValueArchived = default!;
         /// <summary>Include or exclude forks. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
-        public bool? Fork { get; set; }
+        public bool? Fork { get => _explicitNullValueFork; set { _explicitNullValueFork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fork"); else _explicitNullProperties?.Remove("fork"); } }
+        private bool? _explicitNullValueFork = default!;
         /// <summary>The k property</summary>
-        public int? K { get; set; }
+        public int? K { get => _explicitNullValueK; set { _explicitNullValueK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k"); else _explicitNullProperties?.Remove("k"); } }
+        private int? _explicitNullValueK = default!;
         /// <summary>Repository primary language, such as `Rust`. Applies to repository results only; sending it with no `sources` scope returns no `doc` results. See [how the repository filters scope a search](/api-reference/endpoint/developer-search#how-the-repository-filters-scope-a-search).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>Repository license, such as `MIT`. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? License { get; set; }
+        public string? License { get => _explicitNullValueLicense; set { _explicitNullValueLicense = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license"); else _explicitNullProperties?.Remove("license"); } }
+        private string? _explicitNullValueLicense = default!;
 #nullable restore
 #else
-        public string License { get; set; }
+        public string License { get => _explicitNullValueLicense; set { _explicitNullValueLicense = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license"); else _explicitNullProperties?.Remove("license"); } }
+        private string _explicitNullValueLicense = default!;
 #endif
         /// <summary>Upper bound on repository stars. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
-        public int? MaxStars { get; set; }
+        public int? MaxStars { get => _explicitNullValueMaxStars; set { _explicitNullValueMaxStars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_stars"); else _explicitNullProperties?.Remove("max_stars"); } }
+        private int? _explicitNullValueMaxStars = default!;
         /// <summary>Lower bound on repository stars. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
-        public int? MinStars { get; set; }
+        public int? MinStars { get => _explicitNullValueMinStars; set { _explicitNullValueMinStars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_stars"); else _explicitNullProperties?.Remove("min_stars"); } }
+        private int? _explicitNullValueMinStars = default!;
         /// <summary>The passages property</summary>
-        public int? Passages { get; set; }
+        public int? Passages { get => _explicitNullValuePassages; set { _explicitNullValuePassages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passages"); else _explicitNullProperties?.Remove("passages"); } }
+        private int? _explicitNullValuePassages = default!;
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Repository slugs to scope the repository half of the index to. Applies to the `issue`, `pull_request`, and `readme` types only. Sent together with `sources`, the two halves are combined rather than intersected. Returns 400 when no repository type is in `types`, reporting that `repos` cannot match any requested type and that you should add repository types or drop `repos`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Repos { get; set; }
+        public List<string>? Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        private List<string>? _explicitNullValueRepos = default!;
 #nullable restore
 #else
-        public List<string> Repos { get; set; }
+        public List<string> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        private List<string> _explicitNullValueRepos = default!;
 #endif
         /// <summary>Set to `only` to limit the search to indexed agent-skill files.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_skills? Skills { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_skills? Skills { get => _explicitNullValueSkills; set { _explicitNullValueSkills = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skills"); else _explicitNullProperties?.Remove("skills"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_skills? _explicitNullValueSkills = default!;
         /// <summary>Documentation source ids to scope the documentation half to, at most 20. Applies to the `doc` type only. Not a fixed enum: ids reflect the documentation sites in the index and the set grows over time. Returns 400 with `sources cannot match any requested type; add doc or drop sources` when `doc` is not in `types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sources { get; set; }
+        public List<string>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private List<string>? _explicitNullValueSources = default!;
 #nullable restore
 #else
-        public List<string> Sources { get; set; }
+        public List<string> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private List<string> _explicitNullValueSources = default!;
 #endif
         /// <summary>Repository topic, such as `async`. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Topic { get; set; }
+        public string? Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
+        private string? _explicitNullValueTopic = default!;
 #nullable restore
 #else
-        public string Topic { get; set; }
+        public string Topic { get => _explicitNullValueTopic; set { _explicitNullValueTopic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic"); else _explicitNullProperties?.Remove("topic"); } }
+        private string _explicitNullValueTopic = default!;
 #endif
         /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?>? Types { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?>? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?> Types { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types?> _explicitNullValueTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody"/> and sets the default values.
@@ -101,7 +143,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Developer
         public static global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +190,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Developer
             writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
             writer.WriteStringValue("topic", Topic);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.Developer.DeveloperPostRequestBody_types>("types", Types);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

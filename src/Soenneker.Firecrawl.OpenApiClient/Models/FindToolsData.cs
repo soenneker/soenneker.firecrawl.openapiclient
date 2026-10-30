@@ -12,29 +12,46 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FindToolsData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Catalogue entries at `level`. At the `tools` level, each item also has the tool fields of `DiscoveredTool` (`provider`, `capability`, `description`, `creditsCost`, `perRecord`), plus `options` and `response` when `expand` asks for them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>? Items { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items> Items { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items> _explicitNullValueItems = default!;
 #endif
         /// <summary>The catalogue level of the items on this page.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level? Level { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level? _explicitNullValueLevel = default!;
         /// <summary>An `alexandria` call for the next page of this listing, or `null` on the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next? Next { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next Next { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next _explicitNullValueNext = default!;
 #endif
         /// <summary>Total number of entries that match the selectors.</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level>("level", Level);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next>("next", Next);
             writer.WriteIntValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

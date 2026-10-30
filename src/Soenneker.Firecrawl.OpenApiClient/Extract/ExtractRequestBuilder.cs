@@ -70,6 +70,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Extract
             {
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractResponse400Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractResponse500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.ExtractResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.ExtractResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

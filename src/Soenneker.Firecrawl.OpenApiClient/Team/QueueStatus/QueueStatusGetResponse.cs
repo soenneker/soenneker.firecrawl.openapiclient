@@ -11,21 +11,40 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus
     #pragma warning disable CS1591
     public partial class QueueStatusGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeJobsInQueue") is { } nullNodeActiveJobsInQueue && nullNodeActiveJobsInQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveJobsInQueue = null;
+            if (parseNode.GetChildNode("jobsInQueue") is { } nullNodeJobsInQueue && nullNodeJobsInQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobsInQueue = null;
+            if (parseNode.GetChildNode("maxConcurrency") is { } nullNodeMaxConcurrency && nullNodeMaxConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConcurrency = null;
+            if (parseNode.GetChildNode("mostRecentSuccess") is { } nullNodeMostRecentSuccess && nullNodeMostRecentSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentSuccess = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("waitingJobsInQueue") is { } nullNodeWaitingJobsInQueue && nullNodeWaitingJobsInQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitingJobsInQueue = null;
+        }
+
         /// <summary>Number of jobs currently active</summary>
-        public double? ActiveJobsInQueue { get; set; }
+        public double? ActiveJobsInQueue { get => _explicitNullValueActiveJobsInQueue; set { _explicitNullValueActiveJobsInQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeJobsInQueue"); else _explicitNullProperties?.Remove("activeJobsInQueue"); } }
+        private double? _explicitNullValueActiveJobsInQueue = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of jobs currently in your queue</summary>
-        public double? JobsInQueue { get; set; }
+        public double? JobsInQueue { get => _explicitNullValueJobsInQueue; set { _explicitNullValueJobsInQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobsInQueue"); else _explicitNullProperties?.Remove("jobsInQueue"); } }
+        private double? _explicitNullValueJobsInQueue = default!;
         /// <summary>Maximum number of concurrent active jobs based on your plan</summary>
-        public double? MaxConcurrency { get; set; }
+        public double? MaxConcurrency { get => _explicitNullValueMaxConcurrency; set { _explicitNullValueMaxConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxConcurrency"); else _explicitNullProperties?.Remove("maxConcurrency"); } }
+        private double? _explicitNullValueMaxConcurrency = default!;
         /// <summary>Timestamp of the most recent successful job</summary>
-        public DateTimeOffset? MostRecentSuccess { get; set; }
+        public DateTimeOffset? MostRecentSuccess { get => _explicitNullValueMostRecentSuccess; set { _explicitNullValueMostRecentSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mostRecentSuccess"); else _explicitNullProperties?.Remove("mostRecentSuccess"); } }
+        private DateTimeOffset? _explicitNullValueMostRecentSuccess = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>Number of jobs currently waiting</summary>
-        public double? WaitingJobsInQueue { get; set; }
+        public double? WaitingJobsInQueue { get => _explicitNullValueWaitingJobsInQueue; set { _explicitNullValueWaitingJobsInQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitingJobsInQueue"); else _explicitNullProperties?.Remove("waitingJobsInQueue"); } }
+        private double? _explicitNullValueWaitingJobsInQueue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus
         public static global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus
             writer.WriteDateTimeOffsetValue("mostRecentSuccess", MostRecentSuccess);
             writer.WriteBoolValue("success", Success);
             writer.WriteDoubleValue("waitingJobsInQueue", WaitingJobsInQueue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

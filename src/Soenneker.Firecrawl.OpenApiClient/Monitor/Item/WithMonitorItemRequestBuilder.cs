@@ -61,7 +61,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Monitor.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a monitor
@@ -79,7 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Monitor.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a monitor
@@ -99,7 +99,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Monitor.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a monitor

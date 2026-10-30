@@ -11,43 +11,64 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScrapeMember11 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("modes") is { } nullNodeModes && nullNodeModes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modes = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+            if (parseNode.GetChildNode("tag") is { } nullNodeTag && nullNodeTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tag = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The mode to use for change tracking. &apos;git-diff&apos; provides a detailed diff, and &apos;json&apos; compares extracted JSON data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?>? Modes { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?>? Modes { get => _explicitNullValueModes; set { _explicitNullValueModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modes"); else _explicitNullProperties?.Remove("modes"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?>? _explicitNullValueModes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?> Modes { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?> Modes { get => _explicitNullValueModes; set { _explicitNullValueModes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modes"); else _explicitNullProperties?.Remove("modes"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_modes?> _explicitNullValueModes = default!;
 #endif
         /// <summary>Prompt to use for change tracking when using &apos;json&apos; mode. If not provided, the default prompt will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>Schema for JSON extraction when using &apos;json&apos; mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema? Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema _explicitNullValueSchema = default!;
 #endif
         /// <summary>Tag to use for change tracking. Tags can separate change tracking history into separate &quot;branches&quot;, where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+        public string? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
+        private string? _explicitNullValueTag = default!;
 #nullable restore
 #else
-        public string Tag { get; set; }
+        public string Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
+        private string _explicitNullValueTag = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11"/> and sets the default values.
         /// </summary>
@@ -63,7 +84,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_schema>("schema", Schema);
             writer.WriteStringValue("tag", Tag);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeMember11_type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

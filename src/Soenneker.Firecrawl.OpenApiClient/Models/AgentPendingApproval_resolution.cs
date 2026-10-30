@@ -12,28 +12,45 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentPendingApproval_resolution : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
+            if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
+            if (parseNode.GetChildNode("byRunId") is { } nullNodeByRunId && nullNodeByRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByRunId = null;
+            if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The always property</summary>
-        public bool? Always { get; set; }
+        public bool? Always { get => _explicitNullValueAlways; set { _explicitNullValueAlways = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always"); else _explicitNullProperties?.Remove("always"); } }
+        private bool? _explicitNullValueAlways = default!;
         /// <summary>The approved property</summary>
-        public bool? Approved { get; set; }
+        public bool? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
+        private bool? _explicitNullValueApproved = default!;
         /// <summary>The byRunId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ByRunId { get; set; }
+        public string? ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
+        private string? _explicitNullValueByRunId = default!;
 #nullable restore
 #else
-        public string ByRunId { get; set; }
+        public string ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
+        private string _explicitNullValueByRunId = default!;
 #endif
         /// <summary>The callIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CallIds { get; set; }
+        public List<string>? CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        private List<string>? _explicitNullValueCallIds = default!;
 #nullable restore
 #else
-        public List<string> CallIds { get; set; }
+        public List<string> CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        private List<string> _explicitNullValueCallIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteBoolValue("approved", Approved);
             writer.WriteStringValue("byRunId", ByRunId);
             writer.WriteCollectionOfPrimitiveValues<string>("callIds", CallIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.QueueStatus.QueueStatusGetResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Metrics about your team&apos;s scrape queue

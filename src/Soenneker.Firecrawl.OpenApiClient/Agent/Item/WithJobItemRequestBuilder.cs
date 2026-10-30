@@ -68,6 +68,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob409Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -93,6 +95,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             {
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob400Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJob404Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

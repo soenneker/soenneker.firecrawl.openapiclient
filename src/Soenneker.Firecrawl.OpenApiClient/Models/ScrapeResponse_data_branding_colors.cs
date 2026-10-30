@@ -12,88 +12,125 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_branding_colors : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accent") is { } nullNodeAccent && nullNodeAccent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accent = null;
+            if (parseNode.GetChildNode("background") is { } nullNodeBackground && nullNodeBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Background = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
+            if (parseNode.GetChildNode("secondary") is { } nullNodeSecondary && nullNodeSecondary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secondary = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("textPrimary") is { } nullNodeTextPrimary && nullNodeTextPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextPrimary = null;
+            if (parseNode.GetChildNode("textSecondary") is { } nullNodeTextSecondary && nullNodeTextSecondary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextSecondary = null;
+            if (parseNode.GetChildNode("warning") is { } nullNodeWarning && nullNodeWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warning = null;
+        }
+
         /// <summary>Accent color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Accent { get; set; }
+        public string? Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        private string? _explicitNullValueAccent = default!;
 #nullable restore
 #else
-        public string Accent { get; set; }
+        public string Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        private string _explicitNullValueAccent = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Background color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Background { get; set; }
+        public string? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private string? _explicitNullValueBackground = default!;
 #nullable restore
 #else
-        public string Background { get; set; }
+        public string Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private string _explicitNullValueBackground = default!;
 #endif
         /// <summary>Error/danger color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string _explicitNullValueError = default!;
 #endif
         /// <summary>Link color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link { get; set; }
+        public string? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        private string? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public string Link { get; set; }
+        public string Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        private string _explicitNullValueLink = default!;
 #endif
         /// <summary>Primary brand color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Primary { get; set; }
+        public string? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        private string? _explicitNullValuePrimary = default!;
 #nullable restore
 #else
-        public string Primary { get; set; }
+        public string Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        private string _explicitNullValuePrimary = default!;
 #endif
         /// <summary>Secondary brand color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secondary { get; set; }
+        public string? Secondary { get => _explicitNullValueSecondary; set { _explicitNullValueSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary"); else _explicitNullProperties?.Remove("secondary"); } }
+        private string? _explicitNullValueSecondary = default!;
 #nullable restore
 #else
-        public string Secondary { get; set; }
+        public string Secondary { get => _explicitNullValueSecondary; set { _explicitNullValueSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary"); else _explicitNullProperties?.Remove("secondary"); } }
+        private string _explicitNullValueSecondary = default!;
 #endif
         /// <summary>Success/positive color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Success { get; set; }
+        public string? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private string? _explicitNullValueSuccess = default!;
 #nullable restore
 #else
-        public string Success { get; set; }
+        public string Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private string _explicitNullValueSuccess = default!;
 #endif
         /// <summary>Primary text color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextPrimary { get; set; }
+        public string? TextPrimary { get => _explicitNullValueTextPrimary; set { _explicitNullValueTextPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textPrimary"); else _explicitNullProperties?.Remove("textPrimary"); } }
+        private string? _explicitNullValueTextPrimary = default!;
 #nullable restore
 #else
-        public string TextPrimary { get; set; }
+        public string TextPrimary { get => _explicitNullValueTextPrimary; set { _explicitNullValueTextPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textPrimary"); else _explicitNullProperties?.Remove("textPrimary"); } }
+        private string _explicitNullValueTextPrimary = default!;
 #endif
         /// <summary>Secondary text color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextSecondary { get; set; }
+        public string? TextSecondary { get => _explicitNullValueTextSecondary; set { _explicitNullValueTextSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textSecondary"); else _explicitNullProperties?.Remove("textSecondary"); } }
+        private string? _explicitNullValueTextSecondary = default!;
 #nullable restore
 #else
-        public string TextSecondary { get; set; }
+        public string TextSecondary { get => _explicitNullValueTextSecondary; set { _explicitNullValueTextSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("textSecondary"); else _explicitNullProperties?.Remove("textSecondary"); } }
+        private string _explicitNullValueTextSecondary = default!;
 #endif
         /// <summary>Warning color (hex).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Warning { get; set; }
+        public string? Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string? _explicitNullValueWarning = default!;
 #nullable restore
 #else
-        public string Warning { get; set; }
+        public string Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string _explicitNullValueWarning = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_colors"/> and sets the default values.
@@ -110,7 +147,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_colors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_colors();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_colors(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -149,6 +186,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("textPrimary", TextPrimary);
             writer.WriteStringValue("textSecondary", TextSecondary);
             writer.WriteStringValue("warning", Warning);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

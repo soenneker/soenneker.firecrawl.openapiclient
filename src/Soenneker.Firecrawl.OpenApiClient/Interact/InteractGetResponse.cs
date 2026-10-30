@@ -11,19 +11,31 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
     #pragma warning disable CS1591
     public partial class InteractGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sessions") is { } nullNodeSessions && nullNodeSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sessions = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions>? Sessions { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions>? Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions>? _explicitNullValueSessions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions> Sessions { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions> Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions> _explicitNullValueSessions = default!;
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public static global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse_sessions>("sessions", Sessions);
             writer.WriteBoolValue("success", Success);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

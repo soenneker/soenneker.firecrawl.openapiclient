@@ -11,21 +11,40 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorSummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("changed") is { } nullNodeChanged && nullNodeChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Changed = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("new") is { } nullNodeNew && nullNodeNew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) New = null;
+            if (parseNode.GetChildNode("removed") is { } nullNodeRemoved && nullNodeRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Removed = null;
+            if (parseNode.GetChildNode("same") is { } nullNodeSame && nullNodeSame.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Same = null;
+            if (parseNode.GetChildNode("totalPages") is { } nullNodeTotalPages && nullNodeTotalPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPages = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changed property</summary>
-        public int? Changed { get; set; }
+        public int? Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
+        private int? _explicitNullValueChanged = default!;
         /// <summary>The error property</summary>
-        public int? Error { get; set; }
+        public int? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private int? _explicitNullValueError = default!;
         /// <summary>The new property</summary>
-        public int? New { get; set; }
+        public int? New { get => _explicitNullValueNew; set { _explicitNullValueNew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new"); else _explicitNullProperties?.Remove("new"); } }
+        private int? _explicitNullValueNew = default!;
         /// <summary>The removed property</summary>
-        public int? Removed { get; set; }
+        public int? Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
+        private int? _explicitNullValueRemoved = default!;
         /// <summary>The same property</summary>
-        public int? Same { get; set; }
+        public int? Same { get => _explicitNullValueSame; set { _explicitNullValueSame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same"); else _explicitNullProperties?.Remove("same"); } }
+        private int? _explicitNullValueSame = default!;
         /// <summary>The totalPages property</summary>
-        public int? TotalPages { get; set; }
+        public int? TotalPages { get => _explicitNullValueTotalPages; set { _explicitNullValueTotalPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalPages"); else _explicitNullProperties?.Remove("totalPages"); } }
+        private int? _explicitNullValueTotalPages = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteIntValue("removed", Removed);
             writer.WriteIntValue("same", Same);
             writer.WriteIntValue("totalPages", TotalPages);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

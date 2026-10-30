@@ -12,70 +12,104 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlexandriaCall_options : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("expand") is { } nullNodeExpand && nullNodeExpand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expand = null;
+            if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
+            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("providers") is { } nullNodeProviders && nullNodeProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Providers = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Exact capability IDs to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Capabilities { get; set; }
+        public List<string>? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private List<string>? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public List<string> Capabilities { get; set; }
+        public List<string> Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        private List<string> _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>Category IDs to browse.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get; set; }
+        public List<string>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string>? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<string> Categories { get; set; }
+        public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<string> _explicitNullValueCategories = default!;
 #endif
         /// <summary>Contract parts to include on each tool. Use `[&quot;options&quot;, &quot;response&quot;]` for inputs and output shape, add `examples` for example payloads, or use `[]` for compact results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?>? Expand { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?>? Expand { get => _explicitNullValueExpand; set { _explicitNullValueExpand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand"); else _explicitNullProperties?.Remove("expand"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?>? _explicitNullValueExpand = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?> Expand { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?> Expand { get => _explicitNullValueExpand; set { _explicitNullValueExpand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand"); else _explicitNullProperties?.Remove("expand"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_expand?> _explicitNullValueExpand = default!;
 #endif
         /// <summary>Group IDs to browse.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Groups { get; set; }
+        public List<string>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<string>? _explicitNullValueGroups = default!;
 #nullable restore
 #else
-        public List<string> Groups { get; set; }
+        public List<string> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<string> _explicitNullValueGroups = default!;
 #endif
         /// <summary>The catalogue level to list in `items`.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level? Level { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options_level? _explicitNullValueLevel = default!;
         /// <summary>Maximum number of items on the page.</summary>
-        public int? Limit { get; set; }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private int? _explicitNullValueLimit = default!;
         /// <summary>Number of items to skip, for pagination.</summary>
-        public int? Offset { get; set; }
+        public int? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private int? _explicitNullValueOffset = default!;
         /// <summary>Provider IDs to browse, e.g. `particle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Providers { get; set; }
+        public List<string>? Providers { get => _explicitNullValueProviders; set { _explicitNullValueProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providers"); else _explicitNullProperties?.Remove("providers"); } }
+        private List<string>? _explicitNullValueProviders = default!;
 #nullable restore
 #else
-        public List<string> Providers { get; set; }
+        public List<string> Providers { get => _explicitNullValueProviders; set { _explicitNullValueProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("providers"); else _explicitNullProperties?.Remove("providers"); } }
+        private List<string> _explicitNullValueProviders = default!;
 #endif
         /// <summary>Natural-language description of the data you need. Returns tools that match by meaning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Website URLs. Returns tools whose provider matches the domain of a URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get; set; }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get; set; }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options"/> and sets the default values.
@@ -92,7 +126,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall_options(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,6 +165,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("providers", Providers);
             writer.WriteStringValue("query", Query);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

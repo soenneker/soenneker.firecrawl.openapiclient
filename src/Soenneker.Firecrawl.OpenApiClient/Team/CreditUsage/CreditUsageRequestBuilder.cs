@@ -60,6 +60,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage
             {
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.CreditUsage404Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.CreditUsage500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.CreditUsageGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.CreditUsageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,89 +12,141 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
     #pragma warning disable CS1591
     public partial class WithJobGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creditsUsed") is { } nullNodeCreditsUsed && nullNodeCreditsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsUsed = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("effort") is { } nullNodeEffort && nullNodeEffort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Effort = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("exchange") is { } nullNodeExchange && nullNodeExchange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exchange = null;
+            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("partial") is { } nullNodePartial && nullNodePartial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Partial = null;
+            if (parseNode.GetChildNode("partialSchemaValid") is { } nullNodePartialSchemaValid && nullNodePartialSchemaValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartialSchemaValid = null;
+            if (parseNode.GetChildNode("pendingApproval") is { } nullNodePendingApproval && nullNodePendingApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingApproval = null;
+            if (parseNode.GetChildNode("safe") is { } nullNodeSafe && nullNodeSafe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Safe = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stopReason") is { } nullNodeStopReason && nullNodeStopReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopReason = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("suggestions") is { } nullNodeSuggestions && nullNodeSuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suggestions = null;
+            if (parseNode.GetChildNode("threadId") is { } nullNodeThreadId && nullNodeThreadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreadId = null;
+            if (parseNode.GetChildNode("threadTurn") is { } nullNodeThreadTurn && nullNodeThreadTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreadTurn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creditsUsed property</summary>
-        public double? CreditsUsed { get; set; }
+        public double? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsUsed"); else _explicitNullProperties?.Remove("creditsUsed"); } }
+        private double? _explicitNullValueCreditsUsed = default!;
         /// <summary>The extracted data (only present when status is completed). Never set on a failed run, including one that stopped at its credit limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data? Data { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data Data { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_data _explicitNullValueData = default!;
 #endif
         /// <summary>Reasoning budget used for the agent run (only present for runs that set effort)</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort? Effort { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort? Effort { get => _explicitNullValueEffort; set { _explicitNullValueEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effort"); else _explicitNullProperties?.Remove("effort"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_effort? _explicitNullValueEffort = default!;
         /// <summary>Error message (only present when status is failed)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string _explicitNullValueError = default!;
 #endif
         /// <summary>What the run did with Alexandria. `toolkits` and `requireApproval` are what the run resolved to after thread inheritance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary? Exchange { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary? Exchange { get => _explicitNullValueExchange; set { _explicitNullValueExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange"); else _explicitNullProperties?.Remove("exchange"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary? _explicitNullValueExchange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary Exchange { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary Exchange { get => _explicitNullValueExchange; set { _explicitNullValueExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange"); else _explicitNullProperties?.Remove("exchange"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary _explicitNullValueExchange = default!;
 #endif
         /// <summary>The expiresAt property</summary>
-        public DateTimeOffset? ExpiresAt { get; set; }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>A note from the agent about the result. In `chat` mode, a follow-up that asks for no new data is answered here instead of in `data`. On a failed credit-limit stop, it may explain what is incomplete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The mode property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode? Mode { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_mode? _explicitNullValueMode = default!;
         /// <summary>Model preset used for the agent run. Every new run executes on spark-2; Spark 1 names only appear on legacy runs.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? Model { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_model? _explicitNullValueModel = default!;
         /// <summary>Best-effort JSON recovered from an incomplete run. Only present on some failed runs, such as one that reached `maxCredits`; never present while the run is processing. It may be missing rows or fields, so do not treat it as a completed result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Partial { get; set; }
+        public UntypedNode? Partial { get => _explicitNullValuePartial; set { _explicitNullValuePartial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partial"); else _explicitNullProperties?.Remove("partial"); } }
+        private UntypedNode? _explicitNullValuePartial = default!;
 #nullable restore
 #else
-        public UntypedNode Partial { get; set; }
+        public UntypedNode Partial { get => _explicitNullValuePartial; set { _explicitNullValuePartial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partial"); else _explicitNullProperties?.Remove("partial"); } }
+        private UntypedNode _explicitNullValuePartial = default!;
 #endif
         /// <summary>Whether `partial` validates against the request&apos;s JSON schema. Only present when `partial` is present and the request included a `schema`.</summary>
-        public bool? PartialSchemaValid { get; set; }
+        public bool? PartialSchemaValid { get => _explicitNullValuePartialSchemaValid; set { _explicitNullValuePartialSchemaValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partialSchemaValid"); else _explicitNullProperties?.Remove("partialSchemaValid"); } }
+        private bool? _explicitNullValuePartialSchemaValid = default!;
         /// <summary>What the turn stopped to ask. Answer it on the next turn of the thread with `exchange.approve` or `exchange.decline`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval? PendingApproval { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval? PendingApproval { get => _explicitNullValuePendingApproval; set { _explicitNullValuePendingApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingApproval"); else _explicitNullProperties?.Remove("pendingApproval"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval? _explicitNullValuePendingApproval = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval PendingApproval { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval PendingApproval { get => _explicitNullValuePendingApproval; set { _explicitNullValuePendingApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingApproval"); else _explicitNullProperties?.Remove("pendingApproval"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval _explicitNullValuePendingApproval = default!;
 #endif
         /// <summary>Whether the run&apos;s web searches filtered explicit content (only present for runs that set `safe: true`)</summary>
-        public bool? Safe { get; set; }
+        public bool? Safe { get => _explicitNullValueSafe; set { _explicitNullValueSafe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safe"); else _explicitNullProperties?.Remove("safe"); } }
+        private bool? _explicitNullValueSafe = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_status? _explicitNullValueStatus = default!;
         /// <summary>Why a failed run stopped early. `credit_limit_reached` means the run hit its `maxCredits` limit. Only present when status is failed.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason? StopReason { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason? StopReason { get => _explicitNullValueStopReason; set { _explicitNullValueStopReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopReason"); else _explicitNullProperties?.Remove("stopReason"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_stopReason? _explicitNullValueStopReason = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>Follow-ups the agent offers for the next turn of the thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>? Suggestions { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>? Suggestions { get => _explicitNullValueSuggestions; set { _explicitNullValueSuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestions"); else _explicitNullProperties?.Remove("suggestions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>? _explicitNullValueSuggestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions> Suggestions { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions> Suggestions { get => _explicitNullValueSuggestions; set { _explicitNullValueSuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestions"); else _explicitNullProperties?.Remove("suggestions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions> _explicitNullValueSuggestions = default!;
 #endif
         /// <summary>The thread this run belongs to.</summary>
-        public Guid? ThreadId { get; set; }
+        public Guid? ThreadId { get => _explicitNullValueThreadId; set { _explicitNullValueThreadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threadId"); else _explicitNullProperties?.Remove("threadId"); } }
+        private Guid? _explicitNullValueThreadId = default!;
         /// <summary>This run&apos;s turn in the thread, starting at 1.</summary>
-        public int? ThreadTurn { get; set; }
+        public int? ThreadTurn { get => _explicitNullValueThreadTurn; set { _explicitNullValueThreadTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threadTurn"); else _explicitNullProperties?.Remove("threadTurn"); } }
+        private int? _explicitNullValueThreadTurn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse"/> and sets the default values.
         /// </summary>
@@ -111,7 +163,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,6 +220,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.WithJobGetResponse_suggestions>("suggestions", Suggestions);
             writer.WriteGuidValue("threadId", ThreadId);
             writer.WriteIntValue("threadTurn", ThreadTurn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

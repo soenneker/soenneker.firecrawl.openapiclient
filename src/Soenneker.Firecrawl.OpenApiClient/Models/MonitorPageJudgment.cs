@@ -11,28 +11,45 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorPageJudgment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("meaningful") is { } nullNodeMeaningful && nullNodeMeaningful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meaningful = null;
+            if (parseNode.GetChildNode("meaningfulChanges") is { } nullNodeMeaningfulChanges && nullNodeMeaningfulChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeaningfulChanges = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidence property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? Confidence { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? _explicitNullValueConfidence = default!;
         /// <summary>Whether the changed page is meaningful for the monitor goal.</summary>
-        public bool? Meaningful { get; set; }
+        public bool? Meaningful { get => _explicitNullValueMeaningful; set { _explicitNullValueMeaningful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningful"); else _explicitNullProperties?.Remove("meaningful"); } }
+        private bool? _explicitNullValueMeaningful = default!;
         /// <summary>Goal-relevant changes selected by the judge from the page diff.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? MeaningfulChanges { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? _explicitNullValueMeaningfulChanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> MeaningfulChanges { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> _explicitNullValueMeaningfulChanges = default!;
 #endif
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment"/> and sets the default values.
@@ -49,7 +66,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +95,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteBoolValue("meaningful", Meaningful);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>("meaningfulChanges", MeaningfulChanges);
             writer.WriteStringValue("reason", Reason);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

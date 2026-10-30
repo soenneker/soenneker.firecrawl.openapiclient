@@ -11,45 +11,68 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeveloperSearchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coverage") is { } nullNodeCoverage && nullNodeCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coverage = null;
+            if (parseNode.GetChildNode("repos") is { } nullNodeRepos && nullNodeRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repos = null;
+            if (parseNode.GetChildNode("reranked") is { } nullNodeReranked && nullNodeReranked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reranked = null;
+            if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
+            if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Outcome for each result type. Check this when an expected result type is missing: `skipped` means your `types` value did not ask for that type, while `degraded` or `unavailable` means the gap came from the index or from a filter, not from the query. A repository filter is one such cause — see [how the repository filters scope a search](/api-reference/endpoint/developer-search#how-the-repository-filters-scope-a-search).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage? Coverage { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage? _explicitNullValueCoverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage Coverage { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage _explicitNullValueCoverage = default!;
 #endif
         /// <summary>Present only when `repos` was sent. Echoes each slug with whether it is indexed, plus a per-type breakdown under `types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>? Repos { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>? Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>? _explicitNullValueRepos = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos> Repos { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos> _explicitNullValueRepos = default!;
 #endif
         /// <summary>Whether the ranked list went through the reranking stage.</summary>
-        public bool? Reranked { get; set; }
+        public bool? Reranked { get => _explicitNullValueReranked; set { _explicitNullValueReranked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranked"); else _explicitNullProperties?.Remove("reranked"); } }
+        private bool? _explicitNullValueReranked = default!;
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>? Results { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>? _explicitNullValueResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult> Results { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult> Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult> _explicitNullValueResults = default!;
 #endif
         /// <summary>Present only when `sources` was sent. Reports each id exactly as requested along with whether it is indexed. `indexed: true` means the source has a published generation, so documentation evidence from it may appear; `indexed: false` means nothing from that id can match, which distinguishes an id that is not in the index from a query that simply found nothing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>? Sources { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>? _explicitNullValueSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources> Sources { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources> _explicitNullValueSources = default!;
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse"/> and sets the default values.
         /// </summary>
@@ -65,7 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>("results", Results);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>("sources", Sources);
             writer.WriteBoolValue("success", Success);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

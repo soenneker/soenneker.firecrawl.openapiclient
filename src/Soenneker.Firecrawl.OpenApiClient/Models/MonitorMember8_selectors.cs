@@ -11,22 +11,35 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MonitorMember8_selectors : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attribute") is { } nullNodeAttribute && nullNodeAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribute = null;
+            if (parseNode.GetChildNode("selector") is { } nullNodeSelector && nullNodeSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selector = null;
+        }
+
         /// <summary>Attribute name to extract (for example `data-vehicle-name` or `id`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attribute { get; set; }
+        public string? Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
+        private string? _explicitNullValueAttribute = default!;
 #nullable restore
 #else
-        public string Attribute { get; set; }
+        public string Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
+        private string _explicitNullValueAttribute = default!;
 #endif
         /// <summary>CSS selector to find elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Selector { get; set; }
+        public string? Selector { get => _explicitNullValueSelector; set { _explicitNullValueSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selector"); else _explicitNullProperties?.Remove("selector"); } }
+        private string? _explicitNullValueSelector = default!;
 #nullable restore
 #else
-        public string Selector { get; set; }
+        public string Selector { get => _explicitNullValueSelector; set { _explicitNullValueSelector = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selector"); else _explicitNullProperties?.Remove("selector"); } }
+        private string _explicitNullValueSelector = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_selectors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_selectors();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorMember8_selectors(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("attribute", Attribute);
-            writer.WriteStringValue("selector", Selector);
+            writer.WriteStringValue("selector", Selector);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,48 +12,75 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentTraceArtifact : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("artifactId") is { } nullNodeArtifactId && nullNodeArtifactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArtifactId = null;
+            if (parseNode.GetChildNode("change") is { } nullNodeChange && nullNodeChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Change = null;
+            if (parseNode.GetChildNode("changedFields") is { } nullNodeChangedFields && nullNodeChangedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedFields = null;
+            if (parseNode.GetChildNode("itemCount") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("snapshotId") is { } nullNodeSnapshotId && nullNodeSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotId = null;
+            if (parseNode.GetChildNode("sourceToolCallId") is { } nullNodeSourceToolCallId && nullNodeSourceToolCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceToolCallId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The artifactId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ArtifactId { get; set; }
+        public string? ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
+        private string? _explicitNullValueArtifactId = default!;
 #nullable restore
 #else
-        public string ArtifactId { get; set; }
+        public string ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
+        private string _explicitNullValueArtifactId = default!;
 #endif
         /// <summary>The change property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_change? Change { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_change? Change { get => _explicitNullValueChange; set { _explicitNullValueChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change"); else _explicitNullProperties?.Remove("change"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_change? _explicitNullValueChange = default!;
         /// <summary>The changedFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChangedFields { get; set; }
+        public List<string>? ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
+        private List<string>? _explicitNullValueChangedFields = default!;
 #nullable restore
 #else
-        public List<string> ChangedFields { get; set; }
+        public List<string> ChangedFields { get => _explicitNullValueChangedFields; set { _explicitNullValueChangedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedFields"); else _explicitNullProperties?.Remove("changedFields"); } }
+        private List<string> _explicitNullValueChangedFields = default!;
 #endif
         /// <summary>The itemCount property</summary>
-        public int? ItemCount { get; set; }
+        public int? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemCount"); else _explicitNullProperties?.Remove("itemCount"); } }
+        private int? _explicitNullValueItemCount = default!;
         /// <summary>The kind property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_kind? Kind { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_kind? _explicitNullValueKind = default!;
         /// <summary>Workspace path of the artifact, e.g. /workspace/data.json.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get; set; }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string _explicitNullValuePath = default!;
 #endif
         /// <summary>Pass to GET /agent/{jobId}/snapshots/{snapshotId} to fetch this snapshot&apos;s content.</summary>
-        public Guid? SnapshotId { get; set; }
+        public Guid? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotId"); else _explicitNullProperties?.Remove("snapshotId"); } }
+        private Guid? _explicitNullValueSnapshotId = default!;
         /// <summary>The tool call that produced this change, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceToolCallId { get; set; }
+        public string? SourceToolCallId { get => _explicitNullValueSourceToolCallId; set { _explicitNullValueSourceToolCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceToolCallId"); else _explicitNullProperties?.Remove("sourceToolCallId"); } }
+        private string? _explicitNullValueSourceToolCallId = default!;
 #nullable restore
 #else
-        public string SourceToolCallId { get; set; }
+        public string SourceToolCallId { get => _explicitNullValueSourceToolCallId; set { _explicitNullValueSourceToolCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceToolCallId"); else _explicitNullProperties?.Remove("sourceToolCallId"); } }
+        private string _explicitNullValueSourceToolCallId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact"/> and sets the default values.
@@ -70,7 +97,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("path", Path);
             writer.WriteGuidValue("snapshotId", SnapshotId);
             writer.WriteStringValue("sourceToolCallId", SourceToolCallId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

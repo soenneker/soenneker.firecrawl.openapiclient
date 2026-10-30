@@ -11,29 +11,46 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
     #pragma warning disable CS1591
     public partial class InteractPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Code to execute in the scrape-bound browser sandbox</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string _explicitNullValueCode = default!;
 #endif
         /// <summary>Language of the code to execute. Use `node` for JavaScript or `bash` for agent-browser CLI commands.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody_language? Language { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody_language? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody_language? _explicitNullValueLanguage = default!;
         /// <summary>Optional origin label used for execution telemetry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string _explicitNullValueOrigin = default!;
 #endif
         /// <summary>Execution timeout in seconds</summary>
-        public int? Timeout { get; set; }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -51,7 +68,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
         public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +95,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Scrape.Item.Interact.InteractPostRequestBody_language>("language", Language);
             writer.WriteStringValue("origin", Origin);
             writer.WriteIntValue("timeout", Timeout);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

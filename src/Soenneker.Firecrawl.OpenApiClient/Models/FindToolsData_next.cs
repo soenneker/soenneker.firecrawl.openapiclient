@@ -13,6 +13,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FindToolsData_next : global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaCall, IParsable
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+        }
+
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -21,7 +29,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static new global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_next(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,7 +48,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            base.Serialize(writer);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

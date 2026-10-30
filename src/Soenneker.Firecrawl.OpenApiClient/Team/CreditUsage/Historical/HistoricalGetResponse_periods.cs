@@ -11,23 +11,39 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical
     #pragma warning disable CS1591
     public partial class HistoricalGetResponse_periods : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("totalCredits") is { } nullNodeTotalCredits && nullNodeTotalCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCredits = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the API key used for the billing period. null if byApiKey is false (default)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiKey { get; set; }
+        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        private string? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public string ApiKey { get; set; }
+        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        private string _explicitNullValueApiKey = default!;
 #endif
         /// <summary>End date of the billing period</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        private DateTimeOffset? _explicitNullValueEndDate = default!;
         /// <summary>Start date of the billing period</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        private DateTimeOffset? _explicitNullValueStartDate = default!;
         /// <summary>Total number of credits used in the billing period</summary>
-        public int? TotalCredits { get; set; }
+        public int? TotalCredits { get => _explicitNullValueTotalCredits; set { _explicitNullValueTotalCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCredits"); else _explicitNullProperties?.Remove("totalCredits"); } }
+        private int? _explicitNullValueTotalCredits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical.HistoricalGetResponse_periods"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical
         public static global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical.HistoricalGetResponse_periods CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical.HistoricalGetResponse_periods();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical.HistoricalGetResponse_periods(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.CreditUsage.Historical
             writer.WriteDateTimeOffsetValue("endDate", EndDate);
             writer.WriteDateTimeOffsetValue("startDate", StartDate);
             writer.WriteIntValue("totalCredits", TotalCredits);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

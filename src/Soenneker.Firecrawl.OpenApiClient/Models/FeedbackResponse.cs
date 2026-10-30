@@ -11,30 +11,54 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FeedbackResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alreadySubmitted") is { } nullNodeAlreadySubmitted && nullNodeAlreadySubmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlreadySubmitted = null;
+            if (parseNode.GetChildNode("creditsRefunded") is { } nullNodeCreditsRefunded && nullNodeCreditsRefunded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsRefunded = null;
+            if (parseNode.GetChildNode("creditsRefundedToday") is { } nullNodeCreditsRefundedToday && nullNodeCreditsRefundedToday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsRefundedToday = null;
+            if (parseNode.GetChildNode("dailyCapReached") is { } nullNodeDailyCapReached && nullNodeDailyCapReached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyCapReached = null;
+            if (parseNode.GetChildNode("dailyRefundCap") is { } nullNodeDailyRefundCap && nullNodeDailyRefundCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyRefundCap = null;
+            if (parseNode.GetChildNode("feedbackId") is { } nullNodeFeedbackId && nullNodeFeedbackId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackId = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("warning") is { } nullNodeWarning && nullNodeWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warning = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alreadySubmitted property</summary>
-        public bool? AlreadySubmitted { get; set; }
+        public bool? AlreadySubmitted { get => _explicitNullValueAlreadySubmitted; set { _explicitNullValueAlreadySubmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alreadySubmitted"); else _explicitNullProperties?.Remove("alreadySubmitted"); } }
+        private bool? _explicitNullValueAlreadySubmitted = default!;
         /// <summary>The creditsRefunded property</summary>
-        public double? CreditsRefunded { get; set; }
+        public double? CreditsRefunded { get => _explicitNullValueCreditsRefunded; set { _explicitNullValueCreditsRefunded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsRefunded"); else _explicitNullProperties?.Remove("creditsRefunded"); } }
+        private double? _explicitNullValueCreditsRefunded = default!;
         /// <summary>The creditsRefundedToday property</summary>
-        public double? CreditsRefundedToday { get; set; }
+        public double? CreditsRefundedToday { get => _explicitNullValueCreditsRefundedToday; set { _explicitNullValueCreditsRefundedToday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsRefundedToday"); else _explicitNullProperties?.Remove("creditsRefundedToday"); } }
+        private double? _explicitNullValueCreditsRefundedToday = default!;
         /// <summary>The dailyCapReached property</summary>
-        public bool? DailyCapReached { get; set; }
+        public bool? DailyCapReached { get => _explicitNullValueDailyCapReached; set { _explicitNullValueDailyCapReached = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyCapReached"); else _explicitNullProperties?.Remove("dailyCapReached"); } }
+        private bool? _explicitNullValueDailyCapReached = default!;
         /// <summary>The dailyRefundCap property</summary>
-        public double? DailyRefundCap { get; set; }
+        public double? DailyRefundCap { get => _explicitNullValueDailyRefundCap; set { _explicitNullValueDailyRefundCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dailyRefundCap"); else _explicitNullProperties?.Remove("dailyRefundCap"); } }
+        private double? _explicitNullValueDailyRefundCap = default!;
         /// <summary>The feedbackId property</summary>
-        public Guid? FeedbackId { get; set; }
+        public Guid? FeedbackId { get => _explicitNullValueFeedbackId; set { _explicitNullValueFeedbackId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedbackId"); else _explicitNullProperties?.Remove("feedbackId"); } }
+        private Guid? _explicitNullValueFeedbackId = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>The warning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Warning { get; set; }
+        public string? Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string? _explicitNullValueWarning = default!;
 #nullable restore
 #else
-        public string Warning { get; set; }
+        public string Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string _explicitNullValueWarning = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse"/> and sets the default values.
@@ -51,7 +75,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.FeedbackResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +110,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteGuidValue("feedbackId", FeedbackId);
             writer.WriteBoolValue("success", Success);
             writer.WriteStringValue("warning", Warning);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

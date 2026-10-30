@@ -12,40 +12,59 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_actions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("javascriptReturns") is { } nullNodeJavascriptReturns && nullNodeJavascriptReturns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavascriptReturns = null;
+            if (parseNode.GetChildNode("pdfs") is { } nullNodePdfs && nullNodePdfs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pdfs = null;
+            if (parseNode.GetChildNode("scrapes") is { } nullNodeScrapes && nullNodeScrapes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scrapes = null;
+            if (parseNode.GetChildNode("screenshots") is { } nullNodeScreenshots && nullNodeScreenshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshots = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>JavaScript return values, in the same order as the executeJavascript actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? JavascriptReturns { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? _explicitNullValueJavascriptReturns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> JavascriptReturns { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> _explicitNullValueJavascriptReturns = default!;
 #endif
         /// <summary>PDFs generated, in the same order as the pdf actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Pdfs { get; set; }
+        public List<string>? Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
+        private List<string>? _explicitNullValuePdfs = default!;
 #nullable restore
 #else
-        public List<string> Pdfs { get; set; }
+        public List<string> Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
+        private List<string> _explicitNullValuePdfs = default!;
 #endif
         /// <summary>Scrape contents, in the same order as the scrape actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? Scrapes { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? _explicitNullValueScrapes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> Scrapes { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> _explicitNullValueScrapes = default!;
 #endif
         /// <summary>Screenshot URLs, in the same order as the screenshot actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Screenshots { get; set; }
+        public List<string>? Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
+        private List<string>? _explicitNullValueScreenshots = default!;
 #nullable restore
 #else
-        public List<string> Screenshots { get; set; }
+        public List<string> Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
+        private List<string> _explicitNullValueScreenshots = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("pdfs", Pdfs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>("scrapes", Scrapes);
             writer.WriteCollectionOfPrimitiveValues<string>("screenshots", Screenshots);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

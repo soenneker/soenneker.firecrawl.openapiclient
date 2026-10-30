@@ -11,17 +11,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResearchPaperSignals : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("articleRank") is { } nullNodeArticleRank && nullNodeArticleRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleRank = null;
+            if (parseNode.GetChildNode("seedOverlap") is { } nullNodeSeedOverlap && nullNodeSeedOverlap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeedOverlap = null;
+            if (parseNode.GetChildNode("semantic") is { } nullNodeSemantic && nullNodeSemantic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Semantic = null;
+            if (parseNode.GetChildNode("structural") is { } nullNodeStructural && nullNodeStructural.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Structural = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Structural expansion article-rank score.</summary>
-        public double? ArticleRank { get; set; }
+        public double? ArticleRank { get => _explicitNullValueArticleRank; set { _explicitNullValueArticleRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articleRank"); else _explicitNullProperties?.Remove("articleRank"); } }
+        private double? _explicitNullValueArticleRank = default!;
         /// <summary>Number of distinct seeds connected to this candidate.</summary>
-        public int? SeedOverlap { get; set; }
+        public int? SeedOverlap { get => _explicitNullValueSeedOverlap; set { _explicitNullValueSeedOverlap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seedOverlap"); else _explicitNullProperties?.Remove("seedOverlap"); } }
+        private int? _explicitNullValueSeedOverlap = default!;
         /// <summary>Semantic score from the intent search.</summary>
-        public double? Semantic { get; set; }
+        public double? Semantic { get => _explicitNullValueSemantic; set { _explicitNullValueSemantic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("semantic"); else _explicitNullProperties?.Remove("semantic"); } }
+        private double? _explicitNullValueSemantic = default!;
         /// <summary>Raw structural graph signal.</summary>
-        public double? Structural { get; set; }
+        public double? Structural { get => _explicitNullValueStructural; set { _explicitNullValueStructural = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structural"); else _explicitNullProperties?.Remove("structural"); } }
+        private double? _explicitNullValueStructural = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteIntValue("seedOverlap", SeedOverlap);
             writer.WriteDoubleValue("semantic", Semantic);
             writer.WriteDoubleValue("structural", Structural);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

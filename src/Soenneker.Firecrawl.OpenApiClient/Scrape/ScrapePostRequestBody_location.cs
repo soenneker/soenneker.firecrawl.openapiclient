@@ -12,24 +12,37 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapePostRequestBody_location : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("languages") is { } nullNodeLanguages && nullNodeLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Languages = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ISO 3166-1 alpha-2 country code (e.g., &apos;US&apos;, &apos;AU&apos;, &apos;DE&apos;, &apos;JP&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>Preferred languages and locales for the request in order of priority. Defaults to the language of the specified location. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Languages { get; set; }
+        public List<string>? Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        private List<string>? _explicitNullValueLanguages = default!;
 #nullable restore
 #else
-        public List<string> Languages { get; set; }
+        public List<string> Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        private List<string> _explicitNullValueLanguages = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location"/> and sets the default values.
@@ -47,7 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapePostRequestBody_location(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +83,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country", Country);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

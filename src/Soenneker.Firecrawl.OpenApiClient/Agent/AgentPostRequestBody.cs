@@ -12,89 +12,136 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
     #pragma warning disable CS1591
     public partial class AgentPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auditMetadata") is { } nullNodeAuditMetadata && nullNodeAuditMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditMetadata = null;
+            if (parseNode.GetChildNode("effort") is { } nullNodeEffort && nullNodeEffort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Effort = null;
+            if (parseNode.GetChildNode("exchange") is { } nullNodeExchange && nullNodeExchange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exchange = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("maxCredits") is { } nullNodeMaxCredits && nullNodeMaxCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCredits = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("safe") is { } nullNodeSafe && nullNodeSafe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Safe = null;
+            if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+            if (parseNode.GetChildNode("strictConstrainToURLs") is { } nullNodeStrictConstrainToURLs && nullNodeStrictConstrainToURLs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictConstrainToURLs = null;
+            if (parseNode.GetChildNode("threadId") is { } nullNodeThreadId && nullNodeThreadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreadId = null;
+            if (parseNode.GetChildNode("threatProtection") is { } nullNodeThreatProtection && nullNodeThreatProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreatProtection = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+            if (parseNode.GetChildNode("zeroDataRetention") is { } nullNodeZeroDataRetention && nullNodeZeroDataRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroDataRetention = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? _explicitNullValueAuditMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata _explicitNullValueAuditMetadata = default!;
 #endif
         /// <summary>Reasoning budget for the agent task. Every run executes on spark-2, so effort can be sent with or without model.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort? Effort { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort? Effort { get => _explicitNullValueEffort; set { _explicitNullValueEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effort"); else _explicitNullProperties?.Remove("effort"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_effort? _explicitNullValueEffort = default!;
         /// <summary>Let the agent call your team&apos;s [Alexandria](https://docs.firecrawl.dev/features/alexandria) data providers during the run. Without this object the run uses the web only (a follow-up turn inherits the previous turn&apos;s settings). See [Use your connected Alexandria tools](https://docs.firecrawl.dev/features/agent#use-your-connected-alexandria-tools).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange? Exchange { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange? Exchange { get => _explicitNullValueExchange; set { _explicitNullValueExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange"); else _explicitNullProperties?.Remove("exchange"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange? _explicitNullValueExchange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange Exchange { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange Exchange { get => _explicitNullValueExchange; set { _explicitNullValueExchange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange"); else _explicitNullProperties?.Remove("exchange"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange _explicitNullValueExchange = default!;
 #endif
         /// <summary>Proxy country for every request the agent makes during the run: scrapes, batch scrapes and browser sessions go out from this country, and the agent cannot change it. Search results are localized to the country. Omitted on a follow-up turn keeps the thread&apos;s country. See [Choosing a location](https://docs.firecrawl.dev/features/agent#choosing-a-location).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location? Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location Location { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_location _explicitNullValueLocation = default!;
 #endif
         /// <summary>Maximum credits to spend on this agent task. Defaults to 2500 if not set. Values above 2,500 are always billed as paid requests.</summary>
-        public double? MaxCredits { get; set; }
+        public double? MaxCredits { get => _explicitNullValueMaxCredits; set { _explicitNullValueMaxCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxCredits"); else _explicitNullProperties?.Remove("maxCredits"); } }
+        private double? _explicitNullValueMaxCredits = default!;
         /// <summary>`extract` returns the complete structured result in `data` every turn. `chat` lets a follow-up that asks for no new data get a short reply in `message` instead of a re-run. `exchange.requireApproval` needs `chat` on the same request. Omitted on a follow-up turn keeps the thread&apos;s mode.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode? Mode { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_mode? _explicitNullValueMode = default!;
         /// <summary>The model to use for the agent task. spark-2 is the default and the model every run executes on. The Spark 1 model names remain accepted for backwards compatibility but are deprecated and route to spark-2.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? Model { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_model? _explicitNullValueModel = default!;
         /// <summary>The prompt describing what data to extract</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>When `true`, every web search the agent makes during the run filters explicit content, the same filter as the search endpoint&apos;s `safe` option. Pages the agent scrapes or opens in a browser are not filtered. Omit to keep the default behavior, which does not apply the filter. Omitted on a follow-up turn keeps the thread&apos;s setting; `false` turns it off.</summary>
-        public bool? Safe { get; set; }
+        public bool? Safe { get => _explicitNullValueSafe; set { _explicitNullValueSafe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safe"); else _explicitNullProperties?.Remove("safe"); } }
+        private bool? _explicitNullValueSafe = default!;
         /// <summary>Optional JSON schema to structure the extracted data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema? Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_schema _explicitNullValueSchema = default!;
 #endif
         /// <summary>If true, agent will only visit URLs provided in the urls array</summary>
-        public bool? StrictConstrainToURLs { get; set; }
+        public bool? StrictConstrainToURLs { get => _explicitNullValueStrictConstrainToURLs; set { _explicitNullValueStrictConstrainToURLs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strictConstrainToURLs"); else _explicitNullProperties?.Remove("strictConstrainToURLs"); } }
+        private bool? _explicitNullValueStrictConstrainToURLs = default!;
         /// <summary>Continue an existing thread: pass the `threadId` an earlier run returned, and this request runs as that thread&apos;s next turn. Omitted `urls`, `schema`, `effort`, `mode` and `exchange` settings carry over from the previous turn. Omit `threadId` to start a new thread.</summary>
-        public Guid? ThreadId { get; set; }
+        public Guid? ThreadId { get => _explicitNullValueThreadId; set { _explicitNullValueThreadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threadId"); else _explicitNullProperties?.Remove("threadId"); } }
+        private Guid? _explicitNullValueThreadId = default!;
         /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? _explicitNullValueThreatProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride _explicitNullValueThreatProtection = default!;
 #endif
         /// <summary>Optional list of URLs to constrain the agent to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get; set; }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get; set; }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>A webhook specification object. Subscribes to agent lifecycle events (agent.started, agent.action, agent.completed, agent.failed, agent.cancelled).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook? Webhook { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook Webhook { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook _explicitNullValueWebhook = default!;
 #endif
         /// <summary>Run the agent with Zero Data Retention: Firecrawl keeps no prompt, result or step content in logs or storage, only billing and status metadata. The result is kept for 24 hours for retrieval, then deleted. Requires Scrape ZDR and Search ZDR to be enabled for your team, otherwise the request returns 400 `zdr_not_enabled`. Cannot be combined with `threadId`. With `exchange`, only capabilities that support ZDR are used. See [Zero Data Retention](https://docs.firecrawl.dev/features/agent#zero-data-retention-zdr).</summary>
-        public bool? ZeroDataRetention { get; set; }
+        public bool? ZeroDataRetention { get => _explicitNullValueZeroDataRetention; set { _explicitNullValueZeroDataRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeroDataRetention"); else _explicitNullProperties?.Remove("zeroDataRetention"); } }
+        private bool? _explicitNullValueZeroDataRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -113,7 +160,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,6 +211,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_webhook>("webhook", Webhook);
             writer.WriteBoolValue("zeroDataRetention", ZeroDataRetention);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

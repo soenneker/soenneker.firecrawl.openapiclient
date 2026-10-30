@@ -48,7 +48,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionGetResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Full-document update. Unspecified fields reset to defaults. Enterprise feature, team admins only.
@@ -68,7 +68,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Team.ThreatProtection.ThreatProtectionPutResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the team&apos;s threat protection policy

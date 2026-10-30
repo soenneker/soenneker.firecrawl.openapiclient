@@ -12,18 +12,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentPostRequestBody_exchange_approve : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
+            if (parseNode.GetChildNode("approvalId") is { } nullNodeApprovalId && nullNodeApprovalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalId = null;
+            if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
+        }
+
         /// <summary>Stop asking for approval for the rest of the thread. Ignored on a `terms` approval.</summary>
-        public bool? Always { get; set; }
+        public bool? Always { get => _explicitNullValueAlways; set { _explicitNullValueAlways = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always"); else _explicitNullProperties?.Remove("always"); } }
+        private bool? _explicitNullValueAlways = default!;
         /// <summary>The `pendingApproval.id` to answer.</summary>
-        public Guid? ApprovalId { get; set; }
+        public Guid? ApprovalId { get => _explicitNullValueApprovalId; set { _explicitNullValueApprovalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvalId"); else _explicitNullProperties?.Remove("approvalId"); } }
+        private Guid? _explicitNullValueApprovalId = default!;
         /// <summary>Run only these calls from the approval. Defaults to all of them. Ignored on a `terms` approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CallIds { get; set; }
+        public List<string>? CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        private List<string>? _explicitNullValueCallIds = default!;
 #nullable restore
 #else
-        public List<string> CallIds { get; set; }
+        public List<string> CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        private List<string> _explicitNullValueCallIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve"/> and sets the default values.
@@ -40,7 +54,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +78,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("always", Always);
             writer.WriteGuidValue("approvalId", ApprovalId);
-            writer.WriteCollectionOfPrimitiveValues<string>("callIds", CallIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("callIds", CallIds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

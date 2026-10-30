@@ -12,40 +12,59 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapePostRequestBody_webhook : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of events that should be sent to the webhook URL. (default: all)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?>? Events { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?> Events { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_events?> _explicitNullValueEvents = default!;
 #endif
         /// <summary>Headers to send to the webhook URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers? Headers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers Headers { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Custom metadata that will be included in all webhook payloads for this crawl</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata? Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The URL to send the webhook to. This will trigger for batch scrape started (batch_scrape.started), every page scraped (batch_scrape.page) and when the batch scrape is completed (batch_scrape.completed or batch_scrape.failed). The response will be the same as the `/scrape` endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
         public static global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_headers>("headers", Headers);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_webhook_metadata>("metadata", Metadata);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,45 +11,68 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
     #pragma warning disable CS1591
     public partial class InteractPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cdpUrl") is { } nullNodeCdpUrl && nullNodeCdpUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CdpUrl = null;
+            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interactiveLiveViewUrl") is { } nullNodeInteractiveLiveViewUrl && nullNodeInteractiveLiveViewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractiveLiveViewUrl = null;
+            if (parseNode.GetChildNode("liveViewUrl") is { } nullNodeLiveViewUrl && nullNodeLiveViewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveViewUrl = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>WebSocket URL for Chrome DevTools Protocol access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CdpUrl { get; set; }
+        public string? CdpUrl { get => _explicitNullValueCdpUrl; set { _explicitNullValueCdpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdpUrl"); else _explicitNullProperties?.Remove("cdpUrl"); } }
+        private string? _explicitNullValueCdpUrl = default!;
 #nullable restore
 #else
-        public string CdpUrl { get; set; }
+        public string CdpUrl { get => _explicitNullValueCdpUrl; set { _explicitNullValueCdpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdpUrl"); else _explicitNullProperties?.Remove("cdpUrl"); } }
+        private string _explicitNullValueCdpUrl = default!;
 #endif
         /// <summary>When the session will expire based on TTL</summary>
-        public DateTimeOffset? ExpiresAt { get; set; }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The unique session identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>URL to interact with the interact session in real time (click, type, scroll)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InteractiveLiveViewUrl { get; set; }
+        public string? InteractiveLiveViewUrl { get => _explicitNullValueInteractiveLiveViewUrl; set { _explicitNullValueInteractiveLiveViewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactiveLiveViewUrl"); else _explicitNullProperties?.Remove("interactiveLiveViewUrl"); } }
+        private string? _explicitNullValueInteractiveLiveViewUrl = default!;
 #nullable restore
 #else
-        public string InteractiveLiveViewUrl { get; set; }
+        public string InteractiveLiveViewUrl { get => _explicitNullValueInteractiveLiveViewUrl; set { _explicitNullValueInteractiveLiveViewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactiveLiveViewUrl"); else _explicitNullProperties?.Remove("interactiveLiveViewUrl"); } }
+        private string _explicitNullValueInteractiveLiveViewUrl = default!;
 #endif
         /// <summary>URL to view the interact session in real time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LiveViewUrl { get; set; }
+        public string? LiveViewUrl { get => _explicitNullValueLiveViewUrl; set { _explicitNullValueLiveViewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liveViewUrl"); else _explicitNullProperties?.Remove("liveViewUrl"); } }
+        private string? _explicitNullValueLiveViewUrl = default!;
 #nullable restore
 #else
-        public string LiveViewUrl { get; set; }
+        public string LiveViewUrl { get => _explicitNullValueLiveViewUrl; set { _explicitNullValueLiveViewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liveViewUrl"); else _explicitNullProperties?.Remove("liveViewUrl"); } }
+        private string _explicitNullValueLiveViewUrl = default!;
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse"/> and sets the default values.
         /// </summary>
@@ -65,7 +88,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
         public static global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             writer.WriteStringValue("interactiveLiveViewUrl", InteractiveLiveViewUrl);
             writer.WriteStringValue("liveViewUrl", LiveViewUrl);
             writer.WriteBoolValue("success", Success);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

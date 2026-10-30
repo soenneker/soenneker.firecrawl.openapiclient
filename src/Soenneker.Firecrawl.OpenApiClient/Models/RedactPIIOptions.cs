@@ -12,19 +12,33 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RedactPIIOptions : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("replaceStyle") is { } nullNodeReplaceStyle && nullNodeReplaceStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceStyle = null;
+        }
+
         /// <summary>Restrict redaction to these entity buckets. If omitted, all supported entities are redacted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?>? Entities { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?>? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?> Entities { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity?> _explicitNullValueEntities = default!;
 #endif
         /// <summary>Redaction strategy. `accurate` is model-only and optimized for precision, `aggressive` increases recall with additional heuristics, and `fast` uses heuristics without the model call.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_mode? Mode { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_mode? _explicitNullValueMode = default!;
         /// <summary>`tag` replaces spans with placeholders like `&lt;EMAIL&gt;`, `mask` replaces characters with `*`, and `remove` deletes the span text.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_replaceStyle? ReplaceStyle { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_replaceStyle? ReplaceStyle { get => _explicitNullValueReplaceStyle; set { _explicitNullValueReplaceStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaceStyle"); else _explicitNullProperties?.Remove("replaceStyle"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_replaceStyle? _explicitNullValueReplaceStyle = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +79,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIEntity>("entities", Entities);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_mode>("mode", Mode);
-            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_replaceStyle>("replaceStyle", ReplaceStyle);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.RedactPIIOptions_replaceStyle>("replaceStyle", ReplaceStyle);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -58,6 +58,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreview400Error.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreview401Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreview500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -54,6 +54,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item
             {
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshot400Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshot404Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,36 +11,56 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
     #pragma warning disable CS1591
     public partial class FormatsGetResponse_data_formats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
+            if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("mimeTypes") is { } nullNodeMimeTypes && nullNodeMimeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether `/parse` accepts this format for your requests right now. Always `true` for documents; image formats are `false` where image OCR is not enabled.</summary>
-        public bool? Available { get; set; }
+        public bool? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        private bool? _explicitNullValueAvailable = default!;
         /// <summary>File extensions accepted for this format, canonical first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Extensions { get; set; }
+        public List<string>? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private List<string>? _explicitNullValueExtensions = default!;
 #nullable restore
 #else
-        public List<string> Extensions { get; set; }
+        public List<string> Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private List<string> _explicitNullValueExtensions = default!;
 #endif
         /// <summary>Short name of the format, the canonical extension without the dot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get; set; }
+        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public string Format { get; set; }
+        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string _explicitNullValueFormat = default!;
 #endif
         /// <summary>Whether the format is parsed as a document or OCR&apos;d as an image.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats_kind? Kind { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats_kind? _explicitNullValueKind = default!;
         /// <summary>MIME types accepted for this format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MimeTypes { get; set; }
+        public List<string>? MimeTypes { get => _explicitNullValueMimeTypes; set { _explicitNullValueMimeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeTypes"); else _explicitNullProperties?.Remove("mimeTypes"); } }
+        private List<string>? _explicitNullValueMimeTypes = default!;
 #nullable restore
 #else
-        public List<string> MimeTypes { get; set; }
+        public List<string> MimeTypes { get => _explicitNullValueMimeTypes; set { _explicitNullValueMimeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeTypes"); else _explicitNullProperties?.Remove("mimeTypes"); } }
+        private List<string> _explicitNullValueMimeTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
         public static global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
             writer.WriteStringValue("format", Format);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats_kind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("mimeTypes", MimeTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

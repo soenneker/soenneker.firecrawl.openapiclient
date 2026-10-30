@@ -11,54 +11,82 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
     #pragma warning disable CS1591
     public partial class AgentGetResponse_agents : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("targetHint") is { } nullNodeTargetHint && nullNodeTargetHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetHint = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Integration identifier, if the run was started with one</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Integration { get; set; }
+        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private string? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public string Integration { get; set; }
+        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private string _explicitNullValueIntegration = default!;
 #endif
         /// <summary>Options the run was started with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options? Options { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options Options { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options _explicitNullValueOptions = default!;
 #endif
         /// <summary>Origin of the run (e.g. &quot;api&quot;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string _explicitNullValueOrigin = default!;
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings? Settings { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings Settings { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings _explicitNullValueSettings = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_status? Status { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_status? _explicitNullValueStatus = default!;
         /// <summary>Short hint describing the run&apos;s target (first URL or prompt)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetHint { get; set; }
+        public string? TargetHint { get => _explicitNullValueTargetHint; set { _explicitNullValueTargetHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetHint"); else _explicitNullProperties?.Remove("targetHint"); } }
+        private string? _explicitNullValueTargetHint = default!;
 #nullable restore
 #else
-        public string TargetHint { get; set; }
+        public string TargetHint { get => _explicitNullValueTargetHint; set { _explicitNullValueTargetHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetHint"); else _explicitNullProperties?.Remove("targetHint"); } }
+        private string _explicitNullValueTargetHint = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents"/> and sets the default values.
@@ -75,7 +103,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_settings>("settings", Settings);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_status>("status", Status);
             writer.WriteStringValue("targetHint", TargetHint);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

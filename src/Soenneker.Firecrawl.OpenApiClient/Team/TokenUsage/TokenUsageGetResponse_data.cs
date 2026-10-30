@@ -11,17 +11,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage
     #pragma warning disable CS1591
     public partial class TokenUsageGetResponse_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billingPeriodEnd") is { } nullNodeBillingPeriodEnd && nullNodeBillingPeriodEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodEnd = null;
+            if (parseNode.GetChildNode("billingPeriodStart") is { } nullNodeBillingPeriodStart && nullNodeBillingPeriodStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodStart = null;
+            if (parseNode.GetChildNode("planTokens") is { } nullNodePlanTokens && nullNodePlanTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanTokens = null;
+            if (parseNode.GetChildNode("remainingTokens") is { } nullNodeRemainingTokens && nullNodeRemainingTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemainingTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End date of the current billing period.</summary>
-        public DateTimeOffset? BillingPeriodEnd { get; set; }
+        public DateTimeOffset? BillingPeriodEnd { get => _explicitNullValueBillingPeriodEnd; set { _explicitNullValueBillingPeriodEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPeriodEnd"); else _explicitNullProperties?.Remove("billingPeriodEnd"); } }
+        private DateTimeOffset? _explicitNullValueBillingPeriodEnd = default!;
         /// <summary>Start date of the current billing period.</summary>
-        public DateTimeOffset? BillingPeriodStart { get; set; }
+        public DateTimeOffset? BillingPeriodStart { get => _explicitNullValueBillingPeriodStart; set { _explicitNullValueBillingPeriodStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingPeriodStart"); else _explicitNullProperties?.Remove("billingPeriodStart"); } }
+        private DateTimeOffset? _explicitNullValueBillingPeriodStart = default!;
         /// <summary>Number of tokens in the plan. This does not include coupon tokens.</summary>
-        public double? PlanTokens { get; set; }
+        public double? PlanTokens { get => _explicitNullValuePlanTokens; set { _explicitNullValuePlanTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("planTokens"); else _explicitNullProperties?.Remove("planTokens"); } }
+        private double? _explicitNullValuePlanTokens = default!;
         /// <summary>Number of tokens remaining for the team</summary>
-        public double? RemainingTokens { get; set; }
+        public double? RemainingTokens { get => _explicitNullValueRemainingTokens; set { _explicitNullValueRemainingTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remainingTokens"); else _explicitNullProperties?.Remove("remainingTokens"); } }
+        private double? _explicitNullValueRemainingTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse_data"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage
         public static global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse_data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage.TokenUsageGetResponse_data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.TokenUsage
             writer.WriteDateTimeOffsetValue("billingPeriodStart", BillingPeriodStart);
             writer.WriteDoubleValue("planTokens", PlanTokens);
             writer.WriteDoubleValue("remainingTokens", RemainingTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

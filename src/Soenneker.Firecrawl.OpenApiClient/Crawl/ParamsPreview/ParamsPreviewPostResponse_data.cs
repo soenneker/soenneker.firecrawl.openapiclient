@@ -11,62 +11,103 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
     #pragma warning disable CS1591
     public partial class ParamsPreviewPostResponse_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowExternalLinks") is { } nullNodeAllowExternalLinks && nullNodeAllowExternalLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowExternalLinks = null;
+            if (parseNode.GetChildNode("allowSubdomains") is { } nullNodeAllowSubdomains && nullNodeAllowSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowSubdomains = null;
+            if (parseNode.GetChildNode("crawlEntireDomain") is { } nullNodeCrawlEntireDomain && nullNodeCrawlEntireDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlEntireDomain = null;
+            if (parseNode.GetChildNode("deduplicateSimilarURLs") is { } nullNodeDeduplicateSimilarURLs && nullNodeDeduplicateSimilarURLs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeduplicateSimilarURLs = null;
+            if (parseNode.GetChildNode("delay") is { } nullNodeDelay && nullNodeDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delay = null;
+            if (parseNode.GetChildNode("excludePaths") is { } nullNodeExcludePaths && nullNodeExcludePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludePaths = null;
+            if (parseNode.GetChildNode("ignoreQueryParameters") is { } nullNodeIgnoreQueryParameters && nullNodeIgnoreQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreQueryParameters = null;
+            if (parseNode.GetChildNode("ignoreRobotsTxt") is { } nullNodeIgnoreRobotsTxt && nullNodeIgnoreRobotsTxt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreRobotsTxt = null;
+            if (parseNode.GetChildNode("includePaths") is { } nullNodeIncludePaths && nullNodeIncludePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePaths = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("maxDepth") is { } nullNodeMaxDepth && nullNodeMaxDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDepth = null;
+            if (parseNode.GetChildNode("maxDiscoveryDepth") is { } nullNodeMaxDiscoveryDepth && nullNodeMaxDiscoveryDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDiscoveryDepth = null;
+            if (parseNode.GetChildNode("robotsUserAgent") is { } nullNodeRobotsUserAgent && nullNodeRobotsUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsUserAgent = null;
+            if (parseNode.GetChildNode("sitemap") is { } nullNodeSitemap && nullNodeSitemap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sitemap = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow external links</summary>
-        public bool? AllowExternalLinks { get; set; }
+        public bool? AllowExternalLinks { get => _explicitNullValueAllowExternalLinks; set { _explicitNullValueAllowExternalLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowExternalLinks"); else _explicitNullProperties?.Remove("allowExternalLinks"); } }
+        private bool? _explicitNullValueAllowExternalLinks = default!;
         /// <summary>Whether to allow subdomains</summary>
-        public bool? AllowSubdomains { get; set; }
+        public bool? AllowSubdomains { get => _explicitNullValueAllowSubdomains; set { _explicitNullValueAllowSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowSubdomains"); else _explicitNullProperties?.Remove("allowSubdomains"); } }
+        private bool? _explicitNullValueAllowSubdomains = default!;
         /// <summary>Whether to crawl the entire domain</summary>
-        public bool? CrawlEntireDomain { get; set; }
+        public bool? CrawlEntireDomain { get => _explicitNullValueCrawlEntireDomain; set { _explicitNullValueCrawlEntireDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlEntireDomain"); else _explicitNullProperties?.Remove("crawlEntireDomain"); } }
+        private bool? _explicitNullValueCrawlEntireDomain = default!;
         /// <summary>Whether to deduplicate similar URLs</summary>
-        public bool? DeduplicateSimilarURLs { get; set; }
+        public bool? DeduplicateSimilarURLs { get => _explicitNullValueDeduplicateSimilarURLs; set { _explicitNullValueDeduplicateSimilarURLs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduplicateSimilarURLs"); else _explicitNullProperties?.Remove("deduplicateSimilarURLs"); } }
+        private bool? _explicitNullValueDeduplicateSimilarURLs = default!;
         /// <summary>Delay between requests in milliseconds</summary>
-        public double? Delay { get; set; }
+        public double? Delay { get => _explicitNullValueDelay; set { _explicitNullValueDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay"); else _explicitNullProperties?.Remove("delay"); } }
+        private double? _explicitNullValueDelay = default!;
         /// <summary>URL patterns to exclude</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludePaths { get; set; }
+        public List<string>? ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        private List<string>? _explicitNullValueExcludePaths = default!;
 #nullable restore
 #else
-        public List<string> ExcludePaths { get; set; }
+        public List<string> ExcludePaths { get => _explicitNullValueExcludePaths; set { _explicitNullValueExcludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludePaths"); else _explicitNullProperties?.Remove("excludePaths"); } }
+        private List<string> _explicitNullValueExcludePaths = default!;
 #endif
         /// <summary>Whether to ignore query parameters</summary>
-        public bool? IgnoreQueryParameters { get; set; }
+        public bool? IgnoreQueryParameters { get => _explicitNullValueIgnoreQueryParameters; set { _explicitNullValueIgnoreQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreQueryParameters"); else _explicitNullProperties?.Remove("ignoreQueryParameters"); } }
+        private bool? _explicitNullValueIgnoreQueryParameters = default!;
         /// <summary>Whether robots.txt rules are ignored</summary>
-        public bool? IgnoreRobotsTxt { get; set; }
+        public bool? IgnoreRobotsTxt { get => _explicitNullValueIgnoreRobotsTxt; set { _explicitNullValueIgnoreRobotsTxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreRobotsTxt"); else _explicitNullProperties?.Remove("ignoreRobotsTxt"); } }
+        private bool? _explicitNullValueIgnoreRobotsTxt = default!;
         /// <summary>URL patterns to include</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludePaths { get; set; }
+        public List<string>? IncludePaths { get => _explicitNullValueIncludePaths; set { _explicitNullValueIncludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePaths"); else _explicitNullProperties?.Remove("includePaths"); } }
+        private List<string>? _explicitNullValueIncludePaths = default!;
 #nullable restore
 #else
-        public List<string> IncludePaths { get; set; }
+        public List<string> IncludePaths { get => _explicitNullValueIncludePaths; set { _explicitNullValueIncludePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includePaths"); else _explicitNullProperties?.Remove("includePaths"); } }
+        private List<string> _explicitNullValueIncludePaths = default!;
 #endif
         /// <summary>Maximum number of pages to crawl</summary>
-        public int? Limit { get; set; }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private int? _explicitNullValueLimit = default!;
         /// <summary>Maximum crawl depth</summary>
-        public int? MaxDepth { get; set; }
+        public int? MaxDepth { get => _explicitNullValueMaxDepth; set { _explicitNullValueMaxDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDepth"); else _explicitNullProperties?.Remove("maxDepth"); } }
+        private int? _explicitNullValueMaxDepth = default!;
         /// <summary>Maximum discovery depth</summary>
-        public int? MaxDiscoveryDepth { get; set; }
+        public int? MaxDiscoveryDepth { get => _explicitNullValueMaxDiscoveryDepth; set { _explicitNullValueMaxDiscoveryDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDiscoveryDepth"); else _explicitNullProperties?.Remove("maxDiscoveryDepth"); } }
+        private int? _explicitNullValueMaxDiscoveryDepth = default!;
         /// <summary>Custom User-Agent string used for robots.txt evaluation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RobotsUserAgent { get; set; }
+        public string? RobotsUserAgent { get => _explicitNullValueRobotsUserAgent; set { _explicitNullValueRobotsUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsUserAgent"); else _explicitNullProperties?.Remove("robotsUserAgent"); } }
+        private string? _explicitNullValueRobotsUserAgent = default!;
 #nullable restore
 #else
-        public string RobotsUserAgent { get; set; }
+        public string RobotsUserAgent { get => _explicitNullValueRobotsUserAgent; set { _explicitNullValueRobotsUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsUserAgent"); else _explicitNullProperties?.Remove("robotsUserAgent"); } }
+        private string _explicitNullValueRobotsUserAgent = default!;
 #endif
         /// <summary>Sitemap handling strategy</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap? Sitemap { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap? Sitemap { get => _explicitNullValueSitemap; set { _explicitNullValueSitemap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sitemap"); else _explicitNullProperties?.Remove("sitemap"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap? _explicitNullValueSitemap = default!;
         /// <summary>The URL to crawl</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data"/> and sets the default values.
@@ -83,7 +124,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
         public static global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +173,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview
             writer.WriteStringValue("robotsUserAgent", RobotsUserAgent);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Crawl.ParamsPreview.ParamsPreviewPostResponse_data_sitemap>("sitemap", Sitemap);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

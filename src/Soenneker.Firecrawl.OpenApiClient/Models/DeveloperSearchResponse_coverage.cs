@@ -12,17 +12,32 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeveloperSearchResponse_coverage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("doc") is { } nullNodeDoc && nullNodeDoc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Doc = null;
+            if (parseNode.GetChildNode("issue") is { } nullNodeIssue && nullNodeIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issue = null;
+            if (parseNode.GetChildNode("pull_request") is { } nullNodePullRequest && nullNodePullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequest = null;
+            if (parseNode.GetChildNode("readme") is { } nullNodeReadme && nullNodeReadme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Readme = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The doc property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_doc? Doc { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_doc? Doc { get => _explicitNullValueDoc; set { _explicitNullValueDoc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doc"); else _explicitNullProperties?.Remove("doc"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_doc? _explicitNullValueDoc = default!;
         /// <summary>The issue property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_issue? Issue { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_issue? Issue { get => _explicitNullValueIssue; set { _explicitNullValueIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue"); else _explicitNullProperties?.Remove("issue"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_issue? _explicitNullValueIssue = default!;
         /// <summary>The pull_request property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_pull_request? PullRequest { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_pull_request? PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pull_request"); else _explicitNullProperties?.Remove("pull_request"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_pull_request? _explicitNullValuePullRequest = default!;
         /// <summary>The readme property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_readme? Readme { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_readme? Readme { get => _explicitNullValueReadme; set { _explicitNullValueReadme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readme"); else _explicitNullProperties?.Remove("readme"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_readme? _explicitNullValueReadme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_issue>("issue", Issue);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_pull_request>("pull_request", PullRequest);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage_readme>("readme", Readme);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,26 +11,41 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeveloperSearchResponse_repos : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("indexed") is { } nullNodeIndexed && nullNodeIndexed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexed = null;
+            if (parseNode.GetChildNode("repo") is { } nullNodeRepo && nullNodeRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repo = null;
+            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The indexed property</summary>
-        public bool? Indexed { get; set; }
+        public bool? Indexed { get => _explicitNullValueIndexed; set { _explicitNullValueIndexed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexed"); else _explicitNullProperties?.Remove("indexed"); } }
+        private bool? _explicitNullValueIndexed = default!;
         /// <summary>The repo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repo { get; set; }
+        public string? Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        private string? _explicitNullValueRepo = default!;
 #nullable restore
 #else
-        public string Repo { get; set; }
+        public string Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        private string _explicitNullValueRepo = default!;
 #endif
         /// <summary>Which result types are indexed for this repository: `issue`, `pullRequest`, and `readme`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types? Types { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types Types { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types _explicitNullValueTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteBoolValue("indexed", Indexed);
             writer.WriteStringValue("repo", Repo);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types>("types", Types);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

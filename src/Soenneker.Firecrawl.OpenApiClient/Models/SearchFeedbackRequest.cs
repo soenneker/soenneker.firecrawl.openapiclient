@@ -12,58 +12,85 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchFeedbackRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("missingContent") is { } nullNodeMissingContent && nullNodeMissingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingContent = null;
+            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("querySuggestions") is { } nullNodeQuerySuggestions && nullNodeQuerySuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySuggestions = null;
+            if (parseNode.GetChildNode("rating") is { } nullNodeRating && nullNodeRating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rating = null;
+            if (parseNode.GetChildNode("valuableResults") is { } nullNodeValuableResults && nullNodeValuableResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableResults = null;
+            if (parseNode.GetChildNode("valuableSources") is { } nullNodeValuableSources && nullNodeValuableSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableSources = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The integration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Integration { get; set; }
+        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private string? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public string Integration { get; set; }
+        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        private string _explicitNullValueIntegration = default!;
 #endif
         /// <summary>The missingContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? MissingContent { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? _explicitNullValueMissingContent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> MissingContent { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> _explicitNullValueMissingContent = default!;
 #endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        private string _explicitNullValueOrigin = default!;
 #endif
         /// <summary>The querySuggestions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuerySuggestions { get; set; }
+        public string? QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
+        private string? _explicitNullValueQuerySuggestions = default!;
 #nullable restore
 #else
-        public string QuerySuggestions { get; set; }
+        public string QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
+        private string _explicitNullValueQuerySuggestions = default!;
 #endif
         /// <summary>The rating property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? Rating { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? Rating { get => _explicitNullValueRating; set { _explicitNullValueRating = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating"); else _explicitNullProperties?.Remove("rating"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? _explicitNullValueRating = default!;
         /// <summary>Results that were useful, each addressed by the `data` group it appears in and its 1-indexed position within that group. Results are returned grouped (`data.web`, `data.images`, `data.news`) and each group is numbered from 1 independently, so `source` is required. List every useful result; unlisted results are treated as not useful. Positions beyond what the group actually returned are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? ValuableResults { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? _explicitNullValueValuableResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> ValuableResults { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> _explicitNullValueValuableResults = default!;
 #endif
         /// <summary>The valuableSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? ValuableSources { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? _explicitNullValueValuableSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> ValuableSources { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> _explicitNullValueValuableSources = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest"/> and sets the default values.
@@ -81,7 +108,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +141,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating>("rating", Rating);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>("valuableResults", ValuableResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>("valuableSources", ValuableSources);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

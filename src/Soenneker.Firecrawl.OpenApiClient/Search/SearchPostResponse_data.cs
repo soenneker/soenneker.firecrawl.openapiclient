@@ -13,40 +13,59 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchPostResponse_data : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("news") is { } nullNodeNews && nullNodeNews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) News = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+            if (parseNode.GetChildNode("web") is { } nullNodeWeb && nullNodeWeb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Web = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The images property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>? Images { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images> Images { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images> _explicitNullValueImages = default!;
 #endif
         /// <summary>The news property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>? News { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>? News { get => _explicitNullValueNews; set { _explicitNullValueNews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("news"); else _explicitNullProperties?.Remove("news"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>? _explicitNullValueNews = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news> News { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news> News { get => _explicitNullValueNews; set { _explicitNullValueNews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("news"); else _explicitNullProperties?.Remove("news"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news> _explicitNullValueNews = default!;
 #endif
         /// <summary>Tool contracts discovered from the Alexandria catalogue. Present when `alexandria` is among the sources or when `domainTools` was requested; up to `limit` results per discovery source (semantic matches from the `alexandria` source, domain matches from `domainTools`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>? Tools { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool> Tools { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool> _explicitNullValueTools = default!;
 #endif
         /// <summary>The web property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>? Web { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>? Web { get => _explicitNullValueWeb; set { _explicitNullValueWeb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web"); else _explicitNullProperties?.Remove("web"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>? _explicitNullValueWeb = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web> Web { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web> Web { get => _explicitNullValueWeb; set { _explicitNullValueWeb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web"); else _explicitNullProperties?.Remove("web"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web> _explicitNullValueWeb = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data"/> and sets the default values.
@@ -63,7 +82,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         public static global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +109,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>("news", News);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DiscoveredTool>("tools", Tools);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_web>("web", Web);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

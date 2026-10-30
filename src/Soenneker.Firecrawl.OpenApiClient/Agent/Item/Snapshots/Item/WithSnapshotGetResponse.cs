@@ -11,23 +11,39 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item
     #pragma warning disable CS1591
     public partial class WithSnapshotGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("snapshot") is { } nullNodeSnapshot && nullNodeSnapshot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snapshot = null;
+            if (parseNode.GetChildNode("snapshotId") is { } nullNodeSnapshotId && nullNodeSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotId = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The snapshot content as a JSON-encoded string — the agent&apos;s working output artifact at that point in the run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Snapshot { get; set; }
+        public string? Snapshot { get => _explicitNullValueSnapshot; set { _explicitNullValueSnapshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot"); else _explicitNullProperties?.Remove("snapshot"); } }
+        private string? _explicitNullValueSnapshot = default!;
 #nullable restore
 #else
-        public string Snapshot { get; set; }
+        public string Snapshot { get => _explicitNullValueSnapshot; set { _explicitNullValueSnapshot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot"); else _explicitNullProperties?.Remove("snapshot"); } }
+        private string _explicitNullValueSnapshot = default!;
 #endif
         /// <summary>The snapshotId property</summary>
-        public Guid? SnapshotId { get; set; }
+        public Guid? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotId"); else _explicitNullProperties?.Remove("snapshotId"); } }
+        private Guid? _explicitNullValueSnapshotId = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item.WithSnapshotGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Snapshots.Item
             writer.WriteStringValue("snapshot", Snapshot);
             writer.WriteGuidValue("snapshotId", SnapshotId);
             writer.WriteBoolValue("success", Success);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

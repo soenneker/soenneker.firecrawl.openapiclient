@@ -54,6 +54,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact.Item.Execute
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Interact.Item.Execute.Execute402Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Interact.Item.Execute.ExecutePostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Interact.Item.Execute.ExecutePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

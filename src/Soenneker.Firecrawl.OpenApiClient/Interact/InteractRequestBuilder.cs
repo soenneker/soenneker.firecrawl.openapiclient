@@ -65,6 +65,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Interact.Interact402Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +92,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Interact.Interact402Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Interact.InteractPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

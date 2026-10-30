@@ -12,32 +12,48 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeResponse_data_branding_images : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("favicon") is { } nullNodeFavicon && nullNodeFavicon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Favicon = null;
+            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("ogImage") is { } nullNodeOgImage && nullNodeOgImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OgImage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Favicon URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Favicon { get; set; }
+        public string? Favicon { get => _explicitNullValueFavicon; set { _explicitNullValueFavicon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favicon"); else _explicitNullProperties?.Remove("favicon"); } }
+        private string? _explicitNullValueFavicon = default!;
 #nullable restore
 #else
-        public string Favicon { get; set; }
+        public string Favicon { get => _explicitNullValueFavicon; set { _explicitNullValueFavicon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favicon"); else _explicitNullProperties?.Remove("favicon"); } }
+        private string _explicitNullValueFavicon = default!;
 #endif
         /// <summary>Logo image URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get; set; }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get; set; }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>Open Graph image URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OgImage { get; set; }
+        public string? OgImage { get => _explicitNullValueOgImage; set { _explicitNullValueOgImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ogImage"); else _explicitNullProperties?.Remove("ogImage"); } }
+        private string? _explicitNullValueOgImage = default!;
 #nullable restore
 #else
-        public string OgImage { get; set; }
+        public string OgImage { get => _explicitNullValueOgImage; set { _explicitNullValueOgImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ogImage"); else _explicitNullProperties?.Remove("ogImage"); } }
+        private string _explicitNullValueOgImage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_images"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_images CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_images();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_images(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("favicon", Favicon);
             writer.WriteStringValue("logo", Logo);
             writer.WriteStringValue("ogImage", OgImage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

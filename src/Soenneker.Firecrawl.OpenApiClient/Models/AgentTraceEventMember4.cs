@@ -11,29 +11,51 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentTraceEventMember4 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent") is { } nullNodeAgent && nullNodeAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agent = null;
+            if (parseNode.GetChildNode("eventId") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("occurredAt") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
+            if (parseNode.GetChildNode("producerSequence") is { } nullNodeProducerSequence && nullNodeProducerSequence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProducerSequence = null;
+            if (parseNode.GetChildNode("runId") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("schemaVersion") is { } nullNodeSchemaVersion && nullNodeSchemaVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaVersion = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identity of the agent that emitted the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent? Agent { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent? _explicitNullValueAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent Agent { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceAgent _explicitNullValueAgent = default!;
 #endif
         /// <summary>Unique ID of this event.</summary>
-        public Guid? EventId { get; set; }
+        public Guid? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventId"); else _explicitNullProperties?.Remove("eventId"); } }
+        private Guid? _explicitNullValueEventId = default!;
         /// <summary>The occurredAt property</summary>
-        public DateTimeOffset? OccurredAt { get; set; }
+        public DateTimeOffset? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurredAt"); else _explicitNullProperties?.Remove("occurredAt"); } }
+        private DateTimeOffset? _explicitNullValueOccurredAt = default!;
         /// <summary>Monotonic sequence number from the emitting agent; order events by it.</summary>
-        public int? ProducerSequence { get; set; }
+        public int? ProducerSequence { get => _explicitNullValueProducerSequence; set { _explicitNullValueProducerSequence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("producerSequence"); else _explicitNullProperties?.Remove("producerSequence"); } }
+        private int? _explicitNullValueProducerSequence = default!;
         /// <summary>The agent job ID this event belongs to.</summary>
-        public Guid? RunId { get; set; }
+        public Guid? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runId"); else _explicitNullProperties?.Remove("runId"); } }
+        private Guid? _explicitNullValueRunId = default!;
         /// <summary>The schemaVersion property</summary>
-        public int? SchemaVersion { get; set; }
+        public int? SchemaVersion { get => _explicitNullValueSchemaVersion; set { _explicitNullValueSchemaVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemaVersion"); else _explicitNullProperties?.Remove("schemaVersion"); } }
+        private int? _explicitNullValueSchemaVersion = default!;
         /// <summary>Emitted when an agent (orchestrator or subagent) starts.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4"/> and sets the default values.
         /// </summary>
@@ -49,7 +71,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteGuidValue("runId", RunId);
             writer.WriteIntValue("schemaVersion", SchemaVersion);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4_type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

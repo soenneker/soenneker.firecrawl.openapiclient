@@ -12,21 +12,35 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     public partial class MonitorCheckDetailResponse_data : global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheck, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+        }
+
         /// <summary>URL to fetch the next page of monitor check page results, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Next { get; set; }
+        public string? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private string? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public string Next { get; set; }
+        public string Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private string _explicitNullValueNext = default!;
 #endif
         /// <summary>The pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage>? Pages { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage>? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage>? _explicitNullValuePages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage> Pages { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage> Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage> _explicitNullValuePages = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +50,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckDetailResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckDetailResponse_data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckDetailResponse_data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +73,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("next", Next);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorCheckPage>("pages", Pages);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

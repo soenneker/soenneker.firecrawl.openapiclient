@@ -11,58 +11,85 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResearchPaperResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("abstract") is { } nullNodeAbstract && nullNodeAbstract.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Abstract = null;
+            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("paperId") is { } nullNodePaperId && nullNodePaperId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperId = null;
+            if (parseNode.GetChildNode("primaryId") is { } nullNodePrimaryId && nullNodePrimaryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryId = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("signals") is { } nullNodeSignals && nullNodeSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signals = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>The abstract property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Abstract { get; set; }
+        public string? Abstract { get => _explicitNullValueAbstract; set { _explicitNullValueAbstract = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abstract"); else _explicitNullProperties?.Remove("abstract"); } }
+        private string? _explicitNullValueAbstract = default!;
 #nullable restore
 #else
-        public string Abstract { get; set; }
+        public string Abstract { get => _explicitNullValueAbstract; set { _explicitNullValueAbstract = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abstract"); else _explicitNullProperties?.Remove("abstract"); } }
+        private string _explicitNullValueAbstract = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Source identifiers grouped by namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap? Ids { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap Ids { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap _explicitNullValueIds = default!;
 #endif
         /// <summary>Canonical paper id, or web:&lt;url&gt; for SERP-discovered display results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaperId { get; set; }
+        public string? PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
+        private string? _explicitNullValuePaperId = default!;
 #nullable restore
 #else
-        public string PaperId { get; set; }
+        public string PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
+        private string _explicitNullValuePaperId = default!;
 #endif
         /// <summary>Preferred cite/fetch id such as arxiv:&lt;id&gt;, pmid:&lt;id&gt;, pmcid:&lt;id&gt;, or doi:&lt;id&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryId { get; set; }
+        public string? PrimaryId { get => _explicitNullValuePrimaryId; set { _explicitNullValuePrimaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryId"); else _explicitNullProperties?.Remove("primaryId"); } }
+        private string? _explicitNullValuePrimaryId = default!;
 #nullable restore
 #else
-        public string PrimaryId { get; set; }
+        public string PrimaryId { get => _explicitNullValuePrimaryId; set { _explicitNullValuePrimaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryId"); else _explicitNullProperties?.Remove("primaryId"); } }
+        private string _explicitNullValuePrimaryId = default!;
 #endif
         /// <summary>The score property</summary>
-        public double? Score { get; set; }
+        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private double? _explicitNullValueScore = default!;
         /// <summary>The signals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals? Signals { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals? Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals? _explicitNullValueSignals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals Signals { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals _explicitNullValueSignals = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperResult"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteDoubleValue("score", Score);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals>("signals", Signals);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

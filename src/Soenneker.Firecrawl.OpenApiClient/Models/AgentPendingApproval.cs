@@ -12,50 +12,74 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentPendingApproval : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calls") is { } nullNodeCalls && nullNodeCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calls = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("resolution") is { } nullNodeResolution && nullNodeResolution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolution = null;
+            if (parseNode.GetChildNode("terms") is { } nullNodeTerms && nullNodeTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Terms = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The paid calls waiting for approval. Empty on a `terms` approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls>? Calls { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls>? Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls>? _explicitNullValueCalls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls> Calls { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls> Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_calls> _explicitNullValueCalls = default!;
 #endif
         /// <summary>Send this as `approvalId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>`calls`: paid provider calls held back by `requireApproval`. `terms`: providers whose data terms need accepting (`onTermsRequired: &quot;ask&quot;`). Absent on items written before terms offers existed, which are `calls`.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_kind? Kind { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_kind? _explicitNullValueKind = default!;
         /// <summary>Why the agent wants to make these calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
 #endif
         /// <summary>Null until a later turn answers the approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution? Resolution { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution? Resolution { get => _explicitNullValueResolution; set { _explicitNullValueResolution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution"); else _explicitNullProperties?.Remove("resolution"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution? _explicitNullValueResolution = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution Resolution { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution Resolution { get => _explicitNullValueResolution; set { _explicitNullValueResolution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution"); else _explicitNullProperties?.Remove("resolution"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution _explicitNullValueResolution = default!;
 #endif
         /// <summary>On a `terms` approval, the providers whose terms need accepting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms>? Terms { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms>? Terms { get => _explicitNullValueTerms; set { _explicitNullValueTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terms"); else _explicitNullProperties?.Remove("terms"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms>? _explicitNullValueTerms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms> Terms { get; set; }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms> Terms { get => _explicitNullValueTerms; set { _explicitNullValueTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terms"); else _explicitNullProperties?.Remove("terms"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms> _explicitNullValueTerms = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_resolution>("resolution", Resolution);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentPendingApproval_terms>("terms", Terms);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -87,6 +87,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             {
                 { "408", global::Soenneker.Firecrawl.OpenApiClient.Search.Search408Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Search.Search500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

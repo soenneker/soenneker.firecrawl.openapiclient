@@ -13,57 +13,87 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EndpointFeedbackRequest : global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest, IParsable
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("issues") is { } nullNodeIssues && nullNodeIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issues = null;
+            if (parseNode.GetChildNode("jobId") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("note") is { } nullNodeNote && nullNodeNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Note = null;
+            if (parseNode.GetChildNode("pageNumbers") is { } nullNodePageNumbers && nullNodePageNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageNumbers = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>The endpoint property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_endpoint? Endpoint { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_endpoint? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_endpoint? _explicitNullValueEndpoint = default!;
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Issues { get; set; }
+        public List<string>? Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        private List<string>? _explicitNullValueIssues = default!;
 #nullable restore
 #else
-        public List<string> Issues { get; set; }
+        public List<string> Issues { get => _explicitNullValueIssues; set { _explicitNullValueIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issues"); else _explicitNullProperties?.Remove("issues"); } }
+        private List<string> _explicitNullValueIssues = default!;
 #endif
         /// <summary>The jobId property</summary>
-        public Guid? JobId { get; set; }
+        public Guid? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobId"); else _explicitNullProperties?.Remove("jobId"); } }
+        private Guid? _explicitNullValueJobId = default!;
         /// <summary>Small endpoint-specific metadata object. Must be 8KB or smaller; do not include full endpoint results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata Metadata { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest_metadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The note property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note { get; set; }
+        public string? Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        private string? _explicitNullValueNote = default!;
 #nullable restore
 #else
-        public string Note { get; set; }
+        public string Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        private string _explicitNullValueNote = default!;
 #endif
         /// <summary>The pageNumbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? PageNumbers { get; set; }
+        public List<int?>? PageNumbers { get => _explicitNullValuePageNumbers; set { _explicitNullValuePageNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageNumbers"); else _explicitNullProperties?.Remove("pageNumbers"); } }
+        private List<int?>? _explicitNullValuePageNumbers = default!;
 #nullable restore
 #else
-        public List<int?> PageNumbers { get; set; }
+        public List<int?> PageNumbers { get => _explicitNullValuePageNumbers; set { _explicitNullValuePageNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageNumbers"); else _explicitNullProperties?.Remove("pageNumbers"); } }
+        private List<int?> _explicitNullValuePageNumbers = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +103,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static new global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.EndpointFeedbackRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +138,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("note", Note);
             writer.WriteCollectionOfPrimitiveValues<int?>("pageNumbers", PageNumbers);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("url", Url);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

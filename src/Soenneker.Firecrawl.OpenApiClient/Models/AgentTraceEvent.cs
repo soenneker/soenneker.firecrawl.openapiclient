@@ -12,7 +12,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentTraceEvent : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +132,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEvent();
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.AgentTraceEventMember1 == null && result.AgentTraceEventMember10 == null && result.AgentTraceEventMember11 == null && result.AgentTraceEventMember12 == null && result.AgentTraceEventMember13 == null && result.AgentTraceEventMember2 == null && result.AgentTraceEventMember3 == null && result.AgentTraceEventMember4 == null && result.AgentTraceEventMember5 == null && result.AgentTraceEventMember6 == null && result.AgentTraceEventMember7 == null && result.AgentTraceEventMember8 == null && result.AgentTraceEventMember9 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,57 +203,73 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AgentTraceEventMember1 == null && AgentTraceEventMember10 == null && AgentTraceEventMember11 == null && AgentTraceEventMember12 == null && AgentTraceEventMember13 == null && AgentTraceEventMember2 == null && AgentTraceEventMember3 == null && AgentTraceEventMember4 == null && AgentTraceEventMember5 == null && AgentTraceEventMember6 == null && AgentTraceEventMember7 == null && AgentTraceEventMember8 == null && AgentTraceEventMember9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AgentTraceEventMember1 != null)
             {
+                if (AgentTraceEventMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember1>(null, AgentTraceEventMember1);
             }
             else if(AgentTraceEventMember10 != null)
             {
+                if (AgentTraceEventMember10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember10>(null, AgentTraceEventMember10);
             }
             else if(AgentTraceEventMember11 != null)
             {
+                if (AgentTraceEventMember11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember11>(null, AgentTraceEventMember11);
             }
             else if(AgentTraceEventMember12 != null)
             {
+                if (AgentTraceEventMember12 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember12>(null, AgentTraceEventMember12);
             }
             else if(AgentTraceEventMember13 != null)
             {
+                if (AgentTraceEventMember13 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember13>(null, AgentTraceEventMember13);
             }
             else if(AgentTraceEventMember2 != null)
             {
+                if (AgentTraceEventMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember2>(null, AgentTraceEventMember2);
             }
             else if(AgentTraceEventMember3 != null)
             {
+                if (AgentTraceEventMember3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember3>(null, AgentTraceEventMember3);
             }
             else if(AgentTraceEventMember4 != null)
             {
+                if (AgentTraceEventMember4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember4>(null, AgentTraceEventMember4);
             }
             else if(AgentTraceEventMember5 != null)
             {
+                if (AgentTraceEventMember5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember5>(null, AgentTraceEventMember5);
             }
             else if(AgentTraceEventMember6 != null)
             {
+                if (AgentTraceEventMember6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember6>(null, AgentTraceEventMember6);
             }
             else if(AgentTraceEventMember7 != null)
             {
+                if (AgentTraceEventMember7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember7>(null, AgentTraceEventMember7);
             }
             else if(AgentTraceEventMember8 != null)
             {
+                if (AgentTraceEventMember8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember8>(null, AgentTraceEventMember8);
             }
             else if(AgentTraceEventMember9 != null)
             {
+                if (AgentTraceEventMember9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceEventMember9>(null, AgentTraceEventMember9);
             }
         }

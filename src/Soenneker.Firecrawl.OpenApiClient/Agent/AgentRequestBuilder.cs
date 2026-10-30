@@ -65,6 +65,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent400Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,6 +100,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
                 { "403", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent403Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Agent.Agent500Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

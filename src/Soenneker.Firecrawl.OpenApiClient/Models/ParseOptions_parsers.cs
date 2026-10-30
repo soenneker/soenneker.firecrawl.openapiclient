@@ -11,19 +11,38 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ParseOptions_parsers : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocks") is { } nullNodeBlocks && nullNodeBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocks = null;
+            if (parseNode.GetChildNode("maxPages") is { } nullNodeMaxPages && nullNodeMaxPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPages = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("pageMarkers") is { } nullNodePageMarkers && nullNodePageMarkers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageMarkers = null;
+            if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Include per-page typed layout blocks alongside the document markdown. Populates the `blocks` field on the document: typed blocks (title, section_header, text, table, formula, figure, caption, ...) with normalized bounding boxes, reading order, character-span links into the markdown, and per-block confidence. No additional cost.</summary>
-        public bool? Blocks { get; set; }
+        public bool? Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private bool? _explicitNullValueBlocks = default!;
         /// <summary>Maximum number of pages to parse from the PDF.</summary>
-        public int? MaxPages { get; set; }
+        public int? MaxPages { get => _explicitNullValueMaxPages; set { _explicitNullValueMaxPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPages"); else _explicitNullProperties?.Remove("maxPages"); } }
+        private int? _explicitNullValueMaxPages = default!;
         /// <summary>PDF parsing mode. &quot;fast&quot;: text-only extraction. &quot;auto&quot;: text-first with OCR fallback. &quot;ocr&quot;: OCR on every page.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_mode? Mode { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_mode? _explicitNullValueMode = default!;
         /// <summary>Annotate page breaks in the document markdown: pages are joined with `\n\n---\n\n&lt;!-- page N --&gt;\n\n`, where N is the 1-based physical page of the content that follows. Markers appear between pages only (no leading marker for page 1), and numbering may skip pages merged across a page break — use `pages: true` when every physical page is needed. No new response field; no additional cost.</summary>
-        public bool? PageMarkers { get; set; }
+        public bool? PageMarkers { get => _explicitNullValuePageMarkers; set { _explicitNullValuePageMarkers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageMarkers"); else _explicitNullProperties?.Remove("pageMarkers"); } }
+        private bool? _explicitNullValuePageMarkers = default!;
         /// <summary>Include physical per-page markdown alongside the document markdown. Populates the `pages` field on the document as an array of { pageNumber, markdown }. No additional cost.</summary>
-        public bool? Pages { get; set; }
+        public bool? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private bool? _explicitNullValuePages = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_type? Type { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public static global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +91,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_mode>("mode", Mode);
             writer.WriteBoolValue("pageMarkers", PageMarkers);
             writer.WriteBoolValue("pages", Pages);
-            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers_type>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

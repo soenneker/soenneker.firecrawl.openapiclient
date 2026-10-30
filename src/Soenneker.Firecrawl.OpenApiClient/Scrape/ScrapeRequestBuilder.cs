@@ -82,6 +82,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape500Error.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape503Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -145,6 +147,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Scrape.ScrapeRequestBuilder.ScrapePostResponse();
@@ -180,6 +186,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AlexandriaScrapeResponse == null && ScrapeResponse == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(AlexandriaScrapeResponse != null)
                 {

@@ -12,38 +12,62 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentPostRequestBody_exchange : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approve") is { } nullNodeApprove && nullNodeApprove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approve = null;
+            if (parseNode.GetChildNode("decline") is { } nullNodeDecline && nullNodeDecline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decline = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("maxCalls") is { } nullNodeMaxCalls && nullNodeMaxCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCalls = null;
+            if (parseNode.GetChildNode("onTermsRequired") is { } nullNodeOnTermsRequired && nullNodeOnTermsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnTermsRequired = null;
+            if (parseNode.GetChildNode("requireApproval") is { } nullNodeRequireApproval && nullNodeRequireApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApproval = null;
+            if (parseNode.GetChildNode("toolkits") is { } nullNodeToolkits && nullNodeToolkits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toolkits = null;
+        }
+
         /// <summary>Answer yes to the `pendingApproval` the previous turn of this thread ended on. Needs `threadId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve? Approve { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve? Approve { get => _explicitNullValueApprove; set { _explicitNullValueApprove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approve"); else _explicitNullProperties?.Remove("approve"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve? _explicitNullValueApprove = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve Approve { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve Approve { get => _explicitNullValueApprove; set { _explicitNullValueApprove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approve"); else _explicitNullProperties?.Remove("approve"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve _explicitNullValueApprove = default!;
 #endif
         /// <summary>Answer no to the `pendingApproval` the previous turn of this thread ended on. Needs `threadId`. A declined `terms` offer keeps its providers out of the rest of the thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline? Decline { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline? Decline { get => _explicitNullValueDecline; set { _explicitNullValueDecline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decline"); else _explicitNullProperties?.Remove("decline"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline? _explicitNullValueDecline = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline Decline { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline Decline { get => _explicitNullValueDecline; set { _explicitNullValueDecline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decline"); else _explicitNullProperties?.Remove("decline"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline _explicitNullValueDecline = default!;
 #endif
         /// <summary>Let the agent call Alexandria providers. Defaults to `true` once `exchange` is sent; send `false` to turn providers off for a turn of a thread.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Most provider calls the agent may make in this turn.</summary>
-        public int? MaxCalls { get; set; }
+        public int? MaxCalls { get => _explicitNullValueMaxCalls; set { _explicitNullValueMaxCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxCalls"); else _explicitNullProperties?.Remove("maxCalls"); } }
+        private int? _explicitNullValueMaxCalls = default!;
         /// <summary>What to do when a provider the agent would use needs data terms your team has not accepted. Such providers are never called. `skip` answers with accepted providers and lists the others in `exchange.skippedProviders`; `ask` also ends the turn with a `terms` `pendingApproval` and `exchange.requiresAction`. Omitted on a follow-up turn keeps the previous turn&apos;s value. See [Data providers that need terms](https://docs.firecrawl.dev/features/agent#data-providers-that-need-terms).</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_onTermsRequired? OnTermsRequired { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_onTermsRequired? OnTermsRequired { get => _explicitNullValueOnTermsRequired; set { _explicitNullValueOnTermsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onTermsRequired"); else _explicitNullProperties?.Remove("onTermsRequired"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_onTermsRequired? _explicitNullValueOnTermsRequired = default!;
         /// <summary>Before any paid provider call, end the turn with a `pendingApproval` of kind `calls` that you approve or decline on the next turn. Requires `mode: &quot;chat&quot;` on the same request, including on a follow-up.</summary>
-        public bool? RequireApproval { get; set; }
+        public bool? RequireApproval { get => _explicitNullValueRequireApproval; set { _explicitNullValueRequireApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireApproval"); else _explicitNullProperties?.Remove("requireApproval"); } }
+        private bool? _explicitNullValueRequireApproval = default!;
         /// <summary>Pin up to 5 providers by slug, for example `[&quot;apollo&quot;]`. The agent then uses only those. Empty or omitted means every provider your team can use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Toolkits { get; set; }
+        public List<string>? Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        private List<string>? _explicitNullValueToolkits = default!;
 #nullable restore
 #else
-        public List<string> Toolkits { get; set; }
+        public List<string> Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        private List<string> _explicitNullValueToolkits = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange"/> and sets the default values.
@@ -63,7 +87,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         public static global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +119,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
             writer.WriteIntValue("maxCalls", MaxCalls);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_onTermsRequired>("onTermsRequired", OnTermsRequired);
             writer.WriteBoolValue("requireApproval", RequireApproval);
-            writer.WriteCollectionOfPrimitiveValues<string>("toolkits", Toolkits);
+            writer.WriteCollectionOfPrimitiveValues<string>("toolkits", Toolkits);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

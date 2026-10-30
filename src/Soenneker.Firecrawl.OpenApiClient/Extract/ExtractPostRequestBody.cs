@@ -12,58 +12,90 @@ namespace Soenneker.Firecrawl.OpenApiClient.Extract
     #pragma warning disable CS1591
     public partial class ExtractPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enableWebSearch") is { } nullNodeEnableWebSearch && nullNodeEnableWebSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableWebSearch = null;
+            if (parseNode.GetChildNode("ignoreInvalidURLs") is { } nullNodeIgnoreInvalidURLs && nullNodeIgnoreInvalidURLs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreInvalidURLs = null;
+            if (parseNode.GetChildNode("ignoreSitemap") is { } nullNodeIgnoreSitemap && nullNodeIgnoreSitemap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreSitemap = null;
+            if (parseNode.GetChildNode("includeSubdomains") is { } nullNodeIncludeSubdomains && nullNodeIncludeSubdomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSubdomains = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+            if (parseNode.GetChildNode("scrapeOptions") is { } nullNodeScrapeOptions && nullNodeScrapeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeOptions = null;
+            if (parseNode.GetChildNode("showSources") is { } nullNodeShowSources && nullNodeShowSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowSources = null;
+            if (parseNode.GetChildNode("threatProtection") is { } nullNodeThreatProtection && nullNodeThreatProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreatProtection = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, the extraction will use web search to find additional data</summary>
-        public bool? EnableWebSearch { get; set; }
+        public bool? EnableWebSearch { get => _explicitNullValueEnableWebSearch; set { _explicitNullValueEnableWebSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableWebSearch"); else _explicitNullProperties?.Remove("enableWebSearch"); } }
+        private bool? _explicitNullValueEnableWebSearch = default!;
         /// <summary>If invalid URLs are specified in the urls array, they will be ignored. Instead of them failing the entire request, an extract using the remaining valid URLs will be performed, and the invalid URLs will be returned in the invalidURLs field of the response.</summary>
-        public bool? IgnoreInvalidURLs { get; set; }
+        public bool? IgnoreInvalidURLs { get => _explicitNullValueIgnoreInvalidURLs; set { _explicitNullValueIgnoreInvalidURLs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreInvalidURLs"); else _explicitNullProperties?.Remove("ignoreInvalidURLs"); } }
+        private bool? _explicitNullValueIgnoreInvalidURLs = default!;
         /// <summary>When true, sitemap.xml files will be ignored during website scanning</summary>
-        public bool? IgnoreSitemap { get; set; }
+        public bool? IgnoreSitemap { get => _explicitNullValueIgnoreSitemap; set { _explicitNullValueIgnoreSitemap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreSitemap"); else _explicitNullProperties?.Remove("ignoreSitemap"); } }
+        private bool? _explicitNullValueIgnoreSitemap = default!;
         /// <summary>When true, subdomains of the provided URLs will also be scanned</summary>
-        public bool? IncludeSubdomains { get; set; }
+        public bool? IncludeSubdomains { get => _explicitNullValueIncludeSubdomains; set { _explicitNullValueIncludeSubdomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeSubdomains"); else _explicitNullProperties?.Remove("includeSubdomains"); } }
+        private bool? _explicitNullValueIncludeSubdomains = default!;
         /// <summary>Prompt to guide the extraction process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>Schema to define the structure of the extracted data. Must conform to [JSON Schema](https://json-schema.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema? Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema Schema { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody_schema _explicitNullValueSchema = default!;
 #endif
         /// <summary>The scrapeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? _explicitNullValueScrapeOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions _explicitNullValueScrapeOptions = default!;
 #endif
         /// <summary>When true, the sources used to extract the data will be included in the response as `sources` key</summary>
-        public bool? ShowSources { get; set; }
+        public bool? ShowSources { get => _explicitNullValueShowSources; set { _explicitNullValueShowSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showSources"); else _explicitNullProperties?.Remove("showSources"); } }
+        private bool? _explicitNullValueShowSources = default!;
         /// <summary>Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override. Fields you provide replace the corresponding fields of your organization&apos;s policy for this request only; omitted fields keep their organization-level values. Requires Threat Protection to be enabled for your team (enterprise feature) — otherwise the request is rejected with a 403. If your organization has disabled request overrides, any request that includes this object is rejected with a 403. If Threat Protection is enforced for your team, `mode` may not be set to `off`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride? _explicitNullValueThreatProtection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get; set; }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride ThreatProtection { get => _explicitNullValueThreatProtection; set { _explicitNullValueThreatProtection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threatProtection"); else _explicitNullProperties?.Remove("threatProtection"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride _explicitNullValueThreatProtection = default!;
 #endif
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get; set; }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get; set; }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody"/> and sets the default values.
@@ -85,7 +117,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Extract
         public static global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Firecrawl.OpenApiClient.Extract.ExtractPostRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +156,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Extract
             writer.WriteBoolValue("showSources", ShowSources);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride>("threatProtection", ThreatProtection);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

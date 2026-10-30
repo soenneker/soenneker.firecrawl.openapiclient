@@ -52,6 +52,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.Formats401Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse>(requestInfo, global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
