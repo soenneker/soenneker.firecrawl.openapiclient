@@ -18,7 +18,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("originalPrice") is { } nullNodeOriginalPrice && nullNodeOriginalPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPrice = null;
+            if (parseNode.GetChildNode("originalPrice") is null) { _explicitNullValueOriginalPrice = default!; _explicitNullProperties?.Remove("originalPrice"); }
+            else if (parseNode.GetChildNode("originalPrice") is { } nullNodeOriginalPrice && nullNodeOriginalPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPrice = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>The original (pre-discount) price of the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice? OriginalPrice { get => _explicitNullValueOriginalPrice; set { _explicitNullValueOriginalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPrice"); else _explicitNullProperties?.Remove("originalPrice"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice? OriginalPrice { get => _explicitNullValueOriginalPrice; set { _explicitNullValueOriginalPrice = value; AdditionalData?.Remove("originalPrice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPrice"); else _explicitNullProperties?.Remove("originalPrice"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice? _explicitNullValueOriginalPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice OriginalPrice { get => _explicitNullValueOriginalPrice; set { _explicitNullValueOriginalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPrice"); else _explicitNullProperties?.Remove("originalPrice"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice OriginalPrice { get => _explicitNullValueOriginalPrice; set { _explicitNullValueOriginalPrice = value; AdditionalData?.Remove("originalPrice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalPrice"); else _explicitNullProperties?.Remove("originalPrice"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale_originalPrice _explicitNullValueOriginalPrice = default!;
 #endif
         /// <summary>

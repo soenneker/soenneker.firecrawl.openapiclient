@@ -18,9 +18,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
-            if (parseNode.GetChildNode("approvalId") is { } nullNodeApprovalId && nullNodeApprovalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalId = null;
-            if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
+            if (parseNode.GetChildNode("always") is null) { _explicitNullValueAlways = default!; _explicitNullProperties?.Remove("always"); }
+            else if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
+            if (parseNode.GetChildNode("approvalId") is null) { _explicitNullValueApprovalId = default!; _explicitNullProperties?.Remove("approvalId"); }
+            else if (parseNode.GetChildNode("approvalId") is { } nullNodeApprovalId && nullNodeApprovalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalId = null;
+            if (parseNode.GetChildNode("callIds") is null) { _explicitNullValueCallIds = default!; _explicitNullProperties?.Remove("callIds"); }
+            else if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
         }
 
         /// <summary>Stop asking for approval for the rest of the thread. Ignored on a `terms` approval.</summary>

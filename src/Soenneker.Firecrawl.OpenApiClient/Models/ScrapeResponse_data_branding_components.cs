@@ -18,9 +18,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("buttonPrimary") is { } nullNodeButtonPrimary && nullNodeButtonPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonPrimary = null;
-            if (parseNode.GetChildNode("buttonSecondary") is { } nullNodeButtonSecondary && nullNodeButtonSecondary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonSecondary = null;
-            if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("buttonPrimary") is null) { _explicitNullValueButtonPrimary = default!; _explicitNullProperties?.Remove("buttonPrimary"); }
+            else if (parseNode.GetChildNode("buttonPrimary") is { } nullNodeButtonPrimary && nullNodeButtonPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonPrimary = null;
+            if (parseNode.GetChildNode("buttonSecondary") is null) { _explicitNullValueButtonSecondary = default!; _explicitNullProperties?.Remove("buttonSecondary"); }
+            else if (parseNode.GetChildNode("buttonSecondary") is { } nullNodeButtonSecondary && nullNodeButtonSecondary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonSecondary = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Primary button styles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary? ButtonPrimary { get => _explicitNullValueButtonPrimary; set { _explicitNullValueButtonPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonPrimary"); else _explicitNullProperties?.Remove("buttonPrimary"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary? ButtonPrimary { get => _explicitNullValueButtonPrimary; set { _explicitNullValueButtonPrimary = value; AdditionalData?.Remove("buttonPrimary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonPrimary"); else _explicitNullProperties?.Remove("buttonPrimary"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary? _explicitNullValueButtonPrimary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary ButtonPrimary { get => _explicitNullValueButtonPrimary; set { _explicitNullValueButtonPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonPrimary"); else _explicitNullProperties?.Remove("buttonPrimary"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary ButtonPrimary { get => _explicitNullValueButtonPrimary; set { _explicitNullValueButtonPrimary = value; AdditionalData?.Remove("buttonPrimary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonPrimary"); else _explicitNullProperties?.Remove("buttonPrimary"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonPrimary _explicitNullValueButtonPrimary = default!;
 #endif
         /// <summary>Secondary button styles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary? ButtonSecondary { get => _explicitNullValueButtonSecondary; set { _explicitNullValueButtonSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonSecondary"); else _explicitNullProperties?.Remove("buttonSecondary"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary? ButtonSecondary { get => _explicitNullValueButtonSecondary; set { _explicitNullValueButtonSecondary = value; AdditionalData?.Remove("buttonSecondary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonSecondary"); else _explicitNullProperties?.Remove("buttonSecondary"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary? _explicitNullValueButtonSecondary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary ButtonSecondary { get => _explicitNullValueButtonSecondary; set { _explicitNullValueButtonSecondary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonSecondary"); else _explicitNullProperties?.Remove("buttonSecondary"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary ButtonSecondary { get => _explicitNullValueButtonSecondary; set { _explicitNullValueButtonSecondary = value; AdditionalData?.Remove("buttonSecondary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buttonSecondary"); else _explicitNullProperties?.Remove("buttonSecondary"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_buttonSecondary _explicitNullValueButtonSecondary = default!;
 #endif
         /// <summary>Input field styles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_components_input _explicitNullValueInput = default!;
 #endif
         /// <summary>

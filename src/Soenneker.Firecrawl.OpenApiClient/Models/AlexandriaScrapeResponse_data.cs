@@ -17,8 +17,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alexandria") is { } nullNodeAlexandria && nullNodeAlexandria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alexandria = null;
-            if (parseNode.GetChildNode("creditsCost") is { } nullNodeCreditsCost && nullNodeCreditsCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsCost = null;
+            if (parseNode.GetChildNode("alexandria") is null) { _explicitNullValueAlexandria = default!; _explicitNullProperties?.Remove("alexandria"); }
+            else if (parseNode.GetChildNode("alexandria") is { } nullNodeAlexandria && nullNodeAlexandria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alexandria = null;
+            if (parseNode.GetChildNode("creditsCost") is null) { _explicitNullValueCreditsCost = default!; _explicitNullProperties?.Remove("creditsCost"); }
+            else if (parseNode.GetChildNode("creditsCost") is { } nullNodeCreditsCost && nullNodeCreditsCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsCost = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Results for each requested Alexandria call, in the same order as the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult>? Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult>? Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; AdditionalData?.Remove("alexandria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult>? _explicitNullValueAlexandria = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult> Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult> Alexandria { get => _explicitNullValueAlexandria; set { _explicitNullValueAlexandria = value; AdditionalData?.Remove("alexandria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alexandria"); else _explicitNullProperties?.Remove("alexandria"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaResult> _explicitNullValueAlexandria = default!;
 #endif
         /// <summary>Sum of `creditsCost` across successful items.</summary>
-        public int? CreditsCost { get => _explicitNullValueCreditsCost; set { _explicitNullValueCreditsCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsCost"); else _explicitNullProperties?.Remove("creditsCost"); } }
+        public int? CreditsCost { get => _explicitNullValueCreditsCost; set { _explicitNullValueCreditsCost = value; AdditionalData?.Remove("creditsCost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsCost"); else _explicitNullProperties?.Remove("creditsCost"); } }
         private int? _explicitNullValueCreditsCost = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.AlexandriaScrapeResponse_data"/> and sets the default values.

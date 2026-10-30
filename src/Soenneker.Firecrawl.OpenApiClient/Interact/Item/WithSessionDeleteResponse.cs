@@ -17,21 +17,24 @@ namespace Soenneker.Firecrawl.OpenApiClient.Interact.Item
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("creditsBilled") is { } nullNodeCreditsBilled && nullNodeCreditsBilled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsBilled = null;
-            if (parseNode.GetChildNode("sessionDurationMs") is { } nullNodeSessionDurationMs && nullNodeSessionDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDurationMs = null;
-            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("creditsBilled") is null) { _explicitNullValueCreditsBilled = default!; _explicitNullProperties?.Remove("creditsBilled"); }
+            else if (parseNode.GetChildNode("creditsBilled") is { } nullNodeCreditsBilled && nullNodeCreditsBilled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsBilled = null;
+            if (parseNode.GetChildNode("sessionDurationMs") is null) { _explicitNullValueSessionDurationMs = default!; _explicitNullProperties?.Remove("sessionDurationMs"); }
+            else if (parseNode.GetChildNode("sessionDurationMs") is { } nullNodeSessionDurationMs && nullNodeSessionDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDurationMs = null;
+            if (parseNode.GetChildNode("success") is null) { _explicitNullValueSuccess = default!; _explicitNullProperties?.Remove("success"); }
+            else if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of credits billed for the session</summary>
-        public double? CreditsBilled { get => _explicitNullValueCreditsBilled; set { _explicitNullValueCreditsBilled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsBilled"); else _explicitNullProperties?.Remove("creditsBilled"); } }
+        public double? CreditsBilled { get => _explicitNullValueCreditsBilled; set { _explicitNullValueCreditsBilled = value; AdditionalData?.Remove("creditsBilled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsBilled"); else _explicitNullProperties?.Remove("creditsBilled"); } }
         private double? _explicitNullValueCreditsBilled = default!;
         /// <summary>Total session duration in milliseconds</summary>
-        public int? SessionDurationMs { get => _explicitNullValueSessionDurationMs; set { _explicitNullValueSessionDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionDurationMs"); else _explicitNullProperties?.Remove("sessionDurationMs"); } }
+        public int? SessionDurationMs { get => _explicitNullValueSessionDurationMs; set { _explicitNullValueSessionDurationMs = value; AdditionalData?.Remove("sessionDurationMs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionDurationMs"); else _explicitNullProperties?.Remove("sessionDurationMs"); } }
         private int? _explicitNullValueSessionDurationMs = default!;
         /// <summary>The success property</summary>
-        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
         private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Interact.Item.WithSessionDeleteResponse"/> and sets the default values.

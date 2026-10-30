@@ -18,10 +18,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fontFamilies") is { } nullNodeFontFamilies && nullNodeFontFamilies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontFamilies = null;
-            if (parseNode.GetChildNode("fontSizes") is { } nullNodeFontSizes && nullNodeFontSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontSizes = null;
-            if (parseNode.GetChildNode("fontWeights") is { } nullNodeFontWeights && nullNodeFontWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontWeights = null;
-            if (parseNode.GetChildNode("lineHeights") is { } nullNodeLineHeights && nullNodeLineHeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineHeights = null;
+            if (parseNode.GetChildNode("fontFamilies") is null) { _explicitNullValueFontFamilies = default!; _explicitNullProperties?.Remove("fontFamilies"); }
+            else if (parseNode.GetChildNode("fontFamilies") is { } nullNodeFontFamilies && nullNodeFontFamilies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontFamilies = null;
+            if (parseNode.GetChildNode("fontSizes") is null) { _explicitNullValueFontSizes = default!; _explicitNullProperties?.Remove("fontSizes"); }
+            else if (parseNode.GetChildNode("fontSizes") is { } nullNodeFontSizes && nullNodeFontSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontSizes = null;
+            if (parseNode.GetChildNode("fontWeights") is null) { _explicitNullValueFontWeights = default!; _explicitNullProperties?.Remove("fontWeights"); }
+            else if (parseNode.GetChildNode("fontWeights") is { } nullNodeFontWeights && nullNodeFontWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FontWeights = null;
+            if (parseNode.GetChildNode("lineHeights") is null) { _explicitNullValueLineHeights = default!; _explicitNullProperties?.Remove("lineHeights"); }
+            else if (parseNode.GetChildNode("lineHeights") is { } nullNodeLineHeights && nullNodeLineHeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineHeights = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Font families by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies? FontFamilies { get => _explicitNullValueFontFamilies; set { _explicitNullValueFontFamilies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontFamilies"); else _explicitNullProperties?.Remove("fontFamilies"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies? FontFamilies { get => _explicitNullValueFontFamilies; set { _explicitNullValueFontFamilies = value; AdditionalData?.Remove("fontFamilies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontFamilies"); else _explicitNullProperties?.Remove("fontFamilies"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies? _explicitNullValueFontFamilies = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies FontFamilies { get => _explicitNullValueFontFamilies; set { _explicitNullValueFontFamilies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontFamilies"); else _explicitNullProperties?.Remove("fontFamilies"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies FontFamilies { get => _explicitNullValueFontFamilies; set { _explicitNullValueFontFamilies = value; AdditionalData?.Remove("fontFamilies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontFamilies"); else _explicitNullProperties?.Remove("fontFamilies"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies _explicitNullValueFontFamilies = default!;
 #endif
         /// <summary>Font sizes for different text levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes? FontSizes { get => _explicitNullValueFontSizes; set { _explicitNullValueFontSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontSizes"); else _explicitNullProperties?.Remove("fontSizes"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes? FontSizes { get => _explicitNullValueFontSizes; set { _explicitNullValueFontSizes = value; AdditionalData?.Remove("fontSizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontSizes"); else _explicitNullProperties?.Remove("fontSizes"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes? _explicitNullValueFontSizes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes FontSizes { get => _explicitNullValueFontSizes; set { _explicitNullValueFontSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontSizes"); else _explicitNullProperties?.Remove("fontSizes"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes FontSizes { get => _explicitNullValueFontSizes; set { _explicitNullValueFontSizes = value; AdditionalData?.Remove("fontSizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontSizes"); else _explicitNullProperties?.Remove("fontSizes"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes _explicitNullValueFontSizes = default!;
 #endif
         /// <summary>Font weight definitions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights? FontWeights { get => _explicitNullValueFontWeights; set { _explicitNullValueFontWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontWeights"); else _explicitNullProperties?.Remove("fontWeights"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights? FontWeights { get => _explicitNullValueFontWeights; set { _explicitNullValueFontWeights = value; AdditionalData?.Remove("fontWeights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontWeights"); else _explicitNullProperties?.Remove("fontWeights"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights? _explicitNullValueFontWeights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights FontWeights { get => _explicitNullValueFontWeights; set { _explicitNullValueFontWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontWeights"); else _explicitNullProperties?.Remove("fontWeights"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights FontWeights { get => _explicitNullValueFontWeights; set { _explicitNullValueFontWeights = value; AdditionalData?.Remove("fontWeights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fontWeights"); else _explicitNullProperties?.Remove("fontWeights"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontWeights _explicitNullValueFontWeights = default!;
 #endif
         /// <summary>Line height values for different text types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights? LineHeights { get => _explicitNullValueLineHeights; set { _explicitNullValueLineHeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineHeights"); else _explicitNullProperties?.Remove("lineHeights"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights? LineHeights { get => _explicitNullValueLineHeights; set { _explicitNullValueLineHeights = value; AdditionalData?.Remove("lineHeights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineHeights"); else _explicitNullProperties?.Remove("lineHeights"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights? _explicitNullValueLineHeights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights LineHeights { get => _explicitNullValueLineHeights; set { _explicitNullValueLineHeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineHeights"); else _explicitNullProperties?.Remove("lineHeights"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights LineHeights { get => _explicitNullValueLineHeights; set { _explicitNullValueLineHeights = value; AdditionalData?.Remove("lineHeights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lineHeights"); else _explicitNullProperties?.Remove("lineHeights"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_lineHeights _explicitNullValueLineHeights = default!;
 #endif
         /// <summary>

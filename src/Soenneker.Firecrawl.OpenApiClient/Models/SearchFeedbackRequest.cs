@@ -18,13 +18,20 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
-            if (parseNode.GetChildNode("missingContent") is { } nullNodeMissingContent && nullNodeMissingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingContent = null;
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("querySuggestions") is { } nullNodeQuerySuggestions && nullNodeQuerySuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySuggestions = null;
-            if (parseNode.GetChildNode("rating") is { } nullNodeRating && nullNodeRating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rating = null;
-            if (parseNode.GetChildNode("valuableResults") is { } nullNodeValuableResults && nullNodeValuableResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableResults = null;
-            if (parseNode.GetChildNode("valuableSources") is { } nullNodeValuableSources && nullNodeValuableSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableSources = null;
+            if (parseNode.GetChildNode("integration") is null) { _explicitNullValueIntegration = default!; _explicitNullProperties?.Remove("integration"); }
+            else if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("missingContent") is null) { _explicitNullValueMissingContent = default!; _explicitNullProperties?.Remove("missingContent"); }
+            else if (parseNode.GetChildNode("missingContent") is { } nullNodeMissingContent && nullNodeMissingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingContent = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("querySuggestions") is null) { _explicitNullValueQuerySuggestions = default!; _explicitNullProperties?.Remove("querySuggestions"); }
+            else if (parseNode.GetChildNode("querySuggestions") is { } nullNodeQuerySuggestions && nullNodeQuerySuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySuggestions = null;
+            if (parseNode.GetChildNode("rating") is null) { _explicitNullValueRating = default!; _explicitNullProperties?.Remove("rating"); }
+            else if (parseNode.GetChildNode("rating") is { } nullNodeRating && nullNodeRating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rating = null;
+            if (parseNode.GetChildNode("valuableResults") is null) { _explicitNullValueValuableResults = default!; _explicitNullProperties?.Remove("valuableResults"); }
+            else if (parseNode.GetChildNode("valuableResults") is { } nullNodeValuableResults && nullNodeValuableResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableResults = null;
+            if (parseNode.GetChildNode("valuableSources") is null) { _explicitNullValueValuableSources = default!; _explicitNullProperties?.Remove("valuableSources"); }
+            else if (parseNode.GetChildNode("valuableSources") is { } nullNodeValuableSources && nullNodeValuableSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuableSources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,64 +39,64 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>The integration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private string? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private string _explicitNullValueIntegration = default!;
 #endif
         /// <summary>The missingContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; AdditionalData?.Remove("missingContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>? _explicitNullValueMissingContent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> MissingContent { get => _explicitNullValueMissingContent; set { _explicitNullValueMissingContent = value; AdditionalData?.Remove("missingContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingContent"); else _explicitNullProperties?.Remove("missingContent"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent> _explicitNullValueMissingContent = default!;
 #endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private string _explicitNullValueOrigin = default!;
 #endif
         /// <summary>The querySuggestions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
+        public string? QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; AdditionalData?.Remove("querySuggestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
         private string? _explicitNullValueQuerySuggestions = default!;
 #nullable restore
 #else
-        public string QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
+        public string QuerySuggestions { get => _explicitNullValueQuerySuggestions; set { _explicitNullValueQuerySuggestions = value; AdditionalData?.Remove("querySuggestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySuggestions"); else _explicitNullProperties?.Remove("querySuggestions"); } }
         private string _explicitNullValueQuerySuggestions = default!;
 #endif
         /// <summary>The rating property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? Rating { get => _explicitNullValueRating; set { _explicitNullValueRating = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating"); else _explicitNullProperties?.Remove("rating"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? Rating { get => _explicitNullValueRating; set { _explicitNullValueRating = value; AdditionalData?.Remove("rating"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating"); else _explicitNullProperties?.Remove("rating"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating? _explicitNullValueRating = default!;
         /// <summary>Results that were useful, each addressed by the `data` group it appears in and its 1-indexed position within that group. Results are returned grouped (`data.web`, `data.images`, `data.news`) and each group is numbered from 1 independently, so `source` is required. List every useful result; unlisted results are treated as not useful. Positions beyond what the group actually returned are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; AdditionalData?.Remove("valuableResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>? _explicitNullValueValuableResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> ValuableResults { get => _explicitNullValueValuableResults; set { _explicitNullValueValuableResults = value; AdditionalData?.Remove("valuableResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableResults"); else _explicitNullProperties?.Remove("valuableResults"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults> _explicitNullValueValuableResults = default!;
 #endif
         /// <summary>The valuableSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; AdditionalData?.Remove("valuableSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>? _explicitNullValueValuableSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> ValuableSources { get => _explicitNullValueValuableSources; set { _explicitNullValueValuableSources = value; AdditionalData?.Remove("valuableSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valuableSources"); else _explicitNullProperties?.Remove("valuableSources"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources> _explicitNullValueValuableSources = default!;
 #endif
         /// <summary>
@@ -122,7 +129,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "missingContent", n => { MissingContent = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent>(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_missingContent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "querySuggestions", n => { QuerySuggestions = n.GetStringValue(); } },
-                { "rating", n => { Rating = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating>(); } },
+                { "rating", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_rating>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRating = default; _explicitNullProperties?.Remove("rating"); AdditionalData["rating"] = unknown; } else { Rating = parsed; AdditionalData.Remove("rating"); } } },
                 { "valuableResults", n => { ValuableResults = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults>(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableResults.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "valuableSources", n => { ValuableSources = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources>(global::Soenneker.Firecrawl.OpenApiClient.Models.SearchFeedbackRequest_valuableSources.CreateFromDiscriminatorValue)?.AsList(); } },
             };

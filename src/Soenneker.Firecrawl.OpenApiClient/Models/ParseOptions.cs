@@ -18,23 +18,40 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auditMetadata") is { } nullNodeAuditMetadata && nullNodeAuditMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditMetadata = null;
-            if (parseNode.GetChildNode("blockAds") is { } nullNodeBlockAds && nullNodeBlockAds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockAds = null;
-            if (parseNode.GetChildNode("checkPromptInjection") is { } nullNodeCheckPromptInjection && nullNodeCheckPromptInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPromptInjection = null;
-            if (parseNode.GetChildNode("excludeTags") is { } nullNodeExcludeTags && nullNodeExcludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTags = null;
-            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("includeTags") is { } nullNodeIncludeTags && nullNodeIncludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeTags = null;
-            if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
-            if (parseNode.GetChildNode("onlyMainContent") is { } nullNodeOnlyMainContent && nullNodeOnlyMainContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyMainContent = null;
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("parsers") is { } nullNodeParsers && nullNodeParsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parsers = null;
-            if (parseNode.GetChildNode("proxy") is { } nullNodeProxy && nullNodeProxy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxy = null;
-            if (parseNode.GetChildNode("redactPII") is { } nullNodeRedactPII && nullNodeRedactPII.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactPII = null;
-            if (parseNode.GetChildNode("removeBase64Images") is { } nullNodeRemoveBase64Images && nullNodeRemoveBase64Images.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveBase64Images = null;
-            if (parseNode.GetChildNode("skipTlsVerification") is { } nullNodeSkipTlsVerification && nullNodeSkipTlsVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTlsVerification = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
-            if (parseNode.GetChildNode("zeroDataRetention") is { } nullNodeZeroDataRetention && nullNodeZeroDataRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroDataRetention = null;
+            if (parseNode.GetChildNode("auditMetadata") is null) { _explicitNullValueAuditMetadata = default!; _explicitNullProperties?.Remove("auditMetadata"); }
+            else if (parseNode.GetChildNode("auditMetadata") is { } nullNodeAuditMetadata && nullNodeAuditMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditMetadata = null;
+            if (parseNode.GetChildNode("blockAds") is null) { _explicitNullValueBlockAds = default!; _explicitNullProperties?.Remove("blockAds"); }
+            else if (parseNode.GetChildNode("blockAds") is { } nullNodeBlockAds && nullNodeBlockAds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockAds = null;
+            if (parseNode.GetChildNode("checkPromptInjection") is null) { _explicitNullValueCheckPromptInjection = default!; _explicitNullProperties?.Remove("checkPromptInjection"); }
+            else if (parseNode.GetChildNode("checkPromptInjection") is { } nullNodeCheckPromptInjection && nullNodeCheckPromptInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckPromptInjection = null;
+            if (parseNode.GetChildNode("excludeTags") is null) { _explicitNullValueExcludeTags = default!; _explicitNullProperties?.Remove("excludeTags"); }
+            else if (parseNode.GetChildNode("excludeTags") is { } nullNodeExcludeTags && nullNodeExcludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTags = null;
+            if (parseNode.GetChildNode("formats") is null) { _explicitNullValueFormats = default!; _explicitNullProperties?.Remove("formats"); }
+            else if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("includeTags") is null) { _explicitNullValueIncludeTags = default!; _explicitNullProperties?.Remove("includeTags"); }
+            else if (parseNode.GetChildNode("includeTags") is { } nullNodeIncludeTags && nullNodeIncludeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeTags = null;
+            if (parseNode.GetChildNode("integration") is null) { _explicitNullValueIntegration = default!; _explicitNullProperties?.Remove("integration"); }
+            else if (parseNode.GetChildNode("integration") is { } nullNodeIntegration && nullNodeIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integration = null;
+            if (parseNode.GetChildNode("onlyMainContent") is null) { _explicitNullValueOnlyMainContent = default!; _explicitNullProperties?.Remove("onlyMainContent"); }
+            else if (parseNode.GetChildNode("onlyMainContent") is { } nullNodeOnlyMainContent && nullNodeOnlyMainContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyMainContent = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("parsers") is null) { _explicitNullValueParsers = default!; _explicitNullProperties?.Remove("parsers"); }
+            else if (parseNode.GetChildNode("parsers") is { } nullNodeParsers && nullNodeParsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parsers = null;
+            if (parseNode.GetChildNode("proxy") is null) { _explicitNullValueProxy = default!; _explicitNullProperties?.Remove("proxy"); }
+            else if (parseNode.GetChildNode("proxy") is { } nullNodeProxy && nullNodeProxy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxy = null;
+            if (parseNode.GetChildNode("redactPII") is null) { _explicitNullValueRedactPII = default!; _explicitNullProperties?.Remove("redactPII"); }
+            else if (parseNode.GetChildNode("redactPII") is { } nullNodeRedactPII && nullNodeRedactPII.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactPII = null;
+            if (parseNode.GetChildNode("removeBase64Images") is null) { _explicitNullValueRemoveBase64Images = default!; _explicitNullProperties?.Remove("removeBase64Images"); }
+            else if (parseNode.GetChildNode("removeBase64Images") is { } nullNodeRemoveBase64Images && nullNodeRemoveBase64Images.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveBase64Images = null;
+            if (parseNode.GetChildNode("skipTlsVerification") is null) { _explicitNullValueSkipTlsVerification = default!; _explicitNullProperties?.Remove("skipTlsVerification"); }
+            else if (parseNode.GetChildNode("skipTlsVerification") is { } nullNodeSkipTlsVerification && nullNodeSkipTlsVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTlsVerification = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("zeroDataRetention") is null) { _explicitNullValueZeroDataRetention = default!; _explicitNullProperties?.Remove("zeroDataRetention"); }
+            else if (parseNode.GetChildNode("zeroDataRetention") is { } nullNodeZeroDataRetention && nullNodeZeroDataRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroDataRetention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,116 +59,116 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>User attribution included with SIEM logging events when SIEM Logging is enabled for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; AdditionalData?.Remove("auditMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata? _explicitNullValueAuditMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata AuditMetadata { get => _explicitNullValueAuditMetadata; set { _explicitNullValueAuditMetadata = value; AdditionalData?.Remove("auditMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditMetadata"); else _explicitNullProperties?.Remove("auditMetadata"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.AuditMetadata _explicitNullValueAuditMetadata = default!;
 #endif
         /// <summary>Enable ad and cookie popup blocking.</summary>
-        public bool? BlockAds { get => _explicitNullValueBlockAds; set { _explicitNullValueBlockAds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockAds"); else _explicitNullProperties?.Remove("blockAds"); } }
+        public bool? BlockAds { get => _explicitNullValueBlockAds; set { _explicitNullValueBlockAds = value; AdditionalData?.Remove("blockAds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockAds"); else _explicitNullProperties?.Remove("blockAds"); } }
         private bool? _explicitNullValueBlockAds = default!;
         /// <summary>When enabled, scans the parsed content for prompt injection attempts before any LLM-backed format (such as json, summary or question) runs. If an injection is detected, the request fails with a 403 and error code SCRAPE_PROMPT_INJECTION_DETECTED. Adds 4 credits when the check runs. If the check cannot scan all of the content, the parse continues with a warning and the check is not billed.</summary>
-        public bool? CheckPromptInjection { get => _explicitNullValueCheckPromptInjection; set { _explicitNullValueCheckPromptInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkPromptInjection"); else _explicitNullProperties?.Remove("checkPromptInjection"); } }
+        public bool? CheckPromptInjection { get => _explicitNullValueCheckPromptInjection; set { _explicitNullValueCheckPromptInjection = value; AdditionalData?.Remove("checkPromptInjection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkPromptInjection"); else _explicitNullProperties?.Remove("checkPromptInjection"); } }
         private bool? _explicitNullValueCheckPromptInjection = default!;
         /// <summary>Tags to exclude from the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
+        public List<string>? ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; AdditionalData?.Remove("excludeTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
         private List<string>? _explicitNullValueExcludeTags = default!;
 #nullable restore
 #else
-        public List<string> ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
+        public List<string> ExcludeTags { get => _explicitNullValueExcludeTags; set { _explicitNullValueExcludeTags = value; AdditionalData?.Remove("excludeTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludeTags"); else _explicitNullProperties?.Remove("excludeTags"); } }
         private List<string> _explicitNullValueExcludeTags = default!;
 #endif
         /// <summary>Output formats supported for `/parse` uploads. Browser-rendering formats and change tracking are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; AdditionalData?.Remove("formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; AdditionalData?.Remove("formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions.Parse> _explicitNullValueFormats = default!;
 #endif
         /// <summary>Headers to send when additional network requests are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Tags to include in the output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
+        public List<string>? IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; AdditionalData?.Remove("includeTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
         private List<string>? _explicitNullValueIncludeTags = default!;
 #nullable restore
 #else
-        public List<string> IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
+        public List<string> IncludeTags { get => _explicitNullValueIncludeTags; set { _explicitNullValueIncludeTags = value; AdditionalData?.Remove("includeTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTags"); else _explicitNullProperties?.Remove("includeTags"); } }
         private List<string> _explicitNullValueIncludeTags = default!;
 #endif
         /// <summary>Optional integration identifier. When omitted, a valid `X-Integration` request header is used instead; the body value takes precedence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private string? _explicitNullValueIntegration = default!;
 #nullable restore
 #else
-        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
+        public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private string _explicitNullValueIntegration = default!;
 #endif
         /// <summary>Only return the main content of the page excluding headers, navs, footers, etc.</summary>
-        public bool? OnlyMainContent { get => _explicitNullValueOnlyMainContent; set { _explicitNullValueOnlyMainContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onlyMainContent"); else _explicitNullProperties?.Remove("onlyMainContent"); } }
+        public bool? OnlyMainContent { get => _explicitNullValueOnlyMainContent; set { _explicitNullValueOnlyMainContent = value; AdditionalData?.Remove("onlyMainContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onlyMainContent"); else _explicitNullProperties?.Remove("onlyMainContent"); } }
         private bool? _explicitNullValueOnlyMainContent = default!;
         /// <summary>Origin identifier for analytics and logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public string? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private string? _explicitNullValueOrigin = default!;
 #nullable restore
 #else
-        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public string Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private string _explicitNullValueOrigin = default!;
 #endif
         /// <summary>Controls file parser behavior when relevant (for example PDF parser mode).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>? Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>? Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; AdditionalData?.Remove("parsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>? _explicitNullValueParsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers> Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers> Parsers { get => _explicitNullValueParsers; set { _explicitNullValueParsers = value; AdditionalData?.Remove("parsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsers"); else _explicitNullProperties?.Remove("parsers"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers> _explicitNullValueParsers = default!;
 #endif
         /// <summary>Proxy mode for parse uploads. `/parse` supports only `basic` and `auto`.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy? Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy? Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; AdditionalData?.Remove("proxy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy? _explicitNullValueProxy = default!;
         /// <summary>Redact personally identifiable information from returned markdown. Pass `true` to use defaults, or an object to tune mode, entities, and replacement style.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; AdditionalData?.Remove("redactPII"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueRedactPII = default!;
 #nullable restore
 #else
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode RedactPII { get => _explicitNullValueRedactPII; set { _explicitNullValueRedactPII = value; AdditionalData?.Remove("redactPII"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redactPII"); else _explicitNullProperties?.Remove("redactPII"); } }
         private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueRedactPII = default!;
 #endif
         /// <summary>Remove base64-encoded images from output and keep alt text placeholders.</summary>
-        public bool? RemoveBase64Images { get => _explicitNullValueRemoveBase64Images; set { _explicitNullValueRemoveBase64Images = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeBase64Images"); else _explicitNullProperties?.Remove("removeBase64Images"); } }
+        public bool? RemoveBase64Images { get => _explicitNullValueRemoveBase64Images; set { _explicitNullValueRemoveBase64Images = value; AdditionalData?.Remove("removeBase64Images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeBase64Images"); else _explicitNullProperties?.Remove("removeBase64Images"); } }
         private bool? _explicitNullValueRemoveBase64Images = default!;
         /// <summary>Skip TLS certificate verification when making requests.</summary>
-        public bool? SkipTlsVerification { get => _explicitNullValueSkipTlsVerification; set { _explicitNullValueSkipTlsVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipTlsVerification"); else _explicitNullProperties?.Remove("skipTlsVerification"); } }
+        public bool? SkipTlsVerification { get => _explicitNullValueSkipTlsVerification; set { _explicitNullValueSkipTlsVerification = value; AdditionalData?.Remove("skipTlsVerification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipTlsVerification"); else _explicitNullProperties?.Remove("skipTlsVerification"); } }
         private bool? _explicitNullValueSkipTlsVerification = default!;
         /// <summary>Timeout in milliseconds for the request. Default is 30000 (30 seconds). Maximum is 300000 (300 seconds).</summary>
-        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>If true, this will enable zero data retention for this parse. To enable this feature, please contact help@firecrawl.dev</summary>
-        public bool? ZeroDataRetention { get => _explicitNullValueZeroDataRetention; set { _explicitNullValueZeroDataRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeroDataRetention"); else _explicitNullProperties?.Remove("zeroDataRetention"); } }
+        public bool? ZeroDataRetention { get => _explicitNullValueZeroDataRetention; set { _explicitNullValueZeroDataRetention = value; AdditionalData?.Remove("zeroDataRetention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zeroDataRetention"); else _explicitNullProperties?.Remove("zeroDataRetention"); } }
         private bool? _explicitNullValueZeroDataRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions"/> and sets the default values.
@@ -197,7 +214,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "onlyMainContent", n => { OnlyMainContent = n.GetBoolValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "parsers", n => { Parsers = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers>(global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_parsers.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "proxy", n => { Proxy = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy>(); } },
+                { "proxy", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ParseOptions_proxy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProxy = default; _explicitNullProperties?.Remove("proxy"); AdditionalData["proxy"] = unknown; } else { Proxy = parsed; AdditionalData.Remove("proxy"); } } },
                 { "redactPII", n => { RedactPII = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "removeBase64Images", n => { RemoveBase64Images = n.GetBoolValue(); } },
                 { "skipTlsVerification", n => { SkipTlsVerification = n.GetBoolValue(); } },

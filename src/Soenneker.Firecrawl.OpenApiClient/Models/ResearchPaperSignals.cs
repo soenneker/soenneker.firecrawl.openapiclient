@@ -17,25 +17,29 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("articleRank") is { } nullNodeArticleRank && nullNodeArticleRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleRank = null;
-            if (parseNode.GetChildNode("seedOverlap") is { } nullNodeSeedOverlap && nullNodeSeedOverlap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeedOverlap = null;
-            if (parseNode.GetChildNode("semantic") is { } nullNodeSemantic && nullNodeSemantic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Semantic = null;
-            if (parseNode.GetChildNode("structural") is { } nullNodeStructural && nullNodeStructural.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Structural = null;
+            if (parseNode.GetChildNode("articleRank") is null) { _explicitNullValueArticleRank = default!; _explicitNullProperties?.Remove("articleRank"); }
+            else if (parseNode.GetChildNode("articleRank") is { } nullNodeArticleRank && nullNodeArticleRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleRank = null;
+            if (parseNode.GetChildNode("seedOverlap") is null) { _explicitNullValueSeedOverlap = default!; _explicitNullProperties?.Remove("seedOverlap"); }
+            else if (parseNode.GetChildNode("seedOverlap") is { } nullNodeSeedOverlap && nullNodeSeedOverlap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeedOverlap = null;
+            if (parseNode.GetChildNode("semantic") is null) { _explicitNullValueSemantic = default!; _explicitNullProperties?.Remove("semantic"); }
+            else if (parseNode.GetChildNode("semantic") is { } nullNodeSemantic && nullNodeSemantic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Semantic = null;
+            if (parseNode.GetChildNode("structural") is null) { _explicitNullValueStructural = default!; _explicitNullProperties?.Remove("structural"); }
+            else if (parseNode.GetChildNode("structural") is { } nullNodeStructural && nullNodeStructural.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Structural = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Structural expansion article-rank score.</summary>
-        public double? ArticleRank { get => _explicitNullValueArticleRank; set { _explicitNullValueArticleRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articleRank"); else _explicitNullProperties?.Remove("articleRank"); } }
+        public double? ArticleRank { get => _explicitNullValueArticleRank; set { _explicitNullValueArticleRank = value; AdditionalData?.Remove("articleRank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articleRank"); else _explicitNullProperties?.Remove("articleRank"); } }
         private double? _explicitNullValueArticleRank = default!;
         /// <summary>Number of distinct seeds connected to this candidate.</summary>
-        public int? SeedOverlap { get => _explicitNullValueSeedOverlap; set { _explicitNullValueSeedOverlap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seedOverlap"); else _explicitNullProperties?.Remove("seedOverlap"); } }
+        public int? SeedOverlap { get => _explicitNullValueSeedOverlap; set { _explicitNullValueSeedOverlap = value; AdditionalData?.Remove("seedOverlap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seedOverlap"); else _explicitNullProperties?.Remove("seedOverlap"); } }
         private int? _explicitNullValueSeedOverlap = default!;
         /// <summary>Semantic score from the intent search.</summary>
-        public double? Semantic { get => _explicitNullValueSemantic; set { _explicitNullValueSemantic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("semantic"); else _explicitNullProperties?.Remove("semantic"); } }
+        public double? Semantic { get => _explicitNullValueSemantic; set { _explicitNullValueSemantic = value; AdditionalData?.Remove("semantic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("semantic"); else _explicitNullProperties?.Remove("semantic"); } }
         private double? _explicitNullValueSemantic = default!;
         /// <summary>Raw structural graph signal.</summary>
-        public double? Structural { get => _explicitNullValueStructural; set { _explicitNullValueStructural = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structural"); else _explicitNullProperties?.Remove("structural"); } }
+        public double? Structural { get => _explicitNullValueStructural; set { _explicitNullValueStructural = value; AdditionalData?.Remove("structural"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structural"); else _explicitNullProperties?.Remove("structural"); } }
         private double? _explicitNullValueStructural = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals"/> and sets the default values.

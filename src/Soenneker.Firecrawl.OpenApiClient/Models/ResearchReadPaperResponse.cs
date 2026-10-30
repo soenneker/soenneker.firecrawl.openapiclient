@@ -17,11 +17,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("paper") is { } nullNodePaper && nullNodePaper.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paper = null;
-            if (parseNode.GetChildNode("paperId") is { } nullNodePaperId && nullNodePaperId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperId = null;
-            if (parseNode.GetChildNode("passages") is { } nullNodePassages && nullNodePassages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passages = null;
-            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
-            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("paper") is null) { _explicitNullValuePaper = default!; _explicitNullProperties?.Remove("paper"); }
+            else if (parseNode.GetChildNode("paper") is { } nullNodePaper && nullNodePaper.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paper = null;
+            if (parseNode.GetChildNode("paperId") is null) { _explicitNullValuePaperId = default!; _explicitNullProperties?.Remove("paperId"); }
+            else if (parseNode.GetChildNode("paperId") is { } nullNodePaperId && nullNodePaperId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperId = null;
+            if (parseNode.GetChildNode("passages") is null) { _explicitNullValuePassages = default!; _explicitNullProperties?.Remove("passages"); }
+            else if (parseNode.GetChildNode("passages") is { } nullNodePassages && nullNodePassages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passages = null;
+            if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
+            else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("success") is null) { _explicitNullValueSuccess = default!; _explicitNullProperties?.Remove("success"); }
+            else if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>The paper property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata? Paper { get => _explicitNullValuePaper; set { _explicitNullValuePaper = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper"); else _explicitNullProperties?.Remove("paper"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata? Paper { get => _explicitNullValuePaper; set { _explicitNullValuePaper = value; AdditionalData?.Remove("paper"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper"); else _explicitNullProperties?.Remove("paper"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata? _explicitNullValuePaper = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata Paper { get => _explicitNullValuePaper; set { _explicitNullValuePaper = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper"); else _explicitNullProperties?.Remove("paper"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata Paper { get => _explicitNullValuePaper; set { _explicitNullValuePaper = value; AdditionalData?.Remove("paper"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper"); else _explicitNullProperties?.Remove("paper"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata _explicitNullValuePaper = default!;
 #endif
         /// <summary>The paperId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
+        public string? PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; AdditionalData?.Remove("paperId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
         private string? _explicitNullValuePaperId = default!;
 #nullable restore
 #else
-        public string PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
+        public string PaperId { get => _explicitNullValuePaperId; set { _explicitNullValuePaperId = value; AdditionalData?.Remove("paperId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperId"); else _explicitNullProperties?.Remove("paperId"); } }
         private string _explicitNullValuePaperId = default!;
 #endif
         /// <summary>The passages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage>? Passages { get => _explicitNullValuePassages; set { _explicitNullValuePassages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passages"); else _explicitNullProperties?.Remove("passages"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage>? Passages { get => _explicitNullValuePassages; set { _explicitNullValuePassages = value; AdditionalData?.Remove("passages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passages"); else _explicitNullProperties?.Remove("passages"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage>? _explicitNullValuePassages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage> Passages { get => _explicitNullValuePassages; set { _explicitNullValuePassages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passages"); else _explicitNullProperties?.Remove("passages"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage> Passages { get => _explicitNullValuePassages; set { _explicitNullValuePassages = value; AdditionalData?.Remove("passages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passages"); else _explicitNullProperties?.Remove("passages"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPassage> _explicitNullValuePassages = default!;
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
         private bool? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchReadPaperResponse"/> and sets the default values.

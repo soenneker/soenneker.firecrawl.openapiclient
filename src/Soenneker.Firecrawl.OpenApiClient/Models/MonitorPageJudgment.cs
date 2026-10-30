@@ -17,38 +17,42 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
-            if (parseNode.GetChildNode("meaningful") is { } nullNodeMeaningful && nullNodeMeaningful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meaningful = null;
-            if (parseNode.GetChildNode("meaningfulChanges") is { } nullNodeMeaningfulChanges && nullNodeMeaningfulChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeaningfulChanges = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("confidence") is null) { _explicitNullValueConfidence = default!; _explicitNullProperties?.Remove("confidence"); }
+            else if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("meaningful") is null) { _explicitNullValueMeaningful = default!; _explicitNullProperties?.Remove("meaningful"); }
+            else if (parseNode.GetChildNode("meaningful") is { } nullNodeMeaningful && nullNodeMeaningful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meaningful = null;
+            if (parseNode.GetChildNode("meaningfulChanges") is null) { _explicitNullValueMeaningfulChanges = default!; _explicitNullProperties?.Remove("meaningfulChanges"); }
+            else if (parseNode.GetChildNode("meaningfulChanges") is { } nullNodeMeaningfulChanges && nullNodeMeaningfulChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeaningfulChanges = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidence property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; AdditionalData?.Remove("confidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence? _explicitNullValueConfidence = default!;
         /// <summary>Whether the changed page is meaningful for the monitor goal.</summary>
-        public bool? Meaningful { get => _explicitNullValueMeaningful; set { _explicitNullValueMeaningful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningful"); else _explicitNullProperties?.Remove("meaningful"); } }
+        public bool? Meaningful { get => _explicitNullValueMeaningful; set { _explicitNullValueMeaningful = value; AdditionalData?.Remove("meaningful"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningful"); else _explicitNullProperties?.Remove("meaningful"); } }
         private bool? _explicitNullValueMeaningful = default!;
         /// <summary>Goal-relevant changes selected by the judge from the page diff.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; AdditionalData?.Remove("meaningfulChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>? _explicitNullValueMeaningfulChanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> MeaningfulChanges { get => _explicitNullValueMeaningfulChanges; set { _explicitNullValueMeaningfulChanges = value; AdditionalData?.Remove("meaningfulChanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meaningfulChanges"); else _explicitNullProperties?.Remove("meaningfulChanges"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges> _explicitNullValueMeaningfulChanges = default!;
 #endif
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>
@@ -78,7 +82,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "confidence", n => { Confidence = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence>(); } },
+                { "confidence", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_confidence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfidence = default; _explicitNullProperties?.Remove("confidence"); AdditionalData["confidence"] = unknown; } else { Confidence = parsed; AdditionalData.Remove("confidence"); } } },
                 { "meaningful", n => { Meaningful = n.GetBoolValue(); } },
                 { "meaningfulChanges", n => { MeaningfulChanges = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges>(global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorPageJudgment_meaningfulChanges.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },

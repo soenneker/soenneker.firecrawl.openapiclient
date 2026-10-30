@@ -17,8 +17,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("robotsBlocked") is { } nullNodeRobotsBlocked && nullNodeRobotsBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsBlocked = null;
+            if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
+            else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("robotsBlocked") is null) { _explicitNullValueRobotsBlocked = default!; _explicitNullProperties?.Remove("robotsBlocked"); }
+            else if (parseNode.GetChildNode("robotsBlocked") is { } nullNodeRobotsBlocked && nullNodeRobotsBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RobotsBlocked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Errored scrape jobs and error details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.CrawlErrorsResponseObj_errors> _explicitNullValueErrors = default!;
 #endif
         /// <summary>List of URLs that were attempted in scraping but were blocked by robots.txt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RobotsBlocked { get => _explicitNullValueRobotsBlocked; set { _explicitNullValueRobotsBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsBlocked"); else _explicitNullProperties?.Remove("robotsBlocked"); } }
+        public List<string>? RobotsBlocked { get => _explicitNullValueRobotsBlocked; set { _explicitNullValueRobotsBlocked = value; AdditionalData?.Remove("robotsBlocked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsBlocked"); else _explicitNullProperties?.Remove("robotsBlocked"); } }
         private List<string>? _explicitNullValueRobotsBlocked = default!;
 #nullable restore
 #else
-        public List<string> RobotsBlocked { get => _explicitNullValueRobotsBlocked; set { _explicitNullValueRobotsBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsBlocked"); else _explicitNullProperties?.Remove("robotsBlocked"); } }
+        public List<string> RobotsBlocked { get => _explicitNullValueRobotsBlocked; set { _explicitNullValueRobotsBlocked = value; AdditionalData?.Remove("robotsBlocked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("robotsBlocked"); else _explicitNullProperties?.Remove("robotsBlocked"); } }
         private List<string> _explicitNullValueRobotsBlocked = default!;
 #endif
         /// <summary>

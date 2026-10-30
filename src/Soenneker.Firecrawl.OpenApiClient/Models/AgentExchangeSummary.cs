@@ -18,61 +18,69 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("creditsUsed") is { } nullNodeCreditsUsed && nullNodeCreditsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsUsed = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("onTermsRequired") is { } nullNodeOnTermsRequired && nullNodeOnTermsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnTermsRequired = null;
-            if (parseNode.GetChildNode("paidCalls") is { } nullNodePaidCalls && nullNodePaidCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidCalls = null;
-            if (parseNode.GetChildNode("requireApproval") is { } nullNodeRequireApproval && nullNodeRequireApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApproval = null;
-            if (parseNode.GetChildNode("requiresAction") is { } nullNodeRequiresAction && nullNodeRequiresAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresAction = null;
-            if (parseNode.GetChildNode("skippedProviders") is { } nullNodeSkippedProviders && nullNodeSkippedProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedProviders = null;
-            if (parseNode.GetChildNode("toolkits") is { } nullNodeToolkits && nullNodeToolkits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toolkits = null;
+            if (parseNode.GetChildNode("creditsUsed") is null) { _explicitNullValueCreditsUsed = default!; _explicitNullProperties?.Remove("creditsUsed"); }
+            else if (parseNode.GetChildNode("creditsUsed") is { } nullNodeCreditsUsed && nullNodeCreditsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsUsed = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("onTermsRequired") is null) { _explicitNullValueOnTermsRequired = default!; _explicitNullProperties?.Remove("onTermsRequired"); }
+            else if (parseNode.GetChildNode("onTermsRequired") is { } nullNodeOnTermsRequired && nullNodeOnTermsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnTermsRequired = null;
+            if (parseNode.GetChildNode("paidCalls") is null) { _explicitNullValuePaidCalls = default!; _explicitNullProperties?.Remove("paidCalls"); }
+            else if (parseNode.GetChildNode("paidCalls") is { } nullNodePaidCalls && nullNodePaidCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidCalls = null;
+            if (parseNode.GetChildNode("requireApproval") is null) { _explicitNullValueRequireApproval = default!; _explicitNullProperties?.Remove("requireApproval"); }
+            else if (parseNode.GetChildNode("requireApproval") is { } nullNodeRequireApproval && nullNodeRequireApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireApproval = null;
+            if (parseNode.GetChildNode("requiresAction") is null) { _explicitNullValueRequiresAction = default!; _explicitNullProperties?.Remove("requiresAction"); }
+            else if (parseNode.GetChildNode("requiresAction") is { } nullNodeRequiresAction && nullNodeRequiresAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresAction = null;
+            if (parseNode.GetChildNode("skippedProviders") is null) { _explicitNullValueSkippedProviders = default!; _explicitNullProperties?.Remove("skippedProviders"); }
+            else if (parseNode.GetChildNode("skippedProviders") is { } nullNodeSkippedProviders && nullNodeSkippedProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedProviders = null;
+            if (parseNode.GetChildNode("toolkits") is null) { _explicitNullValueToolkits = default!; _explicitNullProperties?.Remove("toolkits"); }
+            else if (parseNode.GetChildNode("toolkits") is { } nullNodeToolkits && nullNodeToolkits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Toolkits = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Credits the provider calls used, or null when unknown.</summary>
-        public double? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsUsed"); else _explicitNullProperties?.Remove("creditsUsed"); } }
+        public double? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; AdditionalData?.Remove("creditsUsed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditsUsed"); else _explicitNullProperties?.Remove("creditsUsed"); } }
         private double? _explicitNullValueCreditsUsed = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The onTermsRequired property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? OnTermsRequired { get => _explicitNullValueOnTermsRequired; set { _explicitNullValueOnTermsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onTermsRequired"); else _explicitNullProperties?.Remove("onTermsRequired"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? OnTermsRequired { get => _explicitNullValueOnTermsRequired; set { _explicitNullValueOnTermsRequired = value; AdditionalData?.Remove("onTermsRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onTermsRequired"); else _explicitNullProperties?.Remove("onTermsRequired"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired? _explicitNullValueOnTermsRequired = default!;
         /// <summary>Paid provider calls the run made.</summary>
-        public int? PaidCalls { get => _explicitNullValuePaidCalls; set { _explicitNullValuePaidCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidCalls"); else _explicitNullProperties?.Remove("paidCalls"); } }
+        public int? PaidCalls { get => _explicitNullValuePaidCalls; set { _explicitNullValuePaidCalls = value; AdditionalData?.Remove("paidCalls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paidCalls"); else _explicitNullProperties?.Remove("paidCalls"); } }
         private int? _explicitNullValuePaidCalls = default!;
         /// <summary>The requireApproval property</summary>
-        public bool? RequireApproval { get => _explicitNullValueRequireApproval; set { _explicitNullValueRequireApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireApproval"); else _explicitNullProperties?.Remove("requireApproval"); } }
+        public bool? RequireApproval { get => _explicitNullValueRequireApproval; set { _explicitNullValueRequireApproval = value; AdditionalData?.Remove("requireApproval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requireApproval"); else _explicitNullProperties?.Remove("requireApproval"); } }
         private bool? _explicitNullValueRequireApproval = default!;
         /// <summary>`onTermsRequired: &quot;ask&quot;` only, when a terms offer ended the turn: the calls to view and accept each provider&apos;s terms. Nothing here runs for you, and `terms/accept` must only be called after your user explicitly agrees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; AdditionalData?.Remove("requiresAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction? _explicitNullValueRequiresAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction RequiresAction { get => _explicitNullValueRequiresAction; set { _explicitNullValueRequiresAction = value; AdditionalData?.Remove("requiresAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiresAction"); else _explicitNullProperties?.Remove("requiresAction"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction _explicitNullValueRequiresAction = default!;
 #endif
         /// <summary>Providers that would have helped but need data terms your team has not accepted. Any `onTermsRequired` mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; AdditionalData?.Remove("skippedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders>? _explicitNullValueSkippedProviders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> SkippedProviders { get => _explicitNullValueSkippedProviders; set { _explicitNullValueSkippedProviders = value; AdditionalData?.Remove("skippedProviders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skippedProviders"); else _explicitNullProperties?.Remove("skippedProviders"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_skippedProviders> _explicitNullValueSkippedProviders = default!;
 #endif
         /// <summary>Pinned providers. Empty or absent means every provider the team can use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        public List<string>? Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; AdditionalData?.Remove("toolkits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
         private List<string>? _explicitNullValueToolkits = default!;
 #nullable restore
 #else
-        public List<string> Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
+        public List<string> Toolkits { get => _explicitNullValueToolkits; set { _explicitNullValueToolkits = value; AdditionalData?.Remove("toolkits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolkits"); else _explicitNullProperties?.Remove("toolkits"); } }
         private List<string> _explicitNullValueToolkits = default!;
 #endif
         /// <summary>
@@ -102,7 +110,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 { "creditsUsed", n => { CreditsUsed = n.GetDoubleValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "onTermsRequired", n => { OnTermsRequired = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired>(); } },
+                { "onTermsRequired", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_onTermsRequired>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOnTermsRequired = default; _explicitNullProperties?.Remove("onTermsRequired"); AdditionalData["onTermsRequired"] = unknown; } else { OnTermsRequired = parsed; AdditionalData.Remove("onTermsRequired"); } } },
                 { "paidCalls", n => { PaidCalls = n.GetIntValue(); } },
                 { "requireApproval", n => { RequireApproval = n.GetBoolValue(); } },
                 { "requiresAction", n => { RequiresAction = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction>(global::Soenneker.Firecrawl.OpenApiClient.Models.AgentExchangeSummary_requiresAction.CreateFromDiscriminatorValue); } },

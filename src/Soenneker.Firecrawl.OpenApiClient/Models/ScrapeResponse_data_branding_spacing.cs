@@ -18,45 +18,49 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("baseUnit") is { } nullNodeBaseUnit && nullNodeBaseUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseUnit = null;
-            if (parseNode.GetChildNode("borderRadius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
-            if (parseNode.GetChildNode("margins") is { } nullNodeMargins && nullNodeMargins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Margins = null;
-            if (parseNode.GetChildNode("padding") is { } nullNodePadding && nullNodePadding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Padding = null;
+            if (parseNode.GetChildNode("baseUnit") is null) { _explicitNullValueBaseUnit = default!; _explicitNullProperties?.Remove("baseUnit"); }
+            else if (parseNode.GetChildNode("baseUnit") is { } nullNodeBaseUnit && nullNodeBaseUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseUnit = null;
+            if (parseNode.GetChildNode("borderRadius") is null) { _explicitNullValueBorderRadius = default!; _explicitNullProperties?.Remove("borderRadius"); }
+            else if (parseNode.GetChildNode("borderRadius") is { } nullNodeBorderRadius && nullNodeBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BorderRadius = null;
+            if (parseNode.GetChildNode("margins") is null) { _explicitNullValueMargins = default!; _explicitNullProperties?.Remove("margins"); }
+            else if (parseNode.GetChildNode("margins") is { } nullNodeMargins && nullNodeMargins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Margins = null;
+            if (parseNode.GetChildNode("padding") is null) { _explicitNullValuePadding = default!; _explicitNullProperties?.Remove("padding"); }
+            else if (parseNode.GetChildNode("padding") is { } nullNodePadding && nullNodePadding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Padding = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base spacing unit in pixels.</summary>
-        public int? BaseUnit { get => _explicitNullValueBaseUnit; set { _explicitNullValueBaseUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseUnit"); else _explicitNullProperties?.Remove("baseUnit"); } }
+        public int? BaseUnit { get => _explicitNullValueBaseUnit; set { _explicitNullValueBaseUnit = value; AdditionalData?.Remove("baseUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseUnit"); else _explicitNullProperties?.Remove("baseUnit"); } }
         private int? _explicitNullValueBaseUnit = default!;
         /// <summary>Default border radius.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
+        public string? BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; AdditionalData?.Remove("borderRadius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
         private string? _explicitNullValueBorderRadius = default!;
 #nullable restore
 #else
-        public string BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
+        public string BorderRadius { get => _explicitNullValueBorderRadius; set { _explicitNullValueBorderRadius = value; AdditionalData?.Remove("borderRadius"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("borderRadius"); else _explicitNullProperties?.Remove("borderRadius"); } }
         private string _explicitNullValueBorderRadius = default!;
 #endif
         /// <summary>Margin values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins? Margins { get => _explicitNullValueMargins; set { _explicitNullValueMargins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("margins"); else _explicitNullProperties?.Remove("margins"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins? Margins { get => _explicitNullValueMargins; set { _explicitNullValueMargins = value; AdditionalData?.Remove("margins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("margins"); else _explicitNullProperties?.Remove("margins"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins? _explicitNullValueMargins = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins Margins { get => _explicitNullValueMargins; set { _explicitNullValueMargins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("margins"); else _explicitNullProperties?.Remove("margins"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins Margins { get => _explicitNullValueMargins; set { _explicitNullValueMargins = value; AdditionalData?.Remove("margins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("margins"); else _explicitNullProperties?.Remove("margins"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_margins _explicitNullValueMargins = default!;
 #endif
         /// <summary>Padding values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding? Padding { get => _explicitNullValuePadding; set { _explicitNullValuePadding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("padding"); else _explicitNullProperties?.Remove("padding"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding? Padding { get => _explicitNullValuePadding; set { _explicitNullValuePadding = value; AdditionalData?.Remove("padding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("padding"); else _explicitNullProperties?.Remove("padding"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding? _explicitNullValuePadding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding Padding { get => _explicitNullValuePadding; set { _explicitNullValuePadding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("padding"); else _explicitNullProperties?.Remove("padding"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding Padding { get => _explicitNullValuePadding; set { _explicitNullValuePadding = value; AdditionalData?.Remove("padding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("padding"); else _explicitNullProperties?.Remove("padding"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_spacing_padding _explicitNullValuePadding = default!;
 #endif
         /// <summary>

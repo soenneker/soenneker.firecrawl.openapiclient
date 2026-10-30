@@ -18,12 +18,18 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blacklist") is { } nullNodeBlacklist && nullNodeBlacklist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blacklist = null;
-            if (parseNode.GetChildNode("blockedTlds") is { } nullNodeBlockedTlds && nullNodeBlockedTlds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedTlds = null;
-            if (parseNode.GetChildNode("failurePolicy") is { } nullNodeFailurePolicy && nullNodeFailurePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailurePolicy = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("riskScoreThreshold") is { } nullNodeRiskScoreThreshold && nullNodeRiskScoreThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScoreThreshold = null;
-            if (parseNode.GetChildNode("whitelist") is { } nullNodeWhitelist && nullNodeWhitelist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Whitelist = null;
+            if (parseNode.GetChildNode("blacklist") is null) { _explicitNullValueBlacklist = default!; _explicitNullProperties?.Remove("blacklist"); }
+            else if (parseNode.GetChildNode("blacklist") is { } nullNodeBlacklist && nullNodeBlacklist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blacklist = null;
+            if (parseNode.GetChildNode("blockedTlds") is null) { _explicitNullValueBlockedTlds = default!; _explicitNullProperties?.Remove("blockedTlds"); }
+            else if (parseNode.GetChildNode("blockedTlds") is { } nullNodeBlockedTlds && nullNodeBlockedTlds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedTlds = null;
+            if (parseNode.GetChildNode("failurePolicy") is null) { _explicitNullValueFailurePolicy = default!; _explicitNullProperties?.Remove("failurePolicy"); }
+            else if (parseNode.GetChildNode("failurePolicy") is { } nullNodeFailurePolicy && nullNodeFailurePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailurePolicy = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("riskScoreThreshold") is null) { _explicitNullValueRiskScoreThreshold = default!; _explicitNullProperties?.Remove("riskScoreThreshold"); }
+            else if (parseNode.GetChildNode("riskScoreThreshold") is { } nullNodeRiskScoreThreshold && nullNodeRiskScoreThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScoreThreshold = null;
+            if (parseNode.GetChildNode("whitelist") is null) { _explicitNullValueWhitelist = default!; _explicitNullProperties?.Remove("whitelist"); }
+            else if (parseNode.GetChildNode("whitelist") is { } nullNodeWhitelist && nullNodeWhitelist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Whitelist = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,40 +37,40 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>Domains to always block, as plain domains (`example.com`) or wildcard globs (`*.example.com`). No protocol, path, or port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Blacklist { get => _explicitNullValueBlacklist; set { _explicitNullValueBlacklist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blacklist"); else _explicitNullProperties?.Remove("blacklist"); } }
+        public List<string>? Blacklist { get => _explicitNullValueBlacklist; set { _explicitNullValueBlacklist = value; AdditionalData?.Remove("blacklist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blacklist"); else _explicitNullProperties?.Remove("blacklist"); } }
         private List<string>? _explicitNullValueBlacklist = default!;
 #nullable restore
 #else
-        public List<string> Blacklist { get => _explicitNullValueBlacklist; set { _explicitNullValueBlacklist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blacklist"); else _explicitNullProperties?.Remove("blacklist"); } }
+        public List<string> Blacklist { get => _explicitNullValueBlacklist; set { _explicitNullValueBlacklist = value; AdditionalData?.Remove("blacklist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blacklist"); else _explicitNullProperties?.Remove("blacklist"); } }
         private List<string> _explicitNullValueBlacklist = default!;
 #endif
         /// <summary>Top-level domains to block outright, lowercase without the leading dot (e.g. `zip`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlockedTlds { get => _explicitNullValueBlockedTlds; set { _explicitNullValueBlockedTlds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedTlds"); else _explicitNullProperties?.Remove("blockedTlds"); } }
+        public List<string>? BlockedTlds { get => _explicitNullValueBlockedTlds; set { _explicitNullValueBlockedTlds = value; AdditionalData?.Remove("blockedTlds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedTlds"); else _explicitNullProperties?.Remove("blockedTlds"); } }
         private List<string>? _explicitNullValueBlockedTlds = default!;
 #nullable restore
 #else
-        public List<string> BlockedTlds { get => _explicitNullValueBlockedTlds; set { _explicitNullValueBlockedTlds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedTlds"); else _explicitNullProperties?.Remove("blockedTlds"); } }
+        public List<string> BlockedTlds { get => _explicitNullValueBlockedTlds; set { _explicitNullValueBlockedTlds = value; AdditionalData?.Remove("blockedTlds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockedTlds"); else _explicitNullProperties?.Remove("blockedTlds"); } }
         private List<string> _explicitNullValueBlockedTlds = default!;
 #endif
         /// <summary>What to do when the classifier can&apos;t be reached: `closed` blocks the request, `open` allows it.</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy? FailurePolicy { get => _explicitNullValueFailurePolicy; set { _explicitNullValueFailurePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failurePolicy"); else _explicitNullProperties?.Remove("failurePolicy"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy? FailurePolicy { get => _explicitNullValueFailurePolicy; set { _explicitNullValueFailurePolicy = value; AdditionalData?.Remove("failurePolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failurePolicy"); else _explicitNullProperties?.Remove("failurePolicy"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy? _explicitNullValueFailurePolicy = default!;
         /// <summary>URL scanning mode for this request. `normal` checks URLs against Google Web Risk (+2 credits per URL scanned).</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode? _explicitNullValueMode = default!;
         /// <summary>Normalized risk score (0–100) at or above which a classifier verdict blocks the URL. Lower is stricter.</summary>
-        public int? RiskScoreThreshold { get => _explicitNullValueRiskScoreThreshold; set { _explicitNullValueRiskScoreThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScoreThreshold"); else _explicitNullProperties?.Remove("riskScoreThreshold"); } }
+        public int? RiskScoreThreshold { get => _explicitNullValueRiskScoreThreshold; set { _explicitNullValueRiskScoreThreshold = value; AdditionalData?.Remove("riskScoreThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScoreThreshold"); else _explicitNullProperties?.Remove("riskScoreThreshold"); } }
         private int? _explicitNullValueRiskScoreThreshold = default!;
         /// <summary>Domains to always allow, as plain domains or wildcard globs. Wins over every other rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Whitelist { get => _explicitNullValueWhitelist; set { _explicitNullValueWhitelist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelist"); else _explicitNullProperties?.Remove("whitelist"); } }
+        public List<string>? Whitelist { get => _explicitNullValueWhitelist; set { _explicitNullValueWhitelist = value; AdditionalData?.Remove("whitelist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelist"); else _explicitNullProperties?.Remove("whitelist"); } }
         private List<string>? _explicitNullValueWhitelist = default!;
 #nullable restore
 #else
-        public List<string> Whitelist { get => _explicitNullValueWhitelist; set { _explicitNullValueWhitelist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelist"); else _explicitNullProperties?.Remove("whitelist"); } }
+        public List<string> Whitelist { get => _explicitNullValueWhitelist; set { _explicitNullValueWhitelist = value; AdditionalData?.Remove("whitelist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelist"); else _explicitNullProperties?.Remove("whitelist"); } }
         private List<string> _explicitNullValueWhitelist = default!;
 #endif
         /// <summary>
@@ -94,8 +100,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             {
                 { "blacklist", n => { Blacklist = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "blockedTlds", n => { BlockedTlds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "failurePolicy", n => { FailurePolicy = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy>(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode>(); } },
+                { "failurePolicy", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_failurePolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFailurePolicy = default; _explicitNullProperties?.Remove("failurePolicy"); AdditionalData["failurePolicy"] = unknown; } else { FailurePolicy = parsed; AdditionalData.Remove("failurePolicy"); } } },
+                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ThreatProtectionOverride_mode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
                 { "riskScoreThreshold", n => { RiskScoreThreshold = n.GetIntValue(); } },
                 { "whitelist", n => { Whitelist = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

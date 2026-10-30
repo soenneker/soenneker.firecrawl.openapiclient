@@ -17,7 +17,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
+            if (parseNode.GetChildNode("formats") is null) { _explicitNullValueFormats = default!; _explicitNullProperties?.Remove("formats"); }
+            else if (parseNode.GetChildNode("formats") is { } nullNodeFormats && nullNodeFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formats = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Parse.Formats
         /// <summary>The formats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats>? Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; AdditionalData?.Remove("formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats>? _explicitNullValueFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats> Formats { get => _explicitNullValueFormats; set { _explicitNullValueFormats = value; AdditionalData?.Remove("formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formats"); else _explicitNullProperties?.Remove("formats"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Parse.Formats.FormatsGetResponse_data_formats> _explicitNullValueFormats = default!;
 #endif
         /// <summary>

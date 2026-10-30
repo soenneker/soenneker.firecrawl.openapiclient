@@ -18,10 +18,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("javascriptReturns") is { } nullNodeJavascriptReturns && nullNodeJavascriptReturns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavascriptReturns = null;
-            if (parseNode.GetChildNode("pdfs") is { } nullNodePdfs && nullNodePdfs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pdfs = null;
-            if (parseNode.GetChildNode("scrapes") is { } nullNodeScrapes && nullNodeScrapes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scrapes = null;
-            if (parseNode.GetChildNode("screenshots") is { } nullNodeScreenshots && nullNodeScreenshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshots = null;
+            if (parseNode.GetChildNode("javascriptReturns") is null) { _explicitNullValueJavascriptReturns = default!; _explicitNullProperties?.Remove("javascriptReturns"); }
+            else if (parseNode.GetChildNode("javascriptReturns") is { } nullNodeJavascriptReturns && nullNodeJavascriptReturns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavascriptReturns = null;
+            if (parseNode.GetChildNode("pdfs") is null) { _explicitNullValuePdfs = default!; _explicitNullProperties?.Remove("pdfs"); }
+            else if (parseNode.GetChildNode("pdfs") is { } nullNodePdfs && nullNodePdfs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pdfs = null;
+            if (parseNode.GetChildNode("scrapes") is null) { _explicitNullValueScrapes = default!; _explicitNullProperties?.Remove("scrapes"); }
+            else if (parseNode.GetChildNode("scrapes") is { } nullNodeScrapes && nullNodeScrapes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scrapes = null;
+            if (parseNode.GetChildNode("screenshots") is null) { _explicitNullValueScreenshots = default!; _explicitNullProperties?.Remove("screenshots"); }
+            else if (parseNode.GetChildNode("screenshots") is { } nullNodeScreenshots && nullNodeScreenshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screenshots = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <summary>JavaScript return values, in the same order as the executeJavascript actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; AdditionalData?.Remove("javascriptReturns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>? _explicitNullValueJavascriptReturns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> JavascriptReturns { get => _explicitNullValueJavascriptReturns; set { _explicitNullValueJavascriptReturns = value; AdditionalData?.Remove("javascriptReturns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javascriptReturns"); else _explicitNullProperties?.Remove("javascriptReturns"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns> _explicitNullValueJavascriptReturns = default!;
 #endif
         /// <summary>PDFs generated, in the same order as the pdf actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
+        public List<string>? Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; AdditionalData?.Remove("pdfs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
         private List<string>? _explicitNullValuePdfs = default!;
 #nullable restore
 #else
-        public List<string> Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
+        public List<string> Pdfs { get => _explicitNullValuePdfs; set { _explicitNullValuePdfs = value; AdditionalData?.Remove("pdfs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdfs"); else _explicitNullProperties?.Remove("pdfs"); } }
         private List<string> _explicitNullValuePdfs = default!;
 #endif
         /// <summary>Scrape contents, in the same order as the scrape actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; AdditionalData?.Remove("scrapes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes>? _explicitNullValueScrapes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> Scrapes { get => _explicitNullValueScrapes; set { _explicitNullValueScrapes = value; AdditionalData?.Remove("scrapes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapes"); else _explicitNullProperties?.Remove("scrapes"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_scrapes> _explicitNullValueScrapes = default!;
 #endif
         /// <summary>Screenshot URLs, in the same order as the screenshot actions provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
+        public List<string>? Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; AdditionalData?.Remove("screenshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
         private List<string>? _explicitNullValueScreenshots = default!;
 #nullable restore
 #else
-        public List<string> Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
+        public List<string> Screenshots { get => _explicitNullValueScreenshots; set { _explicitNullValueScreenshots = value; AdditionalData?.Remove("screenshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenshots"); else _explicitNullProperties?.Remove("screenshots"); } }
         private List<string> _explicitNullValueScreenshots = default!;
 #endif
         /// <summary>

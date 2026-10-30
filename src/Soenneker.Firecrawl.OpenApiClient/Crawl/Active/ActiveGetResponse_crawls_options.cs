@@ -19,7 +19,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.Active
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scrapeOptions") is { } nullNodeScrapeOptions && nullNodeScrapeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeOptions = null;
+            if (parseNode.GetChildNode("scrapeOptions") is null) { _explicitNullValueScrapeOptions = default!; _explicitNullProperties?.Remove("scrapeOptions"); }
+            else if (parseNode.GetChildNode("scrapeOptions") is { } nullNodeScrapeOptions && nullNodeScrapeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeOptions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,11 +28,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl.Active
         /// <summary>The scrapeOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; AdditionalData?.Remove("scrapeOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions? _explicitNullValueScrapeOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions ScrapeOptions { get => _explicitNullValueScrapeOptions; set { _explicitNullValueScrapeOptions = value; AdditionalData?.Remove("scrapeOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeOptions"); else _explicitNullProperties?.Remove("scrapeOptions"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions _explicitNullValueScrapeOptions = default!;
 #endif
         /// <summary>

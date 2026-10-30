@@ -78,7 +78,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.PapersRequestBuilder.PapersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.firecrawl.dev/v2", "/search/research/papers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

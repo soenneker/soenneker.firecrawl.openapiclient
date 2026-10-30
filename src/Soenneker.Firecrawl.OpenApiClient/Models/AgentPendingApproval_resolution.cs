@@ -18,38 +18,42 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
-            if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
-            if (parseNode.GetChildNode("byRunId") is { } nullNodeByRunId && nullNodeByRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByRunId = null;
-            if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
+            if (parseNode.GetChildNode("always") is null) { _explicitNullValueAlways = default!; _explicitNullProperties?.Remove("always"); }
+            else if (parseNode.GetChildNode("always") is { } nullNodeAlways && nullNodeAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Always = null;
+            if (parseNode.GetChildNode("approved") is null) { _explicitNullValueApproved = default!; _explicitNullProperties?.Remove("approved"); }
+            else if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
+            if (parseNode.GetChildNode("byRunId") is null) { _explicitNullValueByRunId = default!; _explicitNullProperties?.Remove("byRunId"); }
+            else if (parseNode.GetChildNode("byRunId") is { } nullNodeByRunId && nullNodeByRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ByRunId = null;
+            if (parseNode.GetChildNode("callIds") is null) { _explicitNullValueCallIds = default!; _explicitNullProperties?.Remove("callIds"); }
+            else if (parseNode.GetChildNode("callIds") is { } nullNodeCallIds && nullNodeCallIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The always property</summary>
-        public bool? Always { get => _explicitNullValueAlways; set { _explicitNullValueAlways = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always"); else _explicitNullProperties?.Remove("always"); } }
+        public bool? Always { get => _explicitNullValueAlways; set { _explicitNullValueAlways = value; AdditionalData?.Remove("always"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always"); else _explicitNullProperties?.Remove("always"); } }
         private bool? _explicitNullValueAlways = default!;
         /// <summary>The approved property</summary>
-        public bool? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
+        public bool? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; AdditionalData?.Remove("approved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
         private bool? _explicitNullValueApproved = default!;
         /// <summary>The byRunId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
+        public string? ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; AdditionalData?.Remove("byRunId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
         private string? _explicitNullValueByRunId = default!;
 #nullable restore
 #else
-        public string ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
+        public string ByRunId { get => _explicitNullValueByRunId; set { _explicitNullValueByRunId = value; AdditionalData?.Remove("byRunId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("byRunId"); else _explicitNullProperties?.Remove("byRunId"); } }
         private string _explicitNullValueByRunId = default!;
 #endif
         /// <summary>The callIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        public List<string>? CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; AdditionalData?.Remove("callIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
         private List<string>? _explicitNullValueCallIds = default!;
 #nullable restore
 #else
-        public List<string> CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
+        public List<string> CallIds { get => _explicitNullValueCallIds; set { _explicitNullValueCallIds = value; AdditionalData?.Remove("callIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callIds"); else _explicitNullProperties?.Remove("callIds"); } }
         private List<string> _explicitNullValueCallIds = default!;
 #endif
         /// <summary>
