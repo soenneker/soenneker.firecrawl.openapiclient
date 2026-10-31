@@ -65,6 +65,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "capability", n => { Capability = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
+
             };
         }
         /// <summary>
