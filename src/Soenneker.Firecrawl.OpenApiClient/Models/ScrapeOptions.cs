@@ -238,7 +238,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             OnlyMainContent = true;
             Proxy = global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeOptions_proxy.Auto;
             RemoveBase64Images = true;
-            SkipTlsVerification = true;
+            SkipTlsVerification = false;
             StoreInCache = true;
             Timeout = 60000;
             WaitFor = 0;

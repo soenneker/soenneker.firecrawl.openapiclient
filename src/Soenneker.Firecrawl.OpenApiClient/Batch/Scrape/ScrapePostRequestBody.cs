@@ -279,7 +279,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Batch.Scrape
             OnlyMainContent = true;
             Proxy = global::Soenneker.Firecrawl.OpenApiClient.Batch.Scrape.ScrapePostRequestBody_proxy.Auto;
             RemoveBase64Images = true;
-            SkipTlsVerification = true;
+            SkipTlsVerification = false;
             StoreInCache = true;
             Timeout = 60000;
             WaitFor = 0;

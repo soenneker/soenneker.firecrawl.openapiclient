@@ -181,7 +181,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             OnlyMainContent = true;
             Origin = "api";
             RemoveBase64Images = true;
-            SkipTlsVerification = true;
+            SkipTlsVerification = false;
             Timeout = 30000;
             ZeroDataRetention = false;
         }
