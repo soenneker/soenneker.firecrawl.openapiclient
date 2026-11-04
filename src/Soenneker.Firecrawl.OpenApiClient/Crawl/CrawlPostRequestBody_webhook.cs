@@ -60,7 +60,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
         public global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlPostRequestBody_webhook_metadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlPostRequestBody_webhook_metadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The URL to send the webhook to. This will trigger for crawl started (crawl.started), every page crawled (crawl.page) and when the crawl is completed (crawl.completed or crawl.failed). The response will be the same as the `/scrape` endpoint.</summary>
+        /// <summary>The URL to send the webhook to. This will trigger for crawl started (crawl.started), every page crawled (crawl.page) and when the crawl is completed (crawl.completed). A page that fails to scrape is sent as crawl.page with success set to false. The response will be the same as the `/scrape` endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }

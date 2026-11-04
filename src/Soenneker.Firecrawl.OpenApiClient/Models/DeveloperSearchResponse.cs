@@ -17,12 +17,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("coverage") is null) { _explicitNullValueCoverage = default!; _explicitNullProperties?.Remove("coverage"); }
-            else if (parseNode.GetChildNode("coverage") is { } nullNodeCoverage && nullNodeCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coverage = null;
+            if (parseNode.GetChildNode("partial") is null) { _explicitNullValuePartial = default!; _explicitNullProperties?.Remove("partial"); }
+            else if (parseNode.GetChildNode("partial") is { } nullNodePartial && nullNodePartial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Partial = null;
             if (parseNode.GetChildNode("repos") is null) { _explicitNullValueRepos = default!; _explicitNullProperties?.Remove("repos"); }
             else if (parseNode.GetChildNode("repos") is { } nullNodeRepos && nullNodeRepos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repos = null;
-            if (parseNode.GetChildNode("reranked") is null) { _explicitNullValueReranked = default!; _explicitNullProperties?.Remove("reranked"); }
-            else if (parseNode.GetChildNode("reranked") is { } nullNodeReranked && nullNodeReranked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reranked = null;
             if (parseNode.GetChildNode("results") is null) { _explicitNullValueResults = default!; _explicitNullProperties?.Remove("results"); }
             else if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
             if (parseNode.GetChildNode("sources") is null) { _explicitNullValueSources = default!; _explicitNullProperties?.Remove("sources"); }
@@ -33,16 +31,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Outcome for each result type. Check this when an expected result type is missing: `skipped` means your `types` value did not ask for that type, while `degraded` or `unavailable` means the gap came from the index or from a filter, not from the query. A repository filter is one such cause — see [how the repository filters scope a search](/api-reference/endpoint/developer-search#how-the-repository-filters-scope-a-search).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage? _explicitNullValueCoverage = default!;
-#nullable restore
-#else
-        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage _explicitNullValueCoverage = default!;
-#endif
+        /// <summary>True when the deadline passed before every best-effort stage finished, so the response holds the work completed by then.</summary>
+        public bool? Partial { get => _explicitNullValuePartial; set { _explicitNullValuePartial = value; AdditionalData?.Remove("partial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partial"); else _explicitNullProperties?.Remove("partial"); } }
+        private bool? _explicitNullValuePartial = default!;
         /// <summary>Present only when `repos` was sent. Echoes each slug with whether it is indexed, plus a per-type breakdown under `types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,9 +44,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; AdditionalData?.Remove("repos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos> _explicitNullValueRepos = default!;
 #endif
-        /// <summary>Whether the ranked list went through the reranking stage.</summary>
-        public bool? Reranked { get => _explicitNullValueReranked; set { _explicitNullValueReranked = value; AdditionalData?.Remove("reranked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reranked"); else _explicitNullProperties?.Remove("reranked"); } }
-        private bool? _explicitNullValueReranked = default!;
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,9 +92,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage.CreateFromDiscriminatorValue); } },
+                { "partial", n => { Partial = n.GetBoolValue(); } },
                 { "repos", n => { Repos = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "reranked", n => { Reranked = n.GetBoolValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -119,9 +106,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_coverage>("coverage", Coverage);
+            writer.WriteBoolValue("partial", Partial);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>("repos", Repos);
-            writer.WriteBoolValue("reranked", Reranked);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult>("results", Results);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_sources>("sources", Sources);
             writer.WriteBoolValue("success", Success);

@@ -17,12 +17,43 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("citation_url") is null) { _explicitNullValueCitationUrl = default!; _explicitNullProperties?.Remove("citation_url"); }
+            else if (parseNode.GetChildNode("citation_url") is { } nullNodeCitationUrl && nullNodeCitationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CitationUrl = null;
+            if (parseNode.GetChildNode("full_tokens_est") is null) { _explicitNullValueFullTokensEst = default!; _explicitNullProperties?.Remove("full_tokens_est"); }
+            else if (parseNode.GetChildNode("full_tokens_est") is { } nullNodeFullTokensEst && nullNodeFullTokensEst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullTokensEst = null;
+            if (parseNode.GetChildNode("served_span") is null) { _explicitNullValueServedSpan = default!; _explicitNullProperties?.Remove("served_span"); }
+            else if (parseNode.GetChildNode("served_span") is { } nullNodeServedSpan && nullNodeServedSpan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServedSpan = null;
             if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
             else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("truncated") is null) { _explicitNullValueTruncated = default!; _explicitNullProperties?.Remove("truncated"); }
+            else if (parseNode.GetChildNode("truncated") is { } nullNodeTruncated && nullNodeTruncated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Truncated = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Link to the passage&apos;s own location, such as a section anchor, when it differs from the result `url`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CitationUrl { get => _explicitNullValueCitationUrl; set { _explicitNullValueCitationUrl = value; AdditionalData?.Remove("citation_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("citation_url"); else _explicitNullProperties?.Remove("citation_url"); } }
+        private string? _explicitNullValueCitationUrl = default!;
+#nullable restore
+#else
+        public string CitationUrl { get => _explicitNullValueCitationUrl; set { _explicitNullValueCitationUrl = value; AdditionalData?.Remove("citation_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("citation_url"); else _explicitNullProperties?.Remove("citation_url"); } }
+        private string _explicitNullValueCitationUrl = default!;
+#endif
+        /// <summary>Approximate token count of the full passage.</summary>
+        public int? FullTokensEst { get => _explicitNullValueFullTokensEst; set { _explicitNullValueFullTokensEst = value; AdditionalData?.Remove("full_tokens_est"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full_tokens_est"); else _explicitNullProperties?.Remove("full_tokens_est"); } }
+        private int? _explicitNullValueFullTokensEst = default!;
+        /// <summary>Byte offsets of `text` within the full passage, present when `text` is one contiguous span.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span? ServedSpan { get => _explicitNullValueServedSpan; set { _explicitNullValueServedSpan = value; AdditionalData?.Remove("served_span"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_span"); else _explicitNullProperties?.Remove("served_span"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span? _explicitNullValueServedSpan = default!;
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span ServedSpan { get => _explicitNullValueServedSpan; set { _explicitNullValueServedSpan = value; AdditionalData?.Remove("served_span"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("served_span"); else _explicitNullProperties?.Remove("served_span"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span _explicitNullValueServedSpan = default!;
+#endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +64,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
+        /// <summary>True when `text` omits part of the full passage. Absent when false.</summary>
+        public bool? Truncated { get => _explicitNullValueTruncated; set { _explicitNullValueTruncated = value; AdditionalData?.Remove("truncated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("truncated"); else _explicitNullProperties?.Remove("truncated"); } }
+        private bool? _explicitNullValueTruncated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages"/> and sets the default values.
         /// </summary>
@@ -58,7 +92,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "citation_url", n => { CitationUrl = n.GetStringValue(); } },
+                { "full_tokens_est", n => { FullTokensEst = n.GetIntValue(); } },
+                { "served_span", n => { ServedSpan = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
+                { "truncated", n => { Truncated = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +106,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("citation_url", CitationUrl);
+            writer.WriteIntValue("full_tokens_est", FullTokensEst);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResult_passages_served_span>("served_span", ServedSpan);
             writer.WriteStringValue("text", Text);
+            writer.WriteBoolValue("truncated", Truncated);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

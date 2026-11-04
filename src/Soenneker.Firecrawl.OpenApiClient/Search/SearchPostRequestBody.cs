@@ -58,15 +58,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Categories to filter results by. Defaults to [], which means results will not be filtered by any categories.</summary>
+        /// <summary>Categories to filter results by. Pass either an array of category names, such as `[&quot;research&quot;, &quot;pdf&quot;]`, or an array of objects, such as `[{&quot;type&quot;: &quot;research&quot;}]`; one array cannot mix the two forms. `developer` and `gov` must be the only entry in the array, and combining either with another category returns `400`. Defaults to [], which means results will not be filtered by any categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
-        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>? _explicitNullValueCategories = default!;
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
-        private List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories> _explicitNullValueCategories = default!;
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories _explicitNullValueCategories = default!;
 #endif
         /// <summary>ISO country code for geo-targeting search results (e.g. `US`). For best results, set both this and the `location` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,7 +220,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "categories", n => { Categories = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories.CreateFromDiscriminatorValue); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "domainTools", n => { DomainTools = n.GetBoolValue(); } },
                 { "enterprise", n => { Enterprise = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>()?.AsList(); } },
@@ -247,7 +247,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>("categories", Categories);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories>("categories", Categories);
             writer.WriteStringValue("country", Country);
             writer.WriteBoolValue("domainTools", DomainTools);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_enterprise>("enterprise", Enterprise);
@@ -269,42 +269,26 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3"/>, <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4"/>
+        /// Composed type wrapper for classes List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1&gt;, List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2&gt;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchPostRequestBody_categories : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1"/></summary>
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1? SearchPostRequestBodyCategoriesMember1 { get; set; }
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1>? SearchPostRequestBodyCategoriesMember1 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1 SearchPostRequestBodyCategoriesMember1 { get; set; }
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1> SearchPostRequestBodyCategoriesMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2"/></summary>
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2? SearchPostRequestBodyCategoriesMember2 { get; set; }
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2>? SearchPostRequestBodyCategoriesMember2 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2 SearchPostRequestBodyCategoriesMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3? SearchPostRequestBodyCategoriesMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3 SearchPostRequestBodyCategoriesMember3 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4? SearchPostRequestBodyCategoriesMember4 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4 SearchPostRequestBodyCategoriesMember4 { get; set; }
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2> SearchPostRequestBodyCategoriesMember2 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -320,6 +304,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody.SearchPostRequestBody_categories();
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1> searchPostRequestBodyCategoriesMember1Value)
+                {
+                    result.SearchPostRequestBodyCategoriesMember1 = searchPostRequestBodyCategoriesMember1Value;
+                }
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2> searchPostRequestBodyCategoriesMember2Value)
+                {
+                    result.SearchPostRequestBodyCategoriesMember2 = searchPostRequestBodyCategoriesMember2Value;
+                }
                 return result;
             }
             /// <summary>
@@ -328,22 +320,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(SearchPostRequestBodyCategoriesMember1 != null)
-                {
-                    return SearchPostRequestBodyCategoriesMember1.GetFieldDeserializers();
-                }
-                else if(SearchPostRequestBodyCategoriesMember2 != null)
-                {
-                    return SearchPostRequestBodyCategoriesMember2.GetFieldDeserializers();
-                }
-                else if(SearchPostRequestBodyCategoriesMember3 != null)
-                {
-                    return SearchPostRequestBodyCategoriesMember3.GetFieldDeserializers();
-                }
-                else if(SearchPostRequestBodyCategoriesMember4 != null)
-                {
-                    return SearchPostRequestBodyCategoriesMember4.GetFieldDeserializers();
-                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -354,24 +330,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
             {
             // Empty composed wrappers serialize as JSON null.
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (SearchPostRequestBodyCategoriesMember1 == null && SearchPostRequestBodyCategoriesMember2 == null && SearchPostRequestBodyCategoriesMember3 == null && SearchPostRequestBodyCategoriesMember4 == null) { writer.WriteNullValue(null); return; }
+            if (SearchPostRequestBodyCategoriesMember1 == null && SearchPostRequestBodyCategoriesMember2 == null) { writer.WriteNullValue(null); return; }
 
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(SearchPostRequestBodyCategoriesMember1 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1>(null, SearchPostRequestBodyCategoriesMember1);
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember1>(null, SearchPostRequestBodyCategoriesMember1);
                 }
                 else if(SearchPostRequestBodyCategoriesMember2 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2>(null, SearchPostRequestBodyCategoriesMember2);
-                }
-                else if(SearchPostRequestBodyCategoriesMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember3>(null, SearchPostRequestBodyCategoriesMember3);
-                }
-                else if(SearchPostRequestBodyCategoriesMember4 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember4>(null, SearchPostRequestBodyCategoriesMember4);
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostRequestBody_categoriesMember2>(null, SearchPostRequestBodyCategoriesMember2);
                 }
             }
         }

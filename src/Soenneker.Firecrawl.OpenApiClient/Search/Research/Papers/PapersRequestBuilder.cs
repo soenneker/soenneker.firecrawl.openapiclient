@@ -35,7 +35,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PapersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/research/papers?query={query}{&authors*,categories*,from*,k*,to*}", pathParameters)
+        public PapersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/research/papers?query={query}{&authors*,categories*,from*,k*,sort*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PapersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/research/papers?query={query}{&authors*,categories*,from*,k*,to*}", rawUrl)
+        public PapersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/research/papers?query={query}{&authors*,categories*,from*,k*,sort*,to*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,6 +134,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
+            /// <summary>Result order. `relevance` (default) returns the most relevant papers first. `date_desc` returns the newest papers among the most relevant matches, newest first by created date, with undated papers last. It does not list every paper in a date range; use `from` and `to` for that.</summary>
+            [QueryParameter("sort")]
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>Inclusive upper bound on created/updated date.</summary>
             [QueryParameter("to")]
             public Date? To { get; set; }

@@ -17,6 +17,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("canonicalRepo") is null) { _explicitNullValueCanonicalRepo = default!; _explicitNullProperties?.Remove("canonicalRepo"); }
+            else if (parseNode.GetChildNode("canonicalRepo") is { } nullNodeCanonicalRepo && nullNodeCanonicalRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanonicalRepo = null;
             if (parseNode.GetChildNode("indexed") is null) { _explicitNullValueIndexed = default!; _explicitNullProperties?.Remove("indexed"); }
             else if (parseNode.GetChildNode("indexed") is { } nullNodeIndexed && nullNodeIndexed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexed = null;
             if (parseNode.GetChildNode("repo") is null) { _explicitNullValueRepo = default!; _explicitNullProperties?.Remove("repo"); }
@@ -27,6 +29,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The current indexed slug when `repo` is a superseded alias. Absent otherwise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CanonicalRepo { get => _explicitNullValueCanonicalRepo; set { _explicitNullValueCanonicalRepo = value; AdditionalData?.Remove("canonicalRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonicalRepo"); else _explicitNullProperties?.Remove("canonicalRepo"); } }
+        private string? _explicitNullValueCanonicalRepo = default!;
+#nullable restore
+#else
+        public string CanonicalRepo { get => _explicitNullValueCanonicalRepo; set { _explicitNullValueCanonicalRepo = value; AdditionalData?.Remove("canonicalRepo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonicalRepo"); else _explicitNullProperties?.Remove("canonicalRepo"); } }
+        private string _explicitNullValueCanonicalRepo = default!;
+#endif
         /// <summary>The indexed property</summary>
         public bool? Indexed { get => _explicitNullValueIndexed; set { _explicitNullValueIndexed = value; AdditionalData?.Remove("indexed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexed"); else _explicitNullProperties?.Remove("indexed"); } }
         private bool? _explicitNullValueIndexed = default!;
@@ -75,6 +87,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "canonicalRepo", n => { CanonicalRepo = n.GetStringValue(); } },
                 { "indexed", n => { Indexed = n.GetBoolValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "types", n => { Types = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types.CreateFromDiscriminatorValue); } },
@@ -87,6 +100,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("canonicalRepo", CanonicalRepo);
             writer.WriteBoolValue("indexed", Indexed);
             writer.WriteStringValue("repo", Repo);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos_types>("types", Types);

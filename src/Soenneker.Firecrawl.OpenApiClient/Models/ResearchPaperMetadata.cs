@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -67,16 +68,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public List<string> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
         private List<string> _explicitNullValueCategories = default!;
 #endif
-        /// <summary>Original creation date string.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("createdDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdDate"); else _explicitNullProperties?.Remove("createdDate"); } }
-        private string? _explicitNullValueCreatedDate = default!;
-#nullable restore
-#else
-        public string CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("createdDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdDate"); else _explicitNullProperties?.Remove("createdDate"); } }
-        private string _explicitNullValueCreatedDate = default!;
-#endif
+        /// <summary>Creation date, YYYY-MM-DD.</summary>
+        public Date? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("createdDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdDate"); else _explicitNullProperties?.Remove("createdDate"); } }
+        private Date? _explicitNullValueCreatedDate = default!;
         /// <summary>Source identifiers grouped by namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,16 +101,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
-        /// <summary>Last-updated date string.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdateDate { get => _explicitNullValueUpdateDate; set { _explicitNullValueUpdateDate = value; AdditionalData?.Remove("updateDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDate"); else _explicitNullProperties?.Remove("updateDate"); } }
-        private string? _explicitNullValueUpdateDate = default!;
-#nullable restore
-#else
-        public string UpdateDate { get => _explicitNullValueUpdateDate; set { _explicitNullValueUpdateDate = value; AdditionalData?.Remove("updateDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDate"); else _explicitNullProperties?.Remove("updateDate"); } }
-        private string _explicitNullValueUpdateDate = default!;
-#endif
+        /// <summary>Last update date, YYYY-MM-DD.</summary>
+        public Date? UpdateDate { get => _explicitNullValueUpdateDate; set { _explicitNullValueUpdateDate = value; AdditionalData?.Remove("updateDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDate"); else _explicitNullProperties?.Remove("updateDate"); } }
+        private Date? _explicitNullValueUpdateDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperMetadata"/> and sets the default values.
         /// </summary>
@@ -145,11 +132,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
                 { "abstract", n => { Abstract = n.GetStringValue(); } },
                 { "authors", n => { Authors = n.GetStringValue(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "createdDate", n => { CreatedDate = n.GetStringValue(); } },
+                { "createdDate", n => { CreatedDate = n.GetDateValue(); } },
                 { "ids", n => { Ids = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap.CreateFromDiscriminatorValue); } },
                 { "paperId", n => { PaperId = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "updateDate", n => { UpdateDate = n.GetStringValue(); } },
+                { "updateDate", n => { UpdateDate = n.GetDateValue(); } },
             };
         }
         /// <summary>
@@ -162,11 +149,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             writer.WriteStringValue("abstract", Abstract);
             writer.WriteStringValue("authors", Authors);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
-            writer.WriteStringValue("createdDate", CreatedDate);
+            writer.WriteDateValue("createdDate", CreatedDate);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap>("ids", Ids);
             writer.WriteStringValue("paperId", PaperId);
             writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("updateDate", UpdateDate);
+            writer.WriteDateValue("updateDate", UpdateDate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

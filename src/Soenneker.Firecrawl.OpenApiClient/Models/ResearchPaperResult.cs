@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -19,6 +20,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("abstract") is null) { _explicitNullValueAbstract = default!; _explicitNullProperties?.Remove("abstract"); }
             else if (parseNode.GetChildNode("abstract") is { } nullNodeAbstract && nullNodeAbstract.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Abstract = null;
+            if (parseNode.GetChildNode("authors") is null) { _explicitNullValueAuthors = default!; _explicitNullProperties?.Remove("authors"); }
+            else if (parseNode.GetChildNode("authors") is { } nullNodeAuthors && nullNodeAuthors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authors = null;
+            if (parseNode.GetChildNode("createdDate") is null) { _explicitNullValueCreatedDate = default!; _explicitNullProperties?.Remove("createdDate"); }
+            else if (parseNode.GetChildNode("createdDate") is { } nullNodeCreatedDate && nullNodeCreatedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedDate = null;
             if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
             else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
             if (parseNode.GetChildNode("paperId") is null) { _explicitNullValuePaperId = default!; _explicitNullProperties?.Remove("paperId"); }
@@ -31,6 +36,8 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             else if (parseNode.GetChildNode("signals") is { } nullNodeSignals && nullNodeSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signals = null;
             if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
             else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("updateDate") is null) { _explicitNullValueUpdateDate = default!; _explicitNullProperties?.Remove("updateDate"); }
+            else if (parseNode.GetChildNode("updateDate") is { } nullNodeUpdateDate && nullNodeUpdateDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateDate = null;
         }
 
         /// <summary>The abstract property</summary>
@@ -45,6 +52,19 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>First 20 author names. GET /search/research/papers/{id} returns the full list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Authors { get => _explicitNullValueAuthors; set { _explicitNullValueAuthors = value; AdditionalData?.Remove("authors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authors"); else _explicitNullProperties?.Remove("authors"); } }
+        private List<string>? _explicitNullValueAuthors = default!;
+#nullable restore
+#else
+        public List<string> Authors { get => _explicitNullValueAuthors; set { _explicitNullValueAuthors = value; AdditionalData?.Remove("authors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authors"); else _explicitNullProperties?.Remove("authors"); } }
+        private List<string> _explicitNullValueAuthors = default!;
+#endif
+        /// <summary>Creation date, YYYY-MM-DD.</summary>
+        public Date? CreatedDate { get => _explicitNullValueCreatedDate; set { _explicitNullValueCreatedDate = value; AdditionalData?.Remove("createdDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdDate"); else _explicitNullProperties?.Remove("createdDate"); } }
+        private Date? _explicitNullValueCreatedDate = default!;
         /// <summary>Source identifiers grouped by namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +118,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
+        /// <summary>Last update date, YYYY-MM-DD.</summary>
+        public Date? UpdateDate { get => _explicitNullValueUpdateDate; set { _explicitNullValueUpdateDate = value; AdditionalData?.Remove("updateDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDate"); else _explicitNullProperties?.Remove("updateDate"); } }
+        private Date? _explicitNullValueUpdateDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperResult"/> and sets the default values.
         /// </summary>
@@ -124,12 +147,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "abstract", n => { Abstract = n.GetStringValue(); } },
+                { "authors", n => { Authors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "createdDate", n => { CreatedDate = n.GetDateValue(); } },
                 { "ids", n => { Ids = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap.CreateFromDiscriminatorValue); } },
                 { "paperId", n => { PaperId = n.GetStringValue(); } },
                 { "primaryId", n => { PrimaryId = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetDoubleValue(); } },
                 { "signals", n => { Signals = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "updateDate", n => { UpdateDate = n.GetDateValue(); } },
             };
         }
         /// <summary>
@@ -140,12 +166,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("abstract", Abstract);
+            writer.WriteCollectionOfPrimitiveValues<string>("authors", Authors);
+            writer.WriteDateValue("createdDate", CreatedDate);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchIdMap>("ids", Ids);
             writer.WriteStringValue("paperId", PaperId);
             writer.WriteStringValue("primaryId", PrimaryId);
             writer.WriteDoubleValue("score", Score);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchPaperSignals>("signals", Signals);
             writer.WriteStringValue("title", Title);
+            writer.WriteDateValue("updateDate", UpdateDate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
