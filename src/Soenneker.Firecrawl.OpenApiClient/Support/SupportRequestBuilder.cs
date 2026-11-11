@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Support.Ask;
-using Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,11 +19,6 @@ namespace Soenneker.Firecrawl.OpenApiClient.Support
         public global::Soenneker.Firecrawl.OpenApiClient.Support.Ask.AskRequestBuilder Ask
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Support.Ask.AskRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The docsSearch property</summary>
-        public global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchRequestBuilder DocsSearch
-        {
-            get => new global::Soenneker.Firecrawl.OpenApiClient.Support.DocsSearch.DocsSearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Support.SupportRequestBuilder"/> and sets the default values.
