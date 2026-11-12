@@ -22,7 +22,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GovRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*}", pathParameters)
+        public GovRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*,sources*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GovRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*}", rawUrl)
+        public GovRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/gov{?cites*,court*,courtType*,domain*,jurisdiction*,k*,sources*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovRequestBuilder.GovRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/search/gov?query={query}{&cites*,court*,courtType*,domain*,jurisdiction*,k*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/search/gov?query={query}{&cites*,court*,courtType*,domain*,jurisdiction*,k*,sources*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -127,15 +127,15 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovRequestBuilderGetQueryParameters 
         {
-            /// <summary>Keep only pages that cite one law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`.</summary>
+            /// <summary>Keep only pages that cite a law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`. Pass up to 32 to keep pages citing any of them. Repeat the parameter to pass more than one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cites")]
-            public string? Cites { get; set; }
+            public string[]? Cites { get; set; }
 #nullable restore
 #else
             [QueryParameter("cites")]
-            public string Cites { get; set; }
+            public string[] Cites { get; set; }
 #endif
             /// <summary>Keep only pages labeled for one court, by CourtListener court id, such as `scotus`, `ca9` or `nysd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,6 +182,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
 #else
             [QueryParameter("query")]
             public string Query { get; set; }
+#endif
+            /// <summary>Result groups to return. `web` returns plain search results. `gov` returns the same results with the index&apos;s labels: `jurisdiction`, `court`, `courtType`, `cites`, `citedAs`, `lang` and `updatedAt`. Repeat the parameter to return both.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sources")]
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GetSourcesQueryParameterType[]? Sources { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sources")]
+            public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GetSourcesQueryParameterType[] Sources { get; set; }
 #endif
         }
     }

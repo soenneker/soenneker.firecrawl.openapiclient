@@ -17,12 +17,24 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("gov") is null) { _explicitNullValueGov = default!; _explicitNullProperties?.Remove("gov"); }
+            else if (parseNode.GetChildNode("gov") is { } nullNodeGov && nullNodeGov.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gov = null;
             if (parseNode.GetChildNode("web") is null) { _explicitNullValueWeb = default!; _explicitNullProperties?.Remove("web"); }
             else if (parseNode.GetChildNode("web") is { } nullNodeWeb && nullNodeWeb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Web = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Present when `sources` includes `gov`. The same results as `web`, in the same order, with the index&apos;s labels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov>? Gov { get => _explicitNullValueGov; set { _explicitNullValueGov = value; AdditionalData?.Remove("gov"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gov"); else _explicitNullProperties?.Remove("gov"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov>? _explicitNullValueGov = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov> Gov { get => _explicitNullValueGov; set { _explicitNullValueGov = value; AdditionalData?.Remove("gov"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gov"); else _explicitNullProperties?.Remove("gov"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov> _explicitNullValueGov = default!;
+#endif
         /// <summary>The web property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +70,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "gov", n => { Gov = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov>(global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "web", n => { Web = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_web>(global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_web.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +81,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_gov>("gov", Gov);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.GovSearchResponse_data_web>("web", Web);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

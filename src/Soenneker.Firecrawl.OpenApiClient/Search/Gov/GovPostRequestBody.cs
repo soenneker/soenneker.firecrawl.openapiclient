@@ -31,17 +31,19 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
             else if (parseNode.GetChildNode("k") is { } nullNodeK && nullNodeK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K = null;
             if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
             else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("sources") is null) { _explicitNullValueSources = default!; _explicitNullProperties?.Remove("sources"); }
+            else if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
         }
 
-        /// <summary>Keep only pages that cite one law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`.</summary>
+        /// <summary>Keep only pages that cite a law or case, as a printed citation such as `42 U.S.C. § 1983` or `5 U.S. 137`, or a citation id such as `us:usc:42:1983`. Pass up to 32 to keep pages citing any of them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
-        private string? _explicitNullValueCites = default!;
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites? Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites? _explicitNullValueCites = default!;
 #nullable restore
 #else
-        public string Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
-        private string _explicitNullValueCites = default!;
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites Cites { get => _explicitNullValueCites; set { _explicitNullValueCites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cites"); else _explicitNullProperties?.Remove("cites"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites _explicitNullValueCites = default!;
 #endif
         /// <summary>Keep only pages labeled for one court, by CourtListener court id, such as `scotus`, `ca9` or `nysd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,6 +91,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
+        /// <summary>Result groups to return, as one name or a list. `web` returns plain search results. `gov` returns the same results with the index&apos;s labels: `jurisdiction`, `court`, `courtType`, `cites`, `citedAs`, `lang` and `updatedAt`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources? _explicitNullValueSources = default!;
+#nullable restore
+#else
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources _explicitNullValueSources = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -114,13 +126,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cites", n => { Cites = n.GetStringValue(); } },
+                { "cites", n => { Cites = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites>(global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites.CreateFromDiscriminatorValue); } },
                 { "court", n => { Court = n.GetStringValue(); } },
                 { "courtType", n => { CourtType = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType>(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "jurisdiction", n => { Jurisdiction = n.GetStringValue(); } },
                 { "k", n => { K = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
+                { "sources", n => { Sources = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources>(global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,14 +143,165 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cites", Cites);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites>("cites", Cites);
             writer.WriteStringValue("court", Court);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_courtType>("courtType", CourtType);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("jurisdiction", Jurisdiction);
             writer.WriteIntValue("k", K);
-            writer.WriteStringValue("query", Query);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteStringValue("query", Query);
+            writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources>("sources", Sources);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class GovPostRequestBody_cites : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? GovPostRequestBodyCitesString { get; set; }
+#nullable restore
+#else
+            public string GovPostRequestBodyCitesString { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites();
+
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites();
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string govPostRequestBodyCitesStringValue)
+                {
+                    result.GovPostRequestBodyCitesString = govPostRequestBodyCitesStringValue;
+                }
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GovPostRequestBodyCitesString == null && String == null) { writer.WriteNullValue(null); return; }
+
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(GovPostRequestBodyCitesString != null)
+                {
+                    writer.WriteStringValue(null, GovPostRequestBodyCitesString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class GovPostRequestBody_sources : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1>? GovPostRequestBodySourcesMember1 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1> GovPostRequestBodySourcesMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources();
+
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_sources();
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1>(global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1> govPostRequestBodySourcesMember1Value)
+                {
+                    result.GovPostRequestBodySourcesMember1 = govPostRequestBodySourcesMember1Value;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GovPostRequestBodySourcesMember1 == null && String == null) { writer.WriteNullValue(null); return; }
+
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+                else if(GovPostRequestBodySourcesMember1 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody_sourcesMember1>(null, GovPostRequestBodySourcesMember1);
+                }
+            }
         }
     }
 }
