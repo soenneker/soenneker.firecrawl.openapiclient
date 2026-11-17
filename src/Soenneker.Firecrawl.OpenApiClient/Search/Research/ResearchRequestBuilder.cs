@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers;
+using Soenneker.Firecrawl.OpenApiClient.Search.Research.Proteins;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Research
         public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.PapersRequestBuilder Papers
         {
             get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Papers.PapersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The proteins property</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Proteins.ProteinsRequestBuilder Proteins
+        {
+            get => new global::Soenneker.Firecrawl.OpenApiClient.Search.Research.Proteins.ProteinsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Search.Research.ResearchRequestBuilder"/> and sets the default values.
