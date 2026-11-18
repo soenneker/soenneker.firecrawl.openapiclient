@@ -93,7 +93,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "javascriptReturns", n => { JavascriptReturns = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_actions_javascriptReturns.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pdfs", n => { Pdfs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

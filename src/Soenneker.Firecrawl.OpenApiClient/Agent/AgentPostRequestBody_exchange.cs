@@ -102,7 +102,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "approve", n => { Approve = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_approve.CreateFromDiscriminatorValue); } },
                 { "decline", n => { Decline = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline>(global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentPostRequestBody_exchange_decline.CreateFromDiscriminatorValue); } },

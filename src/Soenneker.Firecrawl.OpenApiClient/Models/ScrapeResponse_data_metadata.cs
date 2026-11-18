@@ -201,7 +201,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "<any other metadata> ", n => { AnyOtherMetadata = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_AnyOtherMetadata>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_metadata.ScrapeResponse_data_metadata_AnyOtherMetadata.CreateFromDiscriminatorValue); } },
                 { "concurrencyLimited", n => { ConcurrencyLimited = n.GetBoolValue(); } },

@@ -90,7 +90,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "partial", n => { Partial = n.GetBoolValue(); } },
                 { "repos", n => { Repos = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos>(global::Soenneker.Firecrawl.OpenApiClient.Models.DeveloperSearchResponse_repos.CreateFromDiscriminatorValue)?.AsList(); } },

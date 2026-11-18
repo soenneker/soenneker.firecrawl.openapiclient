@@ -93,7 +93,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "fontFamilies", n => { FontFamilies = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontFamilies.CreateFromDiscriminatorValue); } },
                 { "fontSizes", n => { FontSizes = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_typography_fontSizes.CreateFromDiscriminatorValue); } },

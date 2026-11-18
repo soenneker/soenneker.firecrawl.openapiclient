@@ -72,7 +72,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "fullPage", n => { FullPage = n.GetBoolValue(); } },
                 { "quality", n => { Quality = n.GetIntValue(); } },

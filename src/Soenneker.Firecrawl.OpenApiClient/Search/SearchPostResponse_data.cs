@@ -94,7 +94,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_images.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "news", n => { News = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news>(global::Soenneker.Firecrawl.OpenApiClient.Search.SearchPostResponse_data_news.CreateFromDiscriminatorValue)?.AsList(); } },

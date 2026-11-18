@@ -93,7 +93,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorWebhook_events>()?.AsList(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorWebhook_headers>(global::Soenneker.Firecrawl.OpenApiClient.Models.MonitorWebhook_headers.CreateFromDiscriminatorValue); } },

@@ -113,7 +113,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "artifactId", n => { ArtifactId = n.GetStringValue(); } },
                 { "change", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.AgentTraceArtifact_change>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChange = default; _explicitNullProperties?.Remove("change"); AdditionalData["change"] = unknown; } else { Change = parsed; AdditionalData.Remove("change"); } } },

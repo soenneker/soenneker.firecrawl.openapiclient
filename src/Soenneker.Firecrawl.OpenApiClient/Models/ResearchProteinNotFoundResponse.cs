@@ -78,7 +78,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "match", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinNotFoundResponse_match>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMatch = default; _explicitNullProperties?.Remove("match"); AdditionalData["match"] = unknown; } else { Match = parsed; AdditionalData.Remove("match"); } } },
                 { "notice", n => { Notice = n.GetStringValue(); } },

@@ -78,7 +78,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Team.Activity
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Team.Activity.ActivityGetResponse_data>(global::Soenneker.Firecrawl.OpenApiClient.Team.Activity.ActivityGetResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -96,7 +96,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "effort", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_effort>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffort = default; _explicitNullProperties?.Remove("effort"); AdditionalData["effort"] = unknown; } else { Effort = parsed; AdditionalData.Remove("effort"); } } },
                 { "model", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Agent.AgentGetResponse_agents_options_model>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModel = default; _explicitNullProperties?.Remove("model"); AdditionalData["model"] = unknown; } else { Model = parsed; AdditionalData.Remove("model"); } } },

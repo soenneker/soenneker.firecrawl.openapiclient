@@ -124,7 +124,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Gov
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "cites", n => { Cites = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites>(global::Soenneker.Firecrawl.OpenApiClient.Search.Gov.GovPostRequestBody.GovPostRequestBody_cites.CreateFromDiscriminatorValue); } },
                 { "court", n => { Court = n.GetStringValue(); } },

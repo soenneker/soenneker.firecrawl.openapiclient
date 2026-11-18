@@ -19,14 +19,30 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("accession") is null) { _explicitNullValueAccession = default!; _explicitNullProperties?.Remove("accession"); }
             else if (parseNode.GetChildNode("accession") is { } nullNodeAccession && nullNodeAccession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accession = null;
+            if (parseNode.GetChildNode("disease") is null) { _explicitNullValueDisease = default!; _explicitNullProperties?.Remove("disease"); }
+            else if (parseNode.GetChildNode("disease") is { } nullNodeDisease && nullNodeDisease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disease = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
             if (parseNode.GetChildNode("entryName") is null) { _explicitNullValueEntryName = default!; _explicitNullProperties?.Remove("entryName"); }
             else if (parseNode.GetChildNode("entryName") is { } nullNodeEntryName && nullNodeEntryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryName = null;
+            if (parseNode.GetChildNode("featureCount") is null) { _explicitNullValueFeatureCount = default!; _explicitNullProperties?.Remove("featureCount"); }
+            else if (parseNode.GetChildNode("featureCount") is { } nullNodeFeatureCount && nullNodeFeatureCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureCount = null;
+            if (parseNode.GetChildNode("features") is null) { _explicitNullValueFeatures = default!; _explicitNullProperties?.Remove("features"); }
+            else if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
             if (parseNode.GetChildNode("function") is null) { _explicitNullValueFunction = default!; _explicitNullProperties?.Remove("function"); }
             else if (parseNode.GetChildNode("function") is { } nullNodeFunction && nullNodeFunction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Function = null;
             if (parseNode.GetChildNode("gene") is null) { _explicitNullValueGene = default!; _explicitNullProperties?.Remove("gene"); }
             else if (parseNode.GetChildNode("gene") is { } nullNodeGene && nullNodeGene.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gene = null;
             if (parseNode.GetChildNode("goCellularComponent") is null) { _explicitNullValueGoCellularComponent = default!; _explicitNullProperties?.Remove("goCellularComponent"); }
             else if (parseNode.GetChildNode("goCellularComponent") is { } nullNodeGoCellularComponent && nullNodeGoCellularComponent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoCellularComponent = null;
+            if (parseNode.GetChildNode("interactionCount") is null) { _explicitNullValueInteractionCount = default!; _explicitNullProperties?.Remove("interactionCount"); }
+            else if (parseNode.GetChildNode("interactionCount") is { } nullNodeInteractionCount && nullNodeInteractionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionCount = null;
+            if (parseNode.GetChildNode("interactions") is null) { _explicitNullValueInteractions = default!; _explicitNullProperties?.Remove("interactions"); }
+            else if (parseNode.GetChildNode("interactions") is { } nullNodeInteractions && nullNodeInteractions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interactions = null;
+            if (parseNode.GetChildNode("length") is null) { _explicitNullValueLength = default!; _explicitNullProperties?.Remove("length"); }
+            else if (parseNode.GetChildNode("length") is { } nullNodeLength && nullNodeLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Length = null;
+            if (parseNode.GetChildNode("mass") is null) { _explicitNullValueMass = default!; _explicitNullProperties?.Remove("mass"); }
+            else if (parseNode.GetChildNode("mass") is { } nullNodeMass && nullNodeMass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mass = null;
             if (parseNode.GetChildNode("matchedBy") is null) { _explicitNullValueMatchedBy = default!; _explicitNullProperties?.Remove("matchedBy"); }
             else if (parseNode.GetChildNode("matchedBy") is { } nullNodeMatchedBy && nullNodeMatchedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchedBy = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -35,12 +51,22 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
             else if (parseNode.GetChildNode("organism") is { } nullNodeOrganism && nullNodeOrganism.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organism = null;
             if (parseNode.GetChildNode("paperIds") is null) { _explicitNullValuePaperIds = default!; _explicitNullProperties?.Remove("paperIds"); }
             else if (parseNode.GetChildNode("paperIds") is { } nullNodePaperIds && nullNodePaperIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperIds = null;
+            if (parseNode.GetChildNode("pdbCrossReferenceCount") is null) { _explicitNullValuePdbCrossReferenceCount = default!; _explicitNullProperties?.Remove("pdbCrossReferenceCount"); }
+            else if (parseNode.GetChildNode("pdbCrossReferenceCount") is { } nullNodePdbCrossReferenceCount && nullNodePdbCrossReferenceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PdbCrossReferenceCount = null;
+            if (parseNode.GetChildNode("ptm") is null) { _explicitNullValuePtm = default!; _explicitNullProperties?.Remove("ptm"); }
+            else if (parseNode.GetChildNode("ptm") is { } nullNodePtm && nullNodePtm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ptm = null;
             if (parseNode.GetChildNode("subcellularLocation") is null) { _explicitNullValueSubcellularLocation = default!; _explicitNullProperties?.Remove("subcellularLocation"); }
             else if (parseNode.GetChildNode("subcellularLocation") is { } nullNodeSubcellularLocation && nullNodeSubcellularLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubcellularLocation = null;
+            if (parseNode.GetChildNode("subunit") is null) { _explicitNullValueSubunit = default!; _explicitNullProperties?.Remove("subunit"); }
+            else if (parseNode.GetChildNode("subunit") is { } nullNodeSubunit && nullNodeSubunit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subunit = null;
             if (parseNode.GetChildNode("synonyms") is null) { _explicitNullValueSynonyms = default!; _explicitNullProperties?.Remove("synonyms"); }
             else if (parseNode.GetChildNode("synonyms") is { } nullNodeSynonyms && nullNodeSynonyms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Synonyms = null;
+            if (parseNode.GetChildNode("tissueSpecificity") is null) { _explicitNullValueTissueSpecificity = default!; _explicitNullProperties?.Remove("tissueSpecificity"); }
+            else if (parseNode.GetChildNode("tissueSpecificity") is { } nullNodeTissueSpecificity && nullNodeTissueSpecificity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TissueSpecificity = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
             else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("variantCount") is null) { _explicitNullValueVariantCount = default!; _explicitNullProperties?.Remove("variantCount"); }
+            else if (parseNode.GetChildNode("variantCount") is { } nullNodeVariantCount && nullNodeVariantCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariantCount = null;
         }
 
         /// <summary>Primary UniProt accession, such as `Q6P087`.</summary>
@@ -55,6 +81,26 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Disease statements, in UniProt order. Each names its disease in `diseaseName` when UniProt gives one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? Disease { get => _explicitNullValueDisease; set { _explicitNullValueDisease = value; AdditionalData?.Remove("disease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disease"); else _explicitNullProperties?.Remove("disease"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? _explicitNullValueDisease = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> Disease { get => _explicitNullValueDisease; set { _explicitNullValueDisease = value; AdditionalData?.Remove("disease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disease"); else _explicitNullProperties?.Remove("disease"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValueDisease = default!;
+#endif
+        /// <summary>Domain statements, in UniProt order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? _explicitNullValueDomain = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValueDomain = default!;
+#endif
         /// <summary>UniProt entry name, such as `RUSD3_HUMAN`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +110,19 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public string EntryName { get => _explicitNullValueEntryName; set { _explicitNullValueEntryName = value; AdditionalData?.Remove("entryName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryName"); else _explicitNullProperties?.Remove("entryName"); } }
         private string _explicitNullValueEntryName = default!;
+#endif
+        /// <summary>Full number of features, not counting natural variants, mutagenesis results and isoform sequences.</summary>
+        public int? FeatureCount { get => _explicitNullValueFeatureCount; set { _explicitNullValueFeatureCount = value; AdditionalData?.Remove("featureCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureCount"); else _explicitNullProperties?.Remove("featureCount"); } }
+        private int? _explicitNullValueFeatureCount = default!;
+        /// <summary>Up to 50 sequence features in UniProt order, such as chains, domains, modified residues and binding sites. Natural variants, mutagenesis results and isoform sequences are left out.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature>? _explicitNullValueFeatures = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature> _explicitNullValueFeatures = default!;
 #endif
         /// <summary>Function statements, in UniProt order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,6 +154,25 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinGoTerm> GoCellularComponent { get => _explicitNullValueGoCellularComponent; set { _explicitNullValueGoCellularComponent = value; AdditionalData?.Remove("goCellularComponent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goCellularComponent"); else _explicitNullProperties?.Remove("goCellularComponent"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinGoTerm> _explicitNullValueGoCellularComponent = default!;
 #endif
+        /// <summary>Full number of interactions.</summary>
+        public int? InteractionCount { get => _explicitNullValueInteractionCount; set { _explicitNullValueInteractionCount = value; AdditionalData?.Remove("interactionCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactionCount"); else _explicitNullProperties?.Remove("interactionCount"); } }
+        private int? _explicitNullValueInteractionCount = default!;
+        /// <summary>Up to 25 binary interactions from IntAct, those with the most experiments first. They carry no evidence kind and no paper.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction>? Interactions { get => _explicitNullValueInteractions; set { _explicitNullValueInteractions = value; AdditionalData?.Remove("interactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactions"); else _explicitNullProperties?.Remove("interactions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction>? _explicitNullValueInteractions = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction> Interactions { get => _explicitNullValueInteractions; set { _explicitNullValueInteractions = value; AdditionalData?.Remove("interactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactions"); else _explicitNullProperties?.Remove("interactions"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction> _explicitNullValueInteractions = default!;
+#endif
+        /// <summary>Residues in the canonical sequence.</summary>
+        public int? Length { get => _explicitNullValueLength; set { _explicitNullValueLength = value; AdditionalData?.Remove("length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("length"); else _explicitNullProperties?.Remove("length"); } }
+        private int? _explicitNullValueLength = default!;
+        /// <summary>Mass of the canonical sequence, in daltons.</summary>
+        public int? Mass { get => _explicitNullValueMass; set { _explicitNullValueMass = value; AdditionalData?.Remove("mass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mass"); else _explicitNullProperties?.Remove("mass"); } }
+        private int? _explicitNullValueMass = default!;
         /// <summary>Which identifier matched the entry. `secondary_accession` is an older accession that UniProt keeps on the current entry. An older accession that UniProt kept on several entries after a split returns `ambiguous`. `synonym` is a gene synonym. `name` is a recommended or alternative full protein name.</summary>
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinMatchedBy? MatchedBy { get => _explicitNullValueMatchedBy; set { _explicitNullValueMatchedBy = value; AdditionalData?.Remove("matchedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedBy"); else _explicitNullProperties?.Remove("matchedBy"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinMatchedBy? _explicitNullValueMatchedBy = default!;
@@ -118,7 +196,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinOrganism Organism { get => _explicitNullValueOrganism; set { _explicitNullValueOrganism = value; AdditionalData?.Remove("organism"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organism"); else _explicitNullProperties?.Remove("organism"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinOrganism _explicitNullValueOrganism = default!;
 #endif
-        /// <summary>Every paper cited in the statements and GO terms, deduplicated.</summary>
+        /// <summary>Every paper cited anywhere in the entry, once each: in the statements of every field, the GO terms and the features. It can hold papers cited only in `disease`, `ptm`, `subunit`, `tissueSpecificity`, `domain` or `features`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PaperIds { get => _explicitNullValuePaperIds; set { _explicitNullValuePaperIds = value; AdditionalData?.Remove("paperIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperIds"); else _explicitNullProperties?.Remove("paperIds"); } }
@@ -127,6 +205,19 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<string> PaperIds { get => _explicitNullValuePaperIds; set { _explicitNullValuePaperIds = value; AdditionalData?.Remove("paperIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paperIds"); else _explicitNullProperties?.Remove("paperIds"); } }
         private List<string> _explicitNullValuePaperIds = default!;
+#endif
+        /// <summary>Number of PDB structures the UniProt entry cross-references.</summary>
+        public int? PdbCrossReferenceCount { get => _explicitNullValuePdbCrossReferenceCount; set { _explicitNullValuePdbCrossReferenceCount = value; AdditionalData?.Remove("pdbCrossReferenceCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdbCrossReferenceCount"); else _explicitNullProperties?.Remove("pdbCrossReferenceCount"); } }
+        private int? _explicitNullValuePdbCrossReferenceCount = default!;
+        /// <summary>Post-translational modification statements, in UniProt order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? Ptm { get => _explicitNullValuePtm; set { _explicitNullValuePtm = value; AdditionalData?.Remove("ptm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptm"); else _explicitNullProperties?.Remove("ptm"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? _explicitNullValuePtm = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> Ptm { get => _explicitNullValuePtm; set { _explicitNullValuePtm = value; AdditionalData?.Remove("ptm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ptm"); else _explicitNullProperties?.Remove("ptm"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValuePtm = default!;
 #endif
         /// <summary>Subcellular location statements, in UniProt order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,6 +229,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> SubcellularLocation { get => _explicitNullValueSubcellularLocation; set { _explicitNullValueSubcellularLocation = value; AdditionalData?.Remove("subcellularLocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subcellularLocation"); else _explicitNullProperties?.Remove("subcellularLocation"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValueSubcellularLocation = default!;
 #endif
+        /// <summary>Subunit structure statements, in UniProt order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? Subunit { get => _explicitNullValueSubunit; set { _explicitNullValueSubunit = value; AdditionalData?.Remove("subunit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subunit"); else _explicitNullProperties?.Remove("subunit"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? _explicitNullValueSubunit = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> Subunit { get => _explicitNullValueSubunit; set { _explicitNullValueSubunit = value; AdditionalData?.Remove("subunit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subunit"); else _explicitNullProperties?.Remove("subunit"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValueSubunit = default!;
+#endif
         /// <summary>Gene synonyms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +248,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<string> Synonyms { get => _explicitNullValueSynonyms; set { _explicitNullValueSynonyms = value; AdditionalData?.Remove("synonyms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synonyms"); else _explicitNullProperties?.Remove("synonyms"); } }
         private List<string> _explicitNullValueSynonyms = default!;
+#endif
+        /// <summary>Tissue specificity statements, in UniProt order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? TissueSpecificity { get => _explicitNullValueTissueSpecificity; set { _explicitNullValueTissueSpecificity = value; AdditionalData?.Remove("tissueSpecificity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tissueSpecificity"); else _explicitNullProperties?.Remove("tissueSpecificity"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>? _explicitNullValueTissueSpecificity = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> TissueSpecificity { get => _explicitNullValueTissueSpecificity; set { _explicitNullValueTissueSpecificity = value; AdditionalData?.Remove("tissueSpecificity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tissueSpecificity"); else _explicitNullProperties?.Remove("tissueSpecificity"); } }
+        private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement> _explicitNullValueTissueSpecificity = default!;
 #endif
         /// <summary>UniProt page for the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,6 +269,9 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
+        /// <summary>Number of natural variants, mutagenesis results and isoform sequences UniProt records for the entry. The response does not list them.</summary>
+        public int? VariantCount { get => _explicitNullValueVariantCount; set { _explicitNullValueVariantCount = value; AdditionalData?.Remove("variantCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variantCount"); else _explicitNullProperties?.Remove("variantCount"); } }
+        private int? _explicitNullValueVariantCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEntry"/> and sets the default values.
         /// </summary>
@@ -181,20 +295,33 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(25)
             {
                 { "accession", n => { Accession = n.GetStringValue(); } },
+                { "disease", n => { Disease = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "domain", n => { Domain = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entryName", n => { EntryName = n.GetStringValue(); } },
+                { "featureCount", n => { FeatureCount = n.GetIntValue(); } },
+                { "features", n => { Features = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "function", n => { Function = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "gene", n => { Gene = n.GetStringValue(); } },
                 { "goCellularComponent", n => { GoCellularComponent = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinGoTerm>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinGoTerm.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "interactionCount", n => { InteractionCount = n.GetIntValue(); } },
+                { "interactions", n => { Interactions = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "length", n => { Length = n.GetIntValue(); } },
+                { "mass", n => { Mass = n.GetIntValue(); } },
                 { "matchedBy", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinMatchedBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMatchedBy = default; _explicitNullProperties?.Remove("matchedBy"); AdditionalData["matchedBy"] = unknown; } else { MatchedBy = parsed; AdditionalData.Remove("matchedBy"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organism", n => { Organism = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinOrganism>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinOrganism.CreateFromDiscriminatorValue); } },
                 { "paperIds", n => { PaperIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pdbCrossReferenceCount", n => { PdbCrossReferenceCount = n.GetIntValue(); } },
+                { "ptm", n => { Ptm = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subcellularLocation", n => { SubcellularLocation = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subunit", n => { Subunit = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "synonyms", n => { Synonyms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tissueSpecificity", n => { TissueSpecificity = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "variantCount", n => { VariantCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -205,17 +332,30 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accession", Accession);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("disease", Disease);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("domain", Domain);
             writer.WriteStringValue("entryName", EntryName);
+            writer.WriteIntValue("featureCount", FeatureCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinFeature>("features", Features);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("function", Function);
             writer.WriteStringValue("gene", Gene);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinGoTerm>("goCellularComponent", GoCellularComponent);
+            writer.WriteIntValue("interactionCount", InteractionCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinInteraction>("interactions", Interactions);
+            writer.WriteIntValue("length", Length);
+            writer.WriteIntValue("mass", Mass);
             writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinMatchedBy>("matchedBy", MatchedBy);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinOrganism>("organism", Organism);
             writer.WriteCollectionOfPrimitiveValues<string>("paperIds", PaperIds);
+            writer.WriteIntValue("pdbCrossReferenceCount", PdbCrossReferenceCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("ptm", Ptm);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("subcellularLocation", SubcellularLocation);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("subunit", Subunit);
             writer.WriteCollectionOfPrimitiveValues<string>("synonyms", Synonyms);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinStatement>("tissueSpecificity", TissueSpecificity);
             writer.WriteStringValue("url", Url);
+            writer.WriteIntValue("variantCount", VariantCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -182,7 +182,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "animations", n => { Animations = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_animations>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_animations.CreateFromDiscriminatorValue); } },
                 { "colorScheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_branding_colorScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueColorScheme = default; _explicitNullProperties?.Remove("colorScheme"); AdditionalData["colorScheme"] = unknown; } else { ColorScheme = parsed; AdditionalData.Remove("colorScheme"); } } },

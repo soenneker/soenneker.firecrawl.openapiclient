@@ -84,7 +84,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "activeBrowserSessions", n => { ActiveBrowserSessions = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.TraceGetResponse_activeBrowserSessions>(global::Soenneker.Firecrawl.OpenApiClient.Agent.Item.Trace.TraceGetResponse_activeBrowserSessions.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "creditsUsed", n => { CreditsUsed = n.GetDoubleValue(); } },

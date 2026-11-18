@@ -79,7 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items>(global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_items.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "level", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.FindToolsData_level>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLevel = default; _explicitNullProperties?.Remove("level"); AdditionalData["level"] = unknown; } else { Level = parsed; AdditionalData.Remove("level"); } } },

@@ -17,8 +17,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("diseaseAcronym") is null) { _explicitNullValueDiseaseAcronym = default!; _explicitNullProperties?.Remove("diseaseAcronym"); }
+            else if (parseNode.GetChildNode("diseaseAcronym") is { } nullNodeDiseaseAcronym && nullNodeDiseaseAcronym.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiseaseAcronym = null;
+            if (parseNode.GetChildNode("diseaseName") is null) { _explicitNullValueDiseaseName = default!; _explicitNullProperties?.Remove("diseaseName"); }
+            else if (parseNode.GetChildNode("diseaseName") is { } nullNodeDiseaseName && nullNodeDiseaseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiseaseName = null;
             if (parseNode.GetChildNode("evidence") is null) { _explicitNullValueEvidence = default!; _explicitNullProperties?.Remove("evidence"); }
             else if (parseNode.GetChildNode("evidence") is { } nullNodeEvidence && nullNodeEvidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Evidence = null;
+            if (parseNode.GetChildNode("mimId") is null) { _explicitNullValueMimId = default!; _explicitNullProperties?.Remove("mimId"); }
+            else if (parseNode.GetChildNode("mimId") is { } nullNodeMimId && nullNodeMimId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimId = null;
             if (parseNode.GetChildNode("molecule") is null) { _explicitNullValueMolecule = default!; _explicitNullProperties?.Remove("molecule"); }
             else if (parseNode.GetChildNode("molecule") is { } nullNodeMolecule && nullNodeMolecule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Molecule = null;
             if (parseNode.GetChildNode("note") is null) { _explicitNullValueNote = default!; _explicitNullProperties?.Remove("note"); }
@@ -33,6 +39,26 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Acronym of that disease, when UniProt gives one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DiseaseAcronym { get => _explicitNullValueDiseaseAcronym; set { _explicitNullValueDiseaseAcronym = value; AdditionalData?.Remove("diseaseAcronym"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diseaseAcronym"); else _explicitNullProperties?.Remove("diseaseAcronym"); } }
+        private string? _explicitNullValueDiseaseAcronym = default!;
+#nullable restore
+#else
+        public string DiseaseAcronym { get => _explicitNullValueDiseaseAcronym; set { _explicitNullValueDiseaseAcronym = value; AdditionalData?.Remove("diseaseAcronym"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diseaseAcronym"); else _explicitNullProperties?.Remove("diseaseAcronym"); } }
+        private string _explicitNullValueDiseaseAcronym = default!;
+#endif
+        /// <summary>Disease a disease statement is about, when UniProt names one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DiseaseName { get => _explicitNullValueDiseaseName; set { _explicitNullValueDiseaseName = value; AdditionalData?.Remove("diseaseName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diseaseName"); else _explicitNullProperties?.Remove("diseaseName"); } }
+        private string? _explicitNullValueDiseaseName = default!;
+#nullable restore
+#else
+        public string DiseaseName { get => _explicitNullValueDiseaseName; set { _explicitNullValueDiseaseName = value; AdditionalData?.Remove("diseaseName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diseaseName"); else _explicitNullProperties?.Remove("diseaseName"); } }
+        private string _explicitNullValueDiseaseName = default!;
+#endif
         /// <summary>Evidence for the statement. A statement UniProt leaves without evidence has one item with `kind: &quot;untagged&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +68,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEvidence> Evidence { get => _explicitNullValueEvidence; set { _explicitNullValueEvidence = value; AdditionalData?.Remove("evidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evidence"); else _explicitNullProperties?.Remove("evidence"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEvidence> _explicitNullValueEvidence = default!;
+#endif
+        /// <summary>OMIM id of that disease, such as `191170`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MimId { get => _explicitNullValueMimId; set { _explicitNullValueMimId = value; AdditionalData?.Remove("mimId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimId"); else _explicitNullProperties?.Remove("mimId"); } }
+        private string? _explicitNullValueMimId = default!;
+#nullable restore
+#else
+        public string MimId { get => _explicitNullValueMimId; set { _explicitNullValueMimId = value; AdditionalData?.Remove("mimId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimId"); else _explicitNullProperties?.Remove("mimId"); } }
+        private string _explicitNullValueMimId = default!;
 #endif
         /// <summary>Isoform or chain the statement applies to, such as `Isoform 2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +102,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public string Orientation { get => _explicitNullValueOrientation; set { _explicitNullValueOrientation = value; AdditionalData?.Remove("orientation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orientation"); else _explicitNullProperties?.Remove("orientation"); } }
         private string _explicitNullValueOrientation = default!;
 #endif
-        /// <summary>Location term, note text, or function text, as UniProt writes it.</summary>
+        /// <summary>Statement text as UniProt writes it: a location term, a location note, or the text of a function, disease, PTM, subunit, tissue specificity or domain comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
@@ -109,9 +145,12 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
+                { "diseaseAcronym", n => { DiseaseAcronym = n.GetStringValue(); } },
+                { "diseaseName", n => { DiseaseName = n.GetStringValue(); } },
                 { "evidence", n => { Evidence = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEvidence>(global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEvidence.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mimId", n => { MimId = n.GetStringValue(); } },
                 { "molecule", n => { Molecule = n.GetStringValue(); } },
                 { "note", n => { Note = n.GetBoolValue(); } },
                 { "orientation", n => { Orientation = n.GetStringValue(); } },
@@ -126,7 +165,10 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("diseaseAcronym", DiseaseAcronym);
+            writer.WriteStringValue("diseaseName", DiseaseName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ResearchProteinEvidence>("evidence", Evidence);
+            writer.WriteStringValue("mimId", MimId);
             writer.WriteStringValue("molecule", Molecule);
             writer.WriteBoolValue("note", Note);
             writer.WriteStringValue("orientation", Orientation);

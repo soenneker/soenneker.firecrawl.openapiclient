@@ -165,7 +165,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Search.Developer
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "fork", n => { Fork = n.GetBoolValue(); } },
