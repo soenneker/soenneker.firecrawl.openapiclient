@@ -57,6 +57,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape408Error">When receiving a 408 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape409Error">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape500Error">When receiving a 500 status code</exception>
@@ -78,6 +79,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Scrape
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape402Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape403Error.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape404Error.CreateFromDiscriminatorValue },
+                { "408", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape408Error.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape409Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Scrape.Scrape500Error.CreateFromDiscriminatorValue },

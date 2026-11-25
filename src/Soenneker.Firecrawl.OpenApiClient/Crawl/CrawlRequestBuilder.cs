@@ -65,6 +65,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse400Error">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse402Error">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse500Error">When receiving a 500 status code</exception>
@@ -81,6 +82,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Crawl
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse400Error.CreateFromDiscriminatorValue },
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse402Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Crawl.CrawlResponse500Error.CreateFromDiscriminatorValue },

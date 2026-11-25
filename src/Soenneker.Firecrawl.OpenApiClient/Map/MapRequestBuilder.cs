@@ -41,6 +41,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse402Error">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse408Error">When receiving a 408 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse429Error">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,6 +58,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Map
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "402", global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse402Error.CreateFromDiscriminatorValue },
+                { "408", global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse408Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse429Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Firecrawl.OpenApiClient.Map.MapResponse500Error.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
