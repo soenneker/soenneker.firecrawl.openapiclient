@@ -19,10 +19,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("availability") is null) { _explicitNullValueAvailability = default!; _explicitNullProperties?.Remove("availability"); }
             else if (parseNode.GetChildNode("availability") is { } nullNodeAvailability && nullNodeAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Availability = null;
+            if (parseNode.GetChildNode("condition") is null) { _explicitNullValueCondition = default!; _explicitNullProperties?.Remove("condition"); }
+            else if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("gtin") is null) { _explicitNullValueGtin = default!; _explicitNullProperties?.Remove("gtin"); }
+            else if (parseNode.GetChildNode("gtin") is { } nullNodeGtin && nullNodeGtin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gtin = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("images") is null) { _explicitNullValueImages = default!; _explicitNullProperties?.Remove("images"); }
             else if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("mpn") is null) { _explicitNullValueMpn = default!; _explicitNullProperties?.Remove("mpn"); }
+            else if (parseNode.GetChildNode("mpn") is { } nullNodeMpn && nullNodeMpn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mpn = null;
             if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
             else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
             if (parseNode.GetChildNode("sale") is null) { _explicitNullValueSale = default!; _explicitNullProperties?.Remove("sale"); }
@@ -47,6 +53,19 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_availability Availability { get => _explicitNullValueAvailability; set { _explicitNullValueAvailability = value; AdditionalData?.Remove("availability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availability"); else _explicitNullProperties?.Remove("availability"); } }
         private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_availability _explicitNullValueAvailability = default!;
 #endif
+        /// <summary>The item condition. Omitted when the page does not state it.</summary>
+        public global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_condition? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_condition? _explicitNullValueCondition = default!;
+        /// <summary>The variant&apos;s Global Trade Item Number (GTIN-8, 12, 13 or 14). Omitted when the page does not publish one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Gtin { get => _explicitNullValueGtin; set { _explicitNullValueGtin = value; AdditionalData?.Remove("gtin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gtin"); else _explicitNullProperties?.Remove("gtin"); } }
+        private string? _explicitNullValueGtin = default!;
+#nullable restore
+#else
+        public string Gtin { get => _explicitNullValueGtin; set { _explicitNullValueGtin = value; AdditionalData?.Remove("gtin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gtin"); else _explicitNullProperties?.Remove("gtin"); } }
+        private string _explicitNullValueGtin = default!;
+#endif
         /// <summary>The variant identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +85,16 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 #else
         public List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_images> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
         private List<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_images> _explicitNullValueImages = default!;
+#endif
+        /// <summary>The manufacturer part number. Omitted when the page does not publish one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Mpn { get => _explicitNullValueMpn; set { _explicitNullValueMpn = value; AdditionalData?.Remove("mpn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpn"); else _explicitNullProperties?.Remove("mpn"); } }
+        private string? _explicitNullValueMpn = default!;
+#nullable restore
+#else
+        public string Mpn { get => _explicitNullValueMpn; set { _explicitNullValueMpn = value; AdditionalData?.Remove("mpn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpn"); else _explicitNullProperties?.Remove("mpn"); } }
+        private string _explicitNullValueMpn = default!;
 #endif
         /// <summary>The current price of the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,11 +169,14 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(8)
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "availability", n => { Availability = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_availability>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_availability.CreateFromDiscriminatorValue); } },
+                { "condition", n => { var parsed = n.GetEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_condition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCondition = default; _explicitNullProperties?.Remove("condition"); AdditionalData["condition"] = unknown; } else { Condition = parsed; AdditionalData.Remove("condition"); } } },
+                { "gtin", n => { Gtin = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_images>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_images.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mpn", n => { Mpn = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_price>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_price.CreateFromDiscriminatorValue); } },
                 { "sale", n => { Sale = n.GetObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale>(global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale.CreateFromDiscriminatorValue); } },
                 { "sku", n => { Sku = n.GetStringValue(); } },
@@ -160,8 +192,11 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_availability>("availability", Availability);
+            writer.WriteEnumValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_condition>("condition", Condition);
+            writer.WriteStringValue("gtin", Gtin);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_images>("images", Images);
+            writer.WriteStringValue("mpn", Mpn);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_price>("price", Price);
             writer.WriteObjectValue<global::Soenneker.Firecrawl.OpenApiClient.Models.ScrapeResponse_data_product_variants_sale>("sale", Sale);
             writer.WriteStringValue("sku", Sku);

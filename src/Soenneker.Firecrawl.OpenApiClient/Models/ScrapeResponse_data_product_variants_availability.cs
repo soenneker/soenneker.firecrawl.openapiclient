@@ -26,7 +26,7 @@ namespace Soenneker.Firecrawl.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the variant is in stock.</summary>
+        /// <summary>true when the page says the variant is in stock, false when it says it is out of stock, and null when the page does not state stock. SDK versions released before null was introduced keep receiving a boolean, the same value they received before, and never null.</summary>
         public bool? InStock { get => _explicitNullValueInStock; set { _explicitNullValueInStock = value; AdditionalData?.Remove("inStock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inStock"); else _explicitNullProperties?.Remove("inStock"); } }
         private bool? _explicitNullValueInStock = default!;
         /// <summary>Human-readable availability text (e.g. &apos;In Stock&apos;).</summary>
